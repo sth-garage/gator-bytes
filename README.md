@@ -1,2 +1,1 @@
-# gator-bytes
-An example Semantic Kernel application for matching jobs to resumes
+# SemanticKernel_Job_Resume_Analysis_PRIVATE
