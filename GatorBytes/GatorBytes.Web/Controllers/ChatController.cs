@@ -1,4 +1,5 @@
 //using GatorBytes.DAL.CombinedModels;
+using GatorBytes.DAL.Context;
 using GatorBytes.Shared.Models;
 using GatorBytes.Shared.Prompts;
 using Microsoft.AspNetCore.Mvc;
@@ -24,16 +25,19 @@ public class ChatController : ControllerBase
     readonly ConfigurationValues _configValues;
     readonly IChatCompletionService _chatCompletionService;
     readonly Kernel _kernel;
+    readonly GatorBytesDBContext _context;
 
 
     public ChatController(ConfigurationValues configValues,
         Kernel kernel,
-        IChatCompletionService chatCompletionService
+        IChatCompletionService chatCompletionService,
+        GatorBytesDBContext context
         )
     {
         _configValues = configValues;
         _chatCompletionService = chatCompletionService;
         _kernel = kernel;
+        _context = context;
 
     }
 
@@ -46,7 +50,7 @@ public class ChatController : ControllerBase
         if (HttpContext.WebSockets.IsWebSocketRequest)
         {
             using var webSocket = await HttpContext.WebSockets.AcceptWebSocketAsync();
-            await Echo(webSocket, null, _chatCompletionService, _kernel, _configValues);
+            await Echo(webSocket, _context, _chatCompletionService, _kernel, _configValues);
         }
         else
         {
@@ -58,7 +62,7 @@ public class ChatController : ControllerBase
     #endregion
 
     private static async Task Echo(WebSocket inputWebSocket,
-        WebSocket outputWebSocket,
+        GatorBytesDBContext context,
         IChatCompletionService chatCompletionService,
         Kernel kernel,
         ConfigurationValues configValues)
@@ -75,13 +79,24 @@ public class ChatController : ControllerBase
             // Enable planning
             OpenAIPromptExecutionSettings openAIPromptExecutionSettings = new()
             {
-                FunctionChoiceBehavior = FunctionChoiceBehavior.Auto(),
+                ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions
             };
 
             ChatHistory chatHistory = new ChatHistory();
 
             chatHistory.AddSystemMessage(Prompts.TempSystemPrompt);
-            chatHistory.AddDeveloperMessage(Prompts.ResultAsRichHTMLDivRoot);
+
+            StringBuilder docUploadsSB = new StringBuilder();
+
+            foreach (var docUpload in context.DocumentUploads)
+            {
+                docUploadsSB.AppendLine(String.Format("Document Upload Id [{0}] - FileName: [{1}] - Base64Data: [{2}]",
+                    docUpload.Id,
+                    docUpload.FileName,
+                    docUpload.Base64Data));
+            }
+
+            chatHistory.AddDeveloperMessage("Document Uploads: " + docUploadsSB.ToString());
             
 
             while (!receiveResult.CloseStatus.HasValue)
@@ -98,7 +113,12 @@ public class ChatController : ControllerBase
                     executionSettings: openAIPromptExecutionSettings,
                     kernel: kernel);
 
-                result.Content = result.Content.Replace("```html", "").Replace("```", "");
+                result.Content = result.Content.Replace("```html", "")
+                    .Replace("```", "")
+                    .Replace("<|channel|>final <|constrain|>html<|message|>", "")
+                    .Replace("<|channel|>final <|constrain|>", "")
+                    .Replace("div<|message|>", "")
+                    .Replace("<|message|>", "");
 
                 chatHistory.AddAssistantMessage(result.Content);
 

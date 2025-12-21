@@ -25,18 +25,12 @@ var semanticKernelBuildResult = await skBuilder.BuildSemanticKernel(configValues
 webBuilder.Services.AddDbContext<GatorBytesDBContext>(options =>
 {
     options.UseSqlServer(configValues.ConnectionStrings.ConnectionString_GatorBytes,
-        sqlServerOptions => sqlServerOptions.CommandTimeout(999999));
+        sqlServerOptions => sqlServerOptions.CommandTimeout(600));
 });
 
 webBuilder.Services.AddSingleton<IChatCompletionService>(semanticKernelBuildResult.AIServices.ChatCompletionService);
 webBuilder.Services.AddSingleton<Kernel>(semanticKernelBuildResult.AIServices.Kernel);
 webBuilder.Services.AddSingleton<ConfigurationValues>(configValues);
-
-// Enable planning
-//OpenAIPromptExecutionSettings openAIPromptExecutionSettings = new()
-//{
-//    //FunctionChoiceBehavior = FunctionChoiceBehavior.Auto()
-//};
 
 var app = webBuilder.Build();
 

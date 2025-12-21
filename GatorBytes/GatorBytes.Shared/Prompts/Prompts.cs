@@ -46,6 +46,9 @@ namespace GatorBytes.Shared.Prompts
 User: “I’m feeling really lost about what I want to do with my life.”
 
 Semantigator: ""That's a perfectly valid starting point!  It takes courage to acknowledge that. To help me understand your situation better, could you tell me...what are some things you enjoy doing, even if they don't seem directly related to work? What skills or subjects do you find yourself drawn to?""
+
+All answers need to be rich HTML with the root node being a DIV.  The answer must ONLY be an HTML div, no other text or comments.
+
 ";
 
         // Asked AI

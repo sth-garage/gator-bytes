@@ -1,6 +1,7 @@
 ﻿
 using GatorBytes.DAL.Context;
 using GatorBytes.Shared.Models;
+using GatorBytes.SK.Plugins;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.SemanticKernel;
@@ -24,7 +25,6 @@ namespace GatorBytes.SK
                 modelId: modelId,
                 apiKey: modelId,
                 endpoint: new Uri(apiUrl)
-
             );
 
             skBuilder.Services.AddDbContext<GatorBytesDBContext>(options =>
@@ -36,7 +36,7 @@ namespace GatorBytes.SK
             skBuilder.Services.AddSingleton<ConfigurationValues>(configValues);
 
             // Plugins
-
+            skBuilder.Plugins.AddFromType<DocumentUploadPlugin>();
 
             // Build the kernel
             Kernel kernel = skBuilder.Build();

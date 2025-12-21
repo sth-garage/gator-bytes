@@ -27,8 +27,10 @@
     </PackageReference>
     <PackageReference Include="Microsoft.KernelMemory.Abstractions" Version="0.98.250508.3" />
     <PackageReference Include="Microsoft.KernelMemory.AI.OpenAI" Version="0.98.250508.3" />
+    <PackageReference Include="Microsoft.SemanticKernel.Connectors.OpenAI" Version="1.68.0" />
     <PackageReference Include="Microsoft.SemanticKernel.Plugins.Core" Version="1.68.0-preview" />
     <PackageReference Include="Microsoft.SemanticKernel.Plugins.Memory" Version="1.68.0-alpha" />
+    <PackageReference Include="Microsoft.SemanticKernel.Plugins.OpenApi" Version="1.68.0" />
   </ItemGroup>
 
   <ItemGroup>

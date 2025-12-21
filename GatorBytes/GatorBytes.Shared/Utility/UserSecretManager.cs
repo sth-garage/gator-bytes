@@ -7,7 +7,7 @@ namespace GatorBytes.Shared.Utility
     {
 
         // dotnet user-secrets set "LMStudio_Model" "12345"
-        // dotnet user-secrets set "ConnectionStrings:ConnectionString_GatorBytes" "Data Source=127.0.0.1;Initial Catalog=GatorBytes2;User Id=teachersPetSQLService;Password=Testing777!!;TrustServerCertificate=True"
+        // dotnet user-secrets set "ConnectionStrings:ConnectionString_GatorBytes" "Data Source=127.0.0.1;Initial Catalog=GatorBytes;User Id=gatorsBytesService;Password=Testing777!!;TrustServerCertificate=True"
         public static ConfigurationValues GetSecrets(IConfigurationRoot? configurationRoot)
         {
             var result = new ConfigurationValues();
