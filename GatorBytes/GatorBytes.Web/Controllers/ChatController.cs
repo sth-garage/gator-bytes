@@ -100,6 +100,8 @@ public class ChatController : ControllerBase
 
                 result.Content = result.Content.Replace("```html", "").Replace("```", "");
 
+                chatHistory.AddAssistantMessage(result.Content);
+
                 var resultString = result.AsJson();
                 var resultMsgBytes = Encoding.UTF8.GetBytes(resultString);
 

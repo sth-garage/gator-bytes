@@ -6,7 +6,7 @@ namespace GatorBytes.Shared.Utility
     public class UserSecretManager
     {
 
-        // dotnet user-secrets set "Movies:ServiceApiKey" "12345"
+        // dotnet user-secrets set "LMStudio_Model" "12345"
         // dotnet user-secrets set "ConnectionStrings:ConnectionString_GatorBytes" "Data Source=127.0.0.1;Initial Catalog=GatorBytes2;User Id=teachersPetSQLService;Password=Testing777!!;TrustServerCertificate=True"
         public static ConfigurationValues GetSecrets(IConfigurationRoot? configurationRoot)
         {
@@ -20,13 +20,13 @@ namespace GatorBytes.Shared.Utility
 
                     LMStudioSettings = new LMStudioSettings
                     {
-                        LMStudio_ApiKey = "openai/gpt-oss-20b", // configurationRoot["LMStudio_ApiKey"] ?? "",
-                        LMStudio_ApiUrl = "http://127.0.0.1:1234/v1",// configurationRoot["LMStudio_ApiUrl"] ?? "",
-                        LMStudio_Model = "openai/gpt-oss-20b"// configurationRoot["LMStudio_Model"] ?? "",
+                        LMStudio_ApiKey = configurationRoot["LMStudio_ApiKey"] ?? "",
+                        LMStudio_ApiUrl = configurationRoot["LMStudio_ApiUrl"] ?? "",
+                        LMStudio_Model = configurationRoot["LMStudio_Model"] ?? "",
                     },
                     ConnectionStrings = new ConnectionStrings
                     {
-                        ConnectionString_GatorBytes = "Data Source=127.0.0.1;Initial Catalog=GatorBytes;User Id=gatorBytesServiceLogin;Password=Testing777!!;TrustServerCertificate=True" // configurationRoot["ConnectionString_GatorBytes"] ?? ""
+                        ConnectionString_GatorBytes = configurationRoot["ConnectionString_GatorBytes"] ?? ""
                     }
                 };
             }

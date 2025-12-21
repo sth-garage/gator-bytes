@@ -1,4 +1,5 @@
-﻿using GatorBytes.DAL.Context;
+﻿
+using GatorBytes.DAL.Context;
 using GatorBytes.Shared.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,12 +19,6 @@ namespace GatorBytes.SK
             var apiKey = configValues.LMStudioSettings.LMStudio_ApiKey;
             var apiUrl = configValues.LMStudioSettings.LMStudio_ApiUrl;
 
-            //configValues.OpenAISettings.OpenAI_Model = "google/gemma-3-12b";
-            //configValues.OpenAISettings.OpenAI_ApiKey = "Z3T84R3-MWF4GHN-GPMDV46-20TP1V0";
-            //configValues.OpenAISettings.OpenAI_ApiUrl = "http://localhost:3001/api/v1";
-
-
-
             // Create a kernel with Azure OpenAI chat completion
             var skBuilder = Kernel.CreateBuilder().AddOpenAIChatCompletion(
                 modelId: modelId,
@@ -32,13 +27,13 @@ namespace GatorBytes.SK
 
             );
 
-            //skBuilder.Services.AddDbContext<GatorBytesDBContext>(options =>
-            //{
-            //    options.UseSqlServer(configValues.ConnectionStrings.ConnectionString_GatorBytes,
-            //        sqlServerOptions => sqlServerOptions.CommandTimeout(999999));
-            //});
+            skBuilder.Services.AddDbContext<GatorBytesDBContext>(options =>
+            {
+                options.UseSqlServer(configValues.ConnectionStrings.ConnectionString_GatorBytes,
+                    sqlServerOptions => sqlServerOptions.CommandTimeout(600));
+            });
 
-            //skBuilder.Services.AddSingleton<ConfigurationValues>(configValues);
+            skBuilder.Services.AddSingleton<ConfigurationValues>(configValues);
 
             // Plugins
 
@@ -47,26 +42,6 @@ namespace GatorBytes.SK
             Kernel kernel = skBuilder.Build();
 
             var chatCompletionService = kernel.GetRequiredService<IChatCompletionService>();
-
-            //var modelId = "google/gemma-3-1b";
-            //var apiUrl = @"http://127.0.0.1:1234/v1/";
-
-            //// Create a kernel with Azure OpenAI chat completion
-            //var builder = Kernel.CreateBuilder().AddOpenAIChatCompletion(
-            //  modelId: modelId,
-            //  apiKey: modelId,
-            //  endpoint: new Uri(apiUrl));
-
-            //Kernel kernel = builder.Build();
-            //var chatCompletionService = kernel.GetRequiredService<IChatCompletionService>();
-
-            //// Enable planning
-            //OpenAIPromptExecutionSettings openAIPromptExecutionSettings = new()
-            //{
-            //    FunctionChoiceBehavior = FunctionChoiceBehavior.Auto()
-            //};
-
-
 
             return new SemanticKernelBuilderResult
             {
