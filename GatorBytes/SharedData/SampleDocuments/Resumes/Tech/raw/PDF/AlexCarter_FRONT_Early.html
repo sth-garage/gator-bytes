@@ -1,0 +1,753 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alex Carter - Front-End Developer Resume</title>
+    <style>
+        /* ====== Global Styles ====== */
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #222;
+            background-color: #f5f5f5;
+        }
+
+        body {
+            padding: 24px;
+        }
+
+        .resume {
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.06), 0 12px 24px rgba(0,0,0,0.08);
+            padding: 28px 32px 32px 32px;
+            box-sizing: border-box;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 0;
+            font-weight: 600;
+            color: #111;
+        }
+
+        h1 {
+            font-size: 32px;
+            letter-spacing: 0.03em;
+        }
+
+        h2 {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            border-bottom: 1px solid #e2e2e2;
+            padding-bottom: 6px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        h3 {
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        a {
+            color: #0a66c2;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            margin: 0 0 4px 0;
+            line-height: 1.45;
+        }
+
+        ul {
+            margin: 4px 0 8px 18px;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 3px;
+        }
+
+        .muted {
+            color: #666;
+        }
+
+        .small {
+            font-size: 12px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #f1f5f9;
+            border-radius: 999px;
+            padding: 2px 8px;
+            font-size: 11px;
+            margin: 2px 4px 2px 0;
+            color: #223;
+            border: 1px solid #e2e8f0;
+        }
+
+        .highlight {
+            color: #0a66c2;
+            font-weight: 600;
+        }
+
+        .section {
+            margin-top: 16px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 2.2fr 1.3fr;
+            grid-column-gap: 24px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #e5e5e5;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+        }
+
+        .header-left {
+            margin-bottom: 8px;
+        }
+
+        .header-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #444;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 12px;
+            color: #555;
+        }
+
+        .header-right div {
+            margin-bottom: 2px;
+        }
+
+        .item {
+            margin-bottom: 10px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .item-header-left {
+            margin-bottom: 2px;
+        }
+
+        .item-title {
+            font-weight: 600;
+        }
+
+        .item-subtitle {
+            font-size: 13px;
+            color: #444;
+        }
+
+        .item-meta {
+            font-size: 12px;
+            color: #555;
+        }
+
+        .item-location {
+            font-size: 12px;
+            color: #777;
+        }
+
+        .item-date {
+            font-size: 12px;
+            color: #555;
+        }
+
+        .stack-line {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 3px;
+        }
+
+        .stack-label {
+            font-weight: 600;
+            color: #444;
+        }
+
+        .subsection-title {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin: 6px 0 2px 0;
+            color: #555;
+        }
+
+        .bullet-label {
+            font-weight: 600;
+        }
+
+        .indent {
+            margin-left: 14px;
+        }
+
+        .chip-group {
+            margin-bottom: 4px;
+        }
+
+        .chip-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #666;
+            margin-right: 4px;
+        }
+
+        /* Print-friendly tweaks */
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+
+            .resume {
+                box-shadow: none;
+                border: none;
+                padding: 8mm 10mm;
+            }
+
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+        }
+
+        /* Tiny screens */
+        @media (max-width: 700px) {
+            body {
+                padding: 12px;
+            }
+
+            .resume {
+                padding: 16px;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .header-right {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="resume">
+    <!-- ====== Header ====== -->
+    <header class="header">
+        <div class="header-left">
+            <h1>Alex Carter</h1>
+            <div class="header-title">Entry-Level Front-End Developer</div>
+            <p class="small muted">
+                Enthusiastic front-end developer with 14 months of professional experience in React and React Native,
+                recently promoted from Junior Developer. Actively growing Angular (2+) skills through hands-on
+                personal projects and eager to contribute to production Angular applications.
+            </p>
+        </div>
+        <div class="header-right small">
+            <div>127 Maple Ridge Lane, Apt 3B</div>
+            <div>Portland, OR 97205</div>
+            <div>(503) 555-0198</div>
+            <div><a href="mailto:alex.carter.dev@example.com">alex.carter.dev@example.com</a></div>
+            <div><a href="https://github.com/alexcarter-dev" target="_blank">github.com/alexcarter-dev</a></div>
+            <div><a href="https://www.alexcarter.dev" target="_blank">www.alexcarter.dev</a></div>
+            <div><a href="https://www.linkedin.com/in/alexcarter-dev" target="_blank">linkedin.com/in/alexcarter-dev</a></div>
+        </div>
+    </header>
+
+    <div class="two-column">
+        <!-- ====== Left Column ====== -->
+        <main>
+            <!-- Summary -->
+            <section class="section">
+                <h2>Professional Summary</h2>
+                <p>
+                    Front-end developer with a strong foundation in JavaScript, TypeScript, and responsive UI development.
+                    Professional experience building component-based interfaces with <span class="highlight">React</span> and
+                    <span class="highlight">React Native</span>, plus earlier exposure to <span class="highlight">AngularJS</span>.
+                    Currently self-studying and building side projects with <span class="highlight">Angular 16–17</span> and
+                    modern tooling (RxJS, NgRx, standalone components). Known for thoroughness, detailed documentation, and
+                    an eagerness to learn from code reviews and architectural discussions.
+                </p>
+            </section>
+
+            <!-- Experience -->
+            <section class="section">
+                <h2>Professional Experience</h2>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-header-left">
+                            <div class="item-title">Front-End Developer (Promoted from Junior)</div>
+                            <div class="item-subtitle">Northwind Digital Labs</div>
+                            <div class="item-location">Portland, OR (Hybrid)</div>
+                        </div>
+                        <div class="item-date">Jun 2023 – Present (14 months total)</div>
+                    </div>
+                    <p class="item-meta">
+                        Joined as a Junior Front-End Developer focusing on React and React Native, promoted to
+                        Front-End Developer within 12 months after consistently delivering high-quality components,
+                        testing coverage, and proactively mentoring newer interns.
+                    </p>
+
+                    <p class="stack-line">
+                        <span class="stack-label">Tech stack:</span>
+                        React (18), React Native, JavaScript (ES2020+), TypeScript (introductory),
+                        Redux Toolkit, React Query, Styled Components, SASS, Storybook, Jest, React Testing Library,
+                        Git, REST APIs, Webpack, Vite, Node.js (for tooling), basic AngularJS exposure.
+                    </p>
+
+                    <ul>
+                        <li>
+                            <span class="bullet-label">Component Library Ownership:</span>
+                            Contributed 20+ reusable React components (buttons, dialogs, form fields, layout grids)
+                            to an internal design system. Wrote detailed documentation in Storybook, including usage
+                            examples, prop tables, and accessibility notes.
+                        </li>
+                        <li>
+                            <span class="bullet-label">Cross-Platform UI:</span>
+                            Implemented shared UI patterns across web (React) and mobile (React Native) for a customer
+                            feedback module, handling platform-specific styling and navigation while reusing business logic.
+                        </li>
+                        <li>
+                            <span class="bullet-label">Accessibility:</span>
+                            Improved accessibility scores from ~72 to ~93 (Lighthouse) by adding semantic HTML,
+                            ARIA attributes, keyboard navigation, and color-contrast adjustments across several key pages.
+                        </li>
+                        <li>
+                            <span class="bullet-label">State Management & Data Fetching:</span>
+                            Used Redux Toolkit and React Query to manage API state for an order dashboard, including
+                            optimistic UI updates and error handling patterns. Documented the data flow patterns for
+                            new team members.
+                        </li>
+                        <li>
+                            <span class="bullet-label">Testing & QA:</span>
+                            Wrote unit and integration tests for UI components using Jest and React Testing Library,
+                            routinely achieving 85–95% coverage in the areas I owned. Helped debug tricky asynchronous
+                            UI states with mock services.
+                        </li>
+                        <li>
+                            <span class="bullet-label">Angular Exposure:</span>
+                            Assisted with maintenance of a legacy internal tool built in AngularJS (1.x), fixing minor
+                            bugs and improving forms while gradually refactoring small pieces for easier eventual
+                            migration to a modern framework.
+                        </li>
+                        <li>
+                            <span class="bullet-label">Team Collaboration:</span>
+                            Participated in agile ceremonies (daily standups, sprint planning, retrospectives), created
+                            detailed tickets for front-end tasks, and actively requested code reviews to learn best
+                            practices for architecture, reusability, and performance.
+                        </li>
+                        <li>
+                            <span class="bullet-label">Promotion Criteria:</span>
+                            Recognized for clear communication, consistent on-time delivery, thoughtful PR descriptions,
+                            and initiative in learning beyond immediate tasks (e.g., exploring CSS architecture and
+                            design tokens). Promoted from Junior Developer after 12 months.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Selected Projects (Personal & Academic) -->
+            <section class="section">
+                <h2>Selected Projects</h2>
+
+                <!-- Angular 2+ Personal Project -->
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-header-left">
+                            <div class="item-title">TaskFlow Pro (Kanban Productivity App)</div>
+                            <div class="item-subtitle">Personal Project – Modern Angular (Self-Directed Learning)</div>
+                        </div>
+                        <div class="item-date">Angular 17, Ongoing</div>
+                    </div>
+                    <p class="stack-line">
+                        <span class="stack-label">Stack:</span>
+                        Angular 17 (standalone components), TypeScript, RxJS, NgRx (store/effects), Angular Material,
+                        SCSS (BEM), RESTful mock API (JSON Server), Jest, Cypress (basic e2e), ESLint, Prettier.
+                    </p>
+                    <ul>
+                        <li>
+                            Built a Trello-style board where users can create boards, lists, and draggable cards with
+                            persistent state, focusing specifically on learning Angular 2+ architecture and best practices.
+                        </li>
+                        <li>
+                            Implemented a global state store using NgRx, with actions, reducers, selectors, and effects
+                            managing asynchronous operations such as loading boards and updating card order.
+                        </li>
+                        <li>
+                            Used RxJS extensively (e.g., <code>switchMap</code>, <code>combineLatest</code>,
+                            <code>debounceTime</code>) for search, filtering, and live updates within lists.
+                        </li>
+                        <li>
+                            Practiced Angular routing with lazy-loaded feature modules and route guards for a simulated
+                            "authenticated" set of routes, documenting the routing flow and guards in a small markdown guide.
+                        </li>
+                        <li>
+                            Applied Angular Material components with custom theming and typography, carefully mapping
+                            to a design spec I created in Figma (including spacing and color tokens).
+                        </li>
+                        <li>
+                            Added form validation with <code>FormGroup</code>/<code>FormControl</code> and
+                            async validators for a fake "invite collaborator" flow, including descriptive error messages.
+                        </li>
+                    </ul>
+                    <p class="small muted">
+                        Code: <a href="https://github.com/alexcarter-dev/taskflow-pro-angular" target="_blank">
+                        github.com/alexcarter-dev/taskflow-pro-angular</a> (in-progress; includes a detailed
+                        README describing architecture decisions and learning notes).
+                    </p>
+                </div>
+
+                <!-- React Native Project -->
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-header-left">
+                            <div class="item-title">FitTrack Mobile</div>
+                            <div class="item-subtitle">Personal Project – React Native Workout Tracker</div>
+                        </div>
+                        <div class="item-date">React Native, 2023</div>
+                    </div>
+                    <p class="stack-line">
+                        <span class="stack-label">Stack:</span>
+                        React Native, Expo, TypeScript (basic), React Navigation, AsyncStorage, Styled Components.
+                    </p>
+                    <ul>
+                        <li>
+                            Developed a mobile app for tracking workouts and personal records, focusing on building
+                            clean and reusable UI components and gaining comfort with React Native layouts.
+                        </li>
+                        <li>
+                            Implemented navigation between screens (Home, Workout Detail, History, Settings) with React
+                            Navigation, including bottom tabs and stacked navigation.
+                        </li>
+                        <li>
+                            Used AsyncStorage to persist workouts locally and implemented a simple sync mechanism
+                            simulation to prepare for future real API integration.
+                        </li>
+                        <li>
+                            Created a theme file with consistent spacing, fonts, and colors, and styled screens using
+                            Styled Components with strong focus on readability and maintainability.
+                        </li>
+                    </ul>
+                    <p class="small muted">
+                        Code & screenshots:
+                        <a href="https://github.com/alexcarter-dev/fittrack-mobile" target="_blank">
+                            github.com/alexcarter-dev/fittrack-mobile
+                        </a>
+                    </p>
+                </div>
+
+                <!-- University Capstone -->
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-header-left">
+                            <div class="item-title">Campus Event Explorer</div>
+                            <div class="item-subtitle">Senior Capstone Project – University of Oregon</div>
+                        </div>
+                        <div class="item-date">2022</div>
+                    </div>
+                    <p class="stack-line">
+                        <span class="stack-label">Stack:</span>
+                        React, JavaScript, Node.js, Express, MongoDB, Tailwind CSS, Jest.
+                    </p>
+                    <ul>
+                        <li>
+                            Collaborated in a team of four to build a web application for discovering and bookmarking
+                            campus events, with filtering by category, location, and date.
+                        </li>
+                        <li>
+                            Owned the front-end structure, including routing, navigation bar, and event card components,
+                            focusing on responsiveness and reusability.
+                        </li>
+                        <li>
+                            Implemented a simple "My Events" feature where logged-in students could bookmark events,
+                            stored on the backend via a RESTful API (handled by teammates).
+                        </li>
+                        <li>
+                            Wrote a short style guide and component usage notes to keep the team’s UI consistent during
+                            rapid iteration.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Earlier AngularJS Academic Lab -->
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-header-left">
+                            <div class="item-title">Student Budget Planner (AngularJS Lab)</div>
+                            <div class="item-subtitle">Web Application Development Course Project</div>
+                        </div>
+                        <div class="item-date">2021</div>
+                    </div>
+                    <p class="stack-line">
+                        <span class="stack-label">Stack:</span>
+                        AngularJS 1.x, JavaScript, Bootstrap, RESTful API (mock).
+                    </p>
+                    <ul>
+                        <li>
+                            Built a small single-page app allowing students to add, categorize, and visualize monthly
+                            expenses, using AngularJS controllers and services.
+                        </li>
+                        <li>
+                            Connected to a mock REST API to load and save budget data, gaining first exposure to
+                            client-side routing and template binding.
+                        </li>
+                        <li>
+                            Although based on AngularJS, this experience motivated my deeper exploration of the
+                            modern Angular ecosystem and TypeScript.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="section">
+                <h2>Education</h2>
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-header-left">
+                            <div class="item-title">B.S. in Computer & Information Science</div>
+                            <div class="item-subtitle">University of Oregon</div>
+                            <div class="item-location">Eugene, OR</div>
+                        </div>
+                        <div class="item-date">2018 – 2022</div>
+                    </div>
+                    <p class="item-meta">
+                        GPA: 3.5 / 4.0 • Focus Areas: Web Development, Human-Computer Interaction
+                    </p>
+                    <div class="subsection-title">Relevant Coursework</div>
+                    <ul class="indent">
+                        <li>Web Application Development (JavaScript, AngularJS, REST APIs)</li>
+                        <li>User Interface & User Experience Design</li>
+                        <li>Mobile Application Development (introductory React Native concepts)</li>
+                        <li>Software Engineering I & II (Agile, Git workflows, documentation)</li>
+                        <li>Data Structures & Algorithms (Java)</li>
+                    </ul>
+                    <div class="subsection-title">Notable Academic Projects</div>
+                    <ul class="indent">
+                        <li>
+                            <span class="bullet-label">Interactive Course Planner:</span>
+                            Built a responsive web UI where students could plan course schedules and visualize credit loads,
+                            using vanilla JavaScript and CSS Grid.
+                        </li>
+                        <li>
+                            <span class="bullet-label">HCI Usability Study:</span>
+                            Conducted a small usability test for a mock mobile app interface; created personas,
+                            task scenarios, and a report with accessibility recommendations.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <!-- ====== Right Column ====== -->
+        <aside>
+            <!-- Skills -->
+            <section class="section">
+                <h2>Technical Skills</h2>
+
+                <div class="subsection-title">Languages & Core</div>
+                <div class="chip-group">
+                    <span class="chip-label">Primary:</span>
+                    <span class="tag">JavaScript (ES6+)</span>
+                    <span class="tag">TypeScript (growing)</span>
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">JSON</span>
+                </div>
+
+                <div class="subsection-title">Frameworks & Libraries</div>
+                <div class="chip-group">
+                    <span class="chip-label">Front-End:</span>
+                    <span class="tag">React</span>
+                    <span class="tag">React Native</span>
+                    <span class="tag">Redux Toolkit</span>
+                    <span class="tag">React Query</span>
+                    <span class="tag">AngularJS (1.x)</span>
+                    <span class="tag">Angular 16–17 (personal)</span>
+                    <span class="tag">NgRx (personal)</span>
+                    <span class="tag">RxJS</span>
+                    <span class="tag">React Router</span>
+                    <span class="tag">React Navigation</span>
+                </div>
+
+                <div class="chip-group">
+                    <span class="chip-label">Styling:</span>
+                    <span class="tag">CSS Modules</span>
+                    <span class="tag">SASS / SCSS</span>
+                    <span class="tag">Styled Components</span>
+                    <span class="tag">Tailwind CSS</span>
+                    <span class="tag">Flexbox</span>
+                    <span class="tag">CSS Grid</span>
+                </div>
+
+                <div class="subsection-title">Tooling & Testing</div>
+                <div class="chip-group">
+                    <span class="tag">Git & GitHub</span>
+                    <span class="tag">Jest</span>
+                    <span class="tag">React Testing Library</span>
+                    <span class="tag">Storybook</span>
+                    <span class="tag">Webpack</span>
+                    <span class="tag">Vite</span>
+                    <span class="tag">ESLint</span>
+                    <span class="tag">Prettier</span>
+                    <span class="tag">npm</span>
+                    <span class="tag">Yarn</span>
+                </div>
+
+                <div class="subsection-title">Back-End & Other</div>
+                <div class="chip-group">
+                    <span class="tag">Node.js (for tooling / simple APIs)</span>
+                    <span class="tag">Express (basic)</span>
+                    <span class="tag">REST APIs</span>
+                    <span class="tag">MongoDB (intro)</span>
+                    <span class="tag">JSON Server</span>
+                </div>
+
+                <div class="subsection-title">Front-End Focus Areas</div>
+                <ul class="indent">
+                    <li>Component-based architecture & reuse</li>
+                    <li>Responsive & mobile-first design</li>
+                    <li>Accessibility (ARIA, keyboard navigation)</li>
+                    <li>State management (Redux, NgRx, React Query)</li>
+                    <li>Form handling and validation</li>
+                    <li>API integration and error handling patterns</li>
+                </ul>
+            </section>
+
+            <!-- Angular Learning & Motivation -->
+            <section class="section">
+                <h2>Angular 2+ Learning Journey</h2>
+                <p class="small">
+                    Although my professional work has focused on React and React Native, I am very intentionally
+                    building skills in modern Angular to transition into roles using Angular 2+ in production.
+                </p>
+                <ul class="small indent">
+                    <li>
+                        Completed several Angular courses (Angular 14–17) on Udemy and Angular’s official documentation,
+                        focusing on components, services, dependency injection, routing, and RxJS.
+                    </li>
+                    <li>
+                        Built and iteratively refactored the <span class="highlight">TaskFlow Pro</span> Kanban app
+                        to practice Angular best practices (standalone components, NgRx, typed forms).
+                    </li>
+                    <li>
+                        Maintain a personal "Angular Notes" repository documenting common patterns, code snippets,
+                        and migration notes from older tutorials to newer Angular versions.
+                    </li>
+                    <li>
+                        Actively follow Angular community content (Angular Blog, NG Conf talks on YouTube) to stay
+                        current on new features and recommendations.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Additional Academic Web Projects -->
+            <section class="section">
+                <h2>Additional Academic Web Projects</h2>
+                <div class="item small">
+                    <div class="item-title">Interactive Resume Site</div>
+                    <p>
+                        Created a single-page resume site using HTML, CSS, and vanilla JavaScript for smooth scrolling
+                        and section highlighting. Focused on semantic markup and clean, readable code.
+                    </p>
+                </div>
+                <div class="item small">
+                    <div class="item-title">Photo Gallery with CSS Grid</div>
+                    <p>
+                        Designed a responsive photo gallery using CSS Grid and Flexbox with different layouts for mobile,
+                        tablet, and desktop screens, ensuring consistent spacing and aspect ratios.
+                    </p>
+                </div>
+                <div class="item small">
+                    <div class="item-title">JS Algorithms & Practice</div>
+                    <p>
+                        Implemented small JavaScript utilities (debounce, throttle, deep clone, simple router) for
+                        practice, helping me understand underlying logic used in frameworks.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Soft Skills -->
+            <section class="section">
+                <h2>Soft Skills & Work Style</h2>
+                <ul class="indent small">
+                    <li><b>Detail-Oriented:</b> I tend to over-document and carefully comment complex pieces of logic.</li>
+                    <li><b>Enthusiastic Learner:</b> Frequently ask for feedback, seek code reviews, and enjoy pairing sessions.</li>
+                    <li><b>Collaborative:</b> Comfortable in agile teams; enjoy discussions about trade-offs in UI/UX and architecture.</li>
+                    <li><b>Communication:</b> Clear commit messages and PR descriptions; summarize changes and potential impacts.</li>
+                    <li><b>Ownership:</b> Take responsibility for the components and features I build, including bug fixes and refinements.</li>
+                </ul>
+            </section>
+
+            <!-- Activities & Interests -->
+            <section class="section">
+                <h2>Activities & Interests</h2>
+                <ul class="indent small">
+                    <li>
+                        <b>Local Meetups:</b> Attend Portland JavaScript and occasional Angular/Frontend meetups
+                        to learn from talks and meet other developers.
+                    </li>
+                    <li>
+                        <b>UI Experiments:</b> Regularly recreate UI components from popular apps (task lists, cards,
+                        navigation bars) as practice exercises in CodeSandbox.
+                    </li>
+                    <li>
+                        <b>Learning & Reading:</b> Follow blogs such as CSS-Tricks, Smashing Magazine, and Angular Blog
+                        to stay up to date on front-end trends and best practices.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Availability -->
+            <section class="section">
+                <h2>Availability & Preferences</h2>
+                <ul class="indent small">
+                    <li>
+                        Actively seeking junior / entry-level front-end roles with a strong emphasis on
+                        <span class="highlight">Angular 2+</span>, where I can grow under experienced mentors.
+                    </li>
+                    <li>
+                        Open to hybrid and remote positions; authorized to work in the U.S. without sponsorship.</li>
+                    <li>
+                        Very open to detailed code reviews and pair programming as a way to accelerate my Angular learning.
+                    </li>
+                </ul>
+            </section>
+        </aside>
+    </div>
+</div>
+</body>
+</html>

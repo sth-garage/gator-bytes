@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jennifer L. Allen - Resume</title>
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f5f7;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Layout */
+    .page {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #ffffff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.07);
+      border-radius: 8px;
+      padding: 40px 50px 50px;
+    }
+
+    /* Header */
+    .header {
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+    }
+
+    .name {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #222;
+      margin: 0 0 5px 0;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #666;
+      margin-top: 3px;
+    }
+
+    .contact {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .contact span {
+      display: inline-block;
+      margin-right: 18px;
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .contact span::before {
+      content: "•";
+      position: absolute;
+      left: 5px;
+      color: #999;
+    }
+
+    .contact span:first-child::before {
+      content: "";
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 25px;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #444;
+      border-left: 4px solid #1a73e8;
+      padding-left: 10px;
+      margin-bottom: 12px;
+    }
+
+    .summary-text {
+      font-size: 14px;
+      color: #444;
+    }
+
+    /* Experience */
+    .experience-item {
+      margin-bottom: 15px;
+    }
+
+    .org-line {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .org-name {
+      font-weight: 600;
+      font-size: 15px;
+      color: #222;
+    }
+
+    .org-location {
+      font-size: 13px;
+      color: #777;
+    }
+
+    .role-line {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .role-title {
+      font-style: italic;
+      color: #333;
+    }
+
+    .role-dates {
+      font-size: 13px;
+      color: #777;
+    }
+
+    .experience-list {
+      margin: 4px 0 0 0;
+      padding-left: 18px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    /* Education */
+    .edu-item {
+      margin-bottom: 10px;
+    }
+
+    .edu-degree {
+      font-weight: 600;
+      font-size: 14px;
+      color: #222;
+    }
+
+    .edu-details {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Skills & Lists */
+    .skill-list,
+    .affiliation-list,
+    .cert-list {
+      margin: 5px 0 0 0;
+      padding-left: 18px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    /* References */
+    .references-text {
+      font-size: 14px;
+      color: #444;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .page {
+        margin: 20px;
+        padding: 25px 20px 30px;
+      }
+
+      .name {
+        font-size: 26px;
+      }
+
+      .org-line,
+      .role-line {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .role-dates,
+      .org-location {
+        margin-top: 2px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="name">Jennifer L. Allen</h1>
+      <p class="subtitle">K–12 Educator • Team Lead • Curriculum & Instruction Specialist</p>
+      <div class="contact">
+        <span>1234 Oakwood Drive, Springfield, IL 62704</span>
+        <span><a href="tel:+15551234567">(555) 123-4567</a></span>
+        <span><a href="mailto:jallen@email.com">jallen@email.com</a></span>
+        <span><a href="https://linkedin.com/in/jlallenedu" target="_blank">linkedin.com/in/jlallenedu</a></span>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="section">
+      <h2 class="section-title">Professional Summary</h2>
+      <p class="summary-text">
+        Dedicated and passionate K–12 educator with 24 years of comprehensive experience teaching and leading at every grade level. Proven track record of elevating student achievement, mentoring colleagues, and driving curriculum innovation. Skilled team leader committed to fostering inclusive, engaging, and supportive learning environments.
+      </p>
+    </section>
+
+    <!-- Professional Experience -->
+    <section class="section">
+      <h2 class="section-title">Professional Experience</h2>
+
+      <div class="experience-item">
+        <div class="org-line">
+          <div class="org-name">Springfield School District 186</div>
+          <div class="org-location">Springfield, IL</div>
+        </div>
+        <div class="role-line">
+          <div class="role-title">Team Lead &amp; Senior K–12 Educator</div>
+          <div class="role-dates">August 2000 – Present</div>
+        </div>
+        <ul class="experience-list">
+          <li>Led cross-grade teaching teams across elementary, middle, and high school settings, overseeing curriculum alignment and instructional best practices district-wide.</li>
+          <li>Developed and implemented differentiated instruction strategies to meet diverse student needs, resulting in consistent 10% improvement in standardized test scores over five years.</li>
+          <li>Spearheaded professional development workshops for 50+ teachers on classroom management, technology integration, and restorative practices.</li>
+          <li>Coordinated transition programs to support students moving between elementary, middle, and high school, reducing transition-related academic decline by 20%.</li>
+          <li>Served as Grade Level Chair (2012–2020) and later as Lead Teacher (2020–present), facilitating collaboration among faculty and liaising between staff and administration.</li>
+          <li>Mentored 15+ new teachers through district induction program, maintaining a 95% teacher retention rate among mentees.</li>
+          <li>Initiated after-school STEM and literacy programs, expanding student participation in enrichment activities by 40%.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="org-line">
+          <div class="org-name">Longfellow Middle School</div>
+          <div class="org-location">Springfield, IL</div>
+        </div>
+        <div class="role-line">
+          <div class="role-title">7th Grade Science Teacher</div>
+          <div class="role-dates">August 1998 – June 2000</div>
+        </div>
+        <ul class="experience-list">
+          <li>Designed inquiry-based curricula that increased student engagement and interest in science.</li>
+          <li>Coordinated school-wide science fairs and extracurricular clubs.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+
+      <div class="edu-item">
+        <div class="edu-degree">Master of Science in Education (M.S.Ed.)</div>
+        <div class="edu-details">University of Illinois Urbana–Champaign, 2002</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-degree">Bachelor of Arts in Elementary Education</div>
+        <div class="edu-details">Illinois State University, 1998</div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section">
+      <h2 class="section-title">Certifications</h2>
+      <ul class="cert-list">
+        <li>Illinois Professional Educator License (PEL), K–12</li>
+        <li>Endorsements: Science, Social Studies, Reading Specialist</li>
+      </ul>
+    </section>
+
+    <!-- Skills -->
+    <section class="section">
+      <h2 class="section-title">Skills</h2>
+      <ul class="skill-list">
+        <li>Team Leadership &amp; Staff Development</li>
+        <li>Curriculum Design &amp; Implementation</li>
+        <li>Student-Centered Instruction</li>
+        <li>Data Analysis &amp; Assessment</li>
+        <li>Classroom Management</li>
+        <li>Technology Integration (Google Suite, PowerSchool)</li>
+        <li>Parent &amp; Community Engagement</li>
+      </ul>
+    </section>
+
+    <!-- Professional Affiliations -->
+    <section class="section">
+      <h2 class="section-title">Professional Affiliations</h2>
+      <ul class="affiliation-list">
+        <li>Illinois Education Association, Member</li>
+        <li>National Association of Elementary School Principals, Member</li>
+        <li>Kappa Delta Pi International Honor Society in Education</li>
+      </ul>
+    </section>
+
+    <!-- References -->
+    <section class="section">
+      <h2 class="section-title">References</h2>
+      <p class="references-text">Available upon request.</p>
+    </section>
+  </div>
+</body>
+</html>

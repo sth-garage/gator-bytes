@@ -1,1 +1,0 @@
-dotnet ef dbcontext scaffold "Data Source=127.0.0.1;Initial Catalog=GatorBytes;User Id=gatorBytesServiceLogin;Password=Testing777!!;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer --context GatorBytesDBContext --context-dir ./Context --force --output-dir ./EFModels --force

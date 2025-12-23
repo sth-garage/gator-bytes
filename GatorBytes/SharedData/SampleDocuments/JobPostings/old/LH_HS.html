@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Head of Mathematics Department - Lincoln Heights High School</title>
+  <style>
+    :root {
+      --primary-color: #1e3a8a;
+      --primary-light: #e0e7ff;
+      --accent-color: #f59e0b;
+      --bg-color: #f3f4f6;
+      --text-color: #111827;
+      --muted-text: #6b7280;
+      --card-bg: #ffffff;
+      --border-color: #e5e7eb;
+      --shadow-soft: 0 14px 30px rgba(15, 23, 42, 0.12);
+      --radius-lg: 12px;
+      --radius-md: 8px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top left, #eff6ff, #f9fafb 45%);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .header-card {
+      background: linear-gradient(135deg, #1e3a8a, #312e81);
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 32px 32px 24px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .header-card::before {
+      content: "";
+      position: absolute;
+      inset: -60px;
+      background: radial-gradient(circle at top right, #4f46e5, transparent 60%);
+      opacity: 0.65;
+      pointer-events: none;
+    }
+
+    .header-content {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .header-main {
+      flex: 1 1 260px;
+      min-width: 0;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 14px;
+      border-radius: var(--radius-pill);
+      background-color: rgba(15, 23, 42, 0.35);
+      color: #e5e7eb;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .badge span {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background-color: #22c55e;
+    }
+
+    .job-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0 0 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .school-name {
+      font-size: 1.05rem;
+      margin: 0 0 18px;
+      color: #e5e7eb;
+    }
+
+    .meta-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+      font-size: 0.9rem;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      align-items: center;
+      color: #e5e7eb;
+    }
+
+    .meta-label {
+      font-weight: 600;
+      opacity: 0.9;
+    }
+
+    .meta-value {
+      opacity: 0.95;
+    }
+
+    .salary-chip {
+      background-color: rgba(15, 23, 42, 0.35);
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      margin-top: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .salary-chip strong {
+      font-weight: 700;
+    }
+
+    .header-side {
+      flex: 0 0 260px;
+      max-width: 100%;
+      background: rgba(15, 23, 42, 0.40);
+      border-radius: 18px;
+      padding: 16px 18px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(191, 219, 254, 0.55);
+      color: #e5e7eb;
+      font-size: 0.88rem;
+    }
+
+    .header-side h3 {
+      margin: 0 0 10px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #bfdbfe;
+    }
+
+    .summary-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+    }
+
+    .summary-item {
+      flex: 1 1 120px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .summary-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.8;
+    }
+
+    .summary-value {
+      font-weight: 600;
+    }
+
+    .summary-note {
+      margin-top: 10px;
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+
+    .section {
+      margin-top: 26px;
+      background-color: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+      border: 1px solid var(--border-color);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 10px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      letter-spacing: -0.01em;
+    }
+
+    .section-tag {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted-text);
+    }
+
+    .section p {
+      margin: 0 0 10px;
+      color: var(--muted-text);
+      font-size: 0.96rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: 20px;
+    }
+
+    .section-highlight {
+      background-color: #fefce8;
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      border: 1px solid #facc15;
+      font-size: 0.92rem;
+      color: #854d0e;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      margin: 8px 0 0 0;
+      padding-left: 18px;
+      color: var(--text-color);
+      font-size: 0.95rem;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-color);
+      background-color: #f9fafb;
+      color: var(--muted-text);
+      white-space: nowrap;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px 20px;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: var(--text-color);
+    }
+
+    .benefit-icon {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background-color: var(--accent-color);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    .application-list {
+      margin-top: 4px;
+    }
+
+    .contact-block {
+      margin-top: 10px;
+      padding: 12px 14px;
+      background-color: var(--primary-light);
+      border-radius: var(--radius-md);
+      border: 1px solid #c7d2fe;
+      font-size: 0.95rem;
+      color: #111827;
+    }
+
+    .contact-block strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #1e3a8a;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .cta-section {
+      margin-top: 26px;
+      text-align: center;
+      padding: 20px 22px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #1e3a8a, #0f766e);
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .cta-section::before {
+      content: "";
+      position: absolute;
+      inset: -40px;
+      background: radial-gradient(circle at bottom left, #fbbf24, transparent);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .cta-content {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .cta-heading {
+      font-size: 1.3rem;
+      margin: 0 0 4px;
+      letter-spacing: -0.01em;
+    }
+
+    .cta-subtext {
+      margin: 0;
+      font-size: 0.96rem;
+      opacity: 0.95;
+    }
+
+    @media (max-width: 768px) {
+      .page {
+        margin: 20px auto;
+        padding: 16px;
+      }
+
+      .header-card {
+        padding: 24px 20px 18px;
+      }
+
+      .header-side {
+        flex-basis: 100%;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 18px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Header / Hero -->
+    <header class="header-card">
+      <div class="header-content">
+        <div class="header-main">
+          <div class="badge">
+            <span></span>
+            Now Accepting Applications
+          </div>
+          <h1 class="job-title">Head of Mathematics Department</h1>
+          <p class="school-name">Lincoln Heights High School &middot; Springfield, USA</p>
+
+          <div class="meta-list">
+            <div class="meta-item">
+              <div class="meta-label">Location:</div>
+              <div class="meta-value">1234 Main Street, Springfield, USA</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Type:</div>
+              <div class="meta-value">Full-Time, 10-month contract</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Start Date:</div>
+              <div class="meta-value">August 15, 2024</div>
+            </div>
+          </div>
+
+          <div class="salary-chip">
+            <span><strong>Salary:</strong></span>
+            $62,000&ndash;$88,000 &middot; Commensurate with experience &middot; Full benefits
+          </div>
+        </div>
+
+        <aside class="header-side">
+          <h3>Position Snapshot</h3>
+          <div class="summary-row">
+            <div class="summary-item">
+              <div class="summary-label">Department</div>
+              <div class="summary-value">Mathematics (Gr. 9&ndash;12)</div>
+            </div>
+            <div class="summary-item">
+              <div class="summary-label">Leadership</div>
+              <div class="summary-value">Department Head</div>
+            </div>
+          </div>
+          <div class="summary-row" style="margin-top: 10px;">
+            <div class="summary-item">
+              <div class="summary-label">Teaching Load</div>
+              <div class="summary-value">2&ndash;3 sections</div>
+            </div>
+            <div class="summary-item">
+              <div class="summary-label">Focus</div>
+              <div class="summary-value">AP Calculus AB/BC &amp; Upper-Level Math</div>
+            </div>
+          </div>
+          <div class="summary-note">
+            Lead a team of 6 teachers, oversee curriculum, and advance excellence in math instruction school-wide.
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">About Lincoln Heights High School</h2>
+        <span class="section-tag">School Overview</span>
+      </div>
+      <p>
+        Lincoln Heights High School is a vibrant, diverse public high school with a tradition of academic excellence and innovation.
+        We are dedicated to nurturing each student&rsquo;s potential and providing a comprehensive education that prepares our graduates
+        for college and careers. Our supportive staff community thrives on collaboration and a shared commitment to student success.
+      </p>
+    </section>
+
+    <!-- Job Summary / Key Responsibilities -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Job Summary &amp; Key Responsibilities</h2>
+        <span class="section-tag">Role Overview</span>
+      </div>
+      <div class="two-col">
+        <div>
+          <div class="section-highlight">
+            Serve as the instructional and curricular leader for the Mathematics Department while teaching advanced-level courses, with a primary
+            focus on AP Calculus AB/BC and other upper-level mathematics.
+          </div>
+          <p>
+            We are seeking a passionate and experienced educator to serve as the Head of the Mathematics Department. In this leadership role,
+            you will oversee curriculum development, mentor fellow faculty members, and champion excellence in teaching. In addition to departmental
+            responsibilities, you will teach higher-level courses.
+          </p>
+        </div>
+        <div>
+          <h3 class="section-title" style="font-size: 1.0rem; margin-top: 6px; margin-bottom: 4px;">Key Responsibilities</h3>
+          <ul>
+            <li>Provide instructional leadership for the mathematics department (grades 9&ndash;12).</li>
+            <li>Supervise, mentor, and evaluate a team of 6 math teachers.</li>
+            <li>Develop, implement, and periodically review the math curriculum to ensure alignment with state standards and college readiness benchmarks.</li>
+            <li>Teach 2&ndash;3 sections of upper-level mathematics, including AP Calculus AB/BC and/or Pre-Calculus.</li>
+            <li>Monitor and analyze student data to improve instructional practices and student outcomes.</li>
+            <li>Coordinate AP math course offerings, summer bridge programs, and math competitions.</li>
+            <li>Lead department meetings and facilitate professional development workshops.</li>
+            <li>Collaborate with school administration to develop department goals and initiatives.</li>
+            <li>Communicate regularly with students, parents, and guardians regarding course content and student progress.</li>
+            <li>Foster a culture of enthusiasm for mathematics among students and staff.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qualifications -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Qualifications</h2>
+        <span class="section-tag">Required &amp; Preferred</span>
+      </div>
+      <ul>
+        <li>Bachelor&rsquo;s degree in mathematics, mathematics education, or a related field; Master&rsquo;s degree preferred.</li>
+        <li>Valid State of Illinois Professional Educator License with secondary mathematics endorsement.</li>
+        <li>Minimum 5 years&rsquo; teaching experience in high school mathematics, including AP Calculus.</li>
+        <li>Demonstrated leadership experience (department chair, curriculum coordinator, or similar position).</li>
+        <li>Strong understanding of best practices in math instruction and curriculum development.</li>
+        <li>Commitment to diversity, equity, and inclusion in education.</li>
+        <li>Excellent communication, organizational, and interpersonal skills.</li>
+        <li>Familiarity with technology integration in mathematics instruction.</li>
+      </ul>
+
+      <div class="pill-list">
+        <span class="pill">AP Calculus AB/BC</span>
+        <span class="pill">High School Mathematics</span>
+        <span class="pill">Instructional Leadership</span>
+        <span class="pill">Curriculum Development</span>
+        <span class="pill">Data-Informed Instruction</span>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Benefits</h2>
+        <span class="section-tag">Compensation &amp; Support</span>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon"></div>
+          <div>Comprehensive health, dental, and vision insurance.</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"></div>
+          <div>State pension/retirement plan.</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"></div>
+          <div>Tuition reimbursement and paid professional development.</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"></div>
+          <div>Paid sick days and personal leave.</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"></div>
+          <div>Collaborative and supportive team environment.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Application Process -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Application Process</h2>
+        <span class="section-tag">How to Apply</span>
+      </div>
+      <p>
+        To apply, please submit the following to <strong>[email address]</strong> by <strong>April 30, 2024</strong>:
+      </p>
+      <ul class="application-list">
+        <li>Cover letter highlighting your interest and qualifications.</li>
+        <li>Current resume or CV.</li>
+        <li>Copy of teaching license.</li>
+        <li>Three professional references.</li>
+      </ul>
+
+      <div class="contact-block">
+        <strong>Questions?</strong>
+        Contact Principal Katrina Ellis at
+        <a href="mailto:kellis@lincolnheightsHS.edu">kellis@lincolnheightsHS.edu</a>
+        or call <a href="tel:+15551234567">(555) 123-4567</a>.
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2 class="cta-heading">
+          Join Lincoln Heights High School
+        </h2>
+        <p class="cta-subtext">
+          Become part of a dynamic community where passionate educators inspire the mathematicians, engineers, and innovators of tomorrow.
+        </p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

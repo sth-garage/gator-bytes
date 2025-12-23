@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rohan Prakash Iyer - Principal Software Developer (Python | Oracle | PostgreSQL)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --bg-alt: #020617;
+            --card-bg: #020617;
+            --accent: #22c55e;
+            --accent-soft: rgba(34, 197, 94, 0.1);
+            --accent-strong: #4ade80;
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+            --border-subtle: rgba(148, 163, 184, 0.2);
+            --chip-bg: rgba(15, 23, 42, 0.9);
+            --chip-border: rgba(148, 163, 184, 0.5);
+            --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.95);
+            --radius-lg: 18px;
+            --radius-md: 12px;
+            --radius-pill: 999px;
+            --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at top left, #1e293b 0, #020617 40%, #000 100%);
+            color: var(--text);
+            font-family: var(--font-main);
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 1100px;
+            background: linear-gradient(145deg, rgba(15,23,42,0.96), rgba(2,6,23,0.99));
+            border-radius: 24px;
+            box-shadow: var(--shadow-soft);
+            overflow: hidden;
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            backdrop-filter: blur(14px);
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: minmax(0, 1.9fr) minmax(0, 1.2fr);
+            gap: 20px;
+            padding: 26px 28px 30px 28px;
+        }
+
+        @media (max-width: 880px) {
+            .content {
+                grid-template-columns: 1fr;
+                padding: 18px 16px 24px;
+            }
+        }
+
+        header {
+            padding: 22px 26px 12px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+            background:
+                radial-gradient(circle at top left, rgba(34,197,94,0.28) 0, transparent 55%),
+                radial-gradient(circle at top right, rgba(59,130,246,0.3) 0, transparent 50%),
+                rgba(15,23,42,0.96);
+        }
+
+        @media (max-width: 880px) {
+            header {
+                padding: 18px 16px 10px;
+            }
+        }
+
+        .header-inner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 28px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .identity {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 28px;
+            background: radial-gradient(circle at 30% 20%, #22c55e 0, #16a34a 25%, #020617 80%);
+            border: 1px solid rgba(34,197,94,0.65);
+            box-shadow: 0 16px 40px rgba(34,197,94,0.35);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .avatar::after {
+            content: "RI";
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: rgba(15,23,42,0.12);
+            font-size: 26px;
+        }
+
+        .name-role h1 {
+            margin: 0;
+            font-size: 26px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .name-role h2 {
+            margin: 4px 0 0;
+            font-size: 14px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent-strong);
+        }
+
+        .contact {
+            display: grid;
+            gap: 4px;
+            font-size: 13px;
+            text-align: right;
+        }
+
+        @media (max-width: 640px) {
+            .contact {
+                text-align: left;
+            }
+            .header-inner {
+                align-items: flex-start;
+            }
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 18px;
+            justify-content: flex-end;
+        }
+
+        @media (max-width: 640px) {
+            .contact-row {
+                justify-content: flex-start;
+            }
+        }
+
+        .contact a {
+            color: var(--accent-strong);
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .badge-bar {
+            margin-top: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: flex-end;
+        }
+
+        @media (max-width: 640px) {
+            .badge-bar {
+                justify-content: flex-start;
+            }
+        }
+
+        .badge {
+            padding: 3px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.5);
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--muted);
+            background: radial-gradient(circle at top, rgba(148,163,184,0.25) 0, transparent 55%);
+        }
+
+        .badge--accent {
+            border-color: rgba(34,197,94,0.8);
+            color: var(--accent-strong);
+            background: radial-gradient(circle at top, rgba(34,197,94,0.3) 0, transparent 60%);
+        }
+
+        main {
+            display: contents;
+        }
+
+        h3.section-title {
+            margin: 0 0 8px;
+            font-size: 13px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .section-card {
+            padding: 14px 16px 14px;
+            background: radial-gradient(circle at top left, rgba(15,23,42,0.96) 0, rgba(15,23,42,0.96) 40%, rgba(15,23,42,0.98) 100%);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-subtle);
+            box-shadow: 0 14px 32px rgba(15,23,42,1);
+        }
+
+        .section-card.alt {
+            background: linear-gradient(145deg, rgba(15,23,42,0.96), rgba(2,6,23,0.98));
+        }
+
+        .summary-text {
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--muted);
+        }
+
+        .summary-highlight {
+            color: var(--accent-strong);
+            font-weight: 600;
+        }
+
+        .summary-keywords {
+            margin-top: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .keyword-chip {
+            font-size: 11px;
+            padding: 4px 9px;
+            border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.6);
+            background: var(--chip-bg);
+            color: var(--muted);
+        }
+
+        .keyword-chip--accent {
+            border-color: rgba(34,197,94,0.9);
+            color: var(--accent-strong);
+            background: rgba(21,128,61,0.25);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+        }
+
+        .skill-group {
+            padding: 10px 10px 8px;
+            border-radius: var(--radius-md);
+            background: radial-gradient(circle at top, rgba(30,64,175,0.18) 0, rgba(15,23,42,0.96) 55%);
+            border: 1px solid rgba(148,163,184,0.4);
+        }
+
+        .skill-group h4 {
+            margin: 0 0 6px;
+            font-size: 12px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent-strong);
+        }
+
+        .skill-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .skill-chip {
+            padding: 3px 7px;
+            border-radius: 999px;
+            border: 1px solid var(--chip-border);
+            font-size: 11px;
+            color: var(--text);
+            background: rgba(15,23,42,0.9);
+        }
+
+        .skill-chip.level {
+            border-style: dashed;
+            border-color: rgba(163, 230, 53, 0.8);
+            color: rgba(190, 242, 100, 0.95);
+        }
+
+        .skill-metric {
+            margin-top: 6px;
+            font-size: 11px;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .skill-bar {
+            flex: 1;
+            height: 4px;
+            border-radius: 999px;
+            background: rgba(30, 64, 175, 0.7);
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #22c55e, #a3e635);
+        }
+
+        .two-column-split {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+            gap: 10px;
+        }
+
+        @media (max-width: 720px) {
+            .two-column-split {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 4px;
+        }
+
+        .role {
+            padding: 10px 10px 9px;
+            border-radius: var(--radius-md);
+            background: rgba(15,23,42,0.98);
+            border: 1px solid rgba(51,65,85,0.9);
+            position: relative;
+        }
+
+        .role::before {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: -7px;
+            width: 9px;
+            height: 9px;
+            border-radius: 999px;
+            background: radial-gradient(circle at center, #22c55e 0, #15803d 40%, #16a34a 70%);
+            box-shadow: 0 0 0 4px rgba(22,163,74,0.3);
+        }
+
+        @media (max-width: 880px) {
+            .role::before {
+                display: none;
+            }
+        }
+
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            align-items: baseline;
+        }
+
+        .role-title {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .role-meta {
+            font-size: 11px;
+            color: var(--muted);
+            text-align: right;
+        }
+
+        .role-company {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        .role-highlights {
+            margin: 6px 0 0;
+            padding-left: 18px;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .role-highlights li {
+            margin-bottom: 3px;
+        }
+
+        .tag-row {
+            margin-top: 6px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .tag {
+            font-size: 10px;
+            padding: 3px 7px;
+            border-radius: 999px;
+            border: 1px solid rgba(55,65,81,0.9);
+            color: var(--muted);
+            background: rgba(15,23,42,0.95);
+        }
+
+        .tag--accent {
+            border-color: rgba(34,197,94,0.85);
+            color: var(--accent-strong);
+        }
+
+        .project {
+            padding: 8px 10px 7px;
+            border-radius: var(--radius-md);
+            border: 1px dashed rgba(148,163,184,0.7);
+            background: rgba(15,23,42,0.96);
+        }
+
+        .project-title {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .project-meta {
+            font-size: 11px;
+            color: var(--muted);
+            margin: 2px 0 4px;
+        }
+
+        .project-desc {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: 12px;
+            color: var(--muted);
+            padding: 6px 8px;
+            border-radius: var(--radius-md);
+            background: rgba(15,23,42,0.96);
+            border: 1px solid rgba(51,65,85,0.9);
+        }
+
+        .edu-item strong {
+            color: var(--text);
+        }
+
+        .small-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 4px 0 0;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .small-list li {
+            margin-bottom: 2px;
+        }
+
+        .pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 6px;
+        }
+
+        .pill {
+            border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.7);
+            padding: 3px 7px;
+            font-size: 11px;
+            color: var(--muted);
+            background: rgba(15,23,42,0.95);
+        }
+
+        .pill--accent {
+            border-color: rgba(34,197,94,0.9);
+            color: var(--accent-strong);
+        }
+
+        .footer-note {
+            padding: 0 28px 18px;
+            font-size: 10px;
+            text-align: right;
+            color: rgba(148,163,184,0.7);
+        }
+
+        @media (max-width: 880px) {
+            .footer-note {
+                padding: 0 16px 12px;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <header>
+        <div class="header-inner">
+            <div class="identity">
+                <div class="avatar"></div>
+                <div class="name-role">
+                    <h1>Rohan Prakash Iyer</h1>
+                    <h2>Principal Software Developer – Python | Oracle | PostgreSQL</h2>
+                </div>
+            </div>
+            <div class="contact">
+                <div class="contact-row">
+                    <span>Bengaluru, Karnataka, India</span>
+                    <span>|</span>
+                    <span><a href="mailto:rohan.iyer.tech@example.com">rohan.iyer.tech@example.com</a></span>
+                    <span>|</span>
+                    <span>+91-98765-43210</span>
+                </div>
+                <div class="contact-row">
+                    <span><a href="https://www.linkedin.com/in/rohan-iyer" target="_blank">linkedin.com/in/rohan-iyer</a></span>
+                    <span>|</span>
+                    <span><a href="https://github.com/rohan-iyer" target="_blank">github.com/rohan-iyer</a></span>
+                </div>
+                <div class="badge-bar">
+                    <span class="badge badge--accent">Python Engineering</span>
+                    <span class="badge">Data-intensive Systems</span>
+                    <span class="badge">AI &amp; LangChain (Intro)</span>
+                    <span class="badge">Database Performance</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="content">
+        <!-- LEFT COLUMN -->
+        <section>
+            <!-- SUMMARY -->
+            <div class="section">
+                <h3 class="section-title">Profile Summary</h3>
+                <div class="section-card">
+                    <p class="summary-text">
+                        Principal Software Developer with <span class="summary-highlight">12+ years of experience</span> designing and delivering
+                        large-scale, data-intensive platforms using <span class="summary-highlight">Python</span> and enterprise-grade
+                        <span class="summary-highlight">Oracle / PostgreSQL</span> databases. Proven track record leading distributed teams,
+                        modernizing legacy monoliths into microservices, and optimizing complex PL/SQL and SQL workloads.
+                        Hands-on exposure to <span class="summary-highlight">AI-driven workflows using LangChain and LLM APIs</span> for
+                        search, knowledge retrieval, and developer productivity.
+                    </p>
+                    <div class="summary-keywords">
+                        <span class="keyword-chip keyword-chip--accent">System Design &amp; Architecture</span>
+                        <span class="keyword-chip">Python (FastAPI, Django, Async IO)</span>
+                        <span class="keyword-chip">Oracle PL/SQL, Performance Tuning</span>
+                        <span class="keyword-chip">PostgreSQL, PL/pgSQL</span>
+                        <span class="keyword-chip">Microservices &amp; Event-Driven</span>
+                        <span class="keyword-chip">Cloud: AWS / Azure</span>
+                        <span class="keyword-chip">LangChain &amp; LLM Integration</span>
+                        <span class="keyword-chip">Mentoring &amp; Technical Leadership</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CORE SKILLS -->
+            <div class="section">
+                <h3 class="section-title">Core Skills</h3>
+                <div class="section-card alt">
+                    <div class="skills-grid">
+                        <div class="skill-group">
+                            <h4>Python Engineering</h4>
+                            <div class="skill-chips">
+                                <span class="skill-chip">Python 3.x</span>
+                                <span class="skill-chip">FastAPI</span>
+                                <span class="skill-chip">Django / DRF</span>
+                                <span class="skill-chip">AsyncIO</span>
+                                <span class="skill-chip">Pandas</span>
+                                <span class="skill-chip">Celery</span>
+                            </div>
+                            <div class="skill-metric">
+                                <span>Principal-level Design, Clean Architecture</span>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-fill" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-group">
+                            <h4>Databases</h4>
+                            <div class="skill-chips">
+                                <span class="skill-chip">Oracle 11g/12c/19c</span>
+                                <span class="skill-chip">PL/SQL</span>
+                                <span class="skill-chip">PostgreSQL 12+</span>
+                                <span class="skill-chip">PL/pgSQL</span>
+                                <span class="skill-chip">Query Optimization</span>
+                                <span class="skill-chip">Partitioning, Indexing</span>
+                            </div>
+                            <div class="skill-metric">
+                                <span>High-throughput OLTP &amp; Reporting</span>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-fill" style="width: 94%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-group">
+                            <h4>Architecture &amp; Scale</h4>
+                            <div class="skill-chips">
+                                <span class="skill-chip">Microservices</span>
+                                <span class="skill-chip">Event-driven (Kafka)</span>
+                                <span class="skill-chip">REST / gRPC APIs</span>
+                                <span class="skill-chip">Caching (Redis)</span>
+                                <span class="skill-chip">CQRS patterns</span>
+                            </div>
+                            <div class="skill-metric">
+                                <span>System Design, SLAs, SLOs</span>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-fill" style="width: 92%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-group">
+                            <h4>AI &amp; LangChain (Intro)</h4>
+                            <div class="skill-chips">
+                                <span class="skill-chip">LangChain</span>
+                                <span class="skill-chip">OpenAI / Azure OpenAI</span>
+                                <span class="skill-chip">RAG Pipelines</span>
+                                <span class="skill-chip">Vector Stores (FAISS, PGVector)</span>
+                                <span class="skill-chip">Prompt Design</span>
+                            </div>
+                            <div class="skill-metric">
+                                <span>Intro-level: POCs &amp; Integrations</span>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-fill" style="width: 65%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-group">
+                            <h4>DevOps &amp; Quality</h4>
+                            <div class="skill-chips">
+                                <span class="skill-chip">Docker</span>
+                                <span class="skill-chip">Kubernetes</span>
+                                <span class="skill-chip">GitHub Actions</span>
+                                <span class="skill-chip">Jenkins</span>
+                                <span class="skill-chip">pytest</span>
+                                <span class="skill-chip">SonarQube</span>
+                            </div>
+                            <div class="skill-metric">
+                                <span>CI/CD, Observability</span>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-fill" style="width: 88%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-group">
+                            <h4>Leadership</h4>
+                            <div class="skill-chips">
+                                <span class="skill-chip">Technical Roadmapping</span>
+                                <span class="skill-chip">Code Reviews</span>
+                                <span class="skill-chip">Mentoring</span>
+                                <span class="skill-chip">Stakeholder Management</span>
+                                <span class="skill-chip">Agile / Scrum</span>
+                            </div>
+                            <div class="skill-metric">
+                                <span>Leading 8–12 Engineers</span>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-fill" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pill-list">
+                        <span class="pill pill--accent">Primary Stack: Python, Oracle, PostgreSQL</span>
+                        <span class="pill">Secondary: Node.js (basic), MongoDB, ElasticSearch</span>
+                        <span class="pill">Domains: FinTech, Risk &amp; Compliance, Analytics</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPERIENCE -->
+            <div class="section">
+                <h3 class="section-title">Professional Experience</h3>
+                <div class="section-card">
+                    <div class="timeline">
+                        <div class="role">
+                            <div class="role-header">
+                                <div>
+                                    <div class="role-title">Principal Software Developer (Python / Data Platforms)</div>
+                                    <div class="role-company">Confidential Global FinTech | Bengaluru, India</div>
+                                </div>
+                                <div class="role-meta">
+                                    <div>Jul 2019 – Present</div>
+                                    <div>India / Remote Collaboration (US, EU)</div>
+                                </div>
+                            </div>
+                            <ul class="role-highlights">
+                                <li>Architected and led development of a Python-based risk analytics platform on <strong>Oracle + PostgreSQL</strong> handling &gt;2B rows, reducing critical report generation time from 30 mins to &lt;3 mins.</li>
+                                <li>Designed microservices using <strong>FastAPI</strong>, async workers, and <strong>Kafka</strong> to decouple core transaction flows from downstream analytics and reporting workloads.</li>
+                                <li>Optimized complex <strong>PL/SQL and PL/pgSQL</strong> procedures, indexes, and partitioning strategies, improving database performance by 40–60% on key workloads and eliminating frequent deadlocks.</li>
+                                <li>Introduced <strong>introductory AI capabilities</strong> using LangChain and LLM APIs for internal developer search (code + schema documentation), cutting onboarding time for new engineers by ~25%.</li>
+                                <li>Led a team of 10+ engineers across India and Europe; established code quality gates, design review practices, and a shared architecture decision record (ADR) process.</li>
+                            </ul>
+                            <div class="tag-row">
+                                <span class="tag tag--accent">Python</span>
+                                <span class="tag tag--accent">FastAPI</span>
+                                <span class="tag">Django</span>
+                                <span class="tag">Oracle</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">PL/SQL</span>
+                                <span class="tag">Kafka</span>
+                                <span class="tag">LangChain (POC)</span>
+                                <span class="tag">Docker / Kubernetes</span>
+                            </div>
+                        </div>
+
+                        <div class="role">
+                            <div class="role-header">
+                                <div>
+                                    <div class="role-title">Senior Software Engineer (Python &amp; Databases)</div>
+                                    <div class="role-company">Enterprise Solutions Provider | Pune, India</div>
+                                </div>
+                                <div class="role-meta">
+                                    <div>Jan 2014 – Jun 2019</div>
+                                </div>
+                            </div>
+                            <ul class="role-highlights">
+                                <li>Developed and enhanced multiple <strong>Django &amp; Flask</strong> applications interfacing with Oracle and PostgreSQL back-ends for manufacturing and logistics customers.</li>
+                                <li>Re-engineered several database-heavy modules by moving business logic from application layer into optimized <strong>PL/SQL packages</strong>, reducing average API response times by 50–70%.</li>
+                                <li>Implemented robust ETL pipelines in Python for batch data ingestion and reconciliation, with monitoring and alerting for data quality issues.</li>
+                                <li>Acted as database SME during migrations from Oracle to PostgreSQL, including schema conversion, performance tuning, and regression testing.</li>
+                            </ul>
+                            <div class="tag-row">
+                                <span class="tag">Python</span>
+                                <span class="tag">Django</span>
+                                <span class="tag">Flask</span>
+                                <span class="tag">Oracle</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">ETL</span>
+                                <span class="tag">Performance Tuning</span>
+                            </div>
+                        </div>
+
+                        <div class="role">
+                            <div class="role-header">
+                                <div>
+                                    <div class="role-title">Software Engineer</div>
+                                    <div class="role-company">IT Services &amp; Consulting | Chennai, India</div>
+                                </div>
+                                <div class="role-meta">
+                                    <div>Jul 2012 – Dec 2013</div>
+                                </div>
+                            </div>
+                            <ul class="role-highlights">
+                                <li>Worked on internal tools and reporting solutions using Python, SQL, and Oracle to automate manual operations and MIS reporting.</li>
+                                <li>Built reusable data access layers and basic REST APIs, introducing disciplined version control and documentation practices in the team.</li>
+                            </ul>
+                            <div class="tag-row">
+                                <span class="tag">Python</span>
+                                <span class="tag">Oracle</span>
+                                <span class="tag">SQL</span>
+                                <span class="tag">UNIX Shell</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RIGHT COLUMN -->
+        <section>
+            <!-- AI & LANGCHAIN -->
+            <div class="section">
+                <h3 class="section-title">AI &amp; LangChain Experience (Introductory)</h3>
+                <div class="section-card">
+                    <div class="project">
+                        <div class="project-title">Developer Knowledge Assistant (Internal POC)</div>
+                        <div class="project-meta">Python, LangChain, OpenAI, PGVector, FastAPI</div>
+                        <p class="project-desc">
+                            Implemented a proof-of-concept <strong>RAG (Retrieval Augmented Generation)</strong> assistant for internal use:
+                        </p>
+                        <ul class="small-list">
+                            <li>Ingested API docs, database schema definitions, and ADRs into a <strong>PostgreSQL + PGVector</strong> based vector store.</li>
+                            <li>Used <strong>LangChain</strong> to orchestrate document loaders, text splitters, embedding generation, and retrieval chains.</li>
+                            <li>Exposed a <strong>FastAPI</strong> endpoint for engineers to query architecture and database design via LLM chat, reducing repeated SME questions.</li>
+                            <li>Implemented safety guardrails (prompt templates, system messages, context window management) to keep responses grounded in retrieved documents.</li>
+                        </ul>
+                        <div class="pill-list">
+                            <span class="pill pill--accent">RAG pipeline (intro)</span>
+                            <span class="pill">LangChain RetrievalQA</span>
+                            <span class="pill">Vector indexing strategy</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 8px;" class="project">
+                        <div class="project-title">SQL Query Refactoring Assistant (Prototype)</div>
+                        <div class="project-meta">Python, LangChain, LLMs, Oracle / PostgreSQL</div>
+                        <p class="project-desc">
+                            Built a prototype CLI tool where developers paste complex SQL/PLSQL and receive suggestions on:
+                        </p>
+                        <ul class="small-list">
+                            <li>Indexing opportunities and possible anti-patterns (e.g., functions on indexed columns, unbounded scans).</li>
+                            <li>Refactoring ideas into more maintainable CTEs or parameterized queries.</li>
+                            <li>Educational explanations to help mid-level engineers understand tuning decisions.</li>
+                        </ul>
+                        <div class="pill-list">
+                            <span class="pill">Prompt patterns for structured critique</span>
+                            <span class="pill">SQL analysis workflows</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HIGHLIGHTED PROJECTS -->
+            <div class="section">
+                <h3 class="section-title">Selected Projects</h3>
+                <div class="section-card">
+                    <div class="project">
+                        <div class="project-title">Real-Time Risk Scoring Engine</div>
+                        <div class="project-meta">Python, FastAPI, Oracle, Redis, Kafka</div>
+                        <p class="project-desc">
+                            Designed and implemented a low-latency inference service for financial risk scoring:
+                        </p>
+                        <ul class="small-list">
+                            <li>Processed &gt;5k events/second using async FastAPI services and Kafka consumers.</li>
+                            <li>Streamlined <strong>PL/SQL</strong>-backed computations to pre-aggregate data, reducing Oracle load by ~35%.</li>
+                            <li>Introduced multi-layer caching (Redis + in-process) for static reference data to cut DB round-trips.</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 8px;" class="project">
+                        <div class="project-title">Data Warehouse Modernization</div>
+                        <div class="project-meta">PostgreSQL, PL/pgSQL, Python ETL, Airflow</div>
+                        <p class="project-desc">
+                            Led migration of a reporting warehouse from Oracle to PostgreSQL:
+                        </p>
+                        <ul class="small-list">
+                            <li>Converted complex Oracle packages into optimized <strong>PL/pgSQL</strong> functions with partitioned tables and materialized views.</li>
+                            <li>Implemented Airflow-based ETL using Python, with modular DAGs, retries, and data quality checks.</li>
+                            <li>Achieved 25–40% faster nightly load times and reduced license cost significantly.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EDUCATION & CERTIFICATIONS -->
+            <div class="section">
+                <h3 class="section-title">Education</h3>
+                <div class="section-card">
+                    <div class="edu-item">
+                        <div>
+                            <strong>B.E. – Computer Science &amp; Engineering</strong><br>
+                            Visvesvaraya Technological University (VTU)
+                        </div>
+                        <div>
+                            2008 – 2012<br>
+                            Bengaluru, India
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">Certifications &amp; Training</h3>
+                <div class="section-card">
+                    <ul class="small-list">
+                        <li><strong>AWS Certified Solutions Architect – Associate</strong> (Valid)</li>
+                        <li><strong>Oracle Database SQL Certified Associate</strong></li>
+                        <li>Advanced Python for Data Engineering – Internal L&amp;D Program</li>
+                        <li>Intro to Applied LLMs with LangChain – Online Course (POCs &amp; experiments)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ADDITIONAL DETAILS -->
+            <div class="section">
+                <h3 class="section-title">Additional Details</h3>
+                <div class="section-card">
+                    <div class="two-column-split">
+                        <div>
+                            <strong style="font-size: 12px;">Leadership &amp; Collaboration</strong>
+                            <ul class="small-list">
+                                <li>Regularly conduct architecture reviews and design workshops for cross-functional teams.</li>
+                                <li>Mentored 15+ engineers on Python, database design, and performance tuning.</li>
+                                <li>Partnered closely with product, QA, and infra teams to align technical debt reduction with roadmap.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong style="font-size: 12px;">Tools &amp; Practices</strong>
+                            <ul class="small-list">
+                                <li>Git, GitHub / GitLab, Bitbucket, Jira, Confluence.</li>
+                                <li>Monitoring: Prometheus, Grafana, ELK, APM tools.</li>
+                                <li>Engineering culture: trunk-based development, feature flags, blue–green / canary releases.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pill-list" style="margin-top: 8px;">
+                        <span class="pill">Languages: English (Fluent), Hindi (Fluent)</span>
+                        <span class="pill">Notice Period: 60 days (negotiable)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="footer-note">
+        Designed as an HTML resume – printable to A4 / Letter (use browser print, enable background graphics).
+    </div>
+</div>
+</body>
+</html>

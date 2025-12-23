@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SQL Developer – Brightline Data Co.</title>
+  <style>
+    :root {
+      --primary: #1e88e5;
+      --primary-dark: #1565c0;
+      --text-main: #222;
+      --text-muted: #555;
+      --bg-light: #f7f9fc;
+      --border-light: #dde3ee;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-main);
+      background-color: #ffffff;
+      padding: 24px;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    header {
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    header .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border-light);
+      background: var(--bg-light);
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .section {
+      margin-bottom: 24px;
+    }
+
+    .section h2 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .section p {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .meta span::before {
+      content: "•";
+      margin-right: 6px;
+      color: var(--border-light);
+    }
+
+    .meta span:first-child::before {
+      content: "";
+      margin-right: 0;
+    }
+
+    ul {
+      margin-left: 18px;
+      margin-top: 4px;
+    }
+
+    li {
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .highlight {
+      background: #e8f2ff;
+      border-left: 3px solid var(--primary);
+      padding: 10px 12px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      background: var(--bg-light);
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border-light);
+      color: var(--text-muted);
+    }
+
+    .apply-box {
+      border-top: 1px solid var(--border-light);
+      padding-top: 16px;
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .apply-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--primary);
+      border-radius: 999px;
+      border: 1px solid var(--primary);
+      padding: 7px 16px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 12px;
+      }
+      .page {
+        padding: 20px;
+      }
+      header {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div>
+        <h1>SQL Developer</h1>
+        <div class="subtitle">Brightline Data Co. &mdash; Small, product-focused data company</div>
+        <div class="badge-group">
+          <span class="badge">Full-time</span>
+          <span class="badge">Hybrid / Remote-friendly (US)</span>
+          <span class="badge">4+ years experience</span>
+        </div>
+      </div>
+      <div class="meta">
+        <span>Location: Denver, CO (preferred)</span>
+        <span>Team size: &lt; 30 employees</span>
+        <span>Reports to: Head of Engineering</span>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>About Brightline Data Co.</h2>
+      <p>
+        Brightline Data Co. is a small, profitable analytics company helping
+        non-technical teams turn raw operational data into clear, actionable insights.
+        We work with growing businesses that need solid data foundations but don’t
+        have large internal data teams.
+      </p>
+      <p>
+        As a small company, we keep bureaucracy low and ownership high. You’ll
+        work closely with engineering, product, and customer success and have a
+        direct impact on the way we build and evolve our data platform.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>The Role</h2>
+      <p>
+        We’re looking for an experienced <strong>SQL Developer</strong> who can jump in,
+        quickly understand our current database landscape, and help determine
+        the best tools and patterns to take us to the next level.
+      </p>
+      <p>
+        You should be comfortable walking into partially defined systems,
+        asking good questions, proposing options, and then executing. You’ll
+        own significant pieces of our SQL layer, from schema design and
+        complex queries to performance tuning and data quality.
+      </p>
+      <div class="highlight">
+        This is a hands-on role for someone who enjoys designing and building
+        SQL-centric solutions <em>and</em> influencing which tools, frameworks,
+        and practices we adopt as we scale.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What You’ll Do</h2>
+      <ul>
+        <li>Design, write, and maintain complex SQL queries, views, and stored procedures for reporting and application features.</li>
+        <li>Evaluate and recommend the right mix of tools (e.g., ETL/ELT, BI, DB monitoring, schema management) for our size and roadmap.</li>
+        <li>Collaborate with engineers to design and evolve relational database schemas and data models.</li>
+        <li>Optimize existing queries and indexes for performance, reliability, and scalability.</li>
+        <li>Build and maintain data pipelines to load, transform, and aggregate data from multiple sources.</li>
+        <li>Work with product and customer-facing teams to translate business questions into efficient SQL-based solutions and dashboards.</li>
+        <li>Set up and improve conventions for versioning and reviewing SQL (migrations, code reviews, testing patterns).</li>
+        <li>Monitor data quality, identify inconsistencies, and help implement checks and alerts.</li>
+        <li>Contribute to documentation and lightweight standards so others can build on your work.</li>
+      </ul>
+      <div class="tag-list">
+        <span class="tag">Schema design</span>
+        <span class="tag">Query optimization</span>
+        <span class="tag">Data modeling</span>
+        <span class="tag">Tooling evaluation</span>
+        <span class="tag">ETL / ELT</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What We’re Looking For</h2>
+      <ul>
+        <li><strong>4+ years of professional experience</strong> working with SQL in a production environment.</li>
+        <li>Strong command of SQL in at least one major RDBMS (e.g., PostgreSQL, SQL Server, MySQL, or similar).</li>
+        <li>Hands-on experience designing and evolving relational schemas and data models.</li>
+        <li>Proven ability to diagnose and improve slow or inefficient queries and indexing strategies.</li>
+        <li>Comfort working with incomplete requirements and making pragmatic, well-reasoned decisions.</li>
+        <li>Experience integrating SQL with at least one programming environment (e.g., Python, C#, Node.js, or similar).</li>
+        <li>Familiarity with data pipelines or ETL/ELT workflows (custom scripts or tools).</li>
+        <li>Solid understanding of data integrity, normalization/denormalization, and transaction concepts.</li>
+        <li>Clear written and verbal communication; able to explain tradeoffs to both technical and non-technical teammates.</li>
+      </ul>
+      <div class="tag-list">
+        <span class="tag">PostgreSQL / MySQL / SQL Server</span>
+        <span class="tag">Indexes &amp; query plans</span>
+        <span class="tag">OLTP &amp; reporting</span>
+        <span class="tag">Data integrity</span>
+        <span class="tag">Cross-functional collaboration</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Nice to Have</h2>
+      <ul>
+        <li>Experience with a cloud database stack (e.g., AWS RDS, Azure SQL, or Google Cloud SQL/BigQuery).</li>
+        <li>Familiarity with analytics/BI tools (e.g., Metabase, Power BI, Looker, or similar).</li>
+        <li>Exposure to infrastructure-as-code or database migration tools (e.g., Flyway, Liquibase, Alembic).</li>
+        <li>Experience working in a small company or startup environment.</li>
+        <li>Basic understanding of data warehousing concepts and dimensional modeling.</li>
+        <li>Comfort with Git-based workflows and code review practices.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>How We Work &amp; What We Offer</h2>
+      <ul>
+        <li>Small, focused team where your decisions and ideas directly shape our data stack.</li>
+        <li>Hybrid work: Denver office a few days a week preferred; remote within the US considered for the right candidate.</li>
+        <li>Competitive salary for a small company, plus meaningful impact on product and process.</li>
+        <li>Health, dental, and vision benefits; flexible PTO; and reasonable working hours.</li>
+        <li>Budget and support for learning, experimentation, and attending relevant conferences or workshops.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Application Details</h2>
+      <p>
+        If this sounds like a fit, we’d love to hear from you. Please send:
+      </p>
+      <ul>
+        <li>Your resume or LinkedIn profile.</li>
+        <li>A brief note about a SQL problem you’re proud of solving (performance issue, tricky data model, or tool you introduced and why).</li>
+        <li>Optional: links to any public work (GitHub, blog posts, talks, or articles).</li>
+      </ul>
+
+      <div class="apply-box">
+        <div>
+          <p style="font-size:0.95rem; color:var(--text-main);">
+            Email applications to:
+            <strong>careers@brightlinedata.co</strong><br />
+            Subject line: <strong>SQL Developer &mdash; [Your Name]</strong>
+          </p>
+        </div>
+        <div class="apply-actions">
+          <a href="mailto:careers@brightlinedata.co?subject=SQL%20Developer%20Application"
+             class="btn-primary">Apply via Email</a>
+          <a href="#"
+             class="btn-ghost">Download Job Description</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

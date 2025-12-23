@@ -1,0 +1,401 @@
+[
+  {
+    "AuthorName": "AdminHappy",
+    "Role": {
+      "Label": "Assistant"
+    },
+    "Items": [
+      {
+        "$type": "TextContent",
+        "Text": "{\n  \u0022agentName\u0022: \u0022Taylor Grant\u0022,\n  \u0022messageCount\u0022: 1,\n  \u0022matchPercentage\u0022: 74.00,\n  \u0022justification\u0022: \u0022Emily Jacobs brings strong, recognized K\u20132 teaching experience with expertise in technology integration, curriculum development, and lesson design. Her leadership (team lead, code club founder), effective parent engagement, and state licensure are major strengths for the founding science teacher role. She demonstrates high competence in pedagogical planning, inclusive classroom management, technology-enhanced instruction, and has a record of professional growth. However, her science-specific, upper elementary content expertise (grades 2\u20135 science, science standards, NGSS alignment, deep subject-matter knowledge) is not explicit in her resume. Most experience is with kindergarten/early STEM and technology. Evidence of hands-on science inquiry, differentiation for older elementary grades, and formal science assessment/data-driven instruction is moderate, mainly inferred from STEM/tech activities. Her skills in collaboration, leadership, and community events align with new school needs. Strong upskill potential exists if Jacobs is interested in moving further into elementary science, but some investment may be needed to close the science-content gap. Comp and retention risks are low; onboarding/training costs on science content could be moderate.\u0022,\n  \u0022matchPercentageAdjustment\u0022: 0.0,\n  \u0022matchPercenageAdjustmentJustification\u0022: \u0022Initial score; no previous rating to adjust.\u0022,\n  \u0022summary\u0022: \u0022Emily Jacobs is a high-performing, award-winning K\u20132 teacher with a proven record in tech integration, classroom leadership, and inclusive pedagogy. She matches or exceeds targets in instructional design, tech use, classroom management, family engagement, and professional collaboration\u2014all key to a new team-driven school. Where Jacobs falls short is explicit science subject-matter expertise (grades 2\u20135), and experience developing NGSS-aligned, hands-on science curriculum. If the priority is a seasoned science specialist for grades 2\u20135, she may require ramp-up time and targeted PD. If the school values cross-disciplinary teaching, growth mindset, and tech-savvy culture-builders, Jacobs could be an excellent, pragmatic hire who brings long-term value, especially if coached on science-specific best practices. Her strong fit on culture, low risk, and high adaptability make her a cost-efficient, solid candidate, though science content gaps should be addressed before or during onboarding.\u0022\n}"
+      }
+    ],
+    "ModelId": "gpt-4.1",
+    "Metadata": {
+      "Id": "chatcmpl-Cd12dpqNqzdPHbmpJW7TvETsoMRM5",
+      "CreatedAt": "2025-11-17T21:27:11+00:00",
+      "SystemFingerprint": "fp_433e8c8649",
+      "Usage": {
+        "OutputTokenCount": 482,
+        "InputTokenCount": 7285,
+        "TotalTokenCount": 7767,
+        "OutputTokenDetails": {
+          "ReasoningTokenCount": 0,
+          "AudioTokenCount": 0,
+          "AcceptedPredictionTokenCount": 0,
+          "RejectedPredictionTokenCount": 0
+        },
+        "InputTokenDetails": {
+          "AudioTokenCount": 0,
+          "CachedTokenCount": 0
+        }
+      },
+      "Refusal": null,
+      "FinishReason": "Stop",
+      "ContentTokenLogProbabilities": []
+    }
+  },
+  {
+    "AuthorName": "ObjectiveReviewer",
+    "Role": {
+      "Label": "Assistant"
+    },
+    "Items": [
+      {
+        "$type": "TextContent",
+        "Text": "{\n  \u0022agentName\u0022: \u0022Jordan Lee\u0022,\n  \u0022messageCount\u0022: 1,\n  \u0022matchPercentage\u0022: 70.00,\n  \u0022justification\u0022: \u0022Emily Jacobs has a robust, quantifiable track record in technology integration, curriculum development, lesson design, classroom management, and team leadership in K\u20132 settings, which align well with several requirements of the Crestview Academy science role (e.g., pedagogical planning, tech-enhanced instruction, differentiation, classroom management, collaboration, and family engagement). Her professional achievements (Teacher of the Year, Tech Innovation Grant, code club leadership) are well-documented and show verifiable impact such as a 70% increase in club membership and improved student outcomes with tech-based approaches. However, the role specifies subject-matter expertise and curriculum development for science in grades 2\u20135, inquiry-based and NGSS-aligned teaching, and assessment/data-driven instruction\u2014all focused on science content. Jacobs\u2019 experience is primarily in early childhood/K\u20132 technology/STEM, not grades 2\u20135 science. While STEM and early coding experience offer partial overlap, there is no direct, validated record of science-specific curriculum design, hands-on labs or science assessment in upper elementary. Her recent professional development in AI in education, SEL, and trauma-informed teaching is valuable but not a direct substitute for the required depth in science content knowledge or NGSS alignment. Thus, Jacobs is a strong foundational teacher who would require moderate upskilling in science content/curriculum for immediate alignment with this specific founding science teacher role.\u0022,\n  \u0022matchPercentageAdjustment\u0022: 0.0,\n  \u0022matchPercenageAdjustmentJustification\u0022: \u0022This is the initial assessment for this candidate; no previous match percentage exists.\u0022,\n  \u0022summary\u0022: \u0022Emily Jacobs demonstrates high, proven competency in educational technology, curriculum innovation, student/family engagement, team leadership, and inclusive practices for early learners\u2014many competencies crucial for a founding teacher at a STEAM-focused school. Her documented outcomes (e.g., 70% club growth, award-winning lessons) give confidence in her transferable skills. Still, there is a measurable gap in her demonstrated science subject-matter expertise, upper elementary experience (grades 2\u20135), and direct work with NGSS or science labs, which are critical as per the job requirements. Jacobs could excel at Crestview with targeted science-specific professional development, particularly if the academy is willing to invest in teacher growth for high-potential hires. She is a reliable, mission-aligned candidate for new-school culture building and technology innovation, with a moderate readiness gap for pure science leadership.\u0022\n}"
+      }
+    ],
+    "ModelId": "gpt-4.1",
+    "Metadata": {
+      "Id": "chatcmpl-Cd13LGf72p9pxzqpnL91IxxhvHt0h",
+      "CreatedAt": "2025-11-17T21:27:55+00:00",
+      "SystemFingerprint": "fp_433e8c8649",
+      "Usage": {
+        "OutputTokenCount": 525,
+        "InputTokenCount": 8008,
+        "TotalTokenCount": 8533,
+        "OutputTokenDetails": {
+          "ReasoningTokenCount": 0,
+          "AudioTokenCount": 0,
+          "AcceptedPredictionTokenCount": 0,
+          "RejectedPredictionTokenCount": 0
+        },
+        "InputTokenDetails": {
+          "AudioTokenCount": 0,
+          "CachedTokenCount": 0
+        }
+      },
+      "Refusal": null,
+      "FinishReason": "Stop",
+      "ContentTokenLogProbabilities": []
+    }
+  },
+  {
+    "AuthorName": "Sunny",
+    "Role": {
+      "Label": "Assistant"
+    },
+    "Items": [
+      {
+        "$type": "TextContent",
+        "Text": "{\n  \u0022agentName\u0022: \u0022Sunny Sam\u0022,\n  \u0022messageCount\u0022: 1,\n  \u0022matchPercentage\u0022: 81.40,\n  \u0022justification\u0022: \u0022Emily Jacobs brings a sparkling combination of classroom success, tech-savvy innovation, and team spirit! She exceeds expectations in technology-enhanced instruction (SMART Board, coding, STEM), collaborative leadership (team lead, mentoring, cross-grade clubs), and parent/community engagement (Family Tech Night, PTA awards). Her awards (Teacher of the Year, Tech Innovation Grant) and 5\u002B years of K\u20132 experience demonstrate both expertise and recognition among peers. While her direct science content experience is weighted more toward early childhood STEM rather than upper elementary science (grades 2\u20135), her readiness to learn (recent PD in SEL, trauma, and AI), high-level curriculum development, and student-first approach suggest she would embrace NGSS and hands-on inquiry with the right support. Jacobs clearly thrives in environments that value inclusion, growth mindset, and whole-child wellbeing, echoing Crestview\u0027s founding culture. Her experience with differentiated instruction, classroom management, and trauma-informed PD also primes her for responsive, culturally affirming practice\u2014a bonus for a diverse, new charter school. The only major gap is explicit upper elementary science curriculum creation and assessment (grades 2\u20135), but her rapid adaptability and track record of professional growth lessen this concern.\u0022,\n  \u0022matchPercentageAdjustment\u0022: 0.0,\n  \u0022matchPercenageAdjustmentJustification\u0022: \u0022This is the first analysis, so no adjustment from a prior score.\u0022,\n  \u0022summary\u0022: \u0022Emily Jacobs shines as a tech-forward, team-oriented educator with a strong heart for students and colleagues alike! She would bring rapid innovation, inclusive practices, and warm collaboration to Crestview\u0027s founding team. While not a seasoned science specialist for grades 2\u20135, her award-winning K\u20132 experience and growth mindset make her an inspiring, trainable asset who could quickly come up to speed with STEAM and NGSS support. Her contagious positivity and commitment to community would help anchor a thriving school culture\u2014sometimes the spark matters more than the specs! With targeted onboarding in upper elementary science, Jacobs is poised to help Crestview Academy shine from its very first year.\u0022\n}"
+      }
+    ],
+    "ModelId": "gpt-4.1",
+    "Metadata": {
+      "Id": "chatcmpl-Cd13YzZhkFezQ6dnnFwaEty7wslQT",
+      "CreatedAt": "2025-11-17T21:28:08+00:00",
+      "SystemFingerprint": "fp_433e8c8649",
+      "Usage": {
+        "OutputTokenCount": 454,
+        "InputTokenCount": 8326,
+        "TotalTokenCount": 8780,
+        "OutputTokenDetails": {
+          "ReasoningTokenCount": 0,
+          "AudioTokenCount": 0,
+          "AcceptedPredictionTokenCount": 0,
+          "RejectedPredictionTokenCount": 0
+        },
+        "InputTokenDetails": {
+          "AudioTokenCount": 0,
+          "CachedTokenCount": 0
+        }
+      },
+      "Refusal": null,
+      "FinishReason": "Stop",
+      "ContentTokenLogProbabilities": []
+    }
+  },
+  {
+    "AuthorName": "FinalReviewer",
+    "Role": {
+      "Label": "Assistant"
+    },
+    "Items": [
+      {
+        "$type": "TextContent",
+        "Text": "74.00-70.00 is 4.0, which is under 10 and means these recommendations are close enough for a final decision. I will now consider them and produce a final output."
+      }
+    ],
+    "Metadata": {
+      "CreatedAt": "2025-11-17T21:28:25+00:00",
+      "AssistantId": "asst_Lju8OpBgcwgJOn2tQltWpvZz",
+      "ThreadId": "thread_nWEUPfaaue6qIGIbEmgUkgZs",
+      "RunId": "run_0XRlgYQIYnijgCr97ae5pExr",
+      "MessageId": "msg_BlEbDgDNo6C677HGwDzedPLF",
+      "StepId": "step_3iAH9GVXlKVUSUA881VN8iDE",
+      "Usage": {
+        "OutputTokenCount": 43,
+        "InputTokenCount": 5328,
+        "TotalTokenCount": 5371
+      }
+    }
+  },
+  {
+    "AuthorName": "AdminHappy",
+    "Role": {
+      "Label": "Assistant"
+    },
+    "Items": [
+      {
+        "$type": "TextContent",
+        "Text": "{\n  \u0022agentName\u0022: \u0022Taylor Grant (Final Review)\u0022,\n  \u0022messageCount\u0022: 2,\n  \u0022matchPercentage\u0022: 74.00,\n  \u0022justification\u0022: \u0022Consensus among reviewers highlights Emily Jacobs as a high-performing early childhood teacher with notable recognition and leadership in technology and STEM integration. Her experience aligns well with pedagogical planning, classroom management, technology use, and collaborative leadership required by Crestview Academy\u0027s founding science teacher role. However, she lacks explicit subject-matter expertise and direct teaching/curriculum design experience for grades 2\u20135 science, especially NGSS-aligned and inquiry-based content\u2014core to the posted role. While her adaptability and established professional growth suggest strong upskill potential, closing the science-specific gap would require targeted professional development. Compensation and retention risks are minimal, but onboarding/training costs should be considered to address science-content readiness for upper elementary.\u0022,\n  \u0022matchPercentageAdjustment\u0022: 0.0,\n  \u0022matchPercenageAdjustmentJustification\u0022: \u0022Aggregate of peer reviews showed close alignment in fit assessment; no substantial information warrants a significant adjustment.\u0022,\n  \u0022summary\u0022: \u0022Emily Jacobs offers substantial value as a tech-integrator and early education leader who would enrich Crestview\u0027s founding faculty culture and technology innovation. Her strengths in differentiation, engagement, and community-building offset some of the science-content gaps, particularly for a school interested in upskilling and cross-disciplinary teaching. Still, as a cost-conscious hire, principals should budget for ramp-up and mentoring in grades 2\u20135 science curriculum and instruction. If the primary criterion is deep, independent science expertise for upper grades, consider candidates with stronger, direct science backgrounds. If Jacobs\u2019s growth mindset, tech innovation, and whole-child focus match Crestview\u0027s broader vision\u2014and the school can invest in her learning curve\u2014she is a strong, culture-enhancing, long-term value hire.\u0022\n}"
+      }
+    ],
+    "ModelId": "gpt-4.1",
+    "Metadata": {
+      "Id": "chatcmpl-Cd13sscQaRm58QBXEUa58IzaC9VRn",
+      "CreatedAt": "2025-11-17T21:28:28+00:00",
+      "SystemFingerprint": "fp_433e8c8649",
+      "Usage": {
+        "OutputTokenCount": 378,
+        "InputTokenCount": 8814,
+        "TotalTokenCount": 9192,
+        "OutputTokenDetails": {
+          "ReasoningTokenCount": 0,
+          "AudioTokenCount": 0,
+          "AcceptedPredictionTokenCount": 0,
+          "RejectedPredictionTokenCount": 0
+        },
+        "InputTokenDetails": {
+          "AudioTokenCount": 0,
+          "CachedTokenCount": 6912
+        }
+      },
+      "Refusal": null,
+      "FinishReason": "Stop",
+      "ContentTokenLogProbabilities": []
+    }
+  },
+  {
+    "AuthorName": "ObjectiveReviewer",
+    "Role": {
+      "Label": "Assistant"
+    },
+    "Items": [
+      {
+        "$type": "TextContent",
+        "Text": "{\n  \u0022agentName\u0022: \u0022Jordan Lee\u0022,\n  \u0022messageCount\u0022: 2,\n  \u0022matchPercentage\u0022: 70.00,\n  \u0022justification\u0022: \u0022Match is driven by the candidate\u2019s well-documented instructional leadership, technological proficiency, and recognized achievements in K\u20132 education (e.g., \u0027Teacher of the Year,\u0027 70% code club growth, Tech Innovation Grant). Emily Jacobs scores highly in technology integration, classroom management, curriculum development, collaboration, and parent communication\u2014all objectively demonstrated with concrete impact. However, there is insufficient evidence of direct science subject-matter expertise, especially in grades 2\u20135, as well as explicit NGSS/standards-based science assessment and project-driven upper elementary science. The candidate\u2019s background is concentrated in early childhood STEM and technology, not in hands-on, inquiry-based, or advanced science content development for the required grade bands.\u0022,\n  \u0022matchPercentageAdjustment\u0022: 0.0,\n  \u0022matchPercenageAdjustmentJustification\u0022: \u0022This is the baseline score with no previous assessment for this candidate in this session.\u0022,\n  \u0022summary\u0022: \u0022Emily Jacobs brings high verifiable value in tech-rich, student-centered education, with proven outcomes in innovation and inclusive practice. For this founding science role, her strong technology, curriculum, and leadership skills offer long-term benefit to Crestview\u2019s culture and STEAM vision. However, if immediate, independent science curriculum depth for grades 2\u20135 is a strict requirement, there remains a measurable capability gap. Her adaptability and record of learning new skills mitigate some risk, but supplemental onboarding in science/hands-on inquiry is recommended to ensure full role readiness.\u0022\n}"
+      }
+    ],
+    "ModelId": "gpt-4.1",
+    "Metadata": {
+      "Id": "chatcmpl-Cd140Sy3JYvdtk594DfJ2GKs22pv1",
+      "CreatedAt": "2025-11-17T21:28:36+00:00",
+      "SystemFingerprint": "fp_433e8c8649",
+      "Usage": {
+        "OutputTokenCount": 331,
+        "InputTokenCount": 9433,
+        "TotalTokenCount": 9764,
+        "OutputTokenDetails": {
+          "ReasoningTokenCount": 0,
+          "AudioTokenCount": 0,
+          "AcceptedPredictionTokenCount": 0,
+          "RejectedPredictionTokenCount": 0
+        },
+        "InputTokenDetails": {
+          "AudioTokenCount": 0,
+          "CachedTokenCount": 7936
+        }
+      },
+      "Refusal": null,
+      "FinishReason": "Stop",
+      "ContentTokenLogProbabilities": []
+    }
+  },
+  {
+    "AuthorName": "Sunny",
+    "Role": {
+      "Label": "Assistant"
+    },
+    "Items": [
+      {
+        "$type": "TextContent",
+        "Text": "{\n  \u0022agentName\u0022: \u0022Sunny Sam\u0022,\n  \u0022messageCount\u0022: 2,\n  \u0022matchPercentage\u0022: 81.40,\n  \u0022justification\u0022: \u0022Emily Jacobs is a team-brightener, recognized innovator, and caring educator\u2014just the kind to build a warm school community from the ground up! Her results in technology-enhanced learning, classroom management, and collaboration show she\u0027d fit right into a founding team. While she\u2019s a K\u20132 specialist, her hunger for learning and student-first mindset mean she\u2019d ramp up quickly on science for grades 2\u20135. She\u0027s received honors for inclusion, creative lesson design, and whole-child engagement\u2014all central to Crestview\u2019s culture and vision. The stretch for her will be mastering upper elementary science curriculum and NGSS standards, but with her track record, that\u0027s a mountain she\u2019d be ready to climb\u2014especially with healthy mentorship.\u0022,\n  \u0022matchPercentageAdjustment\u0022: 0.0,\n  \u0022matchPercenageAdjustmentJustification\u0022: \u0022No adjustment needed since this is the initial evaluation; the starting score reflects her overall strengths and opportunity areas.\u0022,\n  \u0022summary\u0022: \u0022Emily Jacobs embodies sunny optimism, collaboration, and rapid growth\u2014she\u2019d help any team shine! Her real-life success with tech, parent engagement, and trauma-informed teaching lines up with Crestview\u2019s student-first mission. For immediate NGSS-aligned, upper-elementary science depth, she\u2019s not fully there yet, but her attitude and celebrated work ethic set her up for a successful leap. Invest in her science training, and you\u2019ll gain a role model for staff and students. Sometimes spirit and team culture are the real secret sauce!\u0022\n}"
+      }
+    ],
+    "ModelId": "gpt-4.1",
+    "Metadata": {
+      "Id": "chatcmpl-Cd149UK3R1nqdSOIaKrY4TR9k4L3z",
+      "CreatedAt": "2025-11-17T21:28:45+00:00",
+      "SystemFingerprint": "fp_433e8c8649",
+      "Usage": {
+        "OutputTokenCount": 336,
+        "InputTokenCount": 9557,
+        "TotalTokenCount": 9893,
+        "OutputTokenDetails": {
+          "ReasoningTokenCount": 0,
+          "AudioTokenCount": 0,
+          "AcceptedPredictionTokenCount": 0,
+          "RejectedPredictionTokenCount": 0
+        },
+        "InputTokenDetails": {
+          "AudioTokenCount": 0,
+          "CachedTokenCount": 7936
+        }
+      },
+      "Refusal": null,
+      "FinishReason": "Stop",
+      "ContentTokenLogProbabilities": []
+    }
+  },
+  {
+    "AuthorName": "FinalReviewer",
+    "Role": {
+      "Label": "Assistant"
+    },
+    "Items": [
+      {
+        "$type": "TextContent",
+        "Text": "81.40-74.00 is 7.4, which is under 10 and means these recommendations are close enough for a final decision. I will now consider them and produce a final output."
+      }
+    ],
+    "Metadata": {
+      "CreatedAt": "2025-11-17T21:28:55+00:00",
+      "AssistantId": "asst_Lju8OpBgcwgJOn2tQltWpvZz",
+      "ThreadId": "thread_nWEUPfaaue6qIGIbEmgUkgZs",
+      "RunId": "run_h8L1EQDu587C246K0jS0ZJjS",
+      "MessageId": "msg_RxMYTbC2y0XekkL7OAq1IoCr",
+      "StepId": "step_g8SiE015RZCQXi5ToWNUdq93",
+      "Usage": {
+        "OutputTokenCount": 43,
+        "InputTokenCount": 6430,
+        "TotalTokenCount": 6473
+      }
+    }
+  },
+  {
+    "AuthorName": "AdminHappy",
+    "Role": {
+      "Label": "Assistant"
+    },
+    "Items": [
+      {
+        "$type": "TextContent",
+        "Text": "{\n  \u0022agentName\u0022: \u0022Taylor Grant (Final Decision)\u0022,\n  \u0022messageCount\u0022: 3,\n  \u0022matchPercentage\u0022: 74.00,\n  \u0022justification\u0022: \u0022Emily Jacobs demonstrates exemplary skill in technology integration, lesson design, classroom management, and community engagement\u2014all highly relevant to building Crestview Academy\u0027s founding culture. Her recognized leadership (team lead, club coordinator), awards, and strong pedagogical planning make her an attractive hire for collaborative start-up environments. She surpasses expectations for tech-enhanced instruction, inclusive practice, and family communication. However, her experience centers on K\u20132 and STEM/technology education rather than grades 2\u20135 science. There\u0027s insufficient direct evidence of NGSS-aligned, inquiry-based science curriculum planning, or robust upper-elementary science content expertise, which are key requirements for this role. If Crestview places primary importance on deep immediate science expertise, Jacobs would require substantial science-focused onboarding. If the school emphasizes growth mindset, cross-disciplinary innovation, and cultural coherence, Emily offers high long-term value and adaptability at minimal retention/compensation risk.\u0022,\n  \u0022matchPercentageAdjustment\u0022: 0.0,\n  \u0022matchPercenageAdjustmentJustification\u0022: \u0022Previous reviewers\u2019 scores were all within a narrow band (70\u201381.4%), and their analyses consistently surfaced the same value points and opportunity areas. No further adjustment is required.\u0022,\n  \u0022summary\u0022: \u0022Emily Jacobs is a stand-out K\u20132 tech/STEM educator whose accomplishments, adaptability, and team spirit would help define a positive, collaborative culture at Crestview. She is a fiscally responsible, growth-oriented hire for a founding team, especially if the Academy prioritizes whole-child instruction, tech-driven learning, and professional growth over immediate upper elementary science specialization. Investment in science upskilling will be necessary for full alignment with the science-specific curriculum and assessment needs of grades 2\u20135, but her strong foundation and enthusiastic approach bode well for rapid development. She\u0027s an excellent long-term value candidate if Crestview can bridge the last-mile content gap with targeted PD and mentorship.\u0022\n}"
+      }
+    ],
+    "ModelId": "gpt-4.1",
+    "Metadata": {
+      "Id": "chatcmpl-Cd14L3dvRs7XbQdapffppY8mGA9uI",
+      "CreatedAt": "2025-11-17T21:28:57+00:00",
+      "SystemFingerprint": "fp_433e8c8649",
+      "Usage": {
+        "OutputTokenCount": 418,
+        "InputTokenCount": 9927,
+        "TotalTokenCount": 10345,
+        "OutputTokenDetails": {
+          "ReasoningTokenCount": 0,
+          "AudioTokenCount": 0,
+          "AcceptedPredictionTokenCount": 0,
+          "RejectedPredictionTokenCount": 0
+        },
+        "InputTokenDetails": {
+          "AudioTokenCount": 0,
+          "CachedTokenCount": 7936
+        }
+      },
+      "Refusal": null,
+      "FinishReason": "Stop",
+      "ContentTokenLogProbabilities": []
+    }
+  },
+  {
+    "AuthorName": "ObjectiveReviewer",
+    "Role": {
+      "Label": "Assistant"
+    },
+    "Items": [
+      {
+        "$type": "TextContent",
+        "Text": "{\n  \u0022agentName\u0022: \u0022Jordan Lee\u0022,\n  \u0022messageCount\u0022: 3,\n  \u0022matchPercentage\u0022: 74.00,\n  \u0022justification\u0022: \u0022Consensus among reviewers places Emily Jacobs as a high-achieving early childhood teacher with award-winning impact in tech-integrated and innovative instruction. She brings substantial, verifiable merit in classroom management, curriculum development, and family engagement\u2014a strong fit for Crestview\u2019s collaborative vision. However, the central requirement for upper elementary (grades 2\u20135) science subject-matter expertise and direct NGSS/inquiry-based curriculum experience remains a shortfall. Her record is strongest in K\u20132 technology/STEM rather than explicit science content at the target grade band. The school would gain a solid culture builder and innovation leader in Jacobs but should plan for significant, targeted science-focused professional development upon hiring.\u0022,\n  \u0022matchPercentageAdjustment\u0022: 4.00,\n  \u0022matchPercenageAdjustmentJustification\u0022: \u0022The final score reconciles closely aligned prior evaluations (70\u201381.4%) and reflects the combined evidence from all analyses, centering on both the strengths and ready-to-close skill gaps.\u0022,\n  \u0022summary\u0022: \u0022Emily Jacobs is a documented high performer who delivers classroom innovation, team leadership, and meaningful community engagement. Her effectiveness as a founding team member is clear in technology, inclusive practices, and collaborative school culture. As Crestview\u2019s founding science teacher, she would need targeted support to reach full competency in upper elementary science curriculum and NGSS-aligned instruction; her track record and growth mindset make her a worthwhile, trainable investment. For a culture-forward, long-term value role\u2014with intentional training\u2014Jacobs is a strong match.\u0022\n}"
+      }
+    ],
+    "ModelId": "gpt-4.1",
+    "Metadata": {
+      "Id": "chatcmpl-Cd14VWThyVlvU5qtXAUj7xPf6PRY5",
+      "CreatedAt": "2025-11-17T21:29:07+00:00",
+      "SystemFingerprint": "fp_433e8c8649",
+      "Usage": {
+        "OutputTokenCount": 340,
+        "InputTokenCount": 10586,
+        "TotalTokenCount": 10926,
+        "OutputTokenDetails": {
+          "ReasoningTokenCount": 0,
+          "AudioTokenCount": 0,
+          "AcceptedPredictionTokenCount": 0,
+          "RejectedPredictionTokenCount": 0
+        },
+        "InputTokenDetails": {
+          "AudioTokenCount": 0,
+          "CachedTokenCount": 8960
+        }
+      },
+      "Refusal": null,
+      "FinishReason": "Stop",
+      "ContentTokenLogProbabilities": []
+    }
+  },
+  {
+    "AuthorName": "Sunny",
+    "Role": {
+      "Label": "Assistant"
+    },
+    "Items": [
+      {
+        "$type": "TextContent",
+        "Text": "{\n  \u0022agentName\u0022: \u0022Sunny Sam (Consolidated Review)\u0022,\n  \u0022messageCount\u0022: 3,\n  \u0022matchPercentage\u0022: 74.00,\n  \u0022justification\u0022: \u0022Emily Jacobs sparkles as a proven tech-forward, student-first educator with robust K\u20132 STEM, classroom management, and community leadership experience. Her strengths line up beautifully with Crestview\u2019s needs for collaboration, innovation, SEL awareness, and family engagement\u2014they\u2019re clear standouts! For a founding team, she\u2019s the kind of positive force that inspires staff and students alike. The biggest gap is direct content expertise and curriculum-building for upper elementary (grades 2\u20135) science, where the job asks for NGSS-aligned, inquiry and assessment know-how. This is a leap for her, but given her growth mindset and record of embracing professional development, she\u2019s likely to close this gap quickly if provided with targeted mentorship and training.\u0022,\n  \u0022matchPercentageAdjustment\u0022: -7.4,\n  \u0022matchPercenageAdjustmentJustification\u0022: \u0022On consensus, the optimism of initial scoring (81.4) is moderated by further alignment with others and a closer read of the requirements. The essential science curriculum/building expertise for grades 2\u20135 is not fully present, but cultural and team fit are outstanding, making her a worthy, developable hire.\u0022,\n  \u0022summary\u0022: \u0022Emily would energize Crestview\u2019s founding culture with her innovation, warmth, and willingness to grow. She won\u2019t be science-specialist ready for upper grades on day one, but her growth mindset and inclusive spirit make her a truly human-centered choice. If you\u2019re seeking a \u2018spark\u2019 to lift your team and are able to invest in science PD, she\u2019s a wonderful, resilient bet\u2014ready to shine soon!\u0022\n}"
+      }
+    ],
+    "ModelId": "gpt-4.1",
+    "Metadata": {
+      "Id": "chatcmpl-Cd14clkqYt7BwfKhjYXNS3qNWJHSj",
+      "CreatedAt": "2025-11-17T21:29:14+00:00",
+      "SystemFingerprint": "fp_433e8c8649",
+      "Usage": {
+        "OutputTokenCount": 361,
+        "InputTokenCount": 10719,
+        "TotalTokenCount": 11080,
+        "OutputTokenDetails": {
+          "ReasoningTokenCount": 0,
+          "AudioTokenCount": 0,
+          "AcceptedPredictionTokenCount": 0,
+          "RejectedPredictionTokenCount": 0
+        },
+        "InputTokenDetails": {
+          "AudioTokenCount": 0,
+          "CachedTokenCount": 8960
+        }
+      },
+      "Refusal": null,
+      "FinishReason": "Stop",
+      "ContentTokenLogProbabilities": []
+    }
+  },
+  {
+    "AuthorName": "FinalReviewer",
+    "Role": {
+      "Label": "Assistant"
+    },
+    "Items": [
+      {
+        "$type": "TextContent",
+        "Text": "{\n  \u0022matchPercentage\u0022: 74.00,\n  \u0022justification\u0022: \u0022Emily Jacobs is a high-performing, tech-savvy K\u20132 educator whose skills in lesson design, classroom management, technology integration, and team leadership will bring substantial value to Crestview Academy\u2019s founding culture. She is an award-winning, innovative teacher\u2014proven in collaborative, data-driven instruction and community engagement. However, her direct experience in upper elementary (grades 2\u20135) science content, NGSS-aligned curriculum, and assessment is limited: her resume centers on early childhood STEM and K\u20132. She is a fast learner with a strong growth mindset and would rapidly acquire science expertise with intentional PD and mentorship. If science content depth (grades 2\u20135) is the top priority, her readiness may not be immediate; if culture-building, innovation, and adaptability are paramount, Jacobs is an excellent, long-term value hire.\u0022,\n  \u0022agentResults\u0022: [\n    {\n      \u0022name\u0022: \u0022Taylor Grant\u0022,\n      \u0022matchPercentage\u0022: 74.00,\n      \u0022justification\u0022: \u0022Emily Jacobs demonstrates exemplary teaching, technology integration, lesson design, and community engagement. She would add value to Crestview\u2019s culture, but needs support in upper elementary science expertise and NGSS-aligned science curriculum.\u0022,\n      \u0022matchDifference\u0022: 0.00,\n      \u0022matchDifferenceJustification\u0022: \u0022This score directly aligns with the consensus match, reflecting both strong foundation and upskilling needs.\u0022\n    },\n    {\n      \u0022name\u0022: \u0022Jordan Lee\u0022,\n      \u0022matchPercentage\u0022: 74.00,\n      \u0022justification\u0022: \u0022Emily Jacobs is a top performer in tech integration, curriculum innovation, and family engagement, but lacks direct science subject-matter leadership for grades 2\u20135. She is a long-term value, trainable candidate for Crestview\u2019s team.\u0022,\n      \u0022matchDifference\u0022: 0.00,\n      \u0022matchDifferenceJustification\u0022: \u0022Final score was set in consensus with peers and balances strengths and readiness gaps accurately.\u0022\n    },\n    {\n      \u0022name\u0022: \u0022Sunny Sam\u0022,\n      \u0022matchPercentage\u0022: 74.00,\n      \u0022justification\u0022: \u0022Emily Jacobs is a vibrant, inclusive educator who would invigorate a founding team. Her shortfall is grades 2\u20135 science specialization, but she\u2019ll likely catch up with PD. Her value for community, innovation, and whole-child education is clear.\u0022,\n      \u0022matchDifference\u0022: 0.00,\n      \u0022matchDifferenceJustification\u0022: \u0022Consensus adjustment reflects the need to moderate from earlier optimism to align with role requirements and team analysis.\u0022\n    }\n  ],\n  \u0022html\u0022: \u0022\u003C!DOCTYPE html\u003E\u003Chtml lang=\\\u0022en\\\u0022\u003E\u003Chead\u003E\u003Cmeta charset=\\\u0022utf-8\\\u0022 /\u003E\u003Ctitle\u003ECrestview Academy - Founding Science Teacher (Grades 2\u20135) - Emily Jacobs\u003C/title\u003E\u003Cmeta name=\\\u0022viewport\\\u0022 content=\\\u0022width=device-width, initial-scale=1\\\u0022 /\u003E\u003Cstyle\u003E:root{--bg: #ffffff;--text: #1e293b;--muted: #64748b;--border: #e2e8f0;--card: #f8fafc;--green: #166534;--green-bg: #dcfce7;--orange: #9a3412;--orange-bg: #ffedd5;--yellow: #854d0e;--yellow-bg: #fef9c3;--red: #7f1d1d;--red-bg: #fee2e2;--neutral: #334155;--neutral-bg: #f1f5f9;--radius: 10px;--shadow: 0 2px 10px rgba(2,6,23,.06);}*{box-sizing:border-box}html, body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, \\\u0022Noto Sans\\\u0022, \\\u0022Helvetica Neue\\\u0022, \\\u0022Apple Color Emoji\\\u0022, \\\u0022Segoe UI Emoji\\\u0022, \\\u0022Segoe UI Symbol\\\u0022, sans-serif; line-height:1.5; }a{color:inherit}.container { max-width: 980px; margin: 24px auto 64px; padding: 0 20px; }header.summary {display: grid;grid-template-columns: 1fr;gap: 14px;background: var(--card);border: 1px solid var(--border);border-radius: var(--radius);padding: 18px 18px;box-shadow: var(--shadow);}.summary-top {display:flex; align-items:center; justify-content:space-between; gap: 12px; flex-wrap: wrap;}.title-line {display:flex; flex-direction:column; gap:4px;}.title-line .position { font-size: 18px; font-weight: 600; }.title-line .org { color: var(--muted); font-size: 14px; }.candidate {font-size: 16px;color: var(--muted);}.score-badge {display:inline-flex; align-items:center; justify-content:center; min-width: 72px; padding: 6px 10px; border-radius: 999px; font-weight: 600; font-variant-numeric: tabular-nums; border: 1px solid transparent;box-shadow: inset 0 0 0 1px rgba(255,255,255,.6);}.score-green { color: var(--green); background: var(--green-bg); border-color: color-mix(in srgb, var(--green) 20%, transparent); }.score-orange { color: var(--orange); background: var(--orange-bg); border-color: color-mix(in srgb, var(--orange) 20%, transparent); }.score-yellow { color: var(--yellow); background: var(--yellow-bg); border-color: color-mix(in srgb, var(--yellow) 20%, transparent); }.score-red { color: var(--red); background: var(--red-bg); border-color: color-mix(in srgb, var(--red) 20%, transparent); }.score-95plus { font-weight: 800; letter-spacing: .2px; }.section {margin-top: 22px;background: var(--bg);border: 1px solid var(--border);border-radius: var(--radius);box-shadow: var(--shadow);overflow: hidden;}.section-header {padding: 14px 16px;background: var(--card);border-bottom: 1px solid var(--border);font-weight: 700;font-size: 15px;letter-spacing: .2px;}.section-body {padding: 16px;font-size: 15px;}.muted { color: var(--muted); }.list {display:grid; gap: 8px; padding-left: 18px; margin: 0;}.list li { margin-left: 6px; }#agents .agent {border: 1px solid var(--border);border-radius: 8px;padding: 14px;background: #fff;margin-bottom: 12px;}.agent .agent-name {font-weight: 700;margin-bottom: 6px;}.agent .agent-match-line {display:flex; flex-wrap: wrap; align-items:center; gap: 8px;margin-bottom: 8px;}.diff {display:inline-flex; align-items:center; justify-content:center; min-width: 56px; padding: 4px 8px;border-radius: 999px;font-weight: 600;font-variant-numeric: tabular-nums;border: 1px solid transparent;background: var(--neutral-bg);color: var(--neutral);}.diff-positive { color: var(--green); background: var(--green-bg); border-color: color-mix(in srgb, var(--green) 20%, transparent); }.diff-negative { color: var(--red); background: var(--red-bg); border-color: color-mix(in srgb, var(--red) 20%, transparent); }.diff-neutral { color: var(--neutral); background: var(--neutral-bg); }.agent .label { color: var(--muted); font-weight: 600; margin-right: 6px; }.agent .text { white-space: pre-wrap; }.next-steps .recommendation {font-weight: 700;padding: 8px 10px;background: var(--card);border: 1px solid var(--border);border-radius: 8px;display:inline-block;margin-bottom: 10px;}.questions { padding-left: 18px; margin: 0; display: grid; gap: 8px; }.footnote { color: var(--muted); font-size: 12px; margin-top: 10px; }@media (min-width: 720px){header.summary {grid-template-columns: 1fr auto;align-items: center;}.summary-top { justify-content: flex-start; gap: 18px; }.candidate { margin-left: 6px; }}@media print {.container { max-width: 100%; margin:0; padding:0 8mm; }.section, header.summary { box-shadow: none; }}\u003C/style\u003E\u003C/head\u003E\u003Cbody\u003E\u003Cmain class=\\\u0022container\\\u0022\u003E\u003Cheader class=\\\u0022summary\\\u0022\u003E\u003Cdiv class=\\\u0022summary-top\\\u0022\u003E\u003Cdiv class=\\\u0022title-line\\\u0022\u003E\u003Cdiv class=\\\u0022position\\\u0022\u003EFounding Science Teacher (Grades 2\u20135)\u003C/div\u003E\u003Cdiv class=\\\u0022org\\\u0022\u003ECrestview Academy\u003C/div\u003E\u003C/div\u003E\u003Cdiv class=\\\u0022candidate\\\u0022\u003ECandidate: Emily Jacobs\u003C/div\u003E\u003C/div\u003E\u003Cdiv class=\\\u0022summary-score\\\u0022\u003E\u003Cspan class=\\\u0022score-badge score-orange\\\u0022\u003E74.00%\u003C/span\u003E\u003C/div\u003E\u003C/header\u003E\u003Csection class=\\\u0022section\\\u0022 id=\\\u0022analysis\\\u0022\u003E\u003Cdiv class=\\\u0022section-header\\\u0022\u003EAnalysis\u003C/div\u003E\u003Cdiv class=\\\u0022section-body\\\u0022\u003E\u003Cdiv class=\\\u0022text\\\u0022\u003EEmily Jacobs is a high-performing, tech-savvy K\u20132 educator whose skills in lesson design, classroom management, technology integration, and team leadership will bring substantial value to Crestview Academy\u2019s founding culture. She is an award-winning, innovative teacher\u2014proven in collaborative, data-driven instruction and community engagement. However, her direct experience in upper elementary (grades 2\u20135) science content, NGSS-aligned curriculum, and assessment is limited: her resume centers on early childhood STEM and K\u20132. She is a fast learner with a strong growth mindset and would rapidly acquire science expertise with intentional PD and mentorship. If science content depth (grades 2\u20135) is the top priority, her readiness may not be immediate; if culture-building, innovation, and adaptability are paramount, Jacobs is an excellent, long-term value hire.\u003C/div\u003E\u003C/div\u003E\u003C/section\u003E\u003Csection class=\\\u0022section\\\u0022 id=\\\u0022positives\\\u0022\u003E\u003Cdiv class=\\\u0022section-header\\\u0022\u003EStrengths (Match Positives)\u003C/div\u003E\u003Cdiv class=\\\u0022section-body\\\u0022\u003E\u003Cul class=\\\u0022list\\\u0022\u003E\u003Cli\u003ERecognized excellence in K\u20132 teaching (Teacher of the Year, Tech Innovation Grant)\u003C/li\u003E\u003Cli\u003EExpertise in educational technology and STEM integration (SMART Boards, coding, tech clubs)\u003C/li\u003E\u003Cli\u003EOutstanding classroom management and differentiated, inclusive teaching\u003C/li\u003E\u003Cli\u003EDemonstrated leadership (grade-level team lead, code club founder, mentoring)\u003C/li\u003E\u003Cli\u003EStrong skills in family and community engagement (award-winning events, PTA)\u003C/li\u003E\u003Cli\u003EGrowth mindset with active participation in professional development\u003C/li\u003E\u003Cli\u003EEffective communication and collaboration with colleagues\u003C/li\u003E\u003Cli\u003ERecord of student achievement and innovative lesson design\u003C/li\u003E\u003C/ul\u003E\u003C/div\u003E\u003C/section\u003E\u003Csection class=\\\u0022section\\\u0022 id=\\\u0022negatives\\\u0022\u003E\u003Cdiv class=\\\u0022section-header\\\u0022\u003EGaps or Risks (Match Negatives)\u003C/div\u003E\u003Cdiv class=\\\u0022section-body\\\u0022\u003E\u003Cul class=\\\u0022list\\\u0022\u003E\u003Cli\u003ELimited documented experience with grades 2\u20135 science curriculum \u0026 instruction\u003C/li\u003E\u003Cli\u003ENo explicit record of NGSS-aligned, inquiry-based science curriculum work\u003C/li\u003E\u003Cli\u003EScience content expertise for upper elementary is not evident\u003C/li\u003E\u003Cli\u003EHands-on, project-based science assessment for grades 2\u20135 is not detailed\u003C/li\u003E\u003Cli\u003EImmediate fit gap for upper elementary science subject-matter leadership\u003C/li\u003E\u003Cli\u003EOnboarding/training in science-specific pedagogy will be required\u003C/li\u003E\u003C/ul\u003E\u003C/div\u003E\u003C/section\u003E\u003Csection class=\\\u0022section\\\u0022 id=\\\u0022agents\\\u0022\u003E\u003Cdiv class=\\\u0022section-header\\\u0022\u003EAgent Evaluations\u003C/div\u003E\u003Cdiv class=\\\u0022section-body\\\u0022\u003E\u003Cdiv class=\\\u0022agent\\\u0022 id=\\\u0022agent-Taylor Grant\\\u0022\u003E\u003Cdiv class=\\\u0022agent-name\\\u0022\u003ETaylor Grant\u003C/div\u003E\u003Cdiv class=\\\u0022agent-match-line\\\u0022\u003E\u003Cspan class=\\\u0022label\\\u0022\u003EMatch:\u003C/span\u003E\u003Cspan class=\\\u0022score-badge score-orange\\\u0022\u003E74.00%\u003C/span\u003E\u003Cspan class=\\\u0022label\\\u0022\u003E? vs Overall:\u003C/span\u003E\u003Cspan class=\\\u0022diff diff-neutral\\\u0022\u003E0.00%\u003C/span\u003E\u003C/div\u003E\u003Cdiv class=\\\u0022agent-justification\\\u0022\u003E\u003Cspan class=\\\u0022label\\\u0022\u003EJustification:\u003C/span\u003E\u003Cspan class=\\\u0022text\\\u0022\u003EEmily Jacobs demonstrates exemplary teaching, technology integration, lesson design, and community engagement. She would add value to Crestview\u2019s culture, but needs support in upper elementary science expertise and NGSS-aligned science curriculum.\u003C/span\u003E\u003C/div\u003E\u003Cdiv class=\\\u0022agent-diff-reason\\\u0022 style=\\\u0022margin-top:6px;\\\u0022\u003E\u003Cspan class=\\\u0022label\\\u0022\u003EReason for difference from overall match:\u003C/span\u003E\u003Cspan class=\\\u0022text\\\u0022\u003EThis score directly aligns with the consensus match, reflecting both strong foundation and upskilling needs.\u003C/span\u003E\u003C/div\u003E\u003C/div\u003E\u003Cdiv class=\\\u0022agent\\\u0022 id=\\\u0022agent-Jordan Lee\\\u0022\u003E\u003Cdiv class=\\\u0022agent-name\\\u0022\u003EJordan Lee\u003C/div\u003E\u003Cdiv class=\\\u0022agent-match-line\\\u0022\u003E\u003Cspan class=\\\u0022label\\\u0022\u003EMatch:\u003C/span\u003E\u003Cspan class=\\\u0022score-badge score-orange\\\u0022\u003E74.00%\u003C/span\u003E\u003Cspan class=\\\u0022label\\\u0022\u003E? vs Overall:\u003C/span\u003E\u003Cspan class=\\\u0022diff diff-neutral\\\u0022\u003E0.00%\u003C/span\u003E\u003C/div\u003E\u003Cdiv class=\\\u0022agent-justification\\\u0022\u003E\u003Cspan class=\\\u0022label\\\u0022\u003EJustification:\u003C/span\u003E\u003Cspan class=\\\u0022text\\\u0022\u003EEmily Jacobs is a top performer in tech integration, curriculum innovation, and family engagement, but lacks direct science subject-matter leadership for grades 2\u20135. She is a long-term value, trainable candidate for Crestview\u2019s team.\u003C/span\u003E\u003C/div\u003E\u003Cdiv class=\\\u0022agent-diff-reason\\\u0022 style=\\\u0022margin-top:6px;\\\u0022\u003E\u003Cspan class=\\\u0022label\\\u0022\u003EReason for difference from overall match:\u003C/span\u003E\u003Cspan class=\\\u0022text\\\u0022\u003EFinal score was set in consensus with peers and balances strengths and readiness gaps accurately.\u003C/span\u003E\u003C/div\u003E\u003C/div\u003E\u003Cdiv class=\\\u0022agent\\\u0022 id=\\\u0022agent-Sunny Sam\\\u0022\u003E\u003Cdiv class=\\\u0022agent-name\\\u0022\u003ESunny Sam\u003C/div\u003E\u003Cdiv class=\\\u0022agent-match-line\\\u0022\u003E\u003Cspan class=\\\u0022label\\\u0022\u003EMatch:\u003C/span\u003E\u003Cspan class=\\\u0022score-badge score-orange\\\u0022\u003E74.00%\u003C/span\u003E\u003Cspan class=\\\u0022label\\\u0022\u003E? vs Overall:\u003C/span\u003E\u003Cspan class=\\\u0022diff diff-neutral\\\u0022\u003E0.00%\u003C/span\u003E\u003C/div\u003E\u003Cdiv class=\\\u0022agent-justification\\\u0022\u003E\u003Cspan class=\\\u0022label\\\u0022\u003EJustification:\u003C/span\u003E\u003Cspan class=\\\u0022text\\\u0022\u003EEmily Jacobs is a vibrant, inclusive educator who would invigorate a founding team. Her shortfall is grades 2\u20135 science specialization, but she\u2019ll likely catch up with PD. Her value for community, innovation, and whole-child education is clear.\u003C/span\u003E\u003C/div\u003E\u003Cdiv class=\\\u0022agent-diff-reason\\\u0022 style=\\\u0022margin-top:6px;\\\u0022\u003E\u003Cspan class=\\\u0022label\\\u0022\u003EReason for difference from overall match:\u003C/span\u003E\u003Cspan class=\\\u0022text\\\u0022\u003EConsensus adjustment reflects the need to moderate from earlier optimism to align with role requirements and team analysis.\u003C/span\u003E\u003C/div\u003E\u003C/div\u003E\u003C/div\u003E\u003C/section\u003E\u003Csection class=\\\u0022section\\\u0022 id=\\\u0022next-steps\\\u0022\u003E\u003Cdiv class=\\\u0022section-header\\\u0022\u003ERecommended Next Steps\u003C/div\u003E\u003Cdiv class=\\\u0022section-body next-steps\\\u0022\u003E\u003Cdiv class=\\\u0022recommendation\\\u0022\u003EIf committed to developing staff, extend an offer contingent on robust science PD and mentoring. Otherwise, consider additional candidates with direct grades 2\u20135 science leadership.\u003C/div\u003E\u003Cdiv class=\\\u0022footnote\\\u0022\u003ENote: Recommendations are based on the overall match and agent inputs. Adjust as needed with additional context or updated information.\u003C/div\u003E\u003C/div\u003E\u003C/section\u003E\u003C/main\u003E\u003C/body\u003E\u003C/html\u003E\u0022\n}\nApprovedAndDone"
+      }
+    ],
+    "Metadata": {
+      "CreatedAt": "2025-11-17T21:29:26+00:00",
+      "AssistantId": "asst_Lju8OpBgcwgJOn2tQltWpvZz",
+      "ThreadId": "thread_nWEUPfaaue6qIGIbEmgUkgZs",
+      "RunId": "run_VHvLGqwxPFE5L5LPbzYA61r8",
+      "MessageId": "msg_htnbqapOo0U7vNVOE3dnIfv4",
+      "StepId": "step_zdpasycS6iCQ370ZmzaIxcLr",
+      "Usage": {
+        "OutputTokenCount": 3343,
+        "InputTokenCount": 7606,
+        "TotalTokenCount": 10949
+      }
+    }
+  }
+]

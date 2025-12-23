@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gator Bytes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Gator Bytes vibrant color palette */
+            --gb-blue-800: #63B3ED;
+            --gb-blue-700: #4591E2;
+            --gb-purple-800: #8F5D9C;
+            --gb-dark-purple: #362730;
+            --gb-pink: #E164A7;
+            --gb-bg: #fefae0;
+            --gb-surface: rgba(255, 255, 255, 0.96);
+            --gb-border: rgba(40, 54, 24, 0.18);
+            --gb-text: #1c1f13;
+            --gb-muted: #6b705c;
+            --app-shell-gradient: linear-gradient(135deg, #63B3ED 0%, #4591E2 30%, #8F5D9C 70%, #E164A7 100%);
+            --header-gradient: linear-gradient(96deg, #63B3ED 0%, #4591E2 36%, #8F5D9C 100%);
+            --chat-assistant: rgba(143, 93, 156, 0.10);
+            --chat-user: rgba(69, 145, 226, 0.12);
+            --chat-system: rgba(54, 39, 48, 0.08);
+            --shadow-1: 0 10px 28px rgba(54, 39, 48, 0.10);
+            --shadow-2: 0 18px 50px rgba(54, 39, 48, 0.16);
+            --ring-focus: 0 0 0 3px rgba(225, 100, 167, 0.34);
+            --assistant-avatar-url: url(Images/chat.png);
+            --assistant-avatar-thinking-url: url(Images/chat-thinking.png)
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: "Barlow", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            color: var(--gb-text);
+            background: var(--app-shell-gradient);
+            overflow: hidden;
+        }
+
+        .gb-header {
+            color: #fff;
+            background: var(--header-gradient);
+            padding: 24px 28px 20px 28px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+            position: relative;
+            box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.18);
+            display: none;
+        }
+
+            .gb-header .brandline {
+                max-width: 1260px;
+                margin: 0 auto 8px auto;
+                display: flex;
+                gap: 16px;
+                font-weight: 800;
+                letter-spacing: 0.2px;
+                font-size: 2.15rem;
+            }
+
+        .brand-badge {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #8F5D9C, #63B3ED);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 24px rgba(54, 39, 48, 0.45), inset 0 0 0 3px rgba(254, 250, 224, 0.75);
+        }
+
+            .brand-badge svg {
+                width: 38px;
+                height: 38px;
+                color: #fff;
+            }
+
+        .brand-title {
+            display: flex;
+            flex-direction: column;
+        }
+
+            .brand-title .sub {
+                font-weight: 600;
+                font-size: 1.05rem;
+                opacity: 0.92;
+                color: rgba(254, 250, 224, 0.96);
+                margin-top: 2px;
+            }
+
+        .header-underline {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -2px;
+            width: 140px;
+            height: 4px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #8F5D9C, #E164A7 50%, #63B3ED 100%);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+        }
+
+        .top-banner {
+            max-width: 1260px;
+            margin: 10px auto 0 auto;
+        }
+
+            .top-banner img {
+                width: 100%;
+                height: 170px;
+                object-fit: contain;
+                border-radius: 14px;
+                display: block;
+                background: radial-gradient(circle at 0 0, rgba(254, 250, 224, 0.25), transparent 60%), radial-gradient(circle at 100% 0, rgba(225, 100, 167, 0.25), transparent 60%);
+                border: 1px solid rgba(254, 250, 224, 0.4);
+            }
+
+        .main-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .app-content {
+            width: 90%;
+            height: 95%;
+            display: flex;
+            padding: 24px 28px 28px 28px;
+        }
+
+        .chat-pane {
+            flex: 1 1 auto;
+            min-width: 0;
+            background: var(--gb-surface);
+            border: 1px solid var(--gb-border);
+            border-radius: 18px;
+            box-shadow: var(--shadow-2);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pane-header-bar {
+            padding: 14px 18px 12px 18px;
+            border-bottom: 1px solid var(--gb-border);
+            background: linear-gradient(90deg, rgba(69, 145, 226, 0.14), rgba(225, 100, 167, 0.18));
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pane-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            color: var(--gb-blue-800);
+        }
+
+            .pane-title .avatar {
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #63B3ED, #8F5D9C);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 3px 8px rgba(54, 39, 48, 0.18);
+                overflow: hidden;
+                border: 2.5px solid rgba(254, 250, 224, 0.95);
+            }
+
+                .pane-title .avatar img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    display: block;
+                }
+
+            .pane-title span {
+                font-size: 1.12rem;
+            }
+
+        /* Messages area */
+        .chat-messages-area {
+            flex: 1 1 auto;
+            margin: 14px 14px 0 14px;
+            border-radius: 14px;
+            border: 1px solid var(--gb-border);
+            background: #FEFEFE;
+            padding: 16px 12px;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+            min-height: 200px;
+            position: relative;
+            padding-left: 12px;
+        }
+
+        .chat-input-row {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            padding: 14px;
+            border-top: 1px solid var(--gb-border);
+            background-color: #ECECEC
+        }
+
+        #sendMessage.form-control {
+            border-radius: 12px;
+            background: rgba(254, 250, 224, 0.95);
+            border: 1px solid var(--gb-border);
+            color: var(--gb-text);
+            padding: 12px 14px;
+            font-size: 1.05rem;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0);
+        }
+
+        #sendMessage:focus {
+            border-color: var(--gb-pink);
+            box-shadow: var(--ring-focus);
+        }
+
+        #sendButton.btn {
+            background: linear-gradient(180deg, #E164A7, #8F5D9C);
+            color: #fff;
+            font-weight: 800;
+            border-radius: 12px;
+            padding: 0.62em 1.4em;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 22px rgba(225, 100, 167, 0.35);
+        }
+
+            #sendButton.btn:disabled {
+                background: rgba(225, 100, 167, 0.35);
+                color: rgba(54, 39, 48, 0.8);
+                box-shadow: none;
+                border-color: rgba(225, 100, 167, 0.55);
+            }
+
+            #sendButton.btn:not(:disabled):hover {
+                background: linear-gradient(180deg, #e87bb3, #9b6ca7);
+            }
+
+            #sendButton.btn:focus {
+                box-shadow: var(--ring-focus);
+            }
+
+        .file-upload-btn {
+            background: rgba(254, 250, 224, 0.9);
+            border: 1px solid var(--gb-border);
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gb-purple-800);
+            box-shadow: 0 4px 10px rgba(143, 93, 156, 0.22);
+        }
+
+            .file-upload-btn:hover {
+                background: rgba(254, 250, 224, 1);
+            }
+
+            .file-upload-btn:focus {
+                outline: none;
+                box-shadow: var(--ring-focus);
+            }
+
+            .file-upload-btn svg {
+                width: 22px;
+                height: 22px;
+            }
+
+        .chat-message {
+            display: flex;
+            margin: 10px 8px;
+            gap: 8px;
+            align-items: flex-end;
+        }
+
+            .chat-message[data-role="Client"] {
+                justify-content: flex-end;
+            }
+
+            .chat-message[data-role="Assistant"],
+            .chat-message[data-role="System"] {
+                justify-content: flex-start;
+            }
+
+        .chat-bubble {
+            position: relative;
+            padding: 12px 14px 22px;
+            border-radius: 14px;
+            border: 1.5px solid var(--gb-border);
+            background: rgba(255, 255, 255, 0.96);
+            color: var(--gb-text);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            line-height: 1.45;
+        }
+
+        .chat-message[data-role="Client"] .chat-bubble {
+            background: var(--chat-user);
+            border-color: rgba(69, 145, 226, 0.55);
+        }
+
+        .chat-message[data-role="Assistant"] .chat-bubble {
+            background: var(--chat-assistant);
+            border-color: rgba(143, 93, 156, 0.55);
+        }
+
+        .chat-message[data-role="System"] .chat-bubble {
+            background: var(--chat-system);
+            border-color: rgba(54, 39, 48, 0.35);
+        }
+
+        .latency-badge {
+            position: absolute;
+            right: 10px;
+            bottom: 6px;
+            font-size: 0.8rem;
+            color: var(--gb-blue-800);
+            background: rgba(254, 250, 224, 0.95);
+            border: 1px solid var(--gb-border);
+            border-radius: 10px;
+            padding: 2px 8px;
+            cursor: pointer;
+        }
+
+            .latency-badge:hover {
+                background: rgba(254, 250, 224, 1);
+            }
+
+            .latency-badge:focus {
+                outline: 2px solid var(--gb-blue-700);
+                outline-offset: 1px;
+            }
+
+        .typing-bubble {
+            display: inline-flex;
+            gap: 6px;
+            align-items: center;
+            justify-content: center;
+            min-width: 56px;
+            padding: 12px 16px;
+        }
+
+            .typing-bubble .dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: var(--gb-blue-700);
+                opacity: 0.6;
+                animation: blink 1.2s infinite ease-in-out;
+            }
+
+                .typing-bubble .dot:nth-child(2) {
+                    animation-delay: 0.2s;
+                }
+
+                .typing-bubble .dot:nth-child(3) {
+                    animation-delay: 0.4s;
+                }
+
+        @keyframes blink {
+            0%, 80%, 100% {
+                opacity: 0.2;
+                transform: translateY(0);
+            }
+
+            40% {
+                opacity: 1;
+                transform: translateY(-2px);
+            }
+        }
+
+        .visually-hidden {
+            position: absolute !important;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+            clip: rect(1px, 1px, 1px, 1px);
+            white-space: nowrap;
+            border: 0;
+            padding: 0;
+        }
+
+        .modal-content {
+            border-radius: 14px;
+            border: 1px solid var(--gb-border);
+        }
+
+        .modal-header {
+            background: rgba(254, 250, 224, 0.95);
+            border-bottom: 1px solid var(--gb-border);
+        }
+
+        .modal-body pre {
+            white-space: pre-wrap;
+            border-radius: 10px;
+        }
+
+        .md-line {
+            margin-bottom: 8px;
+        }
+
+        .md-label {
+            font-weight: 800;
+            color: var(--gb-blue-800);
+            margin-right: 6px;
+        }
+
+        .md-meta-wrap {
+            margin-top: 10px;
+            padding: 12px;
+            background: rgba(254, 250, 224, 0.85);
+            border: 1px solid var(--gb-border);
+            border-radius: 10px;
+        }
+
+        .md-subtitle {
+            font-weight: 800;
+            color: var(--gb-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            font-size: 0.85rem;
+            margin: 6px 0 8px 0;
+        }
+
+        .token-usage-list {
+            margin: 0 0 8px 0;
+            padding-left: 16px;
+        }
+
+            .token-usage-list li {
+                margin: 2px 0;
+            }
+
+        .refusal-box {
+            border: 2px solid var(--gb-pink);
+            background: #fff5f5;
+            color: #7f1d1d;
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-top: 8px;
+            font-weight: 700;
+        }
+
+        .pre-raw {
+            background: #0b1020;
+            color: #e4e8f8;
+            border: 1px solid #1f2a44;
+            padding: 12px;
+            border-radius: 10px;
+            max-height: 420px;
+            overflow: auto;
+        }
+
+        .copy-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .chat-message.latest-assistant-anchor[data-role="Assistant"] {
+            display: grid !important;
+            grid-template-columns: 54px 1fr;
+            align-items: center;
+        }
+
+            .chat-message.latest-assistant-anchor[data-role="Assistant"] > .chat-bubble {
+                grid-column: 2;
+            }
+
+            .chat-message.latest-assistant-anchor[data-role="Assistant"]::before {
+                content: "";
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                border: 2px solid rgba(254, 250, 224, 0.96);
+                box-shadow: 0 8px 18px rgba(54, 39, 48, 0.35);
+                background-color: #fff;
+                background-image: var(--assistant-avatar-url);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                grid-column: 1;
+                justify-self: start;
+            }
+
+        .chat-message.latest-assistant-anchor[data-role="Client"] {
+            display: grid !important;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto;
+            justify-items: end;
+        }
+
+            .chat-message.latest-assistant-anchor[data-role="Client"] > .chat-bubble {
+                grid-row: 1;
+            }
+
+            .chat-message.latest-assistant-anchor[data-role="Client"]::after {
+                content: "";
+                width: 75px;
+                height: 75px;
+                border: 2px solid rgba(254, 250, 224, 0.96);
+                box-shadow: 0 6px 14px rgba(54, 39, 48, 0.35);
+                background-color: #fff;
+                background-image: var(--assistant-avatar-thinking-url);
+                background-position: left;
+                background-repeat: no-repeat;
+                background-size: cover;
+                grid-row: 2;
+                margin-top: 6px;
+                margin-right: 90%;
+            }
+
+        .welcome-message {
+            text-align: center;
+            color: var(--gb-purple-800);
+            font-size: 1.2rem;
+        }
+
+            .welcome-message h1 {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+                color: var(--gb-blue-800);
+                text-shadow: 1px 1px 2px rgba(54, 39, 48, 0.5);
+            }
+
+            .welcome-message p {
+                font-size: 1.05rem;
+                line-height: 1;
+                margin-bottom: 20px;
+            }
+
+        .highlight {
+            color: var(--gb-pink);
+            font-weight: bold;
+        }
+
+        .hopeful-gradient {
+            background: linear-gradient(135deg, #63B3ED 0%, #8F5D9C 50%, #E164A7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+
+        /* Download button styling to match existing buttons */
+        .download-btn {
+            background: linear-gradient(180deg, #E164A7, #8F5D9C);
+            color: #fff;
+            font-weight: 800;
+            border-radius: 12px;
+            padding: 0.62em 1.4em;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 22px rgba(225, 100, 167, 0.35);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+            .download-btn:hover {
+                background: linear-gradient(180deg, #e87bb3, #9b6ca7);
+            }
+
+            .download-btn:focus {
+                box-shadow: var(--ring-focus);
+            }
+
+            .download-btn:disabled {
+                background: rgba(225, 100, 167, 0.35);
+                color: rgba(54, 39, 48, 0.8);
+                box-shadow: none;
+                border-color: rgba(225, 100, 167, 0.55);
+                cursor: default;
+            }
+
+        .header-buttons {
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="gb-header">
+        <div class="brandline"> <span class="brand-badge" aria-hidden="true" title="Gator Bytes"> <svg viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="Gator Bytes"> <path d="M19.5 6.5l-7.5-3-7.5 3 7.5 3 7.5-3Zm-9 5.3l-5-2V16a6 6 0 006 6 6 6 0 006-6v-6.2l-5 2V16a1 1 0 11-2 0v-4.2Z" /> <path d="M13.3 3.7a3.5 3.5 0 003.5 3.5 3.5 3.5 0 00-3.5-3.5Zm-7 .6a2.8 2.8 0 012.4 1.3 2.8 2.8 0 01-2.4 1.4 2.8 2.8 0 010-2.7Z" /> </svg> </span> <div class="brand-title"> <div>Gator Bytes</div> <div class="sub">Find your perfect job match with Semantigator's help</div> </div> </div>
+        <div class="top-banner" role="img" aria-label="Gator Bytes banner">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='170' viewBox='0 0 1260 170'><rect width='1260' height='170' fill='%23fefae0'/><text x='50%' y='90' font-family='Arial' font-size='48' text-anchor='middle' fill='%238F5D9C'>Gator Bytes - Your Job Matching Journey</text></svg>" alt="Gator Bytes banner image">
+        </div>
+
+        <div class="header-underline" aria-hidden="true"></div>
+    </div>
+
+    <div class="main-container">
+        <div class="app-content">
+            <section class="chat-pane shadow" id="chatPane" role="main" aria-label="Gator Bytes chat">
+                <div class="pane-header-bar">
+                    <div class="pane-title">
+                        <span class="avatar" title="Semantigator avatar">
+                            <img id="semantigatorAvatar" alt="Semantigator avatar"
+                                 src="Images/chat.png"
+                                 onerror="this.style.display='none'" />
+                        </span>
+                        <span>Chat with Semantigator</span>
+                    </div>
+                    <div class="header-buttons">
+                        <!-- Right-aligned Resumes button -->
+                        <button id="resumesBtn" class="download-btn">Resumes</button>
+                        <button id="jobsBtn" class="download-btn">Jobs</button>
+                        <button id="matchesBtn" class="download-btn">Matches</button>
+                    </div>
+                </div>
+
+                <div class="chat-messages-area" id="chatArea" tabindex="0" aria-label="Chat messages">
+                    <div class="welcome-message">
+                        <h1>Welcome to <span class="hopeful-gradient">Gator Bytes</span></h1>
+                        <p>Find your perfect job match with our smart assistant, Semantigator.    Your journey to the right career begins here.</p>
+                        <p><span class="highlight">Hope and opportunity await you</span> in every conversation.</p>
+                    </div>
+                </div>
+
+                <div class="chat-input-row">
+                    <input type="text"
+                           id="sendMessage"
+                           class="form-control"
+                           placeholder="Paste a job description, résumé, or question here…"
+                           aria-label="Message to send"
+                           autocomplete="off"
+                           disabled />
+                    <button id="sendButton" class="btn" type="button" disabled>Send</button>
+                    <button id="fileUploadBtn"
+                            class="file-upload-btn"
+                            type="button"
+                            title="Upload file (résumé, posting, etc.)"
+                            aria-label="Upload file"
+                            disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M12 16V4M8 8l4-4 4 4M16 16v4H8v-4"></path>
+                        </svg>
+                    </button>
+                    <button id="downloadBtn" class="download-btn">DC</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="visually-hidden">
+        <input type="file" id="uploadInput" />
+    </div>
+
+    <!-- Upload Modal -->
+    <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="uploadModalLabel">Select Upload Type</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-grid gap-2">
+                        <button id="uploadResumeBtn" class="btn btn-primary">Upload Resume</button>
+                        <button id="uploadJobPostingBtn" class="btn btn-primary">Upload Job Posting</button>
+                        <button id="processFilesBtn" class="btn btn-secondary">Process Files</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Detail Modal -->
+    <div class="modal fade" id="chatDetailModal" tabindex="-1" aria-labelledby="chatDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="chatDetailModalLabel">Message Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="chatDetailModalBody"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resumes Modal -->
+    <div class="modal fade" id="resumesModal" tabindex="-1" aria-labelledby="resumesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resumesModalLabel">Resumes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="resumesModalBody">
+                    <!-- Content will be injected by JavaScript -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jobs Modal -->
+    <div class="modal fade" id="jobsModal" tabindex="-1" aria-labelledby="resumesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resumesModalLabel">Jobs</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="jobsModalBody">
+                    <!-- Content will be injected by JavaScript -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Matches Modal -->
+    <div class="modal fade" id="matchesModal" tabindex="-1" aria-labelledby="matchesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="matchesModalLabel">Matches</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-3">
+                        <div class="col-md-6"><label for="resumeSelect" class="form-label">Resumes</label><select id="resumeSelect" class="form-select"></select></div>
+                        <div class="col-md-6"><label for="jobSelect" class="form-label">Jobs</label><select id="jobSelect" class="form-select"></select></div>
+                    </div>
+                    <div id="quickMatchContainer" class="d-none mb-3"><span id='quickMatch'></span></div>
+                    <div class="mt-3">
+                        <button id="viewMatchAnalysisBtn" class="btn btn-primary me-2" disabled>View Match Analysis</button>
+                        <button id="downloadMatchAnalysisBtn" class="btn btn-secondary" disabled>Download Match Analysis</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Chat behavior using a CSS class to mark the latest anchor (no 'top' or scroll-based positioning)
+        let socket;
+        const wsUrl = (location.protocol === "https:" ? "wss://" : "ws://") +
+            location.hostname + (location.port ? (":" + location.port) : "") + "/ws";
+
+        let isWaitingReply = false;
+        let lastUserMsgTime = null;
+        let hasSystemGreeted = false;
+        let userInputHistory = [];
+        let userInputIndex = -1;
+
+        function waitForElm(selector) {
+            return new Promise(resolve => {
+                if (document.querySelector(selector)) {
+                    return resolve(document.querySelector(selector));
+                }
+
+                const observer = new MutationObserver(mutations => {
+                    if (document.querySelector(selector)) {
+                        observer.disconnect();
+                        resolve(document.querySelector(selector));
+                    }
+                });
+
+                // If you get "parameter 1 is not of type 'Node'" error, see https://stackoverflow.com/a/77855838/492336
+                observer.observe(document.body, {
+                    childList: true,
+                    subtree: true
+                });
+            });
+        }
+
+
+        document.getElementById('downloadBtn').addEventListener('click', async () => {
+            var htmlData = document.getElementById('chatPane').outerHTML;
+
+            await downloadItem(htmlData, true);
+
+        });
+
+        async function downloadItem(htmlData, saveAllChat) {
+            const filename = "chat-export.txt"; // change as needed
+            var styleSection = document.querySelector('style').outerHTML;
+            var dataToPass = { "data": htmlData, "style": styleSection, "saveAll": saveAllChat };
+            try {
+                const response = await fetch(`/api/file/download`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(dataToPass)
+                });
+                if (!response.ok) {
+                    alert("Failed to download file!");
+                    return;
+                }
+
+                let downloadFilename = filename;
+                const disposition = response.headers.get('Content-Disposition');
+                var part1 = disposition.substring(disposition.indexOf('filename') + 9);
+                downloadFilename = part1.substring(0, part1.indexOf(';'))
+
+                const blob = await response.blob();
+
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = downloadFilename;
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                }, 100);
+
+            } catch (err) {
+                alert("Error: " + err);
+            }
+        }
+
+        $(function () {
+            const $chatArea = $("#chatArea");
+            const $sendMessage = $("#sendMessage");
+            const $sendButton = $("#sendButton");
+            const $fileUploadBtn = $("#fileUploadBtn");
+
+            const LATEST_ANCHOR_CLASS = "latest-assistant-anchor";
+
+            function enableInputs(state = true) {
+                $sendMessage.prop("disabled", !state);
+                $sendButton.prop("disabled", !state || $sendMessage.val().trim() === "");
+                $fileUploadBtn.prop("disabled", !state);
+            }
+            function disableInputs() { enableInputs(false); }
+
+            function esc(str) {
+                return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+            }
+
+            function buildMessageDetailHTML(msgObj, context = {}) {
+                const metadata = msgObj && msgObj.Metadata ? msgObj.Metadata : {};
+                const usage = metadata && metadata.Usage ? metadata.Usage : {};
+                const createdAt = metadata && metadata.CreatedAt ? metadata.CreatedAt : null;
+                const finishReason = (metadata && metadata.FinishReason) ? metadata.FinishReason : (msgObj.FinishReason || null);
+                let refusalVal = null;
+                if (metadata && metadata.Refusal !== undefined && metadata.Refusal !== null && String(metadata.Refusal).trim() !== "") {
+                    refusalVal = String(metadata.Refusal);
+                } else if (msgObj.Refusal !== undefined && msgObj.Refusal !== null && String(msgObj.Refusal).trim() !== "") {
+                    refusalVal = String(msgObj.Refusal);
+                }
+
+                const latency = (typeof context.latency === 'number' && !Number.isNaN(context.latency)) ? context.latency : null;
+                const titleParts = ["Message Details"];
+                if (latency !== null) titleParts.push(`${latency.toFixed(2)}s`);
+                $("#chatDetailModalLabel").text(titleParts.join(" • "));
+
+                const displayTimestamp = createdAt ? new Date(createdAt).toLocaleString() :
+                    (context.timestamp ? context.timestamp : new Date().toLocaleString());
+
+                const totalTokens = (usage && usage.TotalTokenCount != null) ? usage.TotalTokenCount : "—";
+                const inTokens = (usage && usage.InputTokenCount != null) ? usage.InputTokenCount : "—";
+                const outTokens = (usage && usage.OutputTokenCount != null) ? usage.OutputTokenCount : "—";
+                const finish = finishReason != null && String(finishReason).trim() !== "" ? esc(finishReason) : "—";
+
+                const uid = `raw${Date.now()}${Math.floor(Math.random() * 1000)}`;
+                const rawText = JSON.stringify(msgObj, null, 2);
+
+                let html = "";
+                if (latency !== null) html += `<div class="md-line"><span class="md-label">Latency:</span>${latency.toFixed(2)} seconds</div>`;
+                html += `<div class="md-line"><span class="md-label">Timestamp:</span>${esc(displayTimestamp)}</div>`;
+
+                html += `<div class="md-meta-wrap">
+                                                        <div class="md-subtitle">Metadata</div>
+                                                        <div class="md-subtitle" style="margin-top:0.25rem;">Token Usage</div>
+                                                        <ul class="token-usage-list">
+                                                            <li>Total Token Count: ${esc(totalTokens)}</li>
+                                                            <li>Input Token Count: ${esc(inTokens)}</li>
+                                                            <li>Output Token Count: ${esc(outTokens)}</li>
+                                                        </ul>
+                                                        <div class="md-line"><span class="md-label">Finish Reason:</span>${finish}</div>
+                                                    </div>`;
+
+                html += `
+                                                    <div class="accordion mt-3" id="acc-${uid}">
+                                                      <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="h-${uid}">
+                                                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c-${uid}" aria-expanded="false" aria-controls="c-${uid}">
+                                                            Raw Message
+                                                          </button>
+                                                        </h2>
+                                                        <div id="c-${uid}" class="accordion-collapse collapse" aria-labelledby="h-${uid}" data-bs-parent="#acc-${uid}">
+                                                          <div class="accordion-body">
+                                                            <div class="d-flex justify-content-end mb-2">
+                                                              <button class="btn btn-sm btn-outline-primary copy-btn" id="copy-${uid}" type="button" data-copy-target="pre-${uid}">
+                                                                Copy
+                                                              </button>
+                                                            </div>
+                                                            <pre id="pre-${uid}" class="pre-raw">${esc(rawText)}</pre>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>`;
+
+                $("#chatDetailModalBody").html(html);
+
+                document.getElementById(`copy-${uid}`).addEventListener('click', async function () {
+                    try {
+                        await navigator.clipboard.writeText(rawText);
+                        this.textContent = 'Copied!';
+                        setTimeout(() => { this.textContent = 'Copy'; }, 1200);
+                    } catch (e) {
+                        const pre = document.getElementById(`pre-${uid}`);
+                        const range = document.createRange();
+                        range.selectNodeContents(pre);
+                        const sel = window.getSelection();
+                        sel.removeAllRanges(); sel.addRange(range);
+                        try { document.execCommand('copy'); } catch { }
+                        sel.removeAllRanges();
+                    }
+                });
+            }
+
+            // Manage the latest anchor class (used for assistant avatar or thinking state)
+            function setLatestAnchor($el) {
+                $(".chat-message." + LATEST_ANCHOR_CLASS).removeClass(LATEST_ANCHOR_CLASS);
+                if ($el && $el.length) {
+                    $el.addClass(LATEST_ANCHOR_CLASS);
+                }
+            }
+
+            function addMessage(msgObj, isOwn, latencySeconds) {
+                let role = msgObj.Role?.Label || (isOwn ? "Client" : "Assistant");
+                let richHtml = '';
+                if (msgObj.Items && msgObj.Items[0]?.Text) richHtml = msgObj.Items[0].Text;
+                else if (msgObj.Text) richHtml = msgObj.Text;
+                else if (typeof msgObj === 'string') richHtml = msgObj;
+                else richHtml = $('<div/>').text(JSON.stringify(msgObj)).html();
+
+                const $msgEl = $('<div>').addClass('chat-message Role-' + role)
+                    .attr('data-role', role).attr('tabindex', 0).data('chatMessage', msgObj);
+                const $bubble = $('<div>').addClass('chat-bubble').html(richHtml);
+
+                if (role !== "Client" && role !== "System" && typeof latencySeconds === 'number') {
+                    const lbl = `${latencySeconds.toFixed(2)} seconds`;
+                    $bubble.addClass('has-latency');
+
+                    // Add download button next to latency badge
+                    $bubble.append(`<button class="latency-badge" type="button" data-latency="${latencySeconds}" aria-label="Response time ${lbl}" title="View message details">${lbl}</button>`);
+                    $bubble.append(`<button class="download-btn" type="button" data-message-id="${Date.now()}" aria-label="Download this message" title="Download message"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg></button>`);
+                }
+
+                $msgEl.append($bubble);
+                $chatArea.append($msgEl);
+
+                // Keep the user scrolled to the bottom on new server messages
+                if (role !== "Client") {
+                    $chatArea[0].scrollTop = $chatArea[0].scrollHeight;
+                }
+
+                // If this is an assistant message, mark it as the latest anchor
+                if (role === "Assistant") {
+                    setLatestAnchor($msgEl);
+                }
+
+                return $msgEl;
+            }
+
+            function uploadFile(uploadType) {
+                const fileInput = document.getElementById('uploadInput');
+                if (!fileInput.files || fileInput.files.length === 0) return;
+                const formData = new FormData();
+                formData.append('file', fileInput.files[0]);
+
+                // Add uploadType parameter to the formData
+                if (uploadType) {
+                    formData.append('uploadType', uploadType);
+                }
+
+                fetch('/api/file/upload', { method: 'POST', body: formData })
+                    .then(r => r.json())
+                    .then(data => { console.log('Upload successful:', data); })
+                    .catch(err => console.error('Upload error:', err))
+                    .finally(() => { fileInput.value = ''; });
+            }
+
+            function processFiles() {
+                fetch('/api/file/processFiles', { method: 'POST' })
+                    .then(r => r.json())
+                    .then(data => { console.log('Process files successful:', data); })
+                    .catch(err => console.error('Process files error:', err));
+            }
+
+            // Show upload modal instead of direct file upload
+            document.getElementById('fileUploadBtn').addEventListener('click', function () {
+                const uploadModal = new bootstrap.Modal(document.getElementById('uploadModal'));
+                uploadModal.show();
+            });
+
+            // Handle modal button clicks
+            document.getElementById('uploadResumeBtn').addEventListener('click', function () {
+                document.getElementById('uploadInput').value = '';
+                document.getElementById('uploadInput').onchange = function () {
+                    uploadFile('resume');
+                    const uploadModal = bootstrap.Modal.getInstance(document.getElementById('uploadModal'));
+                    uploadModal.hide();
+                };
+                document.getElementById('uploadInput').click();
+            });
+
+            document.getElementById('uploadJobPostingBtn').addEventListener('click', function () {
+                document.getElementById('uploadInput').value = '';
+                document.getElementById('uploadInput').onchange = function () {
+                    uploadFile('jobPosting');
+                    const uploadModal = bootstrap.Modal.getInstance(document.getElementById('uploadModal'));
+                    uploadModal.hide();
+                };
+                document.getElementById('uploadInput').click();
+            });
+
+            document.getElementById('processFilesBtn').addEventListener('click', function () {
+                processFiles();
+                const uploadModal = bootstrap.Modal.getInstance(document.getElementById('uploadModal'));
+                uploadModal.hide();
+            });
+
+            function connectSocket() {
+                socket = new WebSocket(wsUrl);
+
+                socket.onopen = function () {
+                    disableInputs();
+                    isWaitingReply = true;
+                    try { socket.send('__init_gator_bytes__'); } catch { }
+                };
+
+                socket.onclose = function () {
+                    disableInputs();
+                    addMessage({ Role: { Label: "System" }, Items: [{ Text: "<em>Connection closed.</em>" }] }, false);
+                    isWaitingReply = false;
+                };
+
+                socket.onerror = function () {
+                    disableInputs();
+                    addMessage({ Role: { Label: "System" }, Items: [{ Text: "<em>A connection error occurred.</em>" }] }, false);
+                    isWaitingReply = false;
+                };
+
+                socket.onmessage = function (event) {
+                    isWaitingReply = false;
+
+                    let data = event.data;
+                    let obj = null;
+                    try { obj = JSON.parse(data); }
+                    catch { obj = { Role: { Label: "Assistant" }, Items: [{ Text: data }] }; }
+
+                    let role = obj?.Role?.Label || "Assistant";
+                    let latencyForThis;
+                    if (lastUserMsgTime && role !== "Client") {
+                        const now = performance.now();
+                        latencyForThis = (now - lastUserMsgTime) / 1000;
+                        lastUserMsgTime = null;
+                    }
+
+                    const $newMsg = addMessage(obj, false, latencyForThis);
+
+                    // After first server greeting, enable inputs
+                    if (!hasSystemGreeted) {
+                        hasSystemGreeted = true;
+                        enableInputs(true);
+                        document.getElementById('sendMessage').focus();
+                    } else {
+                        enableInputs(true);
+                    }
+
+                    // Focus input after assistant/system messages
+                    if (role === "Assistant" || role === "System") {
+                        $sendMessage.focus();
+                    }
+                };
+            }
+            connectSocket();
+
+            $sendMessage.on("input", function () {
+                $sendButton.prop("disabled", $sendMessage.val().trim() === "" || isWaitingReply);
+            });
+
+            function sendCurrentMessage() {
+                if (!socket || socket.readyState !== WebSocket.OPEN || isWaitingReply) return;
+                const text = $sendMessage.val();
+                if (!text.trim()) return;
+
+                // Add to history
+                userInputHistory.push(text);
+                userInputIndex = userInputHistory.length;
+
+                isWaitingReply = true;
+                lastUserMsgTime = performance.now();
+
+                enableInputs(false);
+                const $clientMsg = addMessage({ Role: { Label: "Client" }, Items: [{ Text: $('<div/>').text(text).html() }], AuthorName: "Client" }, true);
+
+                // Mark the user's message as the latest anchor (thinking state)
+                setLatestAnchor($clientMsg);
+
+                socket.send(text);
+                $sendMessage.val("").focus();
+                $sendButton.prop('disabled', true);
+            }
+
+            $('#sendButton').on('click', sendCurrentMessage);
+            $('#sendMessage').on('keydown', function (e) {
+                if (e.key === "Enter") {
+                    e.preventDefault();
+                    sendCurrentMessage();
+                }
+                // Handle up and down arrow keys for input history
+                else if (e.key === "ArrowUp" || e.key === "ArrowDown") {
+                    e.preventDefault();
+
+                    if (e.key === "ArrowUp") {
+                        // Move up in history
+                        if (userInputIndex > 0) {
+                            userInputIndex--;
+                            $sendMessage.val(userInputHistory[userInputIndex]);
+                        }
+                    } else if (e.key === "ArrowDown") {
+                        // Move down in history
+                        if (userInputIndex < userInputHistory.length - 1) {
+                            userInputIndex++;
+                            $sendMessage.val(userInputHistory[userInputIndex]);
+                        } else {
+                            // If we're at the end, clear the input
+                            userInputIndex = userInputHistory.length;
+                            $sendMessage.val("");
+                        }
+                    }
+                }
+            });
+
+            $(document).on('click', '.latency-badge', function (e) {
+                e.stopPropagation();
+                const $badge = $(this);
+                const $msg = $badge.closest('.chat-message');
+                const msgObj = $msg.data('chatMessage') || {};
+                const latency = parseFloat($badge.attr('data-latency'));
+                const timestamp = new Date().toLocaleString();
+                buildMessageDetailHTML(msgObj, { latency, timestamp });
+                bootstrap.Modal.getOrCreateInstance(document.getElementById('chatDetailModal')).show();
+            });
+
+            $(document).on('keydown', '.latency-badge', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    $(this).trigger('click');
+                }
+            });
+
+            // Handle download button for individual messages
+            $(document).on('click', '.download-btn', async function (e) {
+                const $btn = $(this);
+                const $msg = $btn.closest('.chat-message')[0].getHTML();
+                await downloadItem($msg, false);
+
+            });
+
+            // Enable initial UI state
+            enableInputs(false);
+
+            // Ensure latest assistant anchor is always visible at bottom
+            function ensureLatestAnchorVisible() {
+                const $latestAnchor = $('.chat-message.' + LATEST_ANCHOR_CLASS);
+                if ($latestAnchor.length > 0) {
+                    const chatArea = $chatArea[0];
+                    const anchorPosition = $latestAnchor.position().top;
+                    const chatHeight = chatArea.clientHeight;
+                    const scrollPosition = chatArea.scrollTop;
+
+                    // If the anchor is not fully visible at the bottom, scroll to it
+                    if (anchorPosition + $latestAnchor.outerHeight() > chatHeight) {
+                        //chatArea.scrollTop = $latestAnchor.position().top - chatHeight + $latestAnchor.outerHeight() + 20;
+                        chatArea.scrollTop = chatArea.scrollHeight;
+                    }
+                }
+            }
+
+            // Call this function after adding messages to ensure visibility
+            const originalAddMessage = addMessage;
+            addMessage = function (msgObj, isOwn, latencySeconds) {
+                const result = originalAddMessage.call(this, msgObj, isOwn, latencySeconds);
+                setTimeout(ensureLatestAnchorVisible, 0); // Use setTimeout to allow DOM updates
+                setTimeout(function () { document.getElementById('sendMessage').focus() }, 200);
+                return result;
+            };
+        });
+
+        /* ------- Resumes Modal Logic -------- */
+        //const resumesData = [
+        //    { id: 1, name: 'Hey', skills: ['sk1', 'sk2', 'sk3'] },
+        //    { id: 2, name: 'Example', skills: ['sk1', 'sk2', 'sk3'] }
+        //];
+
+        function populateResumesModal(resumesData) {
+            const $body = $('#resumesModalBody');
+            let html = '<ul class="list-unstyled">';
+            resumesData.forEach(item => {
+                html += `<li class="mb-4">`;
+                html += `<div><strong>${item.name}</strong></div>`;
+                if (Array.isArray(item.skills) && item.skills.length > 0) {
+                    html += '<ol>';
+                    item.skills.forEach(skill => { html += `<li>${skill}</li>`; });
+                    html += '</ol>';
+                }
+                html += `<div class="mt-2">`;
+                html += `<button class="btn btn-sm btn-outline-primary me-1 download-original-resume-btn" data-id="${item.id}">Download Original Resume</button>`;
+                html += `<button class="btn btn-sm btn-outline-success me-1 view-analysis-btn" data-id="${item.id}">View Analysis</button>`;
+                html += `<button class="btn btn-sm btn-outline-danger download-analysis-btn" data-id="${item.id}">Download Analysis</button>`;
+                html += `</div>`;
+                html += `</li>`;
+            });
+            html += '</ul>';
+            $body.html(html);
+        }
+
+        function populateResumesModalWithData() {
+            fetch(`/api/resume/GetSimpleResumes`)
+                .then(response => {
+                    // Check if the request was successful (status 200-299)
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    // Parse the response body as JSON
+                    return response.json();
+                })
+                .then(data => {
+                    // Work with the actual JSON data (now a JavaScript object)
+                    console.log(data);
+                    populateResumesModal(data);
+                })
+                .catch(error => {
+                    // Handle network errors or errors thrown in .then()
+                    console.error('Fetch error:', error);
+                });
+        }
+
+        function openResumeAnalysisHtml(id) {
+
+            const params = {
+                id: id,
+            };
+
+            // Create a URLSearchParams object from your parameters
+            const queryString = new URLSearchParams(params).toString();
+
+            // Combine the endpoint with the query string using a template literal
+            const fullUrl = `api/resume/GetResumeAnalysis?${queryString}`;
+            fetch(fullUrl)
+                .then(response => {
+                    // Check if the request was successful (status 200-299)
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    // Parse the response body as JSON
+                    return response.text();
+                })
+                .then(data => {
+                    // Work with the actual JSON data (now a JavaScript object)
+                    console.log(data);
+                    var newWindow = window.open();
+                    newWindow.document.write(data);
+                })
+                .catch(error => {
+                    // Handle network errors or errors thrown in .then()
+                    console.error('Fetch error:', error);
+                });
+        }
+
+        //populateResumesModalWithData();
+
+
+
+
+        async function downloadOriginalResume(id) {
+            var dataToPass = { "id": id };
+            try {
+                const response = await fetch(`/api/resume/DownloadOriginalResume`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(dataToPass)
+                });
+                if (!response.ok) {
+                    alert("Failed to download file!");
+                    return;
+                }
+
+                let downloadFilename = '';
+                const disposition = response.headers.get('Content-Disposition');
+                var part1 = disposition.substring(disposition.indexOf('filename') + 9);
+                downloadFilename = part1.substring(0, part1.indexOf(';'))
+                downloadFilename = downloadFilename.replaceAll('"', '')
+                const blob = await response.blob();
+
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = downloadFilename;
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                }, 100);
+
+            } catch (err) {
+                alert("Error: " + err);
+            }
+        }
+
+
+        async function downloadResumeAnalysis(id) {
+            var dataToPass = { "id": id };
+            try {
+                const response = await fetch(`/api/resume/DownloadResumeAnalysis`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(dataToPass)
+                });
+                if (!response.ok) {
+                    alert("Failed to download file!");
+                    return;
+                }
+
+                let downloadFilename = '';
+                const disposition = response.headers.get('Content-Disposition');
+                var part1 = disposition.substring(disposition.indexOf('filename') + 9);
+                downloadFilename = part1.substring(0, part1.indexOf(';'))
+                downloadFilename = downloadFilename.replaceAll('"', '')
+                const blob = await response.blob();
+
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = downloadFilename;
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                }, 100);
+
+            } catch (err) {
+                alert("Error: " + err);
+            }
+        }
+
+
+
+
+
+
+        // Event handlers for resume buttons
+        $(document).on('click', '.download-original-resume-btn', function () {
+            const id = $(this).data('id');
+            //alert(`Download Original Resume ID: ${id}`);
+            downloadOriginalResume(id);
+        });
+
+        $(document).on('click', '.view-analysis-btn', function () {
+            const id = $(this).data('id');
+            //alert(`View Analysis ID: ${id}`);
+            var html = openResumeAnalysisHtml(id);
+        });
+
+        $(document).on('click', '.download-analysis-btn', function () {
+            const id = $(this).data('id');
+            //alert(`Download Analysis ID: ${id}`);
+            downloadResumeAnalysis(id);
+        });
+
+        // Resumes button click
+        $('#resumesBtn').on('click', function () {
+            populateResumesModalWithData();
+            const modalInstance = new bootstrap.Modal(document.getElementById('resumesModal'));
+            modalInstance.show();
+        });
+
+
+
+
+
+
+
+
+
+
+        /* ------- Resumes Modal Logic -------- */
+        const jobsData = [
+            { id: 1, name: 'Hey', skills: ['sk1', 'sk2', 'sk3'] },
+            { id: 2, name: 'Example', skills: ['sk1', 'sk2', 'sk3'] }
+        ];
+
+
+        function populateJobsModal(jobsData) {
+            const $body = $('#jobsModalBody');
+            let html = '<ul class="list-unstyled">';
+            jobsData.forEach(item => {
+                html += `<li class="mb-4">`;
+                html += `<div><strong>${item.name}</strong></div>`;
+                if (Array.isArray(item.skills) && item.skills.length > 0) {
+                    html += '<ol>';
+                    item.skills.forEach(skill => { html += `<li>${skill}</li>`; });
+                    html += '</ol>';
+                }
+                html += `<div class="mt-2">`;
+                html += `<button class="btn btn-sm btn-outline-primary me-1 download-original-job-btn" data-id="${item.id}">Download Original Job Posting</button>`;
+                html += `<button class="btn btn-sm btn-outline-success me-1 view-job-analysis-btn" data-id="${item.id}">View Analysis</button>`;
+                html += `<button class="btn btn-sm btn-outline-danger download-job-analysis-btn" data-id="${item.id}">Download Analysis</button>`;
+                html += `</div>`;
+                html += `</li>`;
+            });
+            html += '</ul>';
+            $body.html(html);
+        }
+
+        function populateJobsModalWithData() {
+            fetch(`/api/job/GetSimpleJobs`)
+                .then(response => {
+                    // Check if the request was successful (status 200-299)
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    // Parse the response body as JSON
+                    return response.json();
+                })
+                .then(data => {
+                    // Work with the actual JSON data (now a JavaScript object)
+                    console.log(data);
+                    populateJobsModal(data);
+                })
+                .catch(error => {
+                    // Handle network errors or errors thrown in .then()
+                    console.error('Fetch error:', error);
+                });
+        }
+
+        function openJobAnalysisHtml(id) {
+
+            const params = {
+                id: id,
+            };
+
+            // Create a URLSearchParams object from your parameters
+            const queryString = new URLSearchParams(params).toString();
+
+            // Combine the endpoint with the query string using a template literal
+            const fullUrl = `api/job/GetJobAnalysis?${queryString}`;
+            fetch(fullUrl)
+                .then(response => {
+                    // Check if the request was successful (status 200-299)
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    // Parse the response body as JSON
+                    return response.text();
+                })
+                .then(data => {
+                    // Work with the actual JSON data (now a JavaScript object)
+                    console.log(data);
+                    var newWindow = window.open();
+                    newWindow.document.write(data);
+                })
+                .catch(error => {
+                    // Handle network errors or errors thrown in .then()
+                    console.error('Fetch error:', error);
+                });
+        }
+
+        ////populateResumesModalWithData();
+
+
+
+
+        async function downloadOriginalJob(id) {
+            var dataToPass = { "id": id };
+            try {
+                const response = await fetch(`/api/job/DownloadOriginalJob`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(dataToPass)
+                });
+                if (!response.ok) {
+                    alert("Failed to download file!");
+                    return;
+                }
+
+                let downloadFilename = '';
+                const disposition = response.headers.get('Content-Disposition');
+                var part1 = disposition.substring(disposition.indexOf('filename') + 9);
+                downloadFilename = part1.substring(0, part1.indexOf(';'))
+                downloadFilename = downloadFilename.replaceAll('"', '')
+                const blob = await response.blob();
+
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = downloadFilename;
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                }, 100);
+
+            } catch (err) {
+                alert("Error: " + err);
+            }
+        }
+
+
+        async function downloadJobAnalysis(id) {
+            var dataToPass = { "id": id };
+            try {
+                const response = await fetch(`/api/job/DownloadJobAnalysis`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(dataToPass)
+                });
+                if (!response.ok) {
+                    alert("Failed to download file!");
+                    return;
+                }
+
+                let downloadFilename = '';
+                const disposition = response.headers.get('Content-Disposition');
+                var part1 = disposition.substring(disposition.indexOf('filename') + 9);
+                downloadFilename = part1.substring(0, part1.indexOf(';'))
+                downloadFilename = downloadFilename.replaceAll('"', '')
+                const blob = await response.blob();
+
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = downloadFilename;
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                }, 100);
+
+            } catch (err) {
+                alert("Error: " + err);
+            }
+        }
+
+
+
+
+
+
+        // Event handlers for resume buttons
+        $(document).on('click', '.download-original-job-btn', function () {
+            const id = $(this).data('id');
+            //alert(`Download Original Resume ID: ${id}`);
+            downloadOriginalJob(id);
+        });
+
+        $(document).on('click', '.view-job-analysis-btn', function () {
+            const id = $(this).data('id');
+            //alert(`View Analysis ID: ${id}`);
+            var html = openJobAnalysisHtml(id);
+        });
+
+        $(document).on('click', '.download-job-analysis-btn', function () {
+            const id = $(this).data('id');
+            //alert(`Download Analysis ID: ${id}`);
+            downloadJobAnalysis(id);
+        });
+
+        // Resumes button click
+        $('#jobsBtn').on('click', function () {
+            populateJobsModalWithData();
+            const modalInstance = new bootstrap.Modal(document.getElementById('jobsModal'));
+            modalInstance.show();
+        });
+
+        function populateSelect(selector, data) {
+            const $sel = $(selector);
+            $sel.empty();
+            $sel.append('<option value="">-- Select --</option>');
+            data.forEach(item => {
+                $sel.append(`<option value="${item.id}">${item.name}</option>`);
+            });
+        }
+
+        /* ------- Matches Modal Logic -------- */
+        $(function () {
+            //const matchResumes = [
+            //    { id: 1, name: 'Res1' },
+            //    { id: 2, name: 'Res2' }
+            //];
+            //const matchJobs = [
+            //    { id: 1, name: 'Job1' },
+            //    { id: 2, name: 'Job2' }
+            //];
+
+            
+
+            // Populate selects on page load
+            //populateSelect('#resumeSelect', matchResumes);
+            //populateSelect('#jobSelect', matchJobs);
+
+            populateModalMatchModalJobsWithData();
+            populateMatchModalResumesWithData();
+
+            function updateMatchSelection() {
+                const resumeId = $('#resumeSelect').val();
+                const jobId = $('#jobSelect').val();
+
+                if (resumeId && jobId) {
+                    //$('#quickMatch').text(`Resume Id ${resumeId} - Job Id ${jobId}`);
+                    getSimpleMatchAnalysis(resumeId, jobId);
+                    $('#quickMatchContainer').removeClass('d-none');
+                    $('#viewMatchAnalysisBtn, #downloadMatchAnalysisBtn').prop('disabled', false);
+                } else {
+                    $('#quickMatchContainer').addClass('d-none');
+                    $('#viewMatchAnalysisBtn, #downloadMatchAnalysisBtn').prop('disabled', true);
+                }
+            }
+
+            $('#resumeSelect, #jobSelect').on('change', updateMatchSelection);
+
+            $('#viewMatchAnalysisBtn').on('click', function () {
+                const resumeId = $('#resumeSelect').val();
+                const jobId = $('#jobSelect').val();
+                openMatchAnalysisHtml(resumeId, jobId)
+                alert(`View Match Analysis for Resume ${resumeId} and Job ${jobId}`);
+            });
+
+            $('#downloadMatchAnalysisBtn').on('click', function () {
+                const resumeId = $('#resumeSelect').val();
+                const jobId = $('#jobSelect').val();
+                downloadMatchAnalysis(resumeId, jobId);
+                alert(`Download Match Analysis for Resume ${resumeId} and Job ${jobId}`);
+            });
+
+            $('#matchesBtn').on('click', function () {
+                const matchesModal = new bootstrap.Modal(document.getElementById('matchesModal'));
+                matchesModal.show();
+            });
+        });
+
+
+
+        function getSimpleMatchAnalysis(resumeId, jobId) {
+
+            const params = {
+                resumeId: resumeId,
+                jobId: jobId
+            };
+
+            // Create a URLSearchParams object from your parameters
+            const queryString = new URLSearchParams(params).toString();
+
+            // Combine the endpoint with the query string using a template literal
+            const fullUrl = `api/match/GetSimpleMatch?${queryString}`;
+            fetch(fullUrl)
+                .then(response => {
+                    // Check if the request was successful (status 200-299)
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    // Parse the response body as JSON
+                    return response.json();
+                })
+                .then(data => {
+                    // Work with the actual JSON data (now a JavaScript object)
+                    console.log(data);
+                    //var newWindow = window.open();
+                    //newWindow.document.write(data);
+                    $('#quickMatch').html(data.overallScore + '%<br/><br/>' + data.summary);
+                })
+                .catch(error => {
+                    // Handle network errors or errors thrown in .then()
+                    console.error('Fetch error:', error);
+                });
+        }
+
+
+
+
+
+        function populateModalMatchModalJobsWithData() {
+            fetch(`/api/job/GetSimpleJobs`)
+                .then(response => {
+                    // Check if the request was successful (status 200-299)
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    // Parse the response body as JSON
+                    return response.json();
+                })
+                .then(data => {
+                    // Work with the actual JSON data (now a JavaScript object)
+                    console.log(data);
+                    populateSelect('#jobSelect', data);
+                })
+                .catch(error => {
+                    // Handle network errors or errors thrown in .then()
+                    console.error('Fetch error:', error);
+                });
+        }
+
+        function populateMatchModalResumesWithData() {
+            fetch(`/api/resume/GetSimpleResumes`)
+                .then(response => {
+                    // Check if the request was successful (status 200-299)
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    // Parse the response body as JSON
+                    return response.json();
+                })
+                .then(data => {
+                    // Work with the actual JSON data (now a JavaScript object)
+                    console.log(data);
+                    populateSelect('#resumeSelect', data);
+
+                })
+                .catch(error => {
+                    // Handle network errors or errors thrown in .then()
+                    console.error('Fetch error:', error);
+                });
+        }
+
+
+        function openMatchAnalysisHtml(resumeId, jobId) {
+            debugger;
+            const params = {
+                resumeId: resumeId,
+                jobId: jobId
+            };
+
+            // Create a URLSearchParams object from your parameters
+            const queryString = new URLSearchParams(params).toString();
+            debugger;
+            // Combine the endpoint with the query string using a template literal
+            const fullUrl = `api/match/GetMatchAnalysis?${queryString}`;
+            debugger;
+            fetch(fullUrl)
+                .then(response => {
+                    // Check if the request was successful (status 200-299)
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    // Parse the response body as JSON
+                    debugger;
+                    return response.text();
+                })
+                .then(data => {
+                    // Work with the actual JSON data (now a JavaScript object)
+                    debugger;
+                    console.log(data);
+                    var newWindow = window.open();
+                    newWindow.document.write(data);
+                    debugger;
+                })
+                .catch(error => {
+                    // Handle network errors or errors thrown in .then()
+                    console.error('Fetch error:', error);
+                });
+        }
+
+        async function downloadMatchAnalysis(resumeId, jobId) {
+            var dataToPass = { "resumeId": resumeId, "jobId": jobId };
+            try {
+                const response = await fetch(`/api/match/DownloadMatchAnalysis`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(dataToPass)
+                });
+                if (!response.ok) {
+                    alert("Failed to download file!");
+                    return;
+                }
+
+                let downloadFilename = '';
+                const disposition = response.headers.get('Content-Disposition');
+                var part1 = disposition.substring(disposition.indexOf('filename') + 9);
+                downloadFilename = part1.substring(0, part1.indexOf(';'))
+                downloadFilename = downloadFilename.replaceAll('"', '')
+                const blob = await response.blob();
+
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = downloadFilename;
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                }, 100);
+
+            } catch (err) {
+                alert("Error: " + err);
+            }
+        }
+
+
+    </script>
+</body>
+</html>
