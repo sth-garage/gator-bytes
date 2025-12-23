@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Front-End Developer (Angular) – HorizonLex Solutions</title>
+  <style>
+    :root {
+      --primary: #1f6feb;
+      --primary-dark: #174fb0;
+      --accent: #ffb300;
+      --text-main: #202124;
+      --text-muted: #5f6368;
+      --bg: #ffffff;
+      --bg-alt: #f5f7fb;
+      --border: #dadce0;
+      --shadow-soft: 0 2px 8px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, sans-serif;
+    }
+
+    body {
+      background: #e5e7eb;
+      padding: 40px 16px;
+      color: var(--text-main);
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #f9fafb 0%, #ffffff 40%, #f5f7fb 100%);
+      border-radius: 14px;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    header {
+      padding: 28px 32px 22px;
+      background: radial-gradient(circle at top left, #dbeafe, #eff6ff 40%, #ffffff);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: conic-gradient(from 210deg, #1f6feb, #ffb300, #22c55e, #1f6feb);
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 14px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--primary);
+      letter-spacing: 0.02em;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .badge-row {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .badge {
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(99, 102, 241, 0.35);
+      background: rgba(129, 140, 248, 0.04);
+      color: #4338ca;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+
+    .badge-alt {
+      border-color: rgba(15, 118, 110, 0.35);
+      background: rgba(34, 197, 94, 0.04);
+      color: #047857;
+    }
+
+    .badge-pill {
+      border-color: rgba(107, 114, 128, 0.4);
+      background: rgba(229, 231, 235, 0.4);
+      color: #374151;
+    }
+
+    main {
+      padding: 24px 32px 28px;
+      display: grid;
+      grid-template-columns: 3fr 1.5fr;
+      gap: 24px;
+    }
+
+    section {
+      margin-bottom: 18px;
+    }
+
+    section h2 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: rgba(226, 232, 240, 0.8);
+      color: #4b5563;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    ul {
+      padding-left: 18px;
+      margin-top: 4px;
+    }
+
+    li {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 4px;
+      color: var(--text-main);
+    }
+
+    .highlight {
+      background: #ecfeff;
+      border-left: 3px solid #0891b2;
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .skill-tag {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(248, 250, 252, 0.9);
+      color: #111827;
+      white-space: nowrap;
+    }
+
+    .sidebar {
+      padding: 16px 16px 18px;
+      background: var(--bg-alt);
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      height: fit-content;
+    }
+
+    .sidebar h3 {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 13px;
+      padding: 6px 0;
+      border-bottom: 1px dashed rgba(148, 163, 184, 0.75);
+    }
+
+    .info-row:last-child {
+      border-bottom: none;
+    }
+
+    .info-label {
+      color: var(--text-muted);
+    }
+
+    .info-value {
+      font-weight: 500;
+      text-align: right;
+    }
+
+    .cta {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(148, 163, 184, 0.5);
+    }
+
+    .apply-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 2px 10px rgba(37, 99, 235, 0.35);
+      transition: transform 0.06s ease, box-shadow 0.06s ease,
+        background 0.06s ease;
+      width: 100%;
+    }
+
+    .apply-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(37, 99, 235, 0.45);
+      background: linear-gradient(135deg, #2557d8, #1d4ed8);
+    }
+
+    .apply-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
+    }
+
+    .apply-note {
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .tags {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag-small {
+      font-size: 11px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(209, 213, 219, 0.6);
+      color: #374151;
+    }
+
+    footer {
+      padding: 12px 32px 18px;
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      background: #f9fafb;
+      font-size: 11px;
+      color: #4b5563;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    footer span {
+      opacity: 0.95;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        grid-template-columns: 1fr;
+        padding: 18px 18px 22px;
+      }
+
+      header {
+        padding: 20px 18px 16px;
+      }
+
+      footer {
+        padding: 10px 18px 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">
+        <div class="logo-inner">H</div>
+      </div>
+      <div>
+        <h1>Front-End Developer (Angular)</h1>
+        <div class="subtitle">
+          HorizonLex Solutions · Mid-size B2B Software Company · Hybrid – Chicago, IL
+        </div>
+        <div class="badge-row">
+          <span class="badge">Angular Front End</span>
+          <span class="badge badge-alt">Product Team</span>
+          <span class="badge badge-pill">Mid-level · Full-time</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div>
+        <section>
+          <div class="pill">About the role</div>
+          <p>
+            HorizonLex Solutions is a mid-size corporate technology company providing workflow and analytics tools to enterprise clients. We’re looking for a strong Front-End Developer to join our product engineering team and help evolve our flagship web platform.
+          </p>
+          <p>
+            In this role, you will work closely with other engineers, designers, and product managers to:
+          </p>
+          <ul>
+            <li>Enhance and maintain existing Angular applications used by our customers every day</li>
+            <li>Contribute to new product features and greenfield initiatives</li>
+            <li>Introduce and champion front-end best practices, patterns, and tooling</li>
+          </ul>
+          <div class="highlight">
+            You’ll have significant impact on how we grow and modernize our front-end codebase, while keeping mission‑critical features stable and reliable.
+          </div>
+        </section>
+
+        <section>
+          <h2>What you’ll do</h2>
+          <ul>
+            <li>Build, refactor, and optimize user-facing features in our Angular applications.</li>
+            <li>Collaborate with UX/UI designers to translate wireframes and visual designs into clean, reusable components.</li>
+            <li>Expand on our existing design system and component library to support new product capabilities.</li>
+            <li>Work on both existing projects and new initiatives, balancing incremental improvements with new feature delivery.</li>
+            <li>Introduce and enforce best practices in front-end architecture, state management, testing, and performance.</li>
+            <li>Write well-structured, testable, and maintainable TypeScript and HTML/CSS.</li>
+            <li>Participate in code reviews, pair programming, and knowledge-sharing sessions with the team.</li>
+            <li>Collaborate with back-end teams to define and integrate RESTful API contracts.</li>
+            <li>Debug and resolve issues across supported browsers and devices, improving reliability and user experience.</li>
+            <li>Contribute to build and deployment pipelines (CI/CD) related to the front-end codebase.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Our tech stack</h2>
+          <p>Core front-end technologies you’ll work with:</p>
+          <div class="skills-grid">
+            <span class="skill-tag">Angular (v12+)</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">RxJS</span>
+            <span class="skill-tag">NgRx or similar state management</span>
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3 / SCSS</span>
+            <span class="skill-tag">RESTful APIs</span>
+            <span class="skill-tag">Jasmine / Karma / Jest</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">CI/CD (Azure DevOps / GitHub Actions)</span>
+          </div>
+          <p style="margin-top: 8px; font-size: 13px; color: var(--text-muted);">
+            Experience with adjacent tools (Webpack, ESLint, Prettier, Storybook, etc.) is helpful but not required from day one.
+          </p>
+        </section>
+
+        <section>
+          <h2>What we’re looking for</h2>
+          <ul>
+            <li>3+ years of professional experience as a Front-End or Web Developer, with at least 2 years using Angular in production.</li>
+            <li>Strong proficiency in TypeScript, modern JavaScript (ES6+), and core web technologies (HTML, CSS).</li>
+            <li>Solid understanding of Angular concepts: components, modules, services, dependency injection, routing, and forms.</li>
+            <li>Experience with reactive programming and RxJS (observables, operators, subjects).</li>
+            <li>Comfortable working in and improving a large existing codebase, not just greenfield projects.</li>
+            <li>Familiarity with front-end testing frameworks and practices (unit tests, basic integration tests).</li>
+            <li>Understanding of web performance, accessibility (a11y), and responsive design principles.</li>
+            <li>Ability to collaborate effectively in a cross-functional team (engineering, product, design, QA).</li>
+            <li>Clear, respectful communication skills—written and verbal.</li>
+            <li>Bachelor’s degree in Computer Science, Engineering, or related field, or equivalent practical experience.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Nice to have</h2>
+          <ul>
+            <li>Experience with NgRx or another state management solution for Angular.</li>
+            <li>Exposure to design systems, component libraries, or Storybook.</li>
+            <li>Background in enterprise or B2B SaaS environments.</li>
+            <li>Experience working with RESTful back-end APIs built with .NET, Java, or Node.js.</li>
+            <li>Familiarity with Docker, Kubernetes, or cloud platforms (Azure, AWS, or GCP).</li>
+            <li>Experience introducing or formalizing best practices (linting, code style guides, testing strategies).</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>How we work</h2>
+          <ul>
+            <li>Hybrid schedule: 2–3 days per week in our downtown Chicago office, with flexibility.</li>
+            <li>Agile-inspired process with two-week sprints, daily stand-ups, and regular demos.</li>
+            <li>Emphasis on collaboration, mentorship, and continuous improvement.</li>
+            <li>Opportunity for growth into senior engineering or technical lead roles as the team expands.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Compensation & benefits</h2>
+          <ul>
+            <li>Competitive salary range: $105,000 – $130,000 USD, depending on experience and location.</li>
+            <li>Annual performance bonus eligibility.</li>
+            <li>Comprehensive health, dental, and vision coverage.</li>
+            <li>401(k) with company match.</li>
+            <li>Generous PTO, sick leave, and paid holidays.</li>
+            <li>Professional development budget for courses, conferences, and certifications.</li>
+            <li>Modern equipment and software tools of your choice (within standard options).</li>
+          </ul>
+        </section>
+      </div>
+
+      <aside class="sidebar">
+        <h3>Role details</h3>
+        <div class="info-row">
+          <span class="info-label">Position</span>
+          <span class="info-value">Front-End Developer</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Level</span>
+          <span class="info-value">Mid-level</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Employment type</span>
+          <span class="info-value">Full-time</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Location</span>
+          <span class="info-value">Chicago, IL (Hybrid)</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Team</span>
+          <span class="info-value">Product Engineering</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Reports to</span>
+          <span class="info-value">Front-End Engineering Manager</span>
+        </div>
+
+        <div class="cta">
+          <button class="apply-btn">
+            Apply now
+          </button>
+          <p class="apply-note">
+            To apply, please submit your resume, a brief note about why you’re interested in this role, and links to any relevant work (GitHub, portfolio, or live apps).
+            <br /><br />
+            Email: careers@horizonlex.com · Reference: FE-ANG-2025
+          </p>
+
+          <div class="tags">
+            <span class="tag-small">Angular</span>
+            <span class="tag-small">TypeScript</span>
+            <span class="tag-small">Front End</span>
+            <span class="tag-small">Mid-size Company</span>
+            <span class="tag-small">Hybrid</span>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <span>HorizonLex Solutions is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.</span>
+      <span>Posted: November 24, 2025 · Applications reviewed on a rolling basis</span>
+    </footer>
+  </div>
+</body>
+</html>

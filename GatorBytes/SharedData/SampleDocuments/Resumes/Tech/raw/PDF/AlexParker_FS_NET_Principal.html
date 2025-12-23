@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alex Parker - Principal Full Stack .NET Developer</title>
+    <style>
+        /* Basic Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, sans-serif;
+            line-height: 1.5;
+            color: #222;
+            background-color: #f5f7fb;
+            padding: 30px;
+        }
+
+        .resume {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            padding: 32px 40px 40px;
+        }
+
+        header {
+            border-bottom: 2px solid #e1e4ec;
+            padding-bottom: 18px;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: 32px;
+            letter-spacing: 0.03em;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .contact {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .contact span {
+            margin-right: 16px;
+        }
+
+        a {
+            color: #0059b3;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-top: 18px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #333;
+        }
+
+        h3 {
+            font-size: 15px;
+            margin-bottom: 4px;
+            color: #222;
+        }
+
+        .section {
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f0f1f6;
+        }
+
+        .summary {
+            font-size: 14px;
+            margin-top: 2px;
+        }
+
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 4px;
+        }
+
+        .pill {
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 999px;
+            background-color: #f1f4ff;
+            border: 1px solid #d9e0ff;
+            color: #333;
+            white-space: nowrap;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 24px;
+        }
+
+        .job {
+            margin-bottom: 10px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+
+        .job-title {
+            font-weight: 600;
+        }
+
+        .job-meta {
+            font-size: 13px;
+            color: #666;
+        }
+
+        ul {
+            margin-left: 18px;
+            margin-top: 4px;
+            font-size: 13px;
+        }
+
+        li {
+            margin-bottom: 2px;
+        }
+
+        .highlight {
+            background-color: #fff9dd;
+            border-radius: 4px;
+            padding: 0 3px;
+        }
+
+        .tagline {
+            font-size: 13px;
+            color: #555;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        .meta-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .meta-list li {
+            margin-bottom: 2px;
+        }
+
+        .meta-label {
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .resume {
+                padding: 20px 18px 24px;
+            }
+
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="resume">
+    <header>
+        <h1>Alex Parker</h1>
+        <div class="subtitle">Principal Full Stack .NET Developer &amp; Problem Fixer</div>
+        <div class="tagline">Turns production fires into boring, fast, maintainable systems.</div>
+        <div class="contact">
+            <span>Seattle, WA</span>
+            <span><a href="mailto:alex.parker.dev@examplemail.com">alex.parker.dev@examplemail.com</a></span>
+            <span>(555) 213-9874</span>
+            <span><a href="https://www.linkedin.com/in/alex-parker-dev" target="_blank">linkedin.com/in/alex-parker-dev</a></span>
+            <span><a href="https://github.com/alexparker-dotnet" target="_blank">github.com/alexparker-dotnet</a></span>
+        </div>
+    </header>
+
+    <section class="section">
+        <h2>Profile</h2>
+        <p class="summary">
+            Principal-level full stack engineer with 14 years of experience building and rescuing .NET systems end to end.
+            Deep focus on <span class="highlight">performance, refactoring, and production firefighting</span>, from SQL Server
+            query plans to vanilla JavaScript on the DOM. Equally comfortable writing C# APIs, optimizing SSIS packages,
+            and jumping into tangled legacy code to make it fast, testable, and boring again. Known for speaking both
+            “business” and “tech” and for shipping changes that move actual numbers, not just ticket counts.
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>Core Strengths</h2>
+        <div class="pill-row">
+            <span class="pill">.NET Core / .NET Framework</span>
+            <span class="pill">C# API Design</span>
+            <span class="pill">Vanilla JavaScript, HTML5, CSS3</span>
+            <span class="pill">Performance Profiling &amp; Tuning</span>
+            <span class="pill">Legacy Code Refactoring</span>
+            <span class="pill">SQL Server Query Optimization</span>
+            <span class="pill">SSIS / SSRS</span>
+            <span class="pill">Distributed Systems</span>
+            <span class="pill">Technical Leadership</span>
+            <span class="pill">Architecture &amp; Design</span>
+            <span class="pill">Stakeholder Collaboration</span>
+            <span class="pill">Incident Response / Root Cause</span>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Technical Skills</h2>
+        <div class="two-col">
+            <div>
+                <ul class="meta-list">
+                    <li><span class="meta-label">Backend:</span> C#, .NET 6/7, .NET Framework, ASP.NET MVC/Web API, REST, LINQ, Entity Framework, Dapper</li>
+                    <li><span class="meta-label">Frontend:</span> Vanilla JS (ES6+), HTML5, CSS3/Flexbox/Grid, minimal frameworks, Webpack, TypeScript (working knowledge)</li>
+                    <li><span class="meta-label">Data:</span> SQL Server, T-SQL, indexing strategies, execution plans, table partitioning, SSIS, SSRS</li>
+                </ul>
+            </div>
+            <div>
+                <ul class="meta-list">
+                    <li><span class="meta-label">Cloud &amp; Infra:</span> Azure (App Service, Functions, SQL DB), IIS, Windows Server, CI/CD (Azure DevOps, GitHub Actions)</li>
+                    <li><span class="meta-label">Practices:</span> TDD when it matters, clean architecture, domain-driven thinking, code review, mentoring, pair programming</li>
+                    <li><span class="meta-label">Tooling:</span> Visual Studio, VS Code, Git, Postman, SQL Profiler, Redgate tools, Fiddler, Chrome DevTools</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Selected Impact Highlights</h2>
+        <ul>
+            <li>Refactored a monolithic .NET order processing engine, cutting average order time from 14 minutes to under 90 seconds and reducing nightly failures by 93%.</li>
+            <li>Rewrote a set of core T-SQL reports and SSRS dashboards for finance, reducing run times from 40+ minutes to under 3 minutes and eliminating timeouts during quarter close.</li>
+            <li>Led modernization of a legacy WebForms app to ASP.NET Core + vanilla JS, maintaining feature parity while reducing page size by 60% and support tickets by 30% within six months.</li>
+            <li>Introduced lightweight performance budgets, profiling, and review practices that surfaced and eliminated several six-figure-per-year infrastructure costs.</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2>Professional Experience</h2>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Principal Full Stack .NET Developer / Team Lead</div>
+                    <div class="job-meta">Northwind Logistics Solutions, Seattle, WA</div>
+                </div>
+                <div class="job-meta">2020 &ndash; Present</div>
+            </div>
+            <ul>
+                <li>Lead a team of 6 developers owning a mission-critical shipment tracking platform built on ASP.NET Core, SQL Server, and vanilla JS/CSS.</li>
+                <li>Redesigned core tracking API and database schema, improving p95 API latency by 72% and reducing deadlocks to near zero using better indexing and isolation levels.</li>
+                <li>Rewrote heavy client-side frameworks with targeted vanilla JS, cutting initial load from 4.2s to 1.6s on average and improving Lighthouse performance scores from 58 to 93.</li>
+                <li>Created a “performance clinic” process: running SQL Profiler traces, .NET profilers, and browser audits to attack hotspots; drove down production incident volume by 40% year over year.</li>
+                <li>Partnered with operations and finance leads to prioritize technical work that directly supported SLAs and margin targets instead of just “cool refactors.”</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Senior Full Stack Engineer / Solutions Architect</div>
+                    <div class="job-meta">BrightWave Health Systems, Bellevue, WA</div>
+                </div>
+                <div class="job-meta">2016 &ndash; 2020</div>
+            </div>
+            <ul>
+                <li>Owned architectural direction for a suite of clinical workflow apps built on ASP.NET MVC, Web API, and SQL Server with SSIS-driven data ingestion.</li>
+                <li>Refactored a brittle SSIS-based ETL pipeline processing 10M+ rows nightly, introducing partitioned loads and incremental updates; reduced run time from 6 hours to under 90 minutes.</li>
+                <li>Redesigned patient-facing UI from server-heavy Razor views to slim HTML + JS with REST APIs, reducing page reloads by 50% and increasing task completion rates in usability tests.</li>
+                <li>Served as escalation point for production issues; implemented runbooks, better logging, and root-cause reviews that cut “mystery outages” by more than half.</li>
+                <li>Mentored 4 mid-level developers into senior roles, emphasizing reading execution plans, understanding browser behavior, and tying work to clinical and business outcomes.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Senior .NET Developer / Lead</div>
+                    <div class="job-meta">CityMarket Retail Technologies, Portland, OR</div>
+                </div>
+                <div class="job-meta">2013 &ndash; 2016</div>
+            </div>
+            <ul>
+                <li>Led development for a high-traffic promotions and pricing engine used by multiple retail chains.</li>
+                <li>Identified and fixed a set of poorly performing T-SQL queries (cart pricing and inventory lookups) by adding proper indexes, rewriting joins, and splitting long-running reports; improved throughput by 3x.</li>
+                <li>Optimized legacy ASP.NET MVC controllers and view logic, caching expensive operations and cutting homepage load time by over 50% without adding heavy JS frameworks.</li>
+                <li>Introduced automated load tests that caught regressions early and justified infrastructure scaling decisions with data instead of hunches.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Full Stack .NET Developer</div>
+                    <div class="job-meta">Harborline Insurance Group, Seattle, WA</div>
+                </div>
+                <div class="job-meta">2010 &ndash; 2013</div>
+            </div>
+            <ul>
+                <li>Developed internal underwriting and claims tools using ASP.NET WebForms/MVC, C#, and SQL Server, gradually refactoring toward cleaner layers and test coverage.</li>
+                <li>Replaced Excel-based reporting with SSRS dashboards tied to optimized stored procedures, improving data freshness from weekly to hourly and increasing report adoption.</li>
+                <li>Implemented a shared JavaScript utilities library (plain JS) to standardize common UI behaviors and reduce copy-paste code across legacy pages.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Software Developer (.NET)</div>
+                    <div class="job-meta">Cascade Business Systems, Tacoma, WA</div>
+                </div>
+                <div class="job-meta">2009 &ndash; 2010</div>
+            </div>
+            <ul>
+                <li>Built and maintained line-of-business web apps in ASP.NET and SQL Server, working across the full stack from database to CSS.</li>
+                <li>Got hooked on performance while tracking down a “random” timeout that turned out to be a full table scan—started a habit of reading query plans that never really stopped.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Sample Projects</h2>
+        <ul>
+            <li><strong>Order Processing Engine Rewrite</strong> &mdash; Extracted a tangled set of procedural C# services into a layered architecture with clear boundaries, async I/O, and tuned SQL access. Result: 10x faster throughput, simplified onboarding for new devs, and a noticeable drop in 2 a.m. calls.</li>
+            <li><strong>Legacy UI Slim-Down</strong> &mdash; Took a 10-year-old WebForms-based admin portal and replaced key flows with lean ASP.NET Core endpoints and vanilla JS frontends. Result: fewer reloads, happy power users, and a codebase small enough for humans to understand.</li>
+            <li><strong>Reporting &amp; Analytics Cleanup</strong> &mdash; Consolidated dozens of ad-hoc T-SQL scripts into parameterized stored procedures powering SSRS reports, with standardized indexing and monthly performance reviews.</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2>Education &amp; Certifications</h2>
+        <ul class="meta-list">
+            <li><span class="meta-label">B.S. in Computer Science</span>, University of Washington, Seattle, WA</li>
+            <li><span class="meta-label">Microsoft Certified:</span> Azure Developer Associate (AZ-204)</li>
+            <li><span class="meta-label">Additional Training:</span> Advanced T-SQL Query Tuning, Effective Legacy Code Refactoring</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2>Leadership &amp; Collaboration</h2>
+        <ul>
+            <li>Regularly act as bridge between product owners, ops, and engineering to slice big technical initiatives into business-visible wins.</li>
+            <li>Run brown-bag sessions on “reading query plans without crying,” browser performance basics, and pragmatic refactoring.</li>
+            <li>Enjoy pairing with devs on “impossible” bugs and turning them into repeatable checklists and patterns for the team.</li>
+        </ul>
+    </section>
+</div>
+</body>
+</html>

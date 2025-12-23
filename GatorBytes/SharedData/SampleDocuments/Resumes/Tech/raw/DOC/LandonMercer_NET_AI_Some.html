@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Landon Mercer – Principal Software Developer (.NET, SQL Server, AI)</title>
+    <style>
+        :root {
+            --bg-main: #050816;
+            --bg-alt: #0b1020;
+            --accent: #4f46e5;
+            --accent-soft: rgba(79, 70, 229, 0.15);
+            --accent-2: #06b6d4;
+            --accent-3: #f97316;
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+            --border-subtle: #1f2933;
+            --card-bg: #111827;
+            --shadow-soft: 0 18px 45px rgba(0,0,0,0.65);
+            --radius-card: 14px;
+            --radius-pill: 999px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at 0 0, #1f2937 0, #050816 45%, #000 100%);
+            color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            padding: 40px 16px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .page {
+            max-width: 1120px;
+            width: 100%;
+            background: radial-gradient(circle at top left, rgba(79,70,229,0.12), transparent 40%),
+                        radial-gradient(circle at bottom right, rgba(6,182,212,0.12), transparent 45%),
+                        var(--bg-main);
+            border-radius: 20px;
+            box-shadow: 0 35px 80px rgba(0,0,0,0.85);
+            overflow: hidden;
+            border: 1px solid rgba(148,163,184,0.18);
+        }
+
+        .header {
+            padding: 28px 32px 20px;
+            background: linear-gradient(135deg, rgba(79,70,229,0.06), rgba(6,182,212,0.03));
+            border-bottom: 1px solid rgba(148,163,184,0.25);
+            display: grid;
+            grid-template-columns: 1.7fr 1.3fr;
+            gap: 24px;
+        }
+
+        .header-main {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .name {
+            font-size: 2.2rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #c7d2fe;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .tagline {
+            margin-top: 6px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .header-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            border-radius: var(--radius-pill);
+            background: radial-gradient(circle at 0 0, rgba(79,70,229,0.35), rgba(15,23,42,0.95));
+            border: 1px solid rgba(129,140,248,0.6);
+            font-size: 0.78rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #e5e7eb;
+            gap: 8px;
+        }
+
+        .pill-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 30%, #f9fafb, #22c55e);
+            box-shadow: 0 0 10px rgba(34,197,94,0.9);
+        }
+
+        .contact {
+            display: grid;
+            grid-template-columns: repeat(2, max-content);
+            gap: 6px 24px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .contact-label {
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            font-size: 0.7rem;
+            color: #6b7280;
+        }
+
+        a {
+            color: #bfdbfe;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .body {
+            display: grid;
+            grid-template-columns: 1.5fr 1.2fr;
+            gap: 24px;
+            padding: 20px 26px 24px;
+        }
+
+        .left-column, .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .section {
+            background: linear-gradient(145deg, rgba(15,23,42,0.92), rgba(17,24,39,0.96));
+            border-radius: var(--radius-card);
+            padding: 14px 16px 16px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(55,65,81,0.8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top left, rgba(79,70,229,0.18), transparent 55%);
+            opacity: 0.9;
+            mix-blend-mode: soft-light;
+            pointer-events: none;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #e5e7eb;
+        }
+
+        .section-subtitle {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #6b7280;
+        }
+
+        .summary-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        .chip-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .chip {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            border: 1px solid rgba(148,163,184,0.8);
+            color: #e5e7eb;
+            background: radial-gradient(circle at 0 0, rgba(148,163,184,0.32), rgba(31,41,55,0.9));
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px 18px;
+            margin-top: 4px;
+        }
+
+        .skill-card {
+            background: radial-gradient(circle at 0 0, rgba(31,41,55,0.95), rgba(15,23,42,1));
+            border-radius: 10px;
+            padding: 9px 10px 8px;
+            border: 1px solid rgba(55,65,81,0.9);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.75);
+            position: relative;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+
+        .skill-name {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .skill-tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #9ca3af;
+        }
+
+        .rating-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .rating-bar {
+            flex: 1;
+            height: 6px;
+            border-radius: 999px;
+            background: #020617;
+            overflow: hidden;
+            box-shadow: inset 0 0 0 1px rgba(15,23,42,0.9);
+        }
+
+        .rating-fill {
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, var(--accent-3), var(--accent-2), var(--accent));
+        }
+
+        .rating-value {
+            font-size: 0.68rem;
+            border-radius: 999px;
+            padding: 2px 7px;
+            border: 1px solid rgba(148,163,184,0.9);
+            color: #e5e7eb;
+            background: radial-gradient(circle at 0 0, rgba(31,41,55,0.9), rgba(15,23,42,0.95));
+        }
+
+        .skill-notes {
+            font-size: 0.68rem;
+            color: #9ca3af;
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+
+        /* Experience */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .exp-item {
+            display: grid;
+            grid-template-columns: 1.2fr 2.1fr;
+            gap: 8px 14px;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        .exp-item::before {
+            content: "";
+            position: absolute;
+            left: -10px;
+            top: 4px;
+            bottom: 4px;
+            border-left: 1px dashed rgba(75,85,99,0.9);
+        }
+
+        .exp-meta {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .exp-role {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #e5e7eb;
+        }
+
+        .exp-company {
+            font-size: 0.82rem;
+            color: #9ca3af;
+        }
+
+        .exp-detail {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .exp-detail ul {
+            padding-left: 16px;
+            margin-top: 4px;
+        }
+
+        .exp-detail li {
+            margin-bottom: 3px;
+        }
+
+        /* AI Feature Highlight */
+        .ai-highlight {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
+            gap: 10px;
+            align-items: start;
+            margin-top: 4px;
+        }
+
+        .ai-pill {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            border: 1px solid rgba(45,212,191,0.9);
+            color: #ccfbf1;
+            background: radial-gradient(circle at 0 0, rgba(45,212,191,0.2), rgba(15,23,42,1));
+            display: inline-flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .ai-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 30%, #f9fafb, #22c55e);
+        }
+
+        .ai-text {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Projects & Education */
+        .list-item {
+            margin-bottom: 8px;
+        }
+
+        .list-title {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #e5e7eb;
+        }
+
+        .list-subtitle {
+            font-size: 0.75rem;
+            color: #9ca3af;
+        }
+
+        .list-body {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 4px;
+        }
+
+        .badge {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            border-radius: var(--radius-pill);
+            padding: 3px 8px;
+            border: 1px solid rgba(148,163,184,0.8);
+            color: #e5e7eb;
+            background: radial-gradient(circle at 0 0, rgba(55,65,81,0.85), rgba(15,23,42,0.95));
+        }
+
+        .footer-note {
+            font-size: 0.7rem;
+            color: #6b7280;
+            padding: 0 26px 18px;
+            text-align: right;
+        }
+
+        @media (max-width: 900px) {
+            .body {
+                grid-template-columns: 1fr;
+            }
+            .header {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .header-meta {
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 12px;
+            }
+            .page {
+                border-radius: 14px;
+            }
+            .header {
+                padding: 18px 16px 14px;
+            }
+            .body {
+                padding: 14px 12px 14px;
+            }
+            .section {
+                padding: 10px 10px 12px;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .exp-item {
+                grid-template-columns: 1fr;
+            }
+            .name {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-main">
+            <div class="pill">
+                <span class="pill-dot"></span>
+                PRINCIPAL SOFTWARE DEVELOPER
+            </div>
+            <h1 class="name">Landon Mercer</h1>
+            <div class="title">.NET • SQL Server • Cloud-Native Architecture • AI-Ready Systems</div>
+            <p class="tagline">
+                15+ years building mission‑critical .NET and SQL Server platforms, leading engineering teams,
+                and evolving legacy estates into cloud-native, AI-augmented solutions.
+            </p>
+        </div>
+        <div class="header-meta">
+            <div class="contact">
+                <div>
+                    <div class="contact-label">Location</div>
+                    <div>Remote / Hybrid – Open to US & EU</div>
+                </div>
+                <div>
+                    <div class="contact-label">Email</div>
+                    <div><a href="mailto:landon.mercer.dev@example.com">landon.mercer.dev@example.com</a></div>
+                </div>
+                <div>
+                    <div class="contact-label">Phone</div>
+                    <div>+1 (555) 123‑4567</div>
+                </div>
+                <div>
+                    <div class="contact-label">LinkedIn / GitHub</div>
+                    <div>
+                        <a href="https://www.linkedin.com" target="_blank">linkedin.com/in/landonmercer</a> ·
+                        <a href="https://github.com" target="_blank">github.com/landonmercer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Body -->
+    <main class="body">
+        <!-- Left Column -->
+        <div class="left-column">
+            <!-- Summary -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-title">Profile</div>
+                    <div class="section-subtitle">Summary</div>
+                </div>
+                <p class="summary-text">
+                    Principal-level engineer and hands-on architect specializing in high-throughput .NET and SQL Server
+                    platforms. Expert in designing and refactoring distributed systems, optimizing database performance,
+                    and coaching teams toward clean, testable, cloud-ready code. Recently focused on introducing AI
+                    capabilities using <strong>Semantic Kernel</strong> and Azure OpenAI to augment existing .NET services
+                    with retrieval-augmented generation, semantic search, and intelligent orchestration.
+                </p>
+                <div class="chip-row">
+                    <span class="chip">.NET 6/7/8</span>
+                    <span class="chip">C#</span>
+                    <span class="chip">ASP.NET Core</span>
+                    <span class="chip">SQL Server</span>
+                    <span class="chip">Azure</span>
+                    <span class="chip">Event-Driven</span>
+                    <span class="chip">Semantic Kernel</span>
+                    <span class="chip">Leadership</span>
+                </div>
+            </section>
+
+            <!-- Core Skills (.NET & SQL) -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-title">Core Engineering Skills</div>
+                    <div class="section-subtitle">.NET & SQL Server</div>
+                </div>
+                <div class="skills-grid">
+                    <!-- C# / .NET -->
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <div>
+                                <div class="skill-name">C# / .NET (Framework, Core, .NET 8)</div>
+                                <div class="skill-tag">API design · async · diagnostics</div>
+                            </div>
+                        </div>
+                        <div class="rating-row">
+                            <div class="rating-bar">
+                                <div class="rating-fill" style="width: 95%;"></div>
+                            </div>
+                            <span class="rating-value">9.5 / 10</span>
+                        </div>
+                        <div class="skill-notes">
+                            Extensive back-end services, microservices, background workers, libraries.
+                        </div>
+                    </div>
+
+                    <!-- ASP.NET Core -->
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <div>
+                                <div class="skill-name">ASP.NET Core Web API</div>
+                                <div class="skill-tag">REST · minimal APIs · filters</div>
+                            </div>
+                        </div>
+                        <div class="rating-row">
+                            <div class="rating-bar">
+                                <div class="rating-fill" style="width: 90%;"></div>
+                            </div>
+                            <span class="rating-value">9 / 10</span>
+                        </div>
+                        <div class="skill-notes">
+                            High-performance APIs with versioning, middleware pipelines, and observability.
+                        </div>
+                    </div>
+
+                    <!-- SQL Server -->
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <div>
+                                <div class="skill-name">SQL Server & T‑SQL</div>
+                                <div class="skill-tag">schema · indexing · tuning</div>
+                            </div>
+                        </div>
+                        <div class="rating-row">
+                            <div class="rating-bar">
+                                <div class="rating-fill" style="width: 96%;"></div>
+                            </div>
+                            <span class="rating-value">9.6 / 10</span>
+                        </div>
+                        <div class="skill-notes">
+                            Query optimization, execution plans, partitioning, troubleshooting deadlocks.
+                        </div>
+                    </div>
+
+                    <!-- Data Layer -->
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <div>
+                                <div class="skill-name">EF Core / Dapper</div>
+                                <div class="skill-tag">ORM strategy · transactions</div>
+                            </div>
+                        </div>
+                        <div class="rating-row">
+                            <div class="rating-bar">
+                                <div class="rating-fill" style="width: 88%;"></div>
+                            </div>
+                            <span class="rating-value">8.8 / 10</span>
+                        </div>
+                        <div class="skill-notes">
+                            Balanced patterns: raw T‑SQL, Dapper, and EF Core where each fits best.
+                        </div>
+                    </div>
+
+                    <!-- Architecture -->
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <div>
+                                <div class="skill-name">Architecture & Design</div>
+                                <div class="skill-tag">DDD · CQRS · messaging</div>
+                            </div>
+                        </div>
+                        <div class="rating-row">
+                            <div class="rating-bar">
+                                <div class="rating-fill" style="width: 92%;"></div>
+                            </div>
+                            <span class="rating-value">9.2 / 10</span>
+                        </div>
+                        <div class="skill-notes">
+                            Domain modeling, bounded contexts, event-driven and modular monolith designs.
+                        </div>
+                    </div>
+
+                    <!-- Performance -->
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <div>
+                                <div class="skill-name">Performance & Scalability</div>
+                                <div class="skill-tag">profiling · caching · load</div>
+                            </div>
+                        </div>
+                        <div class="rating-row">
+                            <div class="rating-bar">
+                                <div class="rating-fill" style="width: 90%;"></div>
+                            </div>
+                            <span class="rating-value">9 / 10</span>
+                        </div>
+                        <div class="skill-notes">
+                            Profiling (dotTrace, PerfView), caching strategies, connection pooling, batching.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-title">Experience</div>
+                    <div class="section-subtitle">Selected Roles</div>
+                </div>
+                <div class="timeline">
+                    <div class="exp-item">
+                        <div class="exp-meta">
+                            <div>Principal Software Developer</div>
+                            <div class="exp-company">FinEdge Systems · Remote</div>
+                            <div>2020 – Present</div>
+                        </div>
+                        <div class="exp-detail">
+                            <div class="exp-role">Principal .NET & SQL Architect – Trading & Risk Platform</div>
+                            <ul>
+                                <li>Led modernization of a legacy .NET / SQL Server monolith into a modular API layer and event-driven services, cutting deployment lead time by 70%.</li>
+                                <li>Redesigned critical T‑SQL procedures and indexes for trade matching; reduced average latency from 1.2s to under 200ms at peak load.</li>
+                                <li>Introduced observability stack (structured logging, metrics, tracing) across .NET services and database to support SLOs and on-call rotations.</li>
+                                <li>Mentored a team of 10+ engineers, establishing coding standards, review practices, and design documentation guidelines.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-meta">
+                            <div>Lead Software Engineer</div>
+                            <div class="exp-company">NorthBridge Health</div>
+                            <div>2014 – 2020</div>
+                        </div>
+                        <div class="exp-detail">
+                            <div class="exp-role">Lead .NET Engineer – Care Management Suite</div>
+                            <ul>
+                                <li>Owned architecture for patient management and billing subsystems built on ASP.NET, WCF (legacy), and SQL Server.</li>
+                                <li>Implemented multi-tenancy, row-level security, and encryption at rest/in transit to support HIPAA compliance.</li>
+                                <li>Designed ETL processes (SSIS + C# loaders) to consolidate data from 10+ hospital systems into a single reporting database.</li>
+                                <li>Introduced automated regression testing and CI/CD pipelines, significantly reducing production defects per release.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-meta">
+                            <div>Senior Software Engineer</div>
+                            <div class="exp-company">BrightPath Logistics</div>
+                            <div>2010 – 2014</div>
+                        </div>
+                        <div class="exp-detail">
+                            <div class="exp-role">Senior .NET / SQL Developer – Routing & Tracking</div>
+                            <ul>
+                                <li>Developed core routing algorithms and scheduling services in C# with heavy SQL Server integration.</li>
+                                <li>Optimized geospatial queries (SQL Server) and caching layer, cutting routing run times by more than 60%.</li>
+                                <li>Collaborated with operations teams to translate complex logistics workflows into robust, testable code.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+            <!-- AI & Semantic Kernel -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-title">AI & Semantic Kernel</div>
+                    <div class="section-subtitle">Emerging Skills</div>
+                </div>
+                <div class="ai-highlight">
+                    <div>
+                        <div class="ai-pill">
+                            <span class="ai-dot"></span>
+                            INTRODUCTORY PRACTITIONER
+                        </div>
+                        <div style="margin-top:8px;">
+                            <div class="skill-card" style="margin-top:4px;">
+                                <div class="skill-header">
+                                    <div>
+                                        <div class="skill-name">Semantic Kernel for .NET</div>
+                                        <div class="skill-tag">plugins · planners · connectors</div>
+                                    </div>
+                                </div>
+                                <div class="rating-row">
+                                    <div class="rating-bar">
+                                        <!-- Intro skill: 5/10 -->
+                                        <div class="rating-fill" style="width: 50%;"></div>
+                                    </div>
+                                    <span class="rating-value">5 / 10</span>
+                                </div>
+                                <div class="skill-notes">
+                                    Hands-on prototypes integrating Semantic Kernel into existing ASP.NET Core services:
+                                    prompt templates, function orchestration, and basic vector search scenarios.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ai-text">
+                        Recently focused on introducing AI features safely into established .NET platforms:
+                        <ul style="margin-top:4px; padding-left:16px;">
+                            <li>Built a proof-of-concept “developer assistant” plugin over internal APIs using Semantic Kernel planners.</li>
+                            <li>Experimented with RAG-style document answering via Azure Cognitive Search and embeddings.</li>
+                            <li>Defined patterns for prompt versioning, telemetry, and guardrails within existing CI/CD workflows.</li>
+                        </ul>
+                        Comfortable guiding teams from zero to first working AI-backed feature, with a focus on
+                        reliability, observability, and incremental adoption.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Auxiliary Skills -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-title">Platform & Leadership</div>
+                    <div class="section-subtitle">Supporting Skills</div>
+                </div>
+                <div class="skills-grid">
+                    <!-- Azure -->
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <div>
+                                <div class="skill-name">Azure Cloud</div>
+                                <div class="skill-tag">App Service · AKS · SQL DB</div>
+                            </div>
+                        </div>
+                        <div class="rating-row">
+                            <div class="rating-bar">
+                                <div class="rating-fill" style="width: 82%;"></div>
+                            </div>
+                            <span class="rating-value">8.2 / 10</span>
+                        </div>
+                        <div class="skill-notes">
+                            Deploying and operating .NET APIs, Azure SQL, Key Vault, Storage, Service Bus.
+                        </div>
+                    </div>
+
+                    <!-- DevOps -->
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <div>
+                                <div class="skill-name">DevOps & CI/CD</div>
+                                <div class="skill-tag">GitHub Actions · Azure DevOps</div>
+                            </div>
+                        </div>
+                        <div class="rating-row">
+                            <div class="rating-bar">
+                                <div class="rating-fill" style="width: 80%;"></div>
+                            </div>
+                            <span class="rating-value">8 / 10</span>
+                        </div>
+                        <div class="skill-notes">
+                            Build/test pipelines, release gating, blue‑green deployments, DB migration strategies.
+                        </div>
+                    </div>
+
+                    <!-- Testing -->
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <div>
+                                <div class="skill-name">Testing Strategy</div>
+                                <div class="skill-tag">unit · integration · contract</div>
+                            </div>
+                        </div>
+                        <div class="rating-row">
+                            <div class="rating-bar">
+                                <div class="rating-fill" style="width: 84%;"></div>
+                            </div>
+                            <span class="rating-value">8.4 / 10</span>
+                        </div>
+                        <div class="skill-notes">
+                            xUnit, NUnit, test harnesses for .NET + SQL interactions, mocks vs. fakes guidance.
+                        </div>
+                    </div>
+
+                    <!-- Leadership -->
+                    <div class="skill-card">
+                        <div class="skill-header">
+                            <div>
+                                <div class="skill-name">Technical Leadership</div>
+                                <div class="skill-tag">mentoring · roadmaps</div>
+                            </div>
+                        </div>
+                        <div class="rating-row">
+                            <div class="rating-bar">
+                                <div class="rating-fill" style="width: 89%;"></div>
+                            </div>
+                            <span class="rating-value">8.9 / 10</span>
+                        </div>
+                        <div class="skill-notes">
+                            Leading guilds, running design reviews, shaping architecture direction with stakeholders.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Projects -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-title">Key Work</div>
+                    <div class="section-subtitle">Selected Projects</div>
+                </div>
+                <div class="list-item">
+                    <div class="list-title">High-Throughput Trading API Platform (.NET & SQL Server)</div>
+                    <div class="list-subtitle">Principal Developer · FinEdge Systems</div>
+                    <div class="list-body">
+                        Re-architected trade ingestion and risk calculation services into a horizontally-scalable
+                        ASP.NET Core and SQL Server solution handling millions of daily transactions.
+                    </div>
+                    <div class="badge-row">
+                        <span class="badge">.NET 7</span>
+                        <span class="badge">SQL Server</span>
+                        <span class="badge">Event-Driven</span>
+                        <span class="badge">Caching</span>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-title">AI-Assisted Developer Companion (Semantic Kernel POC)</div>
+                    <div class="list-subtitle">Internal R&D · FinEdge Systems</div>
+                    <div class="list-body">
+                        Created a prototype developer assistant using Semantic Kernel and Azure OpenAI to answer
+                        questions about internal APIs, generate sample integration code, and propose test cases.
+                    </div>
+                    <div class="badge-row">
+                        <span class="badge">Semantic Kernel</span>
+                        <span class="badge">Azure OpenAI</span>
+                        <span class="badge">RAG</span>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-title">Unified Healthcare Reporting Warehouse</div>
+                    <div class="list-subtitle">Lead Engineer · NorthBridge Health</div>
+                    <div class="list-body">
+                        Designed and implemented an enterprise reporting database and ETL pipeline consolidating
+                        10+ EHR/PM systems, enabling self-service analytics and regulatory reporting.
+                    </div>
+                    <div class="badge-row">
+                        <span class="badge">SQL Server</span>
+                        <span class="badge">SSIS</span>
+                        <span class="badge">Data Modeling</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education & Certifications -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-title">Education & Certifications</div>
+                    <div class="section-subtitle">Background</div>
+                </div>
+                <div class="list-item">
+                    <div class="list-title">B.Sc. in Computer Science</div>
+                    <div class="list-subtitle">State University of Technology</div>
+                    <div class="list-body">Focus on software engineering, algorithms, and database systems.</div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-title">Microsoft Certified: Azure Developer Associate</div>
+                    <div class="list-subtitle">Microsoft</div>
+                    <div class="list-body">Building, testing, and maintaining cloud applications and services on Azure.</div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-title">Internal & Community Learning</div>
+                    <div class="list-body">
+                        Ongoing learning via Microsoft docs, community talks, and prototypes focused on
+                        Semantic Kernel, Azure OpenAI, and responsible AI practices in .NET ecosystems.
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="footer-note">
+        References and detailed project portfolio available on request.
+    </div>
+</div>
+</body>
+</html>

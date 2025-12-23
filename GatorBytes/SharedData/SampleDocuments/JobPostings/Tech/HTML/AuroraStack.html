@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Python AI Engineer (LangChain) – AuroraStack Labs</title>
+  <style>
+    :root {
+      --bg-color: #f5f7fb;
+      --card-bg: #ffffff;
+      --primary: #1e4ed8;
+      --primary-light: #e0ebff;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --border-color: #e5e7eb;
+      --accent: #10b981;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 40px 16px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      padding: 40px 32px 32px;
+      border: 1px solid var(--border-color);
+    }
+
+    .header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .company {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: 1.85rem;
+      margin: 4px 0 6px;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+    }
+
+    .meta span {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border-color);
+      background: #f9fafb;
+    }
+
+    .badge-primary {
+      border-color: var(--primary-light);
+      background: var(--primary-light);
+      color: #1f2937;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin: 24px 0 10px;
+    }
+
+    p {
+      margin-bottom: 10px;
+      color: #111827;
+    }
+
+    .section {
+      margin-bottom: 18px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    li {
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-color);
+      padding: 4px 10px;
+      background: #f9fafb;
+      color: var(--text-muted);
+    }
+
+    .apply-box {
+      border-radius: 10px;
+      border: 1px solid var(--primary-light);
+      background: #f9fafb;
+      padding: 14px 16px;
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    .apply-box strong {
+      color: var(--primary);
+    }
+
+    .highlight {
+      background: #ecfdf5;
+      border-left: 3px solid var(--accent);
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #064e3b;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 24px 18px 22px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div>
+        <div class="company">AuroraStack Labs</div>
+        <h1>Python AI Engineer (LangChain)</h1>
+      </div>
+      <div class="meta">
+        <span class="badge-primary">Early-Stage Startup</span>
+        <span>Full-time</span>
+        <span>Remote-friendly (US/EU time zones)</span>
+        <span>AI / Developer Tools</span>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>About AuroraStack Labs</h2>
+      <p>
+        AuroraStack Labs is a seed-stage startup building AI-native tools that help teams turn their
+        unstructured knowledge into powerful, conversational applications. We are a small, senior
+        team with backgrounds in applied AI, dev tooling, and product-led growth.
+      </p>
+      <p>
+        We are looking for a founding Python engineer to lead a new greenfield AI product built on
+        top of LangChain and modern LLM infrastructure.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Role Overview</h2>
+      <p>
+        You will own the design and implementation of our core AI orchestration layer: ingesting
+        data from multiple sources, building retrieval-augmented generation (RAG) pipelines, and
+        exposing these capabilities via robust APIs and internal tools.
+      </p>
+      <div class="highlight">
+        This role is ideal for someone who is deeply comfortable with Python, already hands-on with
+        LangChain or similar LLM frameworks, and wants ownership over a 0→1 product in a startup
+        environment.
+      </div>
+      <div class="tag-list">
+        <span class="tag">Python</span>
+        <span class="tag">LangChain</span>
+        <span class="tag">LLMs</span>
+        <span class="tag">RAG</span>
+        <span class="tag">Vector Databases</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">TypeScript (nice to have)</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What You’ll Do</h2>
+      <ul>
+        <li>
+          Design, implement, and iterate on AI workflows using Python and LangChain (chains, tools,
+          agents, and custom pipelines).
+        </li>
+        <li>
+          Build retrieval-augmented generation (RAG) systems using vector databases (e.g., Pinecone,
+          Weaviate, Qdrant, or similar).
+        </li>
+        <li>
+          Integrate with leading LLM providers (OpenAI, Anthropic, etc.) and manage prompt
+          templates, routing, and evaluation.
+        </li>
+        <li>
+          Develop production-grade REST APIs and internal services (e.g., with FastAPI) that power
+          our customer-facing applications.
+        </li>
+        <li>
+          Implement data ingestion and document processing pipelines (PDFs, HTML, internal tools,
+          knowledge bases, ticketing systems).
+        </li>
+        <li>
+          Instrument observability, logging, and evaluation loops to monitor LLM quality, latency,
+          and cost.
+        </li>
+        <li>
+          Collaborate closely with design and product to rapidly prototype features and push them to
+          production in short cycles.
+        </li>
+        <li>
+          Contribute to technical direction, architecture, and early engineering culture as a
+          founding team member.
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Required Experience</h2>
+      <ul>
+        <li>3+ years of professional software engineering experience, primarily in Python.</li>
+        <li>
+          Hands-on experience building applications with LangChain or a similar LLM framework
+          (LlamaIndex, Haystack, Semantic Kernel, etc.).
+        </li>
+        <li>
+          Solid grasp of LLM concepts: tokenization, context windows, embeddings, RAG, and prompt
+          design.
+        </li>
+        <li>
+          Experience integrating with at least one major cloud provider (AWS, GCP, or Azure) and
+          deploying backend services.
+        </li>
+        <li>
+          Strong knowledge of modern Python practices: type hints, virtual environments, packaging,
+          testing, and dependency management.
+        </li>
+        <li>
+          Experience building and consuming RESTful APIs; familiarity with frameworks like FastAPI,
+          Flask, or Django.
+        </li>
+        <li>
+          Comfortable working in a fast-moving, ambiguous startup environment with high ownership
+          and self-direction.
+        </li>
+        <li>
+          Clear written and verbal communication in English; able to explain tradeoffs and decisions
+          to both technical and non-technical stakeholders.
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Nice-to-Have Skills</h2>
+      <ul>
+        <li>Experience with one or more vector databases (Pinecone, Qdrant, Weaviate, Chroma).</li>
+        <li>
+          Knowledge of basic MLOps practices: experiment tracking, model/version management,
+          monitoring.
+        </li>
+        <li>
+          Experience building internal CLIs or developer tools that wrap AI capabilities for other
+          engineers.
+        </li>
+        <li>
+          Familiarity with front-end stacks (React, Next.js, or TypeScript) for building basic
+          dashboards or internal UIs.
+        </li>
+        <li>Previous experience at an early-stage startup or in a 0→1 product role.</li>
+        <li>Exposure to authentication/authorization patterns (OAuth, JWT, SSO).</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>What We Offer</h2>
+      <ul>
+        <li>Competitive salary plus meaningful early-stage equity.</li>
+        <li>Remote-first culture with flexible working hours in US/EU-adjacent time zones.</li>
+        <li>Hardware and tooling budget to set up your ideal environment.</li>
+        <li>Opportunity to shape a core AI product from the ground up.</li>
+        <li>
+          Direct collaboration with the founders and influence over product, culture, and technical
+          roadmap.
+        </li>
+        <li>Generous vacation policy and local holidays.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>How to Apply</h2>
+      <div class="apply-box">
+        <p>
+          Email <strong>jobs@aurorastacklabs.com</strong> with the subject
+          <strong>"Python AI Engineer – [Your Name]"</strong> and include:
+        </p>
+        <ul>
+          <li>Your resume or LinkedIn profile.</li>
+          <li>
+            A short note (3–5 paragraphs) on why you are interested in building with LLMs and
+            LangChain at an early-stage startup.
+          </li>
+          <li>
+            Links to anything relevant: GitHub, open-source contributions, blog posts, or projects
+            showing AI/LLM work.
+          </li>
+        </ul>
+        <p>
+          If you are unsure whether you meet every requirement but are excited about the role, we
+          encourage you to apply.
+        </p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

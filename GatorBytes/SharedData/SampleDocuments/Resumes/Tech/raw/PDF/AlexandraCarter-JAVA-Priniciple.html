@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume – Alexandra M. Carter – Principal Java Engineer</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --accent: #2563eb;
+            --text-main: #111827;
+            --text-muted: #4b5563;
+            --border: #e5e7eb;
+            --bg-light: #f9fafb;
+            --badge-bg: #e0f2fe;
+            --badge-text: #1d4ed8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 32px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: #f3f4f6;
+            color: var(--text-main);
+        }
+
+        .resume-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+            overflow: hidden;
+        }
+
+        .header {
+            padding: 28px 32px 20px;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(135deg, #eff6ff, #ffffff);
+        }
+
+        .header-main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .name-role h1 {
+            margin: 0;
+            font-size: 26px;
+            letter-spacing: 0.02em;
+        }
+
+        .name-role .role {
+            margin-top: 4px;
+            font-size: 15px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .contact {
+            text-align: right;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .contact a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .badge-row {
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 11px;
+        }
+
+        .badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            padding: 4px 9px;
+            border-radius: 999px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 2.1fr 1.3fr;
+            gap: 0;
+        }
+
+        .main-column {
+            border-right: 1px solid var(--border);
+        }
+
+        .section {
+            padding: 18px 28px 10px;
+        }
+
+        .section:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .section:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        .section-title {
+            margin: 0 0 8px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .summary-text {
+            font-size: 13px;
+            line-height: 1.5;
+            color: var(--text-muted);
+        }
+
+        .summary-highlights {
+            margin-top: 6px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .summary-pill {
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 999px;
+            border: 1px solid #dbeafe;
+            background-color: #eff6ff;
+            color: #1d4ed8;
+        }
+
+        .experience-item {
+            margin-bottom: 10px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 4px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .experience-title {
+            font-weight: 600;
+        }
+
+        .experience-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .experience-company {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .experience-location {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        ul.bullets {
+            padding-left: 16px;
+            margin: 4px 0 0;
+        }
+
+        ul.bullets li {
+            font-size: 13px;
+            line-height: 1.4;
+            margin-bottom: 2px;
+            color: var(--text-main);
+        }
+
+        .subheading {
+            font-size: 12px;
+            font-weight: 600;
+            margin: 10px 0 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+        }
+
+        .tag-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .tag {
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 999px;
+            background-color: #f3f4f6;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .tag-strong {
+            background-color: #dbeafe;
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+
+        .project {
+            margin-bottom: 8px;
+        }
+
+        .project-title {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .project-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+
+        .project-desc {
+            font-size: 13px;
+            color: var(--text-main);
+        }
+
+        .edu-item {
+            font-size: 13px;
+        }
+
+        .edu-item .school {
+            font-weight: 600;
+        }
+
+        .edu-item .degree {
+            color: var(--text-muted);
+        }
+
+        .edu-item .year {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 12px;
+            }
+            .content {
+                grid-template-columns: 1fr;
+            }
+            .main-column {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+            .header {
+                padding: 20px 18px 14px;
+            }
+            .section {
+                padding: 14px 18px 6px;
+            }
+            .contact {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="resume-wrapper">
+    <header class="header">
+        <div class="header-main">
+            <div class="name-role">
+                <h1>Alexandra M. Carter</h1>
+                <div class="role">Principal Java Engineer &amp; Microservices Architect</div>
+            </div>
+            <div class="contact">
+                <div>Seattle, WA 98101</div>
+                <div>+1 (555) 014-8821</div>
+                <div><a href="mailto:alexandra.carter.dev@example.com">alexandra.carter.dev@example.com</a></div>
+                <div>
+                    <a href="https://www.linkedin.com/in/example-alexandra-carter">linkedin.com/in/example-alexandra-carter</a> |
+                    <a href="https://github.com/example-acarter">github.com/example-acarter</a>
+                </div>
+            </div>
+        </div>
+        <div class="badge-row">
+            <span class="badge">10+ Years Java</span>
+            <span class="badge">Principal Engineer</span>
+            <span class="badge">Microservices</span>
+            <span class="badge">Performance &amp; Optimization</span>
+            <span class="badge">Oracle &amp; PostgreSQL</span>
+        </div>
+    </header>
+
+    <div class="content">
+        <!-- Main Column -->
+        <div class="main-column">
+            <section class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <p class="summary-text">
+                    Principal-level Java engineer with 10 years at Northwind Systems, growing from junior to principal
+                    while leading the design and implementation of high-throughput microservices. Deep experience across
+                    major Java versions (7–21), Spring-based ecosystems, and performance tuning for mission-critical,
+                    data-intensive platforms backed by Oracle and PostgreSQL. Strong focus on clean architecture,
+                    scalability, and reliability, with proven success mentoring teams and driving technical direction
+                    in an internal-facing, product-engineering environment.
+                </p>
+                <div class="summary-highlights">
+                    <span class="summary-pill">End-to-end microservice design &amp; modernization</span>
+                    <span class="summary-pill">High-volume OLTP &amp; reporting workloads</span>
+                    <span class="summary-pill">GC, profiling, and query optimization</span>
+                    <span class="summary-pill">Team leadership &amp; technical mentorship</span>
+                    <span class="summary-pill">Limited direct client exposure; strong internal stakeholder focus</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Professional Experience</h2>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Principal Java Engineer / Microservices Architect</div>
+                            <div class="experience-company">Northwind Systems, Inc.</div>
+                        </div>
+                        <div class="experience-meta">2022 – Present | Seattle, WA (Onsite/Hybrid)</div>
+                    </div>
+                    <ul class="bullets">
+                        <li>Own architecture and implementation of a microservices platform processing 50M+ transactions/day for internal financial operations.</li>
+                        <li>Lead a team of 6–8 engineers, setting coding standards, reviewing designs, and guiding delivery across multiple services.</li>
+                        <li>Redesigned legacy Java 8 monolith components into Spring Boot–based microservices, reducing average latency by ~40% and incident rates by ~30%.</li>
+                        <li>Introduced standardized observability (OpenTelemetry, Prometheus, Grafana) and SLOs, improving mean time to resolution for production issues.</li>
+                        <li>Partner with product and platform teams (limited direct client contact) to refine technical requirements and align solution design with roadmap.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Senior Java Engineer / Team Lead</div>
+                            <div class="experience-company">Northwind Systems, Inc.</div>
+                        </div>
+                        <div class="experience-meta">2019 – 2022 | Seattle, WA</div>
+                    </div>
+                    <ul class="bullets">
+                        <li>Led development of core Java services handling internal order orchestration and billing across Oracle and PostgreSQL-backed systems.</li>
+                        <li>Optimized JVM performance using profiling (YourKit, JFR) and GC tuning, cutting CPU usage by 25% on key workloads.</li>
+                        <li>Refactored high-traffic APIs, reducing 95th percentile response times from 900ms to under 300ms through caching, batching, and SQL optimization.</li>
+                        <li>Coordinated cross-team design sessions and performed design reviews to ensure consistency in API standards and data models.</li>
+                        <li>Mentored 4+ junior/mid-level developers, improving onboarding time and code quality across the team.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Software Engineer (Java)</div>
+                            <div class="experience-company">Northwind Systems, Inc.</div>
+                        </div>
+                        <div class="experience-meta">2017 – 2019 | Seattle, WA</div>
+                    </div>
+                    <ul class="bullets">
+                        <li>Developed RESTful Java services for internal order management and reporting using Spring, Hibernate, and Oracle.</li>
+                        <li>Migrated key services from Java 7/8 to Java 11, resolving compatibility issues and leveraging new language features where appropriate.</li>
+                        <li>Collaborated with DBAs to redesign slow queries and indexes, achieving 3–5x performance improvements on critical reports.</li>
+                        <li>Improved test coverage and reliability through JUnit/Mockito tests and integration tests against in-memory databases.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Junior Java Developer</div>
+                            <div class="experience-company">Northwind Systems, Inc.</div>
+                        </div>
+                        <div class="experience-meta">2015 – 2017 | Seattle, WA</div>
+                    </div>
+                    <ul class="bullets">
+                        <li>Implemented backend features and bug fixes in Java for internal line-of-business applications.</li>
+                        <li>Assisted in decomposing a legacy Java EE application into smaller, REST-based services.</li>
+                        <li>Wrote and maintained PL/SQL and PostgreSQL functions, views, and scripts for data transformations and batch jobs.</li>
+                        <li>Worked closely with senior engineers to adopt coding standards, CI/CD practices, and branching strategies.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Selected Projects</h2>
+
+                <div class="project">
+                    <div class="project-title">Microservices Modernization of Order Processing Platform</div>
+                    <div class="project-meta">Principal Engineer &amp; Architect | Java 11–17, Spring Boot, Kafka, Oracle, PostgreSQL, Docker, Kubernetes</div>
+                    <p class="project-desc">
+                        Led architectural design and phased migration of a monolithic Java 8 order processing system into a suite of independently deployable microservices.
+                        Introduced event-driven communication using Kafka, standardized REST contracts, and implemented blue/green deployments. Achieved ~40% latency
+                        reduction and significantly improved release frequency while maintaining backward compatibility for internal consuming systems.
+                    </p>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">Performance Optimization for Financial Reconciliation Engine</div>
+                    <div class="project-meta">Senior Engineer | Java 8–11, Spring, Oracle, PL/SQL, JFR, YourKit</div>
+                    <p class="project-desc">
+                        Profiled and optimized a reconciliation engine handling large nightly batches and on-demand reporting. Eliminated memory hotspots, tuned GC parameters,
+                        and refactored N+1 database access patterns into bulk operations. Partnered with DBAs to optimize indexes and partitioning. Reduced batch processing
+                        times from 4+ hours to under 90 minutes and improved system stability under peak load.
+                    </p>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">Unified Reporting Microservice for Cross-Database Analytics</div>
+                    <div class="project-meta">Lead Developer | Java 17, Spring Boot, PostgreSQL, Oracle, Flyway, REST</div>
+                    <p class="project-desc">
+                        Designed and implemented a reporting microservice that federated data across Oracle and PostgreSQL sources behind a consistent REST API
+                        for internal analytics tools. Introduced a caching layer and query abstraction to support complex filters without exposing underlying schemas.
+                        Improved report generation times by 60% and simplified data access for multiple internal teams with minimal direct client involvement.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Side Column -->
+        <aside>
+            <section class="section">
+                <h2 class="section-title">Core Skills</h2>
+
+                <div class="subheading">Languages &amp; Platforms</div>
+                <div class="tag-grid">
+                    <span class="tag tag-strong">Java 7–21</span>
+                    <span class="tag">JVM internals &amp; GC tuning</span>
+                    <span class="tag">Kotlin (working)</span>
+                    <span class="tag">SQL / PL/SQL</span>
+                    <span class="tag">Shell scripting</span>
+                </div>
+
+                <div class="subheading">Frameworks &amp; Microservices</div>
+                <div class="tag-grid">
+                    <span class="tag tag-strong">Spring Boot</span>
+                    <span class="tag">Spring Cloud</span>
+                    <span class="tag">Spring Data / JPA / Hibernate</span>
+                    <span class="tag">RESTful APIs</span>
+                    <span class="tag">Event-driven architecture</span>
+                    <span class="tag">Kafka</span>
+                </div>
+
+                <div class="subheading">Databases</div>
+                <div class="tag-grid">
+                    <span class="tag tag-strong">Oracle</span>
+                    <span class="tag tag-strong">PostgreSQL</span>
+                    <span class="tag">Query optimization</span>
+                    <span class="tag">Indexing &amp; partitioning</span>
+                    <span class="tag">Flyway / Liquibase</span>
+                </div>
+
+                <div class="subheading">DevOps &amp; Tooling</div>
+                <div class="tag-grid">
+                    <span class="tag">Docker</span>
+                    <span class="tag">Kubernetes</span>
+                    <span class="tag">CI/CD (Jenkins, GitLab CI)</span>
+                    <span class="tag">Git</span>
+                    <span class="tag">Maven / Gradle</span>
+                </div>
+
+                <div class="subheading">Performance &amp; Quality</div>
+                <div class="tag-grid">
+                    <span class="tag">JFR / YourKit / VisualVM</span>
+                    <span class="tag">Load testing (JMeter/Gatling)</span>
+                    <span class="tag">JUnit / Mockito</span>
+                    <span class="tag">Contract &amp; integration testing</span>
+                    <span class="tag">Observability (OpenTelemetry, Prometheus)</span>
+                </div>
+
+                <div class="subheading">Leadership &amp; Collaboration</div>
+                <div class="tag-grid">
+                    <span class="tag tag-strong">Team leadership</span>
+                    <span class="tag">Technical mentorship</span>
+                    <span class="tag">Architecture reviews</span>
+                    <span class="tag">Agile/Scrum</span>
+                    <span class="tag">Internal stakeholder collaboration</span>
+                    <span class="tag">Limited client-facing experience</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="edu-item">
+                    <div class="school">University of Washington</div>
+                    <div class="degree">B.S., Computer Science</div>
+                    <div class="year">2011 – 2015 | Seattle, WA</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Certifications &amp; Training</h2>
+                <ul class="bullets">
+                    <li>Oracle Certified Professional, Java SE 11 Developer</li>
+                    <li>Oracle Database SQL Certified Associate (coursework &amp; exam)</li>
+                    <li>Spring Professional Certification (Core Spring &amp; Spring Boot)</li>
+                    <li>Internal architecture and leadership programs at Northwind Systems</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Additional Information</h2>
+                <ul class="bullets">
+                    <li>Primary focus on backend engineering and architecture; minimal direct customer-facing responsibilities.</li>
+                    <li>Experience working in regulated, audit-conscious environments (logging, tracing, access control).</li>
+                    <li>Regular contributor to internal engineering guidelines and code-quality practices.</li>
+                </ul>
+            </section>
+        </aside>
+    </div>
+</div>
+</body>
+</html>

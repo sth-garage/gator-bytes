@@ -1,0 +1,67 @@
+All resumes and jobs were AI generated and do not reflect real people or posititions.
+
+
+docker run -p 6333:6333 -v "$(pwd)/qdrant_storage:/qdrant/storage" -v "$(pwd)/qdrant_snapshots:/qdrant/snapshots" qdrant/qdrant
+
+
+
+docker run --rm -it -p 6333:6333 -p 6334:6334 -v qdrant-storage:/qdrant/storage qdrant/qdrant:v1.15.3
+
+https://qdrant.tech/documentation/guides/common-errors/
+
+
+
+
+
+
+
+
+
+The image uses a gradient-heavy palette centered around blues, purples, and hints of pink/magenta.  It’s a cool, modern, and somewhat futuristic look. Here's a breakdown of the key colors I'm identifying:
+
+*   **Primary Blue:** A bright, vibrant blue - #63B3ED
+*   **Secondary Blue:** A slightly darker, more saturated blue - #4591E2
+*   **Purple/Violet:**  A deep purple with a touch of magenta - #8F5D9C
+*   **Dark Purple Core:** The central core is a very dark, almost blackish-purple - #362730
+*   **Pink/Magenta Accent:** A soft pink or magenta used in the highlights - #E164A7
+
+**Style Options (with CSS and Hex Values)**
+
+Here are three style options based on this palette. I'll give a description of the feel, then list the colors with their hex codes and some suggested CSS usage notes.  I'm aiming for different levels of intensity and application.
+
+**1. "Modern Gradient" - Balanced & Techy**
+
+*   **Feel:** This style emphasizes the gradient nature of the image. It’s clean, modern, and suitable for tech-related websites or apps.
+*   **Colors:**
+    *   `#63B3ED` (Primary Blue) – Main background color, primary buttons.  `background: linear-gradient(to right, #63B3ED 0%, #4591E2 100%);`
+    *   `#4591E2` (Secondary Blue) – Secondary backgrounds, accents. `color: #4591E2;`
+    *   `#8F5D9C` (Purple/Violet) –  Headings, important text elements. `font-size: 2em; color: #8F5D9C;`
+    *   `#362730` (Dark Purple Core) – Text on light backgrounds, shadows. `text-shadow: 1px 1px 2px rgba(54, 39, 48, 0.5);`
+    *   `#E164A7` (Pink/Magenta Accent) – Subtle highlights, calls to action.  `border: 1px solid #E164A7;`
+
+**2. "Mystic Dusk" - Dramatic & Elegant**
+
+*   **Feel:** This style leans into the darker tones and creates a more dramatic, elegant feel. It's good for brands that want to convey sophistication or mystery.
+*   **Colors:**
+    *   `#362730` (Dark Purple Core) – Primary background color. `background: #362730;`
+    *   `#8F5D9C` (Purple/Violet) –  Main text color, headings. `color: #8F5D9C;`
+    *   `#4591E2` (Secondary Blue) – Accent color for buttons and interactive elements. `background-color: #4591E2;`
+    *   `#63B3ED` (Primary Blue) –  Subtle highlights, borders. `border-bottom: 2px solid #63B3ED;`
+    *   `#E164A7` (Pink/Magenta Accent) – Very subtle accents for a touch of vibrancy. `box-shadow: 0 0 5px rgba(225, 100, 167, 0.2);`
+
+**3. "Vibrant Pop" - Energetic & Playful**
+
+*   **Feel:** This style maximizes the brightness and energy of the palette. It's suitable for brands targeting a younger audience or wanting to convey excitement.
+*   **Colors:**
+    *   `#63B3ED` (Primary Blue) – Primary background color, large elements. `background: #63B3ED;`
+    *   `#E164A7` (Pink/Magenta Accent) – Main text color, headings.  `color: #E164A7;`
+    *   `#4591E2` (Secondary Blue) – Secondary background or accent color. `background-color: rgba(69, 145, 226, 0.8);`
+    *   `#8F5D9C` (Purple/Violet) –  Buttons and interactive elements. `border: 2px solid #8F5D9C;`
+    *   `#362730` (Dark Purple Core) – Subtle shadows, outlines. `box-shadow: 0 0 10px rgba(54, 39, 48, 0.3);`
+
+**Important Notes:**
+
+*   **Gradients:**  The image heavily relies on gradients. You'll likely want to use CSS linear or radial gradient properties to recreate the visual effect in your designs.
+*   **Transparency (RGBA):** Consider using RGBA values for colors when you need transparency, especially for shadows and overlays. For example: `rgba(54, 39, 48, 0.5)` is a semi-transparent dark purple.
+*   **Accessibility:**  Ensure sufficient contrast between text and background colors to meet accessibility guidelines (WCAG). Use tools like WebAIM Contrast Checker ([https://webaim.org/resources/contrastchecker/](https://webaim.org/resources/contrastchecker/)) to verify.
+*   **Experimentation:** These are starting points!  Feel free to adjust the color ratios and experiment with different combinations to achieve your desired look.

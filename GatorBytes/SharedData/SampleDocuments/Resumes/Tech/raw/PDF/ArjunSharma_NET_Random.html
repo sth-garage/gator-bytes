@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arjun Sharma - Software Developer (.NET)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --primary: #1f4f7b;
+            --secondary: #f4f7fb;
+            --accent: #ffb546;
+            --text-main: #222;
+            --text-muted: #555;
+            --border-color: #d3dde8;
+            --bg-chip: #e3ecf7;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: #f0f2f6;
+            color: var(--text-main);
+        }
+
+        .page {
+            max-width: 1000px;
+            margin: 24px auto;
+            background: #ffffff;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 24px 28px 18px 28px;
+            background: linear-gradient(135deg, #163757, #1f4f7b);
+            color: #ffffff;
+        }
+
+        .header-main {
+            flex: 2 1 260px;
+        }
+
+        .header-main h1 {
+            margin: 0;
+            font-size: 28px;
+            letter-spacing: 0.5px;
+        }
+
+        .header-main h2 {
+            margin: 4px 0 10px 0;
+            font-size: 16px;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .header-main p {
+            margin: 4px 0;
+            font-size: 13px;
+            max-width: 600px;
+            line-height: 1.4;
+            opacity: 0.95;
+        }
+
+        .header-side {
+            flex: 1 1 200px;
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        .header-side div {
+            margin-bottom: 4px;
+        }
+
+        .header-side span.label {
+            font-weight: 600;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 2.1fr 1.2fr;
+            gap: 0;
+        }
+
+        @media (max-width: 800px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .left-column, .right-column {
+            padding: 18px 26px 26px 26px;
+        }
+
+        .left-column {
+            border-right: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 800px) {
+            .left-column {
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+        }
+
+        h3.section-title {
+            margin: 10px 0 6px;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            color: var(--primary);
+        }
+
+        .section-divider {
+            height: 2px;
+            width: 38px;
+            background: var(--accent);
+            margin: 0 0 10px 0;
+        }
+
+        .experience-item {
+            margin-bottom: 14px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            align-items: baseline;
+        }
+
+        .experience-title {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .experience-company {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .experience-dates {
+            font-size: 12px;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .experience-location {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .experience-details {
+            margin-top: 4px;
+        }
+
+        .experience-details ul {
+            padding-left: 17px;
+            margin: 4px 0 2px 0;
+        }
+
+        .experience-details li {
+            font-size: 13px;
+            margin: 2px 0;
+        }
+
+        .tagline {
+            display: inline-block;
+            background: var(--secondary);
+            border-radius: 999px;
+            padding: 3px 9px;
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .skills-group {
+            margin-bottom: 10px;
+        }
+
+        .skills-group-title {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .skill-chip {
+            display: inline-flex;
+            align-items: center;
+            background: var(--bg-chip);
+            border-radius: 999px;
+            padding: 2px 8px;
+            font-size: 11px;
+            margin: 2px 4px 2px 0;
+            border: 1px solid rgba(22,55,87,0.12);
+        }
+
+        .skill-chip span.level {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-left: 4px;
+        }
+
+        .skill-bar {
+            margin: 4px 0 6px 0;
+        }
+
+        .skill-bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .skill-bar-track {
+            position: relative;
+            height: 4px;
+            border-radius: 999px;
+            background: #e2e7f0;
+            overflow: hidden;
+            margin-top: 2px;
+        }
+
+        .skill-bar-fill {
+            position: absolute;
+            inset: 0;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #1f4f7b, #4b86c7);
+        }
+
+        .project-item {
+            margin-bottom: 10px;
+        }
+
+        .project-title-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            align-items: baseline;
+        }
+
+        .project-title {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .project-tech {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .project-description {
+            font-size: 13px;
+            margin: 3px 0 0 0;
+        }
+
+        .project-bullets {
+            padding-left: 17px;
+            margin: 3px 0 0 0;
+        }
+
+        .project-bullets li {
+            font-size: 12px;
+            margin: 2px 0;
+        }
+
+        .meta-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 4px 0;
+        }
+
+        .meta-list li {
+            font-size: 13px;
+            margin: 2px 0;
+        }
+
+        .meta-label {
+            font-weight: 600;
+        }
+
+        .education-item {
+            margin-bottom: 6px;
+        }
+
+        .education-title {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .education-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 999px;
+            background: #edf4ff;
+            color: var(--primary);
+            border: 1px solid #d0ddf6;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-main">
+            <h1>Arjun Sharma</h1>
+            <h2>Software Developer &middot; .NET / Web Applications</h2>
+            <p>
+                5+ years of experience designing and building scalable, cloud-ready web applications on the Microsoft
+                stack. Strong focus on clean architecture, API design, and performance, with hands-on contributions
+                across backend, REST services, databases, and modern front-end frameworks.
+            </p>
+        </div>
+        <div class="header-side">
+            <div><span class="label">Location:</span> Bengaluru, India</div>
+            <div><span class="label">Phone:</span> +91-98765-43210</div>
+            <div><span class="label">Email:</span> <a href="mailto:arjun.sharma.dev@example.com">arjun.sharma.dev@example.com</a></div>
+            <div><span class="label">LinkedIn:</span> <a href="https://www.linkedin.com/in/arjun-sharma" target="_blank">/in/arjun-sharma</a></div>
+            <div><span class="label">GitHub:</span> <a href="https://github.com/arjun-sh" target="_blank">@arjun-sh</a></div>
+        </div>
+    </header>
+
+    <div class="content">
+        <!-- LEFT COLUMN -->
+        <main class="left-column">
+            <!-- EXPERIENCE -->
+            <section>
+                <h3 class="section-title">Experience</h3>
+                <div class="section-divider"></div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Senior Software Developer (.NET)</div>
+                            <div class="experience-company">InnoCraft Technologies Pvt. Ltd.</div>
+                        </div>
+                        <div class="experience-dates">Jul 2021 &ndash; Present</div>
+                    </div>
+                    <div class="experience-location">Bengaluru, India</div>
+                    <div class="tagline">ASP.NET Core · Microservices · Azure · React</div>
+                    <div class="experience-details">
+                        <ul>
+                            <li>Leading development of a multi-tenant B2B order management platform built on ASP.NET Core 7 Web API and Azure SQL, handling ~1.5M orders/month.</li>
+                            <li>Designed and implemented a microservice for pricing and discounts using clean architecture, CQRS, and MediatR, reducing average response time by 32%.</li>
+                            <li>Built secure REST APIs with JWT-based authentication and role-based authorization, integrated with Azure AD and API Management.</li>
+                            <li>Collaborated with front-end team to define contracts and build reusable React components for dashboards using TypeScript and React Query.</li>
+                            <li>Optimized Entity Framework Core queries and introduced caching (Redis) for frequently accessed resources, cutting DB load by ~40%.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Software Developer (.NET)</div>
+                            <div class="experience-company">NexGen Solutions India</div>
+                        </div>
+                        <div class="experience-dates">Aug 2019 &ndash; Jun 2021</div>
+                    </div>
+                    <div class="experience-location">Pune, India</div>
+                    <div class="tagline">ASP.NET MVC · REST APIs · Angular · SQL Server</div>
+                    <div class="experience-details">
+                        <ul>
+                            <li>Worked on a legacy ASP.NET MVC 5 application and progressively migrated high-traffic modules to ASP.NET Core 3.1 Web APIs.</li>
+                            <li>Developed Angular components (Angular 8) for an internal HR portal including complex reactive forms, validation, and reusable UI modules.</li>
+                            <li>Created stored procedures, views, and indexes in SQL Server; tuned slow-performing queries improving key reports from minutes to seconds.</li>
+                            <li>Implemented background jobs using Hangfire for scheduled data sync with third-party systems (payroll, attendance, and CRM).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS -->
+            <section>
+                <h3 class="section-title">Selected Projects</h3>
+                <div class="section-divider"></div>
+
+                <div class="project-item">
+                    <div class="project-title-row">
+                        <div class="project-title">SmartOrder B2B Platform</div>
+                        <div class="project-tech">ASP.NET Core 7 · EF Core · React · Azure SQL · Redis</div>
+                    </div>
+                    <p class="project-description">
+                        Multi-tenant order management solution for distributors and retailers with real-time inventory, pricing,
+                        and analytics dashboards.
+                    </p>
+                    <ul class="project-bullets">
+                        <li>Developed core backend services in C# using RESTful APIs, repository pattern, and EF Core with code-first migrations.</li>
+                        <li>Built React-based admin portal with charts and dynamic filters, integrating with APIs via Axios and secured with JWT.</li>
+                        <li>Introduced centralized logging with Serilog + Application Insights and structured correlation IDs for request tracing.</li>
+                    </ul>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title-row">
+                        <div class="project-title">Employee Self-Service Portal</div>
+                        <div class="project-tech">ASP.NET MVC 5 · Web API · Angular 8 · SQL Server</div>
+                    </div>
+                    <p class="project-description">
+                        Web-based portal for employees to manage leave, attendance, and reimbursements with role-based workflows.
+                    </p>
+                    <ul class="project-bullets">
+                        <li>Created REST APIs with ASP.NET Web API for leave management, integrated them with Angular components using RxJS.</li>
+                        <li>Designed normalized database schema in SQL Server, including FK relationships, indexing strategy, and audit tables.</li>
+                        <li>Implemented server-side validation, model binding, and custom filters to enforce business rules and logging.</li>
+                    </ul>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title-row">
+                        <div class="project-title">Invoice Processing Automation</div>
+                        <div class="project-tech">.NET 6 · Windows Services · Dapper · Azure Storage</div>
+                    </div>
+                    <p class="project-description">
+                        Background processing engine to ingest, validate, and reconcile invoices from multiple vendors.
+                    </p>
+                    <ul class="project-bullets">
+                        <li>Implemented a .NET 6 worker service to poll invoice data from Azure Blob Storage, process it, and persist into SQL Server.</li>
+                        <li>Used Dapper for high-performance batch operations and transaction management during multi-step validations.</li>
+                        <li>Added retry logic, dead-letter queues, and email notifications for failed jobs, improving reliability and transparency.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <!-- RIGHT COLUMN -->
+        <aside class="right-column">
+            <!-- SKILLS -->
+            <section>
+                <h3 class="section-title">Core Skills</h3>
+                <div class="section-divider"></div>
+
+                <!-- Proficiency bars for core .NET -->
+                <div class="skill-bar">
+                    <div class="skill-bar-label">
+                        <span>C# / .NET (Framework &amp; Core)</span>
+                        <span>Advanced</span>
+                    </div>
+                    <div class="skill-bar-track">
+                        <div class="skill-bar-fill" style="width: 92%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-bar-label">
+                        <span>ASP.NET Core (Web API / MVC / Minimal APIs)</span>
+                        <span>Advanced</span>
+                    </div>
+                    <div class="skill-bar-track">
+                        <div class="skill-bar-fill" style="width: 90%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-bar-label">
+                        <span>Entity Framework Core / ORM</span>
+                        <span>Intermediate+</span>
+                    </div>
+                    <div class="skill-bar-track">
+                        <div class="skill-bar-fill" style="width: 82%;"></div>
+                    </div>
+                </div>
+
+                <!-- Skill chips grouped -->
+                <div class="skills-group">
+                    <div class="skills-group-title">Backend &amp; APIs</div>
+                    <span class="skill-chip">RESTful API Design <span class="level">Adv</span></span>
+                    <span class="skill-chip">Clean Architecture <span class="level">Adv</span></span>
+                    <span class="skill-chip">CQRS / MediatR <span class="level">Int</span></span>
+                    <span class="skill-chip">Background Services / Hangfire <span class="level">Int</span></span>
+                    <span class="skill-chip">Authentication (JWT, OAuth2) <span class="level">Int+</span></span>
+                </div>
+
+                <div class="skills-group">
+                    <div class="skills-group-title">Databases &amp; Data</div>
+                    <span class="skill-chip">SQL Server <span class="level">Adv</span></span>
+                    <span class="skill-chip">Azure SQL Database <span class="level">Int</span></span>
+                    <span class="skill-chip">Dapper <span class="level">Int</span></span>
+                    <span class="skill-chip">Query Optimization <span class="level">Int+</span></span>
+                    <span class="skill-chip">Redis Caching <span class="level">Int</span></span>
+                </div>
+
+                <div class="skills-group">
+                    <div class="skills-group-title">Front-end</div>
+                    <span class="skill-chip">JavaScript / TypeScript <span class="level">Int</span></span>
+                    <span class="skill-chip">React <span class="level">Int</span></span>
+                    <span class="skill-chip">Angular 8+ <span class="level">Int-</span></span>
+                    <span class="skill-chip">HTML5 / CSS3 / Bootstrap <span class="level">Adv</span></span>
+                </div>
+
+                <div class="skills-group">
+                    <div class="skills-group-title">Cloud &amp; DevOps</div>
+                    <span class="skill-chip">Azure App Service <span class="level">Int</span></span>
+                    <span class="skill-chip">Azure Storage / Blob <span class="level">Int-</span></span>
+                    <span class="skill-chip">Git / GitHub / Azure DevOps <span class="level">Adv</span></span>
+                    <span class="skill-chip">CI/CD Pipelines <span class="level">Int</span></span>
+                    <span class="skill-chip">Docker (Basics) <span class="level">Beg+</span></span>
+                </div>
+
+                <div class="skills-group">
+                    <div class="skills-group-title">Practices &amp; Other</div>
+                    <span class="skill-chip">OOP / SOLID <span class="level">Adv</span></span>
+                    <span class="skill-chip">Unit Testing (xUnit, MSTest) <span class="level">Int</span></span>
+                    <span class="skill-chip">Design Patterns <span class="level">Int</span></span>
+                    <span class="skill-chip">Agile / Scrum <span class="level">Int+</span></span>
+                </div>
+            </section>
+
+            <!-- EDUCATION -->
+            <section>
+                <h3 class="section-title">Education</h3>
+                <div class="section-divider"></div>
+
+                <div class="education-item">
+                    <div class="education-title">B.Tech in Computer Science &amp; Engineering</div>
+                    <div class="education-meta">Visvesvaraya Technological University, Karnataka &middot; 2015 &ndash; 2019</div>
+                    <div class="education-meta">CGPA: 8.4 / 10</div>
+                </div>
+            </section>
+
+            <!-- ADDITIONAL INFO -->
+            <section>
+                <h3 class="section-title">Additional Information</h3>
+                <div class="section-divider"></div>
+                <ul class="meta-list">
+                    <li><span class="meta-label">Notice Period:</span> 30 days</li>
+                    <li><span class="meta-label">Languages:</span> English (Fluent), Hindi (Native), Kannada (Conversational)</li>
+                    <li><span class="meta-label">Interests:</span> System design, open-source .NET libraries, performance tuning</li>
+                </ul>
+                <span class="badge">Open to Remote &amp; Hybrid Roles</span>
+            </section>
+        </aside>
+    </div>
+</div>
+</body>
+</html>

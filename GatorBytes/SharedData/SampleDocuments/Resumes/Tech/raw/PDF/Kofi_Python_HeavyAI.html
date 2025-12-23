@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kofi Adeyemi – Principal Software Developer (Python, Oracle/PostgreSQL, AI)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b1020;
+            --bg-alt: #141931;
+            --accent: #ff7a18;
+            --accent-soft: rgba(255, 122, 24, 0.18);
+            --accent-2: #4dd0e1;
+            --text-main: #f7f7ff;
+            --text-muted: #b8c2e0;
+            --card-bg: #151a2d;
+            --border-soft: rgba(255, 255, 255, 0.06);
+            --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.6);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top left, #1b2444 0, #050814 55%, #000 100%);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 10px;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, rgba(20,26,45,0.98), rgba(4,10,35,0.98));
+            border-radius: 18px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .page::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 10% 0%, rgba(255, 122, 24, 0.12) 0, transparent 55%),
+                radial-gradient(circle at 90% 100%, rgba(77, 208, 225, 0.16) 0, transparent 60%);
+            mix-blend-mode: screen;
+            pointer-events: none;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            padding: 32px 38px 40px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 5px;
+            }
+            .content-wrapper {
+                padding: 22px 20px 26px;
+            }
+        }
+
+        /* Header */
+        .header {
+            display: grid;
+            grid-template-columns: 2fr 1.3fr;
+            gap: 18px;
+            padding-bottom: 26px;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .name-block {
+            position: relative;
+        }
+
+        .title-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 10px 4px 4px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.16);
+            background: linear-gradient(120deg, rgba(255,122,24,0.16), rgba(77,208,225,0.08));
+            margin-bottom: 8px;
+            font-size: 11px;
+            letter-spacing: 0.11em;
+            text-transform: uppercase;
+            color: var(--text-main);
+        }
+
+        .title-pill span.icon-dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #fff 0, #ffd89b 25%, #ff7a18 60%, #8b3b00 100%);
+            box-shadow: 0 0 16px rgba(255, 138, 76, 0.7);
+        }
+
+        .name {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .name {
+                font-size: 26px;
+            }
+        }
+
+        .role {
+            font-weight: 400;
+            font-size: 14px;
+            color: var(--accent-2);
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            margin-bottom: 10px;
+        }
+
+        .summary {
+            font-size: 13px;
+            color: var(--text-muted);
+            max-width: 640px;
+        }
+
+        .summary strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .contact-block {
+            text-align: right;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .contact-block div {
+            margin-bottom: 4px;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: var(--text-main);
+            margin-right: 4px;
+        }
+
+        .tag-row {
+            margin-top: 10px;
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 3px 9px;
+            color: var(--text-muted);
+        }
+
+        /* Layout */
+        .main {
+            display: grid;
+            grid-template-columns: 1.55fr 1.2fr;
+            gap: 26px;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .main {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .section-title::before {
+            content: "";
+            width: 26px;
+            height: 2px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        }
+
+        /* Experience cards */
+        .card {
+            background: linear-gradient(135deg, rgba(14,19,40,0.98), rgba(18,26,55,0.95));
+            border-radius: 14px;
+            padding: 12px 13px 10px;
+            border: 1px solid var(--border-soft);
+            margin-bottom: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(77,208,225,0.16) 0, transparent 55%);
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .card-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 4px;
+        }
+
+        .card-header-main {
+            max-width: 70%;
+        }
+
+        @media (max-width: 600px) {
+            .card-header {
+                flex-direction: column;
+            }
+            .card-header-main {
+                max-width: 100%;
+            }
+        }
+
+        .role-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 2px;
+        }
+
+        .company-location {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .company-location span.company {
+            color: var(--accent-2);
+            font-weight: 500;
+        }
+
+        .date-pill {
+            align-self: flex-start;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            border-radius: 999px;
+            padding: 4px 9px;
+            border: 1px solid rgba(255,255,255,0.18);
+            background: radial-gradient(circle at 0 0, rgba(255,122,24,0.4), transparent 70%);
+            color: var(--text-main);
+            white-space: nowrap;
+        }
+
+        .highlight-line {
+            font-size: 11px;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .highlight-line strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .bullets {
+            list-style: none;
+            padding-left: 0;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .bullets li {
+            position: relative;
+            padding-left: 13px;
+            margin-bottom: 3px;
+        }
+
+        .bullets li::before {
+            content: "";
+            position: absolute;
+            top: 7px;
+            left: 3px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent) 0, #ffefba 80%);
+        }
+
+        /* Skills */
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-pill {
+            font-size: 10px;
+            padding: 4px 9px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(10, 15, 38, 0.9);
+            color: var(--text-main);
+        }
+
+        .skill-pill.highlight {
+            border-color: rgba(255, 122, 24, 0.65);
+            background: linear-gradient(135deg, rgba(255,122,24,0.35), rgba(10,20,40,0.9));
+        }
+
+        .skill-category {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--accent-2);
+            margin: 6px 0 3px;
+        }
+
+        /* Education & certifications */
+        .edu-item {
+            margin-bottom: 8px;
+        }
+
+        .edu-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .edu-meta {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Projects */
+        .project-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 1px;
+        }
+
+        .project-tech {
+            font-size: 10px;
+            color: var(--accent-2);
+            margin-bottom: 2px;
+        }
+
+        .project-desc {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* AI emphasis badge */
+        .ai-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            padding: 3px 10px 3px 5px;
+            border-radius: 999px;
+            border: 1px solid rgba(77,208,225,0.7);
+            background: radial-gradient(circle at 0 50%, rgba(77,208,225,0.55), transparent 65%);
+            color: #e0f7fa;
+            margin-top: 6px;
+        }
+
+        .ai-badge span.dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 4px;
+            background: conic-gradient(from 160deg, #4dd0e1, #ff7a18, #ffd56b, #4dd0e1);
+            box-shadow: 0 0 13px rgba(77,208,225,0.8);
+        }
+
+        /* Footer line */
+        .footer-note {
+            margin-top: 12px;
+            font-size: 9px;
+            color: var(--text-muted);
+            text-align: right;
+            opacity: 0.7;
+        }
+
+        a {
+            color: var(--accent-2);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="content-wrapper">
+        <!-- Header -->
+        <header class="header">
+            <div class="name-block">
+                <div class="title-pill">
+                    <span class="icon-dot"></span>
+                    PRINCIPAL SOFTWARE DEVELOPER
+                </div>
+                <div class="name">Kofi Adeyemi</div>
+                <div class="role">Python • Oracle/PostgreSQL • AI-Driven Systems</div>
+                <p class="summary">
+                    Principal engineer with <strong>15+ years</strong> of experience designing and scaling
+                    data‑intensive platforms in the UK. Specialist in <strong>Python</strong> and
+                    <strong>Oracle/PostgreSQL</strong>, leading delivery of high‑availability services,
+                    complex data pipelines and <strong>AI‑augmented features using LangChain</strong>,
+                    LLMs and vector search. Proven track record mentoring teams, modernising legacy estates,
+                    and embedding AI safely into enterprise applications.
+                </p>
+                <div class="ai-badge">
+                    <span class="dot"></span>
+                    AI-Native Architecture • LangChain • LLM Integration
+                </div>
+            </div>
+            <div class="contact-block">
+                <div><span class="contact-label">Location</span>London, United Kingdom</div>
+                <div><span class="contact-label">Phone</span>+44 7xxx xxx xxx</div>
+                <div><span class="contact-label">Email</span><a href="mailto:kofi.adeyemi@example.com">kofi.adeyemi@example.com</a></div>
+                <div><span class="contact-label">LinkedIn</span><a href="https://www.linkedin.com/" target="_blank">linkedin.com/in/kofi-adeyemi</a></div>
+                <div><span class="contact-label">GitHub</span><a href="https://github.com/" target="_blank">github.com/kofi-adeyemi</a></div>
+                <div class="tag-row">
+                    <span class="tag">Python</span>
+                    <span class="tag">Oracle</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">LangChain</span>
+                    <span class="tag">LLMs</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main -->
+        <main class="main">
+            <!-- Left column: Experience -->
+            <section>
+                <div class="section">
+                    <h2 class="section-title">Experience</h2>
+
+                    <!-- Role 1 -->
+                    <article class="card">
+                        <div class="card-inner">
+                            <div class="card-header">
+                                <div class="card-header-main">
+                                    <div class="role-title">Principal Software Engineer (Python & Data Platforms)</div>
+                                    <div class="company-location">
+                                        <span class="company">FinEdge Capital</span> – London, UK · FinTech (Trading & Risk)
+                                    </div>
+                                </div>
+                                <div class="date-pill">2020 – Present</div>
+                            </div>
+                            <p class="highlight-line">
+                                Technical lead for a <strong>Python / PostgreSQL / Oracle</strong> platform powering
+                                intraday risk analytics and AI‑driven insights across multi‑asset trading desks.
+                            </p>
+                            <ul class="bullets">
+                                <li>Architected a <strong>LangChain‑based AI assistant</strong> for risk analysts, enabling natural‑language
+                                    querying over <strong>PostgreSQL</strong> data and Oracle risk models, reducing ad‑hoc SQL/report requests by 65%.</li>
+                                <li>Designed a unified <strong>vector search layer</strong> (PostgreSQL + pgvector) to index research notes,
+                                    trade rationales and market commentary, powering contextual retrieval for LLM‑backed copilots.</li>
+                                <li>Migrated critical reporting workloads from legacy PL/SQL into <strong>Python services</strong> using
+                                    SQLAlchemy and async processing, improving end‑of‑day batch completion times by 40%.</li>
+                                <li>Implemented a secure <strong>AI governance framework</strong> (prompt templates, guardrails, PII scrubbing,
+                                    audit logging) around LangChain pipelines to meet internal model‑risk and compliance standards.</li>
+                                <li>Led a cross‑functional squad of 8 (engineers, data scientists, QA) and mentored senior developers
+                                    stepping into staff/principal responsibilities.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Role 2 -->
+                    <article class="card">
+                        <div class="card-inner">
+                            <div class="card-header">
+                                <div class="card-header-main">
+                                    <div class="role-title">Lead Software Engineer (Data & Integration)</div>
+                                    <div class="company-location">
+                                        <span class="company">Northbridge Health Systems</span> – Manchester, UK · Healthcare
+                                    </div>
+                                </div>
+                                <div class="date-pill">2015 – 2020</div>
+                            </div>
+                            <p class="highlight-line">
+                                Led delivery of secure data integration services and clinical analytics built on
+                                <strong>Python, Oracle and PostgreSQL</strong>.
+                            </p>
+                            <ul class="bullets">
+                                <li>Developed a suite of <strong>Python microservices</strong> exposing patient and claims data from Oracle and
+                                    PostgreSQL via a unified REST/GraphQL API, consumed by internal portals and third‑party partners.</li>
+                                <li>Introduced <strong>data‑quality monitoring</strong> with SQL‑based validation rules, anomaly detection in Python,
+                                    and dashboarding, reducing critical data‑quality incidents by 70%.</li>
+                                <li>Designed a prototype <strong>clinical decision‑support assistant</strong> using early LLM tooling (later
+                                    refactored to LangChain), providing summarised patient histories and coding suggestions to clinicians.</li>
+                                <li>Optimised key Oracle and PostgreSQL queries (partitioning, indexing strategies, materialised views),
+                                    eliminating chronic slow‑query alerts and cutting report runtimes from minutes to seconds.</li>
+                                <li>Championed CI/CD (GitLab CI, Docker, Kubernetes) and led a gradual migration from on‑prem
+                                    Oracle to a <strong>hybrid PostgreSQL</strong> architecture in the cloud.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Role 3 -->
+                    <article class="card">
+                        <div class="card-inner">
+                            <div class="card-header">
+                                <div class="card-header-main">
+                                    <div class="role-title">Senior Software Developer (Backend & Data)</div>
+                                    <div class="company-location">
+                                        <span class="company">BrightSky Retail Group</span> – London, UK · E‑commerce
+                                    </div>
+                                </div>
+                                <div class="date-pill">2010 – 2015</div>
+                            </div>
+                            <p class="highlight-line">
+                                Core developer on a high‑volume e‑commerce platform built on <strong>Python, Oracle</strong> and
+                                distributed caching, focused on pricing, inventory and personalisation.
+                            </p>
+                            <ul class="bullets">
+                                <li>Implemented backend services in <strong>Python</strong> managing catalogue, promotions and order fulfilment,
+                                    integrating tightly with Oracle for transactional integrity.</li>
+                                <li>Designed new schemas and PL/SQL procedures for promotions & loyalty, later ported to
+                                    PostgreSQL during an in‑house POC migration.</li>
+                                <li>Introduced A/B‑test pipelines (Python + SQL) for personalisation rules, improving average
+                                    order value by ~8% across key categories.</li>
+                                <li>Mentored junior developers in Python best practices, SQL optimisation and clean
+                                    architecture patterns.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Selected AI / Data Projects -->
+                <div class="section">
+                    <h2 class="section-title">Selected AI & Data Engineering Work</h2>
+
+                    <article class="card">
+                        <div class="card-inner">
+                            <div class="project-name">LangChain‑Powered Analyst Copilot</div>
+                            <div class="project-tech">Python · LangChain · OpenAI/Anthropic APIs · PostgreSQL · Oracle · pgvector</div>
+                            <p class="project-desc">
+                                Designed an internal copilot for risk and compliance teams: orchestrated <strong>LangChain</strong> tools
+                                to translate natural‑language queries into SQL, perform retrieval‑augmented generation across
+                                <strong>PostgreSQL</strong> and Oracle datasets, and provide fully cited responses. Added query‑plan analysis
+                                and automatic <strong>SQL optimisation suggestions</strong> for complex ad‑hoc questions.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-inner">
+                            <div class="project-name">Knowledge Graph & Vector Search for Research Content</div>
+                            <div class="project-tech">Python · FastAPI · Neo4j (optional) · PostgreSQL · pgvector · LangChain</div>
+                            <p class="project-desc">
+                                Built a research discovery platform indexing analyst notes, filings and earnings calls into
+                                <strong>PostgreSQL + pgvector</strong>. Used LangChain to enrich content with entities and relationships,
+                                and delivered a semantic search API that plugged into existing web portals with minimal changes.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-inner">
+                            <div class="project-name">Legacy PL/SQL Modernisation to Python Services</div>
+                            <div class="project-tech">Python · SQLAlchemy · Celery · Oracle · PostgreSQL · Kubernetes</div>
+                            <p class="project-desc">
+                                Led a multi‑year effort to replace monolithic PL/SQL jobs with containerised Python services.
+                                Introduced clear <strong>domain boundaries</strong>, standardised data‑access layers for Oracle and PostgreSQL,
+                                and implemented async job orchestration. Improved transparency, observability and deployment safety,
+                                while reducing operational incidents.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Right column: Skills, Education, etc. -->
+            <section>
+                <!-- Skills -->
+                <div class="section">
+                    <h2 class="section-title">Core Skills</h2>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="skill-category">Languages & Frameworks</div>
+                            <div class="pill-row">
+                                <span class="skill-pill highlight">Python (Advanced)</span>
+                                <span class="skill-pill">FastAPI</span>
+                                <span class="skill-pill">Django / DRF</span>
+                                <span class="skill-pill">AsyncIO</span>
+                                <span class="skill-pill">TypeScript (APIs)</span>
+                                <span class="skill-pill">Bash</span>
+                            </div>
+
+                            <div class="skill-category">Databases & Storage</div>
+                            <div class="pill-row">
+                                <span class="skill-pill highlight">PostgreSQL</span>
+                                <span class="skill-pill highlight">Oracle</span>
+                                <span class="skill-pill">pgvector</span>
+                                <span class="skill-pill">SQL Performance Tuning</span>
+                                <span class="skill-pill">Data Modelling</span>
+                                <span class="skill-pill">Redis</span>
+                            </div>
+
+                            <div class="skill-category">AI, LLMs & LangChain</div>
+                            <div class="pill-row">
+                                <span class="skill-pill highlight">LangChain</span>
+                                <span class="skill-pill">RAG (Retrieval‑Augmented Generation)</span>
+                                <span class="skill-pill">Prompt Engineering</span>
+                                <span class="skill-pill">OpenAI / Anthropic / Azure OpenAI</span>
+                                <span class="skill-pill">Vector Stores (PostgreSQL, Chroma, Pinecone)</span>
+                                <span class="skill-pill">Tool‑Calling & Agents</span>
+                                <span class="skill-pill">Guardrails & Safety</span>
+                            </div>
+
+                            <div class="skill-category">Architecture & DevOps</div>
+                            <div class="pill-row">
+                                <span class="skill-pill">Microservices</span>
+                                <span class="skill-pill">Event‑Driven Design</span>
+                                <span class="skill-pill">Docker</span>
+                                <span class="skill-pill">Kubernetes</span>
+                                <span class="skill-pill">CI/CD (GitLab, GitHub Actions)</span>
+                                <span class="skill-pill">AWS / Azure</span>
+                                <span class="skill-pill">Observability (Prometheus, Grafana, ELK)</span>
+                            </div>
+
+                            <div class="skill-category">Leadership & Delivery</div>
+                            <div class="pill-row">
+                                <span class="skill-pill">Technical Strategy</span>
+                                <span class="skill-pill">Mentoring & Coaching</span>
+                                <span class="skill-pill">Stakeholder Management</span>
+                                <span class="skill-pill">Agile / Kanban</span>
+                                <span class="skill-pill">Cross‑team Collaboration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="section">
+                    <h2 class="section-title">Education</h2>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="edu-item">
+                                <div class="edu-title">MSc, Software Engineering</div>
+                                <div class="edu-meta">
+                                    University of Cape Town – Cape Town, South Africa · 2008 – 2010
+                                </div>
+                                <div class="edu-meta">
+                                    Thesis: <em>Scalable Service‑Oriented Architectures for Data‑Intensive Systems</em>
+                                </div>
+                            </div>
+                            <div class="edu-item">
+                                <div class="edu-title">BSc (Hons), Computer Science</div>
+                                <div class="edu-meta">
+                                    University of Lagos – Lagos, Nigeria · 2004 – 2008
+                                </div>
+                                <div class="edu-meta">
+                                    Final year project on high‑performance query processing over relational databases.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="section">
+                    <h2 class="section-title">Certifications & Training</h2>
+                    <div class="card">
+                        <div class="card-inner">
+                            <ul class="bullets">
+                                <li>Oracle Certified Professional, Java SE 6 (historical; foundation in enterprise stacks).</li>
+                                <li>PostgreSQL Administration & Performance Tuning (EnterpriseDB training).</li>
+                                <li>Advanced LangChain & LLMOps Workshops (various online programmes, 2023–2024).</li>
+                                <li>AWS Certified Solutions Architect – Associate.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Info -->
+                <div class="section">
+                    <h2 class="section-title">Additional Information</h2>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="skill-category">Domains</div>
+                            <div class="pill-row">
+                                <span class="skill-pill">Capital Markets</span>
+                                <span class="skill-pill">Retail & E‑commerce</span>
+                                <span class="skill-pill">Healthcare</span>
+                            </div>
+
+                            <div class="skill-category">Community & Leadership</div>
+                            <ul class="bullets">
+                                <li>Regular mentor for early‑career African developers transitioning into UK software roles.</li>
+                                <li>Speaker at internal engineering guilds on <strong>LLM architectures, LangChain patterns</strong> and
+                                    <strong>production‑grade RAG</strong>.</li>
+                                <li>Contributor to internal Python and SQL style guides and reviewer of critical database‑schema changes.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <div class="footer-note">
+            Detailed references and portfolio available on request.
+        </div>
+    </div>
+</div>
+</body>
+</html>

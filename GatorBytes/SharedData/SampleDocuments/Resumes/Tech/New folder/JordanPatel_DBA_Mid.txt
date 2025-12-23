@@ -1,0 +1,103 @@
+JORDAN M. PATEL  
+Denver, CO 80205  
+Phone: (303) 555-1429  
+Email: jordan.patel.db@gmail.com  
+LinkedIn: linkedin.com/in/jordan-m-patel-dba  
+
+TARGET ROLE  
+Lead DBA / Senior Oracle Database Engineer  
+
+SUMMARY  
+Oracle-focused Database Engineer with 7+ years of experience designing, administering, and tuning mission-critical databases in fast-paced, often contract-based environments. Strong background in Oracle (RAC, Data Guard, RMAN), with additional experience in SQL Server and PostgreSQL. Known for quickly stabilizing environments, leading small project teams, and driving standards for performance, security, and automation. Looking to step into a Lead DBA role owning database strategy, best practices, and mentoring junior DBAs.  
+
+CORE SKILLS  
+- Databases: Oracle 11g/12c/18c/19c, SQL Server 2017/2019, PostgreSQL 12–15  
+- Oracle: RAC, Data Guard, RMAN, ASM, OEM, Partitioning, PL/SQL, Performance Tuning  
+- SQL Server: Backups/restore, indexing, basic SSIS/SSRS, AlwaysOn (readers)  
+- PostgreSQL: Installation, roles, basic performance tuning, migrations from Oracle  
+- Cloud: AWS RDS (Oracle, PostgreSQL), Azure SQL DB, basic OCI  
+- Scripting: SQL, Bash, Python (utilities), PowerShell (basic)  
+- DevOps & Tools: Git, Jenkins, Ansible (basic), Jira, Confluence  
+- Other: Capacity planning, HA/DR design, security hardening, on-call support, mentoring  
+
+PROFESSIONAL EXPERIENCE  
+
+Lead Database Engineer (Contract)  
+Apex Health Systems, Remote  
+03/2025 – Present  
+- Lead DBA for Oracle and PostgreSQL platforms supporting clinical apps and analytics  
+- Standardized backup/restore and DR runbooks; reduced recovery time by ~40%  
+- Guided two junior DBAs on incident handling, health checks, and tuning basics  
+- Drove migration design from legacy Oracle schemas to AWS RDS for PostgreSQL  
+
+Senior Oracle DBA (Contract)  
+BluePeak Logistics, Denver, CO  
+07/2024 – 02/2025  
+- Owned three critical Oracle 19c RAC clusters supporting 24/7 logistics operations  
+- Tuned high-impact SQL and indexes, cutting batch runtimes by up to 60%  
+- Implemented RMAN backup strategy and quarterly recovery drills  
+- Partnered with app architects to define database standards and review designs  
+
+Database Engineer III  
+CloudVista Technologies, Denver, CO  
+10/2023 – 06/2024  
+- Supported multi-tenant Oracle and SQL Server instances for SaaS customers  
+- Built monitoring and alerting dashboards with OEM and custom scripts  
+- Led small effort to consolidate multiple customer databases, reducing server footprint  
+- Assisted sales/solutions teams with sizing and HA recommendations  
+
+Database Engineer (Contract)  
+NorthRiver Financial, Remote  
+02/2023 – 09/2023  
+- Managed Oracle and PostgreSQL environments for trading and risk systems  
+- Implemented Oracle Data Guard for key databases to meet RPO/RTO SLAs  
+- Created migration scripts and procedures for select workloads to PostgreSQL  
+- Performed security hardening, account audits, and encryption reviews  
+
+Database Administrator  
+Luma Retail Group, Aurora, CO  
+06/2022 – 01/2023  
+- Administered Oracle 12c/19c and SQL Server 2019 for e‑commerce and reporting  
+- Optimized slow queries and indexing strategies for peak-season traffic  
+- Set up capacity and growth reports for leadership planning  
+- Provided 24/7 on-call rotation coverage and root cause analysis for incidents  
+
+Oracle Database Engineer (Contract)  
+City of Aurora – IT Department, Aurora, CO  
+09/2021 – 05/2022  
+- Supported Oracle databases for public safety, billing, and GIS applications  
+- Upgraded key systems from Oracle 11g to 19c with minimal downtime  
+- Automated maintenance tasks (stats, housekeeping) with Bash and PL/SQL  
+- Documented environment, standards, and recovery procedures  
+
+Database Administrator  
+Western Energy Services, Denver, CO  
+01/2021 – 08/2021  
+- Managed mixed Oracle and SQL Server estate for field operations and reporting  
+- Improved backup strategy and tested restores across multiple environments  
+- Assisted in moving non-critical workloads to AWS RDS   
+- Worked with developers to refine stored procedures and reduce deadlocks  
+
+Junior Oracle DBA  
+HexaSoft Solutions, Denver, CO  
+07/2018 – 12/2020  
+- Supported Oracle databases for multiple mid-size clients under SLAs  
+- Performed daily health checks, user management, and basic performance tuning  
+- Assisted senior DBAs with RAC, Data Guard setups, and environment builds  
+- Wrote simple scripts to automate log checks and space monitoring  
+
+EDUCATION  
+
+Bachelor of Science in Computer Science  
+Colorado State University, Fort Collins, CO  
+GPA: 3.6 / 4.0  
+Graduated: May 2018  
+
+CERTIFICATIONS  
+- Oracle Database Administrator Certified Professional (OCP) – 19c  
+- AWS Certified Cloud Practitioner (CLF-C01)  
+
+PROFESSIONAL HIGHLIGHTS  
+- Consistently selected for short-term and contract roles to stabilize and tune critical databases  
+- Experience mentoring junior DBAs and setting team standards for monitoring and recovery  
+- Strong interest in formal leadership: defining DBA best practices, coaching, and technical strategy

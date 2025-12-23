@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Python Developer – Legacy Modernization & .NET Migration</title>
+  <style>
+    :root {
+      --primary: #194775;
+      --secondary: #f4f7fb;
+      --accent: #f08a24;
+      --text-main: #222;
+      --text-muted: #555;
+      --border: #d7dde7;
+      --bg-light: #ffffff;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-main);
+      background-color: var(--secondary);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      padding: 2.5rem 2rem;
+      background: var(--bg-light);
+      border-radius: 10px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--border);
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .company-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.9rem;
+      color: var(--primary);
+      letter-spacing: 0.02em;
+    }
+
+    .company-name {
+      font-weight: 600;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .tagline {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .job-meta {
+      text-align: right;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      border: 1px solid var(--border);
+      margin-left: 0.4rem;
+      background: #f9fbff;
+    }
+
+    section {
+      margin-bottom: 1.75rem;
+    }
+
+    section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin: 0 0 0.75rem 0;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0 0 0.7rem 0;
+      font-size: 0.96rem;
+    }
+
+    ul {
+      margin: 0.2rem 0 0.7rem 1.1rem;
+      padding-left: 0.2rem;
+      font-size: 0.95rem;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+    }
+
+    .highlight {
+      background: #fff5e9;
+      border-left: 3px solid var(--accent);
+      padding: 0.7rem 0.9rem;
+      border-radius: 4px;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.35rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .badge {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fafbfe;
+      color: var(--text-muted);
+    }
+
+    .badge.strong {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: #ecf3ff;
+    }
+
+    .apply-box {
+      border-top: 1px solid var(--border);
+      padding-top: 1.25rem;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+
+    .apply-info {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .apply-button {
+      display: inline-block;
+      text-decoration: none;
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.9rem;
+      border: 1px solid var(--primary);
+      transition: background 0.15s ease, transform 0.1s ease,
+        box-shadow 0.15s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .apply-button:hover {
+      background: #153a60;
+      transform: translateY(-1px);
+      box-shadow: 0 3px 10px rgba(25, 71, 117, 0.3);
+    }
+
+    .apply-button:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        margin: 1.25rem 0.75rem;
+        padding: 1.6rem 1.1rem;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .job-meta {
+        text-align: left;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="company-block">
+        <div class="company-name">Northbridge MicroSystems, Inc.</div>
+        <h1>Python Developer – Legacy Modernization &amp; .NET Migration</h1>
+        <div class="tagline">
+          Help a small engineering-driven company modernize a core product
+          from .NET to Python.
+        </div>
+      </div>
+      <div class="job-meta">
+        <div><strong>Location:</strong> Hybrid – Portland, OR (U.S. only)</div>
+        <div><strong>Type:</strong> Full-time <span class="pill">Small Corporation (≈45 employees)</span></div>
+        <div><strong>Team:</strong> Software Engineering</div>
+      </div>
+    </header>
+
+    <section>
+      <h2>About the Role</h2>
+      <p>
+        Northbridge MicroSystems is a small, profitable corporation that builds
+        specialized monitoring and automation tools for light industrial and
+        research environments. Our flagship product is currently implemented as
+        a monolithic .NET application. We are beginning a multi-year effort to
+        modernize this stack with a Python-based backend and a more modular
+        architecture.
+      </p>
+      <p>
+        We are looking for a <strong>Python Developer</strong> who can both
+        <strong>provide technical guidance on moving from .NET to Python</strong> and
+        <strong>take ownership of a large legacy codebase</strong>: refactoring,
+        improving test coverage, and incrementally introducing modern patterns
+        and tooling. Experience with basic front-end technologies
+        (<strong>HTML</strong>, <strong>vanilla JavaScript</strong>, and classic
+        DOM/event-driven UIs) is a significant plus.
+      </p>
+      <p class="highlight">
+        You will be the go-to Python engineer in a small team of mixed-skill
+        developers (C#, desktop UI, and embedded). This is a hands-on role that
+        combines coding, technical decision-making, and mentoring.
+      </p>
+    </section>
+
+    <section>
+      <h2>What You&#8217;ll Work On</h2>
+      <ul>
+        <li>
+          Analyze our existing <strong>.NET/C# desktop application</strong> and
+          design a staged strategy to migrate core business logic and services
+          into <strong>Python</strong>.
+        </li>
+        <li>
+          Take ownership of an existing <strong>Python-based service layer</strong>
+          (partially implemented), refactor it for clarity, reliability, and
+          maintainability, and fill in missing features.
+        </li>
+        <li>
+          Improve the current system&#8217;s architecture by
+          <strong>decomposing tightly coupled components</strong> into smaller,
+          testable modules and services.
+        </li>
+        <li>
+          Introduce or expand <strong>automated testing</strong> (unit, integration)
+          and continuous integration around the Python components.
+        </li>
+        <li>
+          Collaborate with existing .NET developers to define clear
+          <strong>APIs and data contracts</strong> between legacy and new components.
+        </li>
+        <li>
+          Where needed, implement or update <strong>simple UIs</strong>
+          (internal tools, configuration pages, status dashboards) using
+          <strong>HTML, CSS, and vanilla JavaScript</strong>.
+        </li>
+        <li>
+          Profile and optimize Python code paths that are
+          <strong>performance-sensitive</strong>, balancing speed with readability.
+        </li>
+        <li>
+          Document architecture decisions, migration plans, and guidelines for
+          other engineers to follow as the modernization continues.
+        </li>
+        <li>
+          Provide practical <strong>mentoring and guidance</strong> to teammates
+          who are experienced in .NET but newer to Python.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Required Qualifications</h2>
+      <ul>
+        <li>
+          <strong>3+ years of professional experience with Python</strong>
+          in production environments (back-end services, tooling, or data-heavy systems).
+        </li>
+        <li>
+          Strong understanding of <strong>Python application structure</strong>,
+          including virtual environments, packaging, dependency management, and
+          logging.
+        </li>
+        <li>
+          Demonstrated experience <strong>refactoring large or legacy codebases</strong>:
+          breaking up monoliths, improving readability, and introducing tests.
+        </li>
+        <li>
+          Solid understanding of <strong>object-oriented design</strong>,
+          modularization, and clean code practices (e.g., SOLID principles,
+          separation of concerns).
+        </li>
+        <li>
+          Hands-on experience with <strong>RESTful APIs</strong> or service-oriented
+          architectures (e.g., using Flask, FastAPI, or similar frameworks).
+        </li>
+        <li>
+          Comfortable reading and reasoning about <strong>.NET / C#</strong> code,
+          even if you are not a deep .NET expert.
+        </li>
+        <li>
+          Experience writing and maintaining <strong>automated tests</strong> in Python
+          (pytest or similar).
+        </li>
+        <li>
+          Familiarity with <strong>Git-based workflows</strong> (feature branches,
+          code review, pull requests).
+        </li>
+        <li>
+          Strong communication skills and willingness to
+          <strong>explain design decisions</strong> to both technical and less-technical stakeholders.
+        </li>
+        <li>
+          Ability to work in the U.S. without sponsorship and be available for
+          some <strong>on-site collaboration in Portland, OR</strong> (roughly
+          1–2 days per week).
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Nice-to-Have Skills</h2>
+      <ul>
+        <li>
+          Front-end experience with <strong>HTML, CSS, and vanilla JavaScript</strong>,
+          including DOM manipulation and browser event handling.
+        </li>
+        <li>
+          Background in <strong>.NET / C#</strong> application development
+          (WinForms, WPF, or ASP.NET) or experience interfacing Python with .NET.
+        </li>
+        <li>
+          Experience designing and working with
+          <strong>REST APIs</strong> between legacy and new systems.
+        </li>
+        <li>
+          Knowledge of <strong>SQL databases</strong> (e.g., PostgreSQL, SQL Server)
+          and basic schema design or query optimization.
+        </li>
+        <li>
+          Familiarity with <strong>CI/CD pipelines</strong>
+          (GitHub Actions, Azure DevOps, GitLab CI, or similar).
+        </li>
+        <li>
+          Exposure to <strong>message queues or pub/sub</strong> systems
+          (RabbitMQ, Redis, MQTT, etc.).
+        </li>
+        <li>
+          Experience in <strong>industrial automation, instrumentation, or data
+          acquisition</strong> environments.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>How We Work</h2>
+      <p>
+        Northbridge MicroSystems operates as a <strong>small, engineering-led
+        corporation</strong> where individual contributors have a visible impact
+        on the product and on our customers&#8217; day-to-day operations.
+      </p>
+      <ul>
+        <li>
+          A <strong>tight-knit engineering team</strong> of fewer than 15 developers,
+          with short decision chains and direct access to product stakeholders.
+        </li>
+        <li>
+          <strong>Hybrid work</strong>: quiet office space in Portland for lab work
+          and collaboration, with flexibility for remote days.
+        </li>
+        <li>
+          Emphasis on <strong>incremental modernization</strong>, not big-bang rewrites:
+          we value stability for our customers alongside better technology.
+        </li>
+        <li>
+          Realistic scope and timelines; we prioritize long-term maintainability
+          over short-term hacks.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Compensation &amp; Benefits</h2>
+      <ul>
+        <li>
+          <strong>Salary range:</strong> $110,000 – $135,000 DOE
+        </li>
+        <li>
+          Annual performance-based bonus (profit-sharing style).
+        </li>
+        <li>
+          Medical, dental, and vision coverage; 401(k) with company match.
+        </li>
+        <li>
+          Generous PTO and paid holidays.
+        </li>
+        <li>
+          Budget for conferences, courses, or books related to your role.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Key Technologies You&#8217;ll Touch</h2>
+      <div class="badge-list">
+        <span class="badge strong">Python 3.x</span>
+        <span class="badge strong">.NET / C# (read &amp; integrate)</span>
+        <span class="badge strong">REST APIs</span>
+        <span class="badge">Flask or FastAPI</span>
+        <span class="badge">pytest</span>
+        <span class="badge">Git</span>
+        <span class="badge">SQL (PostgreSQL / SQL Server)</span>
+        <span class="badge strong">HTML &amp; CSS</span>
+        <span class="badge strong">Vanilla JavaScript</span>
+        <span class="badge">Windows &amp; Linux environments</span>
+        <span class="badge">CI/CD tooling</span>
+      </div>
+    </section>
+
+    <section class="apply-box">
+      <div class="apply-info">
+        <strong>How to Apply</strong><br />
+        Send your resume (and optionally a short note or link to a portfolio /
+        GitHub) to
+        <a href="mailto:careers@northbridgemicro.com">careers@northbridgemicro.com</a>
+        with the subject line
+        <em>&#8220;Python Developer – Legacy Modernization&#8221;</em>.
+        <div class="note">
+          If you have examples of refactoring work, migration projects, or code that
+          shows your approach to structuring Python applications, we&#8217;d love to
+          see them.
+        </div>
+      </div>
+      <a class="apply-button" href="mailto:careers@northbridgemicro.com?subject=Python%20Developer%20%E2%80%93%20Legacy%20Modernization">
+        Apply via Email
+      </a>
+    </section>
+  </div>
+</body>
+</html>

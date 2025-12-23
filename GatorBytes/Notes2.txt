@@ -1,0 +1,139 @@
+Create a system prompt for OpenAI that will read in a PDF Resume and generate a detailed, properly formatted text file equivalent.  The file will be for a resume and needs to include as much detail as possible.  Candidant name, position, contact info, etc.
+The output should avoid using special characters or unnecessary white space or new lines.  
+It needs to extract the candidates name, work history, top skills and approximate levels, a personality interpretation based off the text choice, description length, etc.
+A general summary of the profile needs to be included.  Be as detailed as possible, do not summarize.  Thing very, very hard that all details
+
+The final output should be a JSON object:
+{ "text": "<the text summary from above>",
+  "markdown": "<the above summary but adjusted to be in markdown format>"
+}
+
+
+----------------------------------------
+
+
+
+
+
+Create a system prompt for OpenAI that will read in a Resume and extract and evaluate the skills contained in the resume.  
+The output should avoid using special characters or unnecessary white space or new lines.  
+Thing very, very hard that all details.
+
+In order to reuse existing skills, a list of current skill names will be provided.  Favor using those if possible but create new ones if there are no matches.
+
+The final output should be a JSON object:
+{ "skills": <for each skil> [
+	"name": <skillName>,
+	"level" <1-10 based on inference from the document>,
+	"justification": <justification for why the scoring took place including examples and history>,
+	"lastUsed": <an approximate value in months that the skill was last used>,
+	"usedWith": <various projects or tasks that required the skill>
+]
+}
+
+
+
+
+
+
+
+
+-------------------------------------------------------
+
+
+Create a system prompt that will take in the following:
+1. A text representation of a resume
+2. A markdown representation of the same resume
+3. A list of skills and skill levels 
+
+Create an HTML template that will summarize this resume and profile skills.
+
+Include a style section with all CSS classes to be used defined in the output for uniformity.  These classes need to be fully defined (color, font, margin, etc.) and integrated so that the final result is a single HTML file that can be opened by a user.
+
+Basic Template:
+<html>
+	<title>{Candidate Name}</title>
+	<style>{Define all styles and classes for this template, include colors, fonts, etc.} </style>
+	<div class="overview">
+		{A detailed summary of the candidate, broken up into paragraphs as needed}
+	</div>
+	<div class="personality">
+		{a description of the candidates personality}
+	</div>
+	<div class="workHistory">
+		<span class="totalYears">{Total years experience on the job as a double value} Years Experience</span>
+		<div>
+		{{{For each positition}}}
+		<div class="workHistoryEntryHeader">{PositionTitle} - {CompanyWorkedFor} <span class="workHistoryEntryTime">{StartDate} to ({LastDate or Current}</div>
+		<div class="workHistoryEntrySummary">{Brief summary of the position}</div>
+		<ul class="workHistoryEntryTasks>
+			{{{For each task/project/responbility}}
+			<li>{Task/project/responbility description}</li>
+		</ul>
+		</div>
+	<div class="skillList">
+		{{{For each skill sorted by highest skill levels first}}}
+		<div class="skillEntry">
+			<span class="skillName">{SkillName}<span><span class="skillLevel (dark green for above 90, green for 80-90, orange for 60-80, red for under 60)</span>
+			</br>
+			<span class="skillJustification">{SkillJustification}</span>
+		</div>
+	</div>
+</html>
+
+Return the output as a single text message with all required features included.
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------
+
+
+Create a system prompt for OpenAI that will read in a PDF Job Posting and generate a detailed, properly formatted text file equivalent.  The file will be for a job posting and needs to include as much detail as possible.  Company name, position, contact info, etc.
+The output should avoid using special characters or unnecessary white space or new lines.  
+It needs to extract the company name, the position, a personality interpretation based off the text choice, description length, etc.
+A general summary of the profile needs to be included.  Be as detailed as possible, do not summarize.  Thing very, very hard that all details
+
+The final output should be a JSON object:
+{ "text": "<the text summary from above>",
+  "markdown": "<the above summary but adjusted to be in markdown format>"
+  "companyName"": ""<the full company name>"",
+	""position"": ""<the position for the job posting>"",
+""candidateSummary"": ""<a short summary of the job posting including responsibilities>"",
+""culture"": ""<a short made up description of the company culture on the job post text, details, requirements>"",
+""jobId"": ""<a made up id number like JS-134 or JB-1234>"",
+""postingDate"": ""<a made up date within the past years for when the job was posting was made in MM/dd/yyyy format>"",
+""benefits"": ""<a comma seperated string of made up benefits (for example 401k matching, health care, annual bonuses, etc.""
+}
+
+
+----------------------------------------------------------------------------
+
+
+
+
+Create a system prompt for OpenAI that will read in a Resume and extract and evaluate the skills contained in the resume.  
+The output should avoid using special characters or unnecessary white space or new lines.  
+Thing very, very hard that all details.
+
+In order to reuse existing skills, a list of current skill names will be provided.  Favor using those if possible but create new ones if there are no matches.
+
+The final output should be a JSON object:
+{ "skills": <for each skil> [
+	"name": <skillName>,
+	"level" <1-10 based on inference from the document>,
+	"justification": <justification for why the scoring took place including examples and history>,
+	"lastUsed": <an approximate value in months that the skill was last used>,
+	"usedWith": <various projects or tasks that required the skill>
+]
+}
+
+

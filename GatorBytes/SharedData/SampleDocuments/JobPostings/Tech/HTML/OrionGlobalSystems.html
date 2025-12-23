@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lead Java Developer – Orion Global Systems</title>
+  <style>
+    :root {
+      --primary: #1d4ed8;
+      --primary-dark: #1e3a8a;
+      --accent: #0ea5e9;
+      --bg: #f3f4f6;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --radius: 6px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 16px 40px;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      padding: 24px 24px 20px;
+      border-radius: var(--radius);
+      color: #ffffff;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+    }
+
+    header h1 {
+      margin: 0 0 4px;
+      font-size: 1.9rem;
+    }
+
+    header h2 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      opacity: 0.95;
+    }
+
+    header .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    header .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05);
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 4px;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background-color: #f9fafb;
+      color: #374151;
+    }
+
+    .pill.primary {
+      border-color: rgba(37, 99, 235, 0.28);
+      background-color: rgba(219, 234, 254, 0.7);
+      color: #1d4ed8;
+      font-weight: 500;
+    }
+
+    .highlight {
+      color: #111827;
+      font-weight: 500;
+    }
+
+    .apply-box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .apply-button {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    .apply-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.45);
+    }
+
+    .apply-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .small {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding: 18px 18px 16px;
+      }
+      .card {
+        padding: 16px 16px;
+      }
+      .page {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Lead Java Developer</h1>
+      <h2>Orion Global Systems – Enterprise Technology Division</h2>
+      <div class="meta">
+        <span>Location: New York, NY (Hybrid, 3 days on-site)</span>
+        <span>Department: Core Platforms Engineering</span>
+        <span class="badge">Full-time</span>
+        <span class="badge">Mission Critical Project</span>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="section-title">About the role</div>
+      <p>
+        Orion Global Systems, a Fortune 500 enterprise technology company, is seeking an
+        experienced <span class="highlight">Lead Java Developer</span> to take ownership of a
+        mission‑critical platform that is currently behind schedule. This system underpins
+        high‑volume internal and customer‑facing operations across multiple business units.
+      </p>
+      <p>
+        You will be responsible for stabilizing the existing codebase, driving architectural
+        improvements, coordinating with stakeholders, and leading a small cross‑functional team
+        to bring the project back on track and into long‑term, sustainable delivery.
+      </p>
+      <div class="pill-row">
+        <span class="pill primary">Java 8–17</span>
+        <span class="pill primary">Mission-critical systems</span>
+        <span class="pill">Hybrid work</span>
+        <span class="pill">Enterprise environment</span>
+        <span class="pill">Hands-on leadership</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-title">Key responsibilities</div>
+      <ul>
+        <li>Take technical ownership of an existing, delayed Java-based enterprise platform.</li>
+        <li>Assess current architecture, code quality, and delivery practices; define and execute a remediation plan.</li>
+        <li>Design and implement robust, scalable, and secure backend services using Java and Spring (Boot / Core).</li>
+        <li>Refactor legacy modules to improve performance, reliability, and maintainability.</li>
+        <li>Review, prioritize, and de‑risk the backlog in collaboration with Product and Project Management.</li>
+        <li>Provide hands-on guidance and mentorship to a small team of developers and QA engineers.</li>
+        <li>Establish and enforce coding standards, code review practices, and branching strategies in Git.</li>
+        <li>Improve build and deployment pipelines in collaboration with DevOps (CI/CD, environment management).</li>
+        <li>Collaborate with architecture, security, and infrastructure teams to align with enterprise standards.</li>
+        <li>Communicate progress, risks, and trade‑offs clearly to senior technical and business stakeholders.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="section-title">Required qualifications</div>
+      <ul>
+        <li><span class="highlight">8+ years of professional Java development experience</span> in large-scale, production environments.</li>
+        <li>Strong expertise with <span class="highlight">Java 8+</span>, including multithreading, collections, and JVM fundamentals.</li>
+        <li>Solid experience with <span class="highlight">Spring / Spring Boot</span> for building RESTful services and enterprise applications.</li>
+        <li>Demonstrated success stabilizing or turning around complex or delayed software projects.</li>
+        <li>Proficiency with relational databases; ability to design and optimize SQL queries and schemas.</li>
+        <li>Working knowledge of modern software engineering practices: unit testing, integration testing, and TDD/BDD concepts.</li>
+        <li>Strong experience using <span class="highlight">Git</span> in a collaborative team setting (branching, pull requests, code reviews).</li>
+        <li>Experience working within an Agile or hybrid Agile environment (Scrum, Kanban, or similar).</li>
+        <li>Excellent problem‑solving skills and the ability to make pragmatic, risk‑aware technical decisions.</li>
+        <li>Clear verbal and written communication skills suitable for both technical and non‑technical audiences.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="section-title">Preferred experience</div>
+      <ul>
+        <li><span class="highlight">Team lead or technical lead experience</span> (formal or informal) is a strong plus.</li>
+        <li>Hands‑on experience with <span class="highlight">ORM frameworks</span> such as Hibernate or JPA.</li>
+        <li>Experience with <span class="highlight">PostgreSQL</span> in a production environment.</li>
+        <li>Background in designing and consuming RESTful APIs and microservices architectures.</li>
+        <li>Familiarity with messaging/streaming technologies (e.g., Kafka, RabbitMQ, or similar).</li>
+        <li>Exposure to CI/CD pipelines and tools (e.g., Jenkins, GitLab CI, GitHub Actions, or similar).</li>
+        <li>Experience with containerization and orchestration (Docker, Kubernetes) in an enterprise context.</li>
+        <li>Knowledge of cloud platforms (AWS, GCP, or Azure) and related managed services.</li>
+        <li>Performance tuning experience at the JVM, application, and database layers.</li>
+        <li>Prior experience in financial services, telecom, logistics, or other high‑availability domains is a plus.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="section-title">What we offer</div>
+      <ul>
+        <li>Competitive salary with annual performance bonus eligibility.</li>
+        <li>Comprehensive health, dental, and vision coverage from day one.</li>
+        <li>401(k) with company match and employee stock purchase program.</li>
+        <li>Flexible hybrid work model with modern office space and collaboration tools.</li>
+        <li>Generous paid time off, including vacation, personal days, and company holidays.</li>
+        <li>Professional development budget, internal training, and access to certifications.</li>
+        <li>Opportunity to have a direct, visible impact on a mission‑critical enterprise platform.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="section-title">How to apply</div>
+      <div class="apply-box">
+        <a href="mailto:careers@orionglobalsystems.example?subject=Lead%20Java%20Developer%20Application"
+           class="apply-button">
+          Apply via Email
+        </a>
+        <p class="apply-note">
+          Please include your resume (PDF or LinkedIn profile), a brief summary of your most relevant Java
+          experience, and one example of a complex or delayed project you helped stabilize or successfully deliver.
+        </p>
+        <p class="small">
+          Orion Global Systems is an equal opportunity employer. We celebrate diversity and are committed to
+          creating an inclusive environment for all employees.
+        </p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alex Johnson - Software Developer (.NET)</title>
+    <style>
+        :root {
+            --primary-color: #1f4f7f;
+            --accent-color: #f2a541;
+            --text-color: #333333;
+            --muted-text: #666666;
+            --border-color: #dddddd;
+            --bg-light: #f7f9fc;
+            --badge-bg: #e6edf7;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-color);
+            background-color: #f0f2f5;
+        }
+
+        .page {
+            max-width: 980px;
+            margin: 24px auto;
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #163759);
+            color: white;
+            padding: 24px 32px 20px 32px;
+        }
+
+        header .name {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        header .title {
+            font-size: 15px;
+            margin-top: 4px;
+            opacity: 0.9;
+        }
+
+        header .contact {
+            margin-top: 12px;
+            font-size: 13px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        header .contact span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        header .contact a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        header .contact a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px 32px 28px 32px;
+        }
+
+        h2 {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            color: var(--primary-color);
+            margin: 18px 0 8px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 2.1fr 1.3fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .page {
+                margin: 0;
+                border-radius: 0;
+            }
+
+            header, main {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section {
+            margin-top: 12px;
+        }
+
+        .summary {
+            font-size: 13px;
+            color: var(--muted-text);
+            line-height: 1.6;
+        }
+
+        .experience-item {
+            margin-top: 12px;
+            padding: 10px 10px 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .job-title {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .job-company {
+            font-size: 13px;
+            color: var(--primary-color);
+        }
+
+        .job-dates {
+            font-size: 12px;
+            color: var(--muted-text);
+        }
+
+        .job-location {
+            font-size: 12px;
+            color: var(--muted-text);
+            margin-top: 2px;
+        }
+
+        ul {
+            margin: 6px 0 0 18px;
+            padding: 0;
+            font-size: 13px;
+            color: var(--muted-text);
+        }
+
+        ul li {
+            margin-bottom: 4px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 6px;
+        }
+
+        .skill-category {
+            margin-top: 6px;
+        }
+
+        .skill-category-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 2px;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 6px;
+        }
+
+        .skill-badge {
+            font-size: 11px;
+            border-radius: 999px;
+            border: 1px solid #dde3ec;
+            padding: 3px 7px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background-color: #fafbfe;
+        }
+
+        .skill-name {
+            font-weight: 500;
+        }
+
+        .skill-level {
+            font-size: 10px;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+        }
+
+        .projects {
+            margin-top: 8px;
+        }
+
+        .project-item {
+            margin-top: 8px;
+            padding: 8px 10px;
+            background-color: var(--bg-light);
+            border-radius: 4px;
+            border: 1px solid #e1e6f0;
+        }
+
+        .project-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .project-meta {
+            font-size: 11px;
+            color: var(--muted-text);
+            margin-top: 2px;
+        }
+
+        .project-tech {
+            font-size: 11px;
+            color: var(--muted-text);
+            margin-top: 4px;
+        }
+
+        .project-description {
+            font-size: 12px;
+            color: var(--muted-text);
+            margin-top: 4px;
+        }
+
+        .tagline {
+            font-size: 12px;
+            color: var(--muted-text);
+            margin-top: 2px;
+        }
+
+        .education-item {
+            margin-top: 8px;
+        }
+
+        .edu-degree {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .edu-school {
+            font-size: 12px;
+            color: var(--primary-color);
+        }
+
+        .edu-meta {
+            font-size: 12px;
+            color: var(--muted-text);
+        }
+
+        .small-list {
+            font-size: 12px;
+            list-style-type: disc;
+            margin-left: 16px;
+        }
+
+        .badge-inline {
+            display: inline-block;
+            background-color: var(--badge-bg);
+            color: var(--primary-color);
+            border-radius: 999px;
+            padding: 2px 7px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-left: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <header>
+        <div class="name">Alex Johnson</div>
+        <div class="title">Software Developer &bull; .NET / C# / Web Applications</div>
+        <div class="contact">
+            <span>Email: <a href="mailto:alex.johnson.dev@example.com">alex.johnson.dev@example.com</a></span>
+            <span>Phone: <a href="tel:+11234567890">+1 (123) 456-7890</a></span>
+            <span>Location: Seattle, WA</span>
+            <span>GitHub: <a href="https://github.com/alex-j-dev">github.com/alex-j-dev</a></span>
+            <span>LinkedIn: <a href="https://www.linkedin.com/in/alex-j-dev">linkedin.com/in/alex-j-dev</a></span>
+        </div>
+    </header>
+
+    <main>
+        <div class="two-column">
+            <!-- Left Column -->
+            <section>
+                <section class="section">
+                    <h2>Professional Summary</h2>
+                    <p class="summary">
+                        Software developer with 5+ years of experience designing and building web applications on the Microsoft stack.
+                        Deep expertise in C# and ASP.NET Core for RESTful APIs and back-end services, with hands-on experience in
+                        front-end frameworks and relational databases. Proven track record modernizing legacy .NET applications,
+                        implementing clean architecture, and improving performance and reliability in production environments.
+                    </p>
+                </section>
+
+                <section class="section">
+                    <h2>Experience</h2>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Software Engineer</div>
+                                <div class="job-company">TechNova Solutions</div>
+                            </div>
+                            <div class="job-dates">Apr 2021 &ndash; Present</div>
+                        </div>
+                        <div class="job-location">Seattle, WA</div>
+                        <ul>
+                            <li>
+                                Designed and implemented microservice-style APIs using <strong>ASP.NET Core 7</strong>,
+                                <strong>C#</strong>, and <strong>Entity Framework Core</strong>, powering a SaaS platform handling
+                                ~1.5M requests/day.
+                            </li>
+                            <li>
+                                Led migration of a legacy <strong>.NET Framework 4.6</strong> monolith to a modular <strong>.NET 6</strong>
+                                architecture, reducing average response time by ~35% and deployment time from hours to under 10 minutes.
+                            </li>
+                            <li>
+                                Built internal admin UI using <strong>React</strong> and <strong>TypeScript</strong> backed by
+                                ASP.NET Core APIs, enabling non-technical teams to manage configuration and customer accounts.
+                            </li>
+                            <li>
+                                Optimized database access on <strong>SQL Server</strong> with indexed views, stored procedures,
+                                and EF Core query tuning, resulting in a 50% reduction in high-CPU SQL incidents.
+                            </li>
+                            <li>
+                                Implemented automated CI/CD pipelines in <strong>Azure DevOps</strong>, including unit tests,
+                                code quality checks, and blue-green deployments to Azure App Service.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Software Developer</div>
+                                <div class="job-company">BrightLine Systems</div>
+                            </div>
+                            <div class="job-dates">Jul 2019 &ndash; Mar 2021</div>
+                        </div>
+                        <div class="job-location">Bellevue, WA</div>
+                        <ul>
+                            <li>
+                                Developed features for an enterprise order management system using <strong>ASP.NET MVC</strong>,
+                                <strong>Web API</strong>, and <strong>Razor</strong> views.
+                            </li>
+                            <li>
+                                Collaborated with senior engineers to refactor business logic into reusable C# libraries and
+                                improve unit test coverage from ~30% to ~70%.
+                            </li>
+                            <li>
+                                Built data-heavy screens with <strong>jQuery</strong>, <strong>Bootstrap</strong>, and
+                                server-side paging against <strong>SQL Server</strong> to handle 100k+ record datasets.
+                            </li>
+                            <li>
+                                Participated in daily Scrum ceremonies, backlog grooming, and estimation using Jira and Azure Boards.
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section projects">
+                    <h2>Selected Projects</h2>
+
+                    <div class="project-item">
+                        <div class="project-title">Subscription Billing API Platform</div>
+                        <div class="project-meta">TechNova Solutions &bull; 2022 &ndash; 2024</div>
+                        <div class="project-tech">
+                            Tech: ASP.NET Core 7, C#, EF Core, SQL Server, Azure App Service, Azure Key Vault, Redis
+                        </div>
+                        <p class="project-description">
+                            Led back-end development for a multi-tenant subscription billing engine. Exposed RESTful endpoints for
+                            plan management, invoicing, and payment workflow. Used EF Core with code-first migrations and
+                            optimized LINQ queries for complex billing calculations. Introduced caching with Redis to reduce
+                            load on SQL Server and implemented background processing for invoice generation using hosted services.
+                        </p>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-title">Customer Self-Service Portal</div>
+                        <div class="project-meta">TechNova Solutions &bull; 2021 &ndash; 2023</div>
+                        <div class="project-tech">
+                            Tech: ASP.NET Core 6, React, TypeScript, REST APIs, IdentityServer, Azure DevOps
+                        </div>
+                        <p class="project-description">
+                            Built a responsive self-service portal allowing customers to manage subscriptions, usage, and account
+                            settings. Implemented secure authentication and authorization using JWT and IdentityServer.
+                            Developed reusable React components for forms, tables, and notifications, consuming .NET Core APIs.
+                            Set up CI/CD with Azure DevOps pipelines to automate builds, tests, and deployments per environment.
+                        </p>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-title">Legacy .NET Modernization</div>
+                        <div class="project-meta">BrightLine Systems &bull; 2020 &ndash; 2021</div>
+                        <div class="project-tech">
+                            Tech: .NET Framework 4.6, ASP.NET MVC 5, Web API 2, SQL Server, Dapper
+                        </div>
+                        <p class="project-description">
+                            Worked on incremental modernization of a 10-year-old line-of-business application. Extracted
+                            business logic from Web Forms into Web API endpoints and domain services. Replaced chatty ORM calls
+                            with parameterized Dapper queries and stored procedures. Introduced structured logging and improved
+                            exception handling patterns across the codebase.
+                        </p>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-title">Internal Reporting Dashboard</div>
+                        <div class="project-meta">Side Project &bull; 2019 &ndash; 2020</div>
+                        <div class="project-tech">
+                            Tech: ASP.NET Core 3.1, Razor Pages, Chart.js, PostgreSQL, Docker
+                        </div>
+                        <p class="project-description">
+                            Created a reporting dashboard for internal analytics. Designed normalized PostgreSQL schema,
+                            wrote ETL jobs to aggregate metrics, and exposed dashboard views with Razor Pages and Chart.js
+                            visualizations. Containerized the application with Docker for easier deployment to test servers.
+                        </p>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Right Column -->
+            <section>
+                <section class="section">
+                    <h2>Core Skills</h2>
+                    <div class="skills-grid">
+
+                        <div class="skill-category">
+                            <div class="skill-category-title">Languages & Frameworks</div>
+                            <div class="skill-items">
+                                <span class="skill-badge">
+                                    <span class="skill-name">C#</span>
+                                    <span class="skill-level">Expert</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">ASP.NET Core</span>
+                                    <span class="skill-level">Advanced</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">ASP.NET MVC / Web API</span>
+                                    <span class="skill-level">Advanced</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">Entity Framework Core</span>
+                                    <span class="skill-level">Advanced</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">LINQ</span>
+                                    <span class="skill-level">Advanced</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">.NET 6/7</span>
+                                    <span class="skill-level">Advanced</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <div class="skill-category-title">Front-End</div>
+                            <div class="skill-items">
+                                <span class="skill-badge">
+                                    <span class="skill-name">React</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">TypeScript</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">JavaScript (ES6+)</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">HTML5 / CSS3</span>
+                                    <span class="skill-level">Advanced</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">Razor Pages</span>
+                                    <span class="skill-level">Advanced</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">jQuery</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <div class="skill-category-title">Databases</div>
+                            <div class="skill-items">
+                                <span class="skill-badge">
+                                    <span class="skill-name">SQL Server</span>
+                                    <span class="skill-level">Advanced</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">T-SQL</span>
+                                    <span class="skill-level">Advanced</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">PostgreSQL</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">Dapper</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <div class="skill-category-title">Cloud, DevOps & Tools</div>
+                            <div class="skill-items">
+                                <span class="skill-badge">
+                                    <span class="skill-name">Azure App Service</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">Azure DevOps</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">Git</span>
+                                    <span class="skill-level">Advanced</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">Docker</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">CI/CD Pipelines</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">xUnit / MSTest</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <div class="skill-category-title">Practices</div>
+                            <div class="skill-items">
+                                <span class="skill-badge">
+                                    <span class="skill-name">OOP / SOLID</span>
+                                    <span class="skill-level">Advanced</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">REST API Design</span>
+                                    <span class="skill-level">Advanced</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">Clean Architecture</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">Agile / Scrum</span>
+                                    <span class="skill-level">Advanced</span>
+                                </span>
+                                <span class="skill-badge">
+                                    <span class="skill-name">Unit & Integration Testing</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>Education</h2>
+                    <div class="education-item">
+                        <div class="edu-degree">B.Sc. in Computer Science</div>
+                        <div class="edu-school">University of Washington</div>
+                        <div class="edu-meta">2015 &ndash; 2019 &bull; Seattle, WA</div>
+                        <ul class="small-list">
+                            <li>Relevant coursework: Data Structures & Algorithms, Database Systems, Distributed Systems, Software Engineering</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>Certifications</h2>
+                    <ul class="small-list">
+                        <li>
+                            Microsoft Certified: Azure Fundamentals
+                            <span class="badge-inline">AZ-900</span>
+                        </li>
+                        <li>
+                            Microsoft Certified: .NET Developer (in progress)
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="section">
+                    <h2>Additional</h2>
+                    <ul class="small-list">
+                        <li>Comfortable working with both greenfield and legacy .NET applications.</li>
+                        <li>Experience collaborating with distributed teams using Git, code reviews, and pull requests.</li>
+                        <li>Regularly mentor junior developers on C# best practices and debugging techniques.</li>
+                    </ul>
+                </section>
+            </section>
+        </div>
+    </main>
+</div>
+</body>
+</html>

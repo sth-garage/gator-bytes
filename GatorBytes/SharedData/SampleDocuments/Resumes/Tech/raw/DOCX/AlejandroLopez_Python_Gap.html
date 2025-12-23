@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alejandro García López - Python Developer Resume</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #2980b9;
+            --light: #ecf0f1;
+            --muted: #7f8c8d;
+            --border: #dcdfe3;
+            --bg: #f7f9fb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: #2c3e50;
+        }
+
+        body {
+            padding: 20px;
+        }
+
+        .resume {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.03), 0 10px 30px rgba(0,0,0,0.06);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .resume-header {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 28px 32px 20px 32px;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(135deg, #ffffff 0%, #f5f8fb 40%, #e8f1f9 100%);
+        }
+
+        .header-main {
+            flex: 2;
+            min-width: 240px;
+        }
+
+        .header-main h1 {
+            font-size: 28px;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+            color: var(--primary);
+        }
+
+        .header-main h2 {
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .header-main p {
+            font-size: 13px;
+            color: var(--muted);
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        .header-side {
+            flex: 1;
+            min-width: 220px;
+            padding-top: 6px;
+        }
+
+        .contact-list {
+            list-style: none;
+            font-size: 13px;
+            color: var(--primary);
+        }
+
+        .contact-list li {
+            margin-bottom: 4px;
+        }
+
+        .label {
+            font-weight: 600;
+            color: var(--muted);
+            margin-right: 4px;
+        }
+
+        .resume-body {
+            display: grid;
+            grid-template-columns: 1.1fr 1.5fr;
+            gap: 0;
+        }
+
+        .sidebar {
+            border-right: 1px solid var(--border);
+            padding: 18px 22px 22px 32px;
+            background: #fbfcfe;
+        }
+
+        .main {
+            padding: 18px 32px 26px 22px;
+        }
+
+        h3.section-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+
+        .chip-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .chip {
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: #ffffff;
+            color: var(--primary);
+        }
+
+        .chip.chip-strong {
+            border-color: rgba(41,128,185,0.25);
+            background: rgba(41,128,185,0.06);
+            color: #1c4f73;
+            font-weight: 500;
+        }
+
+        .skill-category {
+            margin-bottom: 14px;
+        }
+
+        .skill-category-title {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 12px;
+            color: var(--primary);
+        }
+
+        .skill-list li {
+            margin-bottom: 2px;
+        }
+
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .experience-item {
+            margin-bottom: 14px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 2px;
+        }
+
+        .job-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .job-company {
+            font-size: 13px;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .job-dates {
+            font-size: 12px;
+            color: var(--muted);
+            text-align: right;
+        }
+
+        .job-location {
+            font-size: 11px;
+            color: var(--muted);
+            margin-bottom: 3px;
+        }
+
+        .job-summary {
+            font-size: 12px;
+            margin-bottom: 3px;
+            color: var(--primary);
+        }
+
+        .job-details {
+            list-style: disc;
+            margin-left: 16px;
+            font-size: 12px;
+            color: var(--primary);
+        }
+
+        .job-details li {
+            margin-bottom: 2px;
+        }
+
+        .project-item {
+            margin-bottom: 10px;
+        }
+
+        .project-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .project-meta {
+            font-size: 11px;
+            color: var(--muted);
+            margin-bottom: 2px;
+        }
+
+        .project-desc {
+            font-size: 12px;
+            color: var(--primary);
+        }
+
+        .edu-item {
+            margin-bottom: 8px;
+        }
+
+        .edu-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .edu-meta {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .tagline {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        @media (max-width: 800px) {
+            .resume-body {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding: 18px 22px 8px 22px;
+            }
+            .main {
+                padding: 14px 22px 22px 22px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .resume-header {
+                padding: 20px;
+            }
+            .sidebar, .main {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .job-dates {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="resume">
+    <header class="resume-header">
+        <div class="header-main">
+            <h1>Alejandro García López</h1>
+            <h2>Python Software Developer</h2>
+            <p>
+                Python-focused software developer with 6+ years of experience building APIs, data-driven backends
+                and automation tools. Strong background in Django, FastAPI, relational databases and clean, testable
+                code. Comfortable owning features end-to-end, from design to deployment.
+            </p>
+        </div>
+        <div class="header-side">
+            <ul class="contact-list">
+                <li><span class="label">Location:</span> Madrid, Spain</li>
+                <li><span class="label">Phone:</span> +34 600 123 456</li>
+                <li><span class="label">Email:</span> alejandro.garcia.dev@example.com</li>
+                <li><span class="label">GitHub:</span> github.com/agarcia-dev</li>
+                <li><span class="label">LinkedIn:</span> linkedin.com/in/alejandro-garcia-lopez</li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="resume-body">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <section class="section">
+                <h3 class="section-title">Core Skills</h3>
+                <div class="chip-group">
+                    <span class="chip chip-strong">Python 3.x</span>
+                    <span class="chip chip-strong">Django</span>
+                    <span class="chip chip-strong">FastAPI</span>
+                    <span class="chip chip-strong">REST APIs</span>
+                    <span class="chip chip-strong">SQL</span>
+                    <span class="chip">PostgreSQL</span>
+                    <span class="chip">Docker</span>
+                    <span class="chip">Git</span>
+                    <span class="chip">Unit Testing</span>
+                    <span class="chip">Async IO</span>
+                    <span class="chip">Linux</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Technical Summary</h3>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">Languages & Frameworks</div>
+                    <ul class="skill-list">
+                        <li>Python (3.7+), TypeScript (basic)</li>
+                        <li>Django, Django REST Framework</li>
+                        <li>FastAPI, Flask</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">Data & Storage</div>
+                    <ul class="skill-list">
+                        <li>PostgreSQL, MySQL, SQLite</li>
+                        <li>Redis, Celery</li>
+                        <li>SQLAlchemy, ORM design</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">DevOps & Tools</div>
+                    <ul class="skill-list">
+                        <li>Docker & docker-compose</li>
+                        <li>Git, GitHub, GitLab CI</li>
+                        <li>Linux, Bash scripting</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-category-title">Quality & Practices</div>
+                    <ul class="skill-list">
+                        <li>Unit & integration testing (pytest)</li>
+                        <li>Code review, refactoring</li>
+                        <li>Clean Architecture, SOLID principles</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Education</h3>
+                <div class="edu-item">
+                    <div class="edu-title">B.Sc. in Computer Science</div>
+                    <div class="edu-meta">Universidad Politécnica de Madrid, 2012 – 2016</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Certifications</h3>
+                <div class="edu-item">
+                    <div class="edu-title">Python Developer</div>
+                    <div class="edu-meta">PCAP – Certified Associate in Python Programming (2020)</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-title">AWS Cloud Practitioner</div>
+                    <div class="edu-meta">AWS Certified Cloud Practitioner (2021)</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Languages</h3>
+                <ul class="skill-list">
+                    <li>Spanish – Native</li>
+                    <li>English – Professional working proficiency (B2/C1)</li>
+                </ul>
+            </section>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+            <section class="section">
+                <h3 class="section-title">Professional Experience</h3>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Senior Python Developer</div>
+                            <div class="job-company">Barcelona Data Labs</div>
+                        </div>
+                        <div class="job-dates">Feb 2022 – Present</div>
+                    </div>
+                    <div class="job-location">Barcelona, Spain (Hybrid)</div>
+                    <p class="job-summary">
+                        Leading backend development of data-intensive web services using FastAPI and Django, with a
+                        focus on performance, reliability and testability.
+                    </p>
+                    <ul class="job-details">
+                        <li>Designed and implemented RESTful and async APIs with FastAPI serving ~2M requests/day.</li>
+                        <li>Optimized PostgreSQL queries and indexes, reducing key endpoints' latency by up to 40%.</li>
+                        <li>Introduced automated test suites (pytest, coverage) and CI pipelines, raising coverage from ~45% to 80%.</li>
+                        <li>Refactored legacy Django modules into a modular service layer, simplifying onboarding and maintenance.</li>
+                        <li>Containerized services with Docker and improved local dev environments with docker-compose.</li>
+                    </ul>
+                </div>
+
+                <!-- Explicit 2-year gap -->
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Career Break – Relocation & Professional Development</div>
+                            <div class="job-company">Madrid & Barcelona</div>
+                        </div>
+                        <div class="job-dates">Feb 2020 – Jan 2022</div>
+                    </div>
+                    <div class="job-location">Spain</div>
+                    <p class="job-summary">
+                        Two-year planned break between roles to relocate from Madrid to Barcelona and deepen Python
+                        and cloud skills through targeted study and personal projects.
+                    </p>
+                    <ul class="job-details">
+                        <li>Completed advanced online courses on async Python, FastAPI and test-driven development.</li>
+                        <li>Built several open-source utilities (CLI tools, small web services) published on GitHub.</li>
+                        <li>Studied cloud fundamentals and obtained AWS Cloud Practitioner certification.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Python Backend Developer</div>
+                            <div class="job-company">Madrid Tech Solutions</div>
+                        </div>
+                        <div class="job-dates">Feb 2017 – Jan 2020</div>
+                    </div>
+                    <div class="job-location">Madrid, Spain</div>
+                    <p class="job-summary">
+                        Developed and maintained backend services for internal tools and client-facing web applications
+                        using Python, Django and REST APIs.
+                    </p>
+                    <ul class="job-details">
+                        <li>Implemented Django-based APIs consumed by Angular and React frontends for enterprise clients.</li>
+                        <li>Designed database schemas and wrote complex SQL queries for reporting and analytics.</li>
+                        <li>Automated data import/export workflows with Python, reducing manual work by ~60%.</li>
+                        <li>Collaborated with frontend and QA teams in an agile environment (Scrum, 2-week sprints).</li>
+                        <li>Maintained documentation and participated in regular code reviews to ensure code quality.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Selected Projects</h3>
+
+                <div class="project-item">
+                    <div class="project-title">Async Data Ingestion API</div>
+                    <div class="project-meta">FastAPI · PostgreSQL · Redis · Docker</div>
+                    <p class="project-desc">
+                        Designed an async ingestion API that receives large JSON payloads from external partners,
+                        validates them and queues background processing with Redis and Celery. Implemented robust
+                        validation, logging and retry strategies, achieving stable throughput of thousands of records/minute.
+                    </p>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">Internal Reporting Dashboard</div>
+                    <div class="project-meta">Django · Django REST Framework · Vue.js (team) · PostgreSQL</div>
+                    <p class="project-desc">
+                        Exposed a REST API for financial and operational reports consumed by a Vue.js frontend.
+                        Added filtering, pagination and role-based permissions. Helped product and finance teams
+                        access key metrics in near real time.
+                    </p>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">Automation & Tooling Scripts</div>
+                    <div class="project-meta">Python · Click · Bash · GitHub Actions</div>
+                    <p class="project-desc">
+                        Built CLI tools to automate routine tasks (log analysis, CSV transformations, backups) and
+                        wired them into GitHub Actions for scheduled runs, improving reliability and reducing manual errors.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Professional Interests</h3>
+                <p class="tagline">
+                    Modern Python (type hints, async IO), scalable backend architectures, API design, observability
+                    (logging/metrics), and mentoring junior developers.
+                </p>
+            </section>
+        </main>
+    </div>
+</div>
+</body>
+</html>
