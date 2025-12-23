@@ -1,0 +1,195 @@
+1.
+Create a job posting for a random company
+C# developer
+at a large corporation
+that is looking for
+a lead to
+take over and fix up a mission critical project that is behind schedule
+Needs 8 years of experience
+Team lead experience is a plus
+C# and Entity Framework are mandatory
+Strong SQL skills
+Fill out gaps with related skills and reasonable requirements for as related to the job.  Return as a single HTML file with style section included
+
+2.
+Create a job posting for a random company
+C# developer
+at a large corporation
+that is looking for
+a lead to
+take over and refactor and improve an existing legacy project
+Needs 6 years of experience
+.NET Core and ORM skills are mandatory
+Strong SQL skills
+Fill out gaps with related skills and reasonable requirements for as related to the job.  Return as a single HTML file with style section included
+
+
+3.
+Create a job posting for a random company
+Java developer
+at a large corporation
+that is looking for
+a lead to
+take over and fix up a mission critical project that is behind schedule
+Needs 8 years of experience
+Team lead experience is a plus
+ORM, Git, PostgresSQL skills are a plus
+Fill out gaps with related skills and reasonable requirements for as related to the job.  Return as a single HTML file with style section included
+
+4.
+Create a job posting for a random company
+Java
+at a large corporation
+that is looking for
+a developer
+take over and refactor and improve an existing legacy project
+Needs 6 years of experience
+.NET Core and ORM skills are mandatory
+Strong SQL skills
+Fill out gaps with related skills and reasonable requirements for as related to the job.  Return as a single HTML file with style section included
+
+
+5.
+Create a job posting for a random company
+Python developer
+at a large corporation
+that is looking for
+a lead to
+take over and fix up a mission critical project that is behind schedule
+Needs 8 years of experience
+Team lead experience is a plus
+Fill out gaps with related skills and reasonable requirements for as related to the job.  Return as a single HTML file with style section included
+
+6.
+Create a job posting for a random company
+Python
+at a large corporation
+that is looking for
+a developer
+take over and refactor and improve an existing legacy project
+Needs 6 years of experience
+Java 6 is a nice to have
+Some front end experience in HTML and vanilla JS are a huge plus
+Fill out gaps with related skills and reasonable requirements for as related to the job.  Return as a single HTML file with style section included
+
+
+7.
+Create a job posting for a random company
+Python
+at a small corporation
+that is looking for
+a developer to provide guidance moving from .NET to Python
+take over and refactor and improve an existing legacy project
+Some front end experience in HTML and vanilla JS are a huge plus
+Fill out gaps with related skills and reasonable requirements for as related to the job.  Return as a single HTML file with style section included
+
+
+8.
+Create a job posting for a random company
+Python
+at a startup
+that is looking for
+a developer to create a new project
+with a focus on AI and langchain
+Fill out gaps with related skills and reasonable requirements for as related to the job.  Return as a single HTML file with style section included
+
+
+9.
+Create a job posting for a random company
+C# developer
+at a mid size company
+that is looking for
+a junior
+to learn under a team
+Needs 1-2 years of experience
+Front end skills are a plus
+Fill out gaps with related skills and reasonable requirements for as related to the job.  Return as a single HTML file with style section included
+
+
+10.
+Create a job posting for a random company
+C# developer
+at a mid size company
+that is looking for
+a junior
+to learn under a team building a new product
+SQL Experience and any work with ORMs like Dapper or Entity Framework is a plus
+Fill out gaps with related skills and reasonable requirements for as related to the job.  Return as a single HTML file with style section included
+
+11.
+Create a job posting for a random company
+Front end developer
+at a large corporate company
+that is looking for
+a team lead with at least 10 years of experience
+to expand on an existing product and introduce best practices
+Tech stack is React with some legacy AngularJS
+Fill out gaps with related skills and reasonable requirements for as related to the job.  Return as a single HTML file with style section included
+
+12.
+Create a job posting for a random company
+Front end developer
+at a mid size corporate company
+that is looking for
+a strong team member to help with existing projects and work on new ones
+to expand on an existing product and introduce best practices
+Tech stack is Angular
+Fill out gaps with related skills and reasonable requirements for as related to the job.  Return as a single HTML file with style section included
+
+13.
+Create a job posting for a random company
+Full Stack developer / architect
+at a startup company
+that is looking for
+a strong team lead / architect to create a new AI focused project
+Tech stack is Angular, React, .NET with a SQL Server backend
+Fill out gaps with related skills and reasonable requirements for as related to the job.  Return as a single HTML file with style section included
+
+14.
+Create a job posting for a random company
+Full Stack developer / architect
+at a startup company
+that is looking for
+a strong team lead / architect to create a new AI focused project
+Tech stack is Angular, React, Python, and langchain
+7 years
+Fill out gaps with related skills and reasonable requirements for as related to the job.  Return as a single HTML file with style section included
+
+14.
+Create a job posting for a random company
+SQL Developer
+at a mid-sized company
+that is looking for
+someone ready to jump in and help with DB Maintance, SSRS, SSIS, other ETL
+4 years
+Fill out gaps with related skills and reasonable requirements for as related to the job.  Return as a single HTML file with style section included
+
+15.
+Create a job posting for a random company
+SQL Developer
+at a small company
+that is looking for
+someone to jump in an figure out the best tools to use
+4 years
+Fill out gaps with related skills and reasonable requirements for as related to the job.  Return as a single HTML file with style section included
+
+16.
+Create a job posting for a random company
+Full stack developer
+at a corporate company
+that is looking for
+someone to jump in an figure out the best tools to use - tech stack is .NET, Java, Python with multiple types of database providers
+Wants to focus on AI
+12 years
+Fill out gaps with related skills and reasonable requirements for as related to the job.  Return as a single HTML file with style section included
+
+
+17.
+Create a job posting for a random company
+Front end developer
+at a large corporate company
+that is looking for
+a junior with some programming background
+Tech stack is AngularJS
+Return as a single HTML file with style section included
+

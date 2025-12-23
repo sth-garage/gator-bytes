@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Front-End Team Lead – Orion Global Solutions</title>
+  <style>
+    :root {
+      --primary-color: #114B8C;
+      --secondary-color: #0A2A4A;
+      --accent-color: #F6A623;
+      --bg-color: #f7f9fc;
+      --border-color: #dde3ee;
+      --text-color: #1f2933;
+      --muted-text: #6b7280;
+      --radius-lg: 10px;
+      --radius-sm: 5px;
+      --shadow-soft: 0 8px 20px rgba(15, 23, 42, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #e9f0fa 0%, #f8fafc 55%, #e8edf7 100%);
+      color: var(--text-color);
+      padding: 40px 16px;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      border: 1px solid rgba(17, 75, 140, 0.05);
+    }
+
+    header {
+      background: radial-gradient(circle at top left, #1d5fb5, var(--primary-color));
+      color: white;
+      padding: 28px 32px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(145deg, #f6f9ff, #c9d7f5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-color);
+      font-weight: 800;
+      font-size: 22px;
+      box-shadow: 0 10px 25px rgba(3, 20, 45, 0.25);
+    }
+
+    .company-meta h1 {
+      font-size: 24px;
+      margin-bottom: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    .company-meta p {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .tagline {
+      margin-left: auto;
+      text-align: right;
+      font-size: 13px;
+      max-width: 260px;
+      opacity: 0.95;
+    }
+
+    .tagline span {
+      display: inline-flex;
+      margin-bottom: 4px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .content {
+      padding: 28px 32px 30px;
+      display: grid;
+      grid-template-columns: 3fr 2.2fr;
+      gap: 28px;
+    }
+
+    @media (max-width: 860px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .tagline {
+        margin-left: 0;
+        text-align: left;
+      }
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--secondary-color);
+    }
+
+    h3 {
+      font-size: 15px;
+      margin-bottom: 6px;
+      color: var(--secondary-color);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 8px 0 14px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      font-size: 11px;
+      border-radius: 999px;
+      border: 1px solid var(--border-color);
+      background: #f9fafb;
+      color: var(--muted-text);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .pill.primary {
+      border-color: rgba(17, 75, 140, 0.25);
+      background: rgba(17, 75, 140, 0.05);
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+
+    .section {
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px dashed #e5e7eb;
+    }
+
+    .section:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.55;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      margin-left: 18px;
+      margin-top: 4px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .highlight {
+      background: #fef9eb;
+      border-left: 3px solid var(--accent-color);
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      margin: 8px 0 14px;
+      color: #7c4a12;
+    }
+
+    .sidebar {
+      border-left: 1px solid #edf0f7;
+      padding-left: 20px;
+    }
+
+    @media (max-width: 860px) {
+      .sidebar {
+        border-left: none;
+        border-top: 1px solid #edf0f7;
+        padding-left: 0;
+        padding-top: 18px;
+        margin-top: 6px;
+      }
+    }
+
+    .sidebar-block {
+      margin-bottom: 18px;
+      padding: 12px 12px 10px;
+      border-radius: var(--radius-lg);
+      background: #f9fafb;
+      border: 1px solid #eaedf5;
+    }
+
+    .sidebar-block h3 {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .inline-list {
+      list-style: none;
+      margin-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 13px;
+    }
+
+    .inline-list li {
+      background: #ffffff;
+      border-radius: 999px;
+      padding: 3px 9px;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 0;
+    }
+
+    .apply-cta {
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .btn-primary {
+      border: none;
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      background: linear-gradient(135deg, #1d5fb5, #114B8C);
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.25);
+      transition: transform 0.06s ease, box-shadow 0.06s ease, background 0.1s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.28);
+      background: linear-gradient(135deg, #2270d4, #1659a3);
+    }
+
+    .btn-secondary {
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 12px;
+      border: 1px solid #cbd5e1;
+      background: white;
+      color: #4b5563;
+      cursor: pointer;
+      transition: background 0.1s ease, border-color 0.1s ease;
+    }
+
+    .btn-secondary:hover {
+      background: #f3f4f6;
+      border-color: #9ca3af;
+    }
+
+    .muted {
+      color: var(--muted-text);
+      font-size: 12px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 7px;
+      font-size: 11px;
+      border-radius: 999px;
+      background: #ecfeff;
+      border: 1px solid #bae6fd;
+      color: #0369a1;
+      margin-left: 4px;
+    }
+
+    .location-line {
+      font-size: 13px;
+      color: var(--muted-text);
+      margin-bottom: 8px;
+    }
+
+    .location-line strong {
+      color: var(--text-color);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="card">
+      <header>
+        <div class="logo-wrap">
+          <div class="logo-mark">O</div>
+          <div class="company-meta">
+            <h1>Front-End Team Lead (React)</h1>
+            <p>Orion Global Solutions · Enterprise Digital Products</p>
+          </div>
+        </div>
+        <div class="tagline">
+          <span>Large Corporate Environment</span>
+          Build and lead the next generation of our flagship enterprise web platform.
+        </div>
+      </header>
+
+      <div class="content">
+        <!-- Main content -->
+        <main>
+          <section class="section">
+            <div class="pill-row">
+              <div class="pill primary">Team Lead</div>
+              <div class="pill">Front-End Engineering</div>
+              <div class="pill">React, TypeScript</div>
+              <div class="pill">Legacy AngularJS</div>
+              <div class="pill">Permanent · Full Time</div>
+            </div>
+
+            <p class="location-line">
+              <strong>Location:</strong> New York, NY (Hybrid: 3 days onsite) · Open to relocation assistance
+            </p>
+
+            <p>
+              Orion Global Solutions is a Fortune 500 technology and services company powering mission-critical operations
+              for clients in finance, healthcare, and logistics across 40+ countries. We are seeking an experienced
+              <strong>Front-End Team Lead</strong> to own and evolve the UI for our flagship enterprise product suite.
+            </p>
+            <p>
+              In this role, you will lead a small but growing front-end team, modernize a large-scale React application,
+              address legacy AngularJS modules, and champion front-end best practices across the organization.
+            </p>
+
+            <div class="highlight">
+              You will be the senior-most front-end engineer on the product, with direct influence over architecture,
+              standards, and the technical direction of the UI platform.
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>What you will do</h2>
+            <ul>
+              <li>Lead a team of 4–6 front-end engineers delivering features for a high-traffic enterprise web application.</li>
+              <li>Own and evolve our React-based front-end architecture, establishing patterns, standards, and guidelines.</li>
+              <li>Define and roll out front-end best practices: code quality, testing strategies, performance, accessibility, and CI/CD.</li>
+              <li>Plan and oversee the gradual migration of key legacy AngularJS modules to modern React/TypeScript.</li>
+              <li>Collaborate with product, UX, and back-end teams to plan and deliver complex, multi-quarter initiatives.</li>
+              <li>Conduct design and code reviews, provide ongoing technical coaching, and grow the capabilities of the team.</li>
+              <li>Partner with Architecture and Platform Engineering to improve our design system, component library, and tooling.</li>
+              <li>Monitor and improve application performance, bundle size, and perceived responsiveness.</li>
+              <li>Drive quality through automated testing (unit, integration, and end-to-end) and robust release practices.</li>
+              <li>Represent front-end engineering in cross-functional planning and architecture forums.</li>
+            </ul>
+          </section>
+
+          <section class="section">
+            <h2>What we are looking for</h2>
+            <h3>Must-have qualifications</h3>
+            <ul>
+              <li>10+ years of professional experience in front-end or full-stack web development.</li>
+              <li>3+ years in a formal leadership capacity (team lead, tech lead, or engineering manager).</li>
+              <li>Deep expertise in <strong>React</strong>, modern JavaScript (ES6+), and component-based architectures.</li>
+              <li>Practical experience working with or migrating from <strong>AngularJS</strong> (1.x).</li>
+              <li>Strong proficiency with <strong>HTML5, CSS3, and responsive design</strong> for complex web applications.</li>
+              <li>Hands-on experience with <strong>TypeScript</strong> in production systems.</li>
+              <li>Proven track record of introducing and enforcing engineering best practices in a large codebase.</li>
+              <li>Experience working in a large corporate or enterprise environment with multiple stakeholders.</li>
+              <li>Ability to design scalable front-end architectures and API integration patterns.</li>
+              <li>Excellent communication skills and the ability to influence and mentor engineers at different levels.</li>
+            </ul>
+
+            <h3>Nice-to-have experience</h3>
+            <ul>
+              <li>Background with state management libraries (Redux, Zustand, or similar) and query libraries (React Query, SWR).</li>
+              <li>Experience with design systems and component libraries (Storybook, internal UI kits, Material UI, Chakra, etc.).</li>
+              <li>Familiarity with Node.js build tooling (Webpack, Vite, Babel, ESLint, Prettier) and CI/CD pipelines.</li>
+              <li>Exposure to micro-frontend architectures or modular monolith front-ends.</li>
+              <li>Solid understanding of accessibility standards (WCAG) and building inclusive user interfaces.</li>
+              <li>Experience in regulated industries (finance, healthcare, insurance, or government) is a plus.</li>
+            </ul>
+          </section>
+
+          <section class="section">
+            <h2>How you work</h2>
+            <ul>
+              <li>You are comfortable operating in and improving a large existing codebase rather than only greenfield work.</li>
+              <li>You think in systems and standards, not one-off solutions, and advocate for long-term maintainability.</li>
+              <li>You value code review, documentation, and knowledge sharing as part of your daily practice.</li>
+              <li>You can break down complex initiatives into clear, prioritized milestones for your team.</li>
+              <li>You balance technical excellence with business impact and can articulate trade-offs to stakeholders.</li>
+            </ul>
+          </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-block">
+            <h3>Role details</h3>
+            <ul>
+              <li><strong>Title:</strong> Front-End Team Lead</li>
+              <li><strong>Department:</strong> Digital Products & Platforms</li>
+              <li><strong>Reports to:</strong> Director of Engineering</li>
+              <li><strong>Team size:</strong> 4–6 engineers to start</li>
+              <li><strong>Employment type:</strong> Full-time, exempt</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-block">
+            <h3>Core tech stack</h3>
+            <ul>
+              <li>React, React Hooks, TypeScript</li>
+              <li>Legacy AngularJS (1.x)</li>
+              <li>HTML5, CSS3 / SASS, CSS-in-JS</li>
+              <li>RESTful APIs, JSON</li>
+              <li>Jest, React Testing Library, Cypress (or similar)</li>
+              <li>Webpack/Vite, ESLint, Prettier</li>
+              <li>Git, GitHub/Bitbucket</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-block">
+            <h3>Compensation & benefits</h3>
+            <ul>
+              <li>Competitive base salary + annual performance bonus</li>
+              <li>Equity participation in long-term incentive plan</li>
+              <li>Comprehensive health, dental, and vision coverage</li>
+              <li>401(k) with company match</li>
+              <li>Generous PTO, company holidays, and paid parental leave</li>
+              <li>Education budget for conferences, courses, and certifications</li>
+              <li>Hybrid work model, flexible hours, and modern office space</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-block">
+            <h3>Application process</h3>
+            <p class="muted">
+              We aim to make decisions within 3–4 weeks.
+            </p>
+            <ul>
+              <li>30-min conversation with a senior recruiter</li>
+              <li>60-min technical and architecture deep-dive with Engineering Director</li>
+              <li>Virtual panel with senior engineers and product stakeholders</li>
+              <li>Final cultural and leadership interview with VP of Engineering</li>
+            </ul>
+
+            <div class="apply-cta">
+              <button class="btn-primary">Apply Now</button>
+              <button class="btn-secondary">Save for Later</button>
+              <span class="muted">
+                Or email your resume and a short note to
+                <strong>careers@orionglobalsolutions.com</strong>
+              </span>
+            </div>
+          </div>
+
+          <div class="sidebar-block">
+            <h3>Work authorization</h3>
+            <p class="muted">
+              We are currently able to consider candidates with existing work authorization in the United States.
+              Visa transfer support may be available for exceptional candidates.
+            </p>
+          </div>
+
+          <div class="sidebar-block">
+            <h3>Equal Opportunity</h3>
+            <p class="muted">
+              Orion Global Solutions is an Equal Opportunity Employer. We celebrate diversity and are committed to
+              creating an inclusive environment for all employees.
+              <span class="badge">EEO</span>
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

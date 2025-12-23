@@ -1,0 +1,88 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.3.11222.16 d18.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedData", "SharedData", "{68380700-2FE9-4EF1-8114-FB96BDF48C56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SampleDocuments", "SampleDocuments", "{19294CC0-715C-44FD-807D-D35D63568AAB}"
+	ProjectSection(SolutionItems) = preProject
+		SharedData\SampleDocuments\ExampleAnalysis.json = SharedData\SampleDocuments\ExampleAnalysis.json
+		Notes.txt = Notes.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resumes", "Resumes", "{D5C8007F-C54B-4761-8D29-CBBB9FA47489}"
+	ProjectSection(SolutionItems) = preProject
+		SharedData\SampleDocuments\Resumes\Angela_Rivera.pdf = SharedData\SampleDocuments\Resumes\Angela_Rivera.pdf
+		SharedData\SampleDocuments\Resumes\Emily_Jacobs.pdf = SharedData\SampleDocuments\Resumes\Emily_Jacobs.pdf
+		SharedData\SampleDocuments\Resumes\Jane_Mitchell.pdf = SharedData\SampleDocuments\Resumes\Jane_Mitchell.pdf
+		SharedData\SampleDocuments\Resumes\Jennifer_Allen.pdf = SharedData\SampleDocuments\Resumes\Jennifer_Allen.pdf
+		SharedData\SampleDocuments\Resumes\Jessica_Ramirez.pdf = SharedData\SampleDocuments\Resumes\Jessica_Ramirez.pdf
+		SharedData\SampleDocuments\Resumes\Samantha_Lopez.pdf = SharedData\SampleDocuments\Resumes\Samantha_Lopez.pdf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JobPostings", "JobPostings", "{BCD1638F-96E2-443B-9FA4-B0B9E5F6E8CB}"
+	ProjectSection(SolutionItems) = preProject
+		SharedData\SampleDocuments\JobPostings\CrestviewAcademy.pdf = SharedData\SampleDocuments\JobPostings\CrestviewAcademy.pdf
+		SharedData\SampleDocuments\JobPostings\GreenHorizons.pdf = SharedData\SampleDocuments\JobPostings\GreenHorizons.pdf
+		SharedData\SampleDocuments\JobPostings\HarmonyRidge.pdf = SharedData\SampleDocuments\JobPostings\HarmonyRidge.pdf
+		SharedData\SampleDocuments\JobPostings\LincolnHeights.pdf = SharedData\SampleDocuments\JobPostings\LincolnHeights.pdf
+		SharedData\SampleDocuments\JobPostings\WillowbrookElementary.pdf = SharedData\SampleDocuments\JobPostings\WillowbrookElementary.pdf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{91A07B52-D12D-4208-B7AD-278C3B9C26E5}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Notes.txt = Notes.txt
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeJobAnalysisTool.AppLogic", "ResumeJobAnalysisTool.AppLogic\ResumeJobAnalysisTool.AppLogic.csproj", "{6E604D3B-A4CE-8C6D-3282-27F5E4223AE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeJobAnalysisTool.DAL", "ResumeJobAnalysisTool.DAL\ResumeJobAnalysisTool.DAL.csproj", "{C6FE4D41-0F5A-08C4-2D06-0D500F4D1805}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeJobAnalysisTool.Shared", "ResumeJobAnalysisTool.Shared\ResumeJobAnalysisTool.Shared.csproj", "{B546C927-D574-DE1F-8DEB-3A422B09BB57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeJobAnalysisTool.SK", "ResumeJobAnalysisTool.SK\ResumeJobAnalysisTool.SK.csproj", "{F4052F3B-024D-C2FA-854E-93D1F5912A62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeJobAnalysisTool.Web", "ResumeJobAnalysisTool.Web\ResumeJobAnalysisTool.Web.csproj", "{26DA47DD-7FE5-D871-5AD8-7E55BE2A5DFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E604D3B-A4CE-8C6D-3282-27F5E4223AE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E604D3B-A4CE-8C6D-3282-27F5E4223AE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E604D3B-A4CE-8C6D-3282-27F5E4223AE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E604D3B-A4CE-8C6D-3282-27F5E4223AE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6FE4D41-0F5A-08C4-2D06-0D500F4D1805}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6FE4D41-0F5A-08C4-2D06-0D500F4D1805}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6FE4D41-0F5A-08C4-2D06-0D500F4D1805}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6FE4D41-0F5A-08C4-2D06-0D500F4D1805}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B546C927-D574-DE1F-8DEB-3A422B09BB57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B546C927-D574-DE1F-8DEB-3A422B09BB57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B546C927-D574-DE1F-8DEB-3A422B09BB57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B546C927-D574-DE1F-8DEB-3A422B09BB57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4052F3B-024D-C2FA-854E-93D1F5912A62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4052F3B-024D-C2FA-854E-93D1F5912A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4052F3B-024D-C2FA-854E-93D1F5912A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4052F3B-024D-C2FA-854E-93D1F5912A62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26DA47DD-7FE5-D871-5AD8-7E55BE2A5DFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26DA47DD-7FE5-D871-5AD8-7E55BE2A5DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26DA47DD-7FE5-D871-5AD8-7E55BE2A5DFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26DA47DD-7FE5-D871-5AD8-7E55BE2A5DFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{19294CC0-715C-44FD-807D-D35D63568AAB} = {68380700-2FE9-4EF1-8114-FB96BDF48C56}
+		{D5C8007F-C54B-4761-8D29-CBBB9FA47489} = {19294CC0-715C-44FD-807D-D35D63568AAB}
+		{BCD1638F-96E2-443B-9FA4-B0B9E5F6E8CB} = {19294CC0-715C-44FD-807D-D35D63568AAB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79D87D04-F60D-43F6-943A-3200BB0040E0}
+	EndGlobalSection
+EndGlobal

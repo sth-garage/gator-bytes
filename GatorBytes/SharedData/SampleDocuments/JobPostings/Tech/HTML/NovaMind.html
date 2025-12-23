@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Full Stack Developer / Architect – AI Platform | NovaMind Labs</title>
+  <style>
+    :root {
+      --primary: #1e88e5;
+      --primary-dark: #1565c0;
+      --accent: #00bfa5;
+      --bg: #f5f7fb;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      padding: 40px 16px;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+      overflow: hidden;
+    }
+
+    .header {
+      padding: 28px 32px 22px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #ffffff;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 22px;
+    }
+
+    .header-main {
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .header-main h1 {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    .header-main h2 {
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    .header-meta {
+      text-align: right;
+      min-width: 180px;
+      font-size: 13px;
+      opacity: 0.95;
+    }
+
+    .header-meta div {
+      margin-bottom: 3px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: rgba(15, 23, 42, 0.18);
+    }
+
+    .content {
+      padding: 28px 32px 32px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin: 22px 0 8px;
+    }
+
+    p {
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 8px 0 18px;
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+      background: #f9fafb;
+    }
+
+    ul {
+      padding-left: 18px;
+      margin-bottom: 8px;
+    }
+
+    li {
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .section-muted p,
+    .section-muted li {
+      color: var(--muted);
+    }
+
+    .highlight {
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+
+    .apply-box {
+      margin-top: 24px;
+      padding: 16px 18px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #f9fafb;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .apply-box p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .apply-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 20px;
+      border-radius: 999px;
+      border: none;
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.18s ease, transform 0.1s ease;
+      white-space: nowrap;
+    }
+
+    .apply-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .apply-btn:active {
+      transform: translateY(0);
+    }
+
+    .footer {
+      padding: 14px 32px 18px;
+      border-top: 1px solid var(--border);
+      background: #fcfcfd;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer a {
+      color: var(--primary-dark);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .header {
+        padding: 20px 18px 16px;
+      }
+
+      .content {
+        padding: 20px 18px 22px;
+      }
+
+      .footer {
+        padding: 12px 18px 14px;
+      }
+
+      .header-main h1 {
+        font-size: 20px;
+      }
+
+      .header-meta {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="logo">N</div>
+      <div class="header-main">
+        <h1>Full Stack Developer / Architect (AI Platform)</h1>
+        <h2>NovaMind Labs · AI-first SaaS Startup</h2>
+      </div>
+      <div class="header-meta">
+        <div><span class="badge">Full-time · Lead Role</span></div>
+        <div>Location: Remote (UTC-5 to UTC+2 preferred)</div>
+        <div>Experience: 7+ years</div>
+      </div>
+    </header>
+
+    <main class="content">
+      <p>
+        NovaMind Labs is a seed-stage startup building an intelligent automation platform that helps teams design,
+        orchestrate, and monitor AI-powered workflows. We’re looking for a <span class="highlight">hands-on Full Stack
+        Developer / Architect</span> to lead the engineering of a new AI-focused product line from the ground up.
+      </p>
+
+      <div class="pill-row">
+        <span class="pill">Angular</span>
+        <span class="pill">React</span>
+        <span class="pill">Python</span>
+        <span class="pill">LangChain</span>
+        <span class="pill">LLM Applications</span>
+        <span class="pill">System Design</span>
+        <span class="pill">Team Leadership</span>
+        <span class="pill">Cloud (AWS / GCP / Azure)</span>
+      </div>
+
+      <h3>What you’ll do</h3>
+      <ul>
+        <li>Own the end-to-end architecture of our next-generation AI workflow platform (frontend, backend, and AI layer).</li>
+        <li>Design and implement core services and APIs in <strong>Python</strong>, including integration with large language models via <strong>LangChain</strong>.</li>
+        <li>Lead development of responsive, component-based UIs using <strong>React</strong> and/or <strong>Angular</strong>.</li>
+        <li>Establish technical standards, code quality guidelines, and best practices for a small but growing engineering team.</li>
+        <li>Evaluate and integrate third-party APIs and tools (vector databases, observability, auth, billing, etc.).</li>
+        <li>Design for scalability, reliability, and security from day one (caching, rate limiting, observability, RBAC, GDPR-friendly data handling).</li>
+        <li>Mentor engineers, perform code reviews, and help grow the team as we scale.</li>
+        <li>Work closely with product and design to translate fuzzy ideas into concrete, iterative technical plans.</li>
+        <li>Prototype new AI-powered product features and rapidly iterate based on user feedback.</li>
+      </ul>
+
+      <h3>Our stack</h3>
+      <ul>
+        <li><strong>Frontend:</strong> React, Angular, TypeScript, Tailwind or similar component libraries.</li>
+        <li><strong>Backend:</strong> Python (FastAPI / Flask), RESTful APIs, async design where appropriate.</li>
+        <li><strong>AI &amp; Data:</strong> LangChain, major LLM providers (OpenAI, Anthropic, etc.), embeddings, vector stores (Pinecone, PostgreSQL + pgvector, etc.).</li>
+        <li><strong>Infrastructure:</strong> Cloud-native (AWS / GCP / Azure), Docker, CI/CD (GitHub Actions or similar).</li>
+        <li><strong>Storage:</strong> SQL databases (PostgreSQL preferred), object storage, Redis or similar for caching.</li>
+      </ul>
+
+      <h3>What we’re looking for</h3>
+      <ul>
+        <li><strong>7+ years</strong> of professional software engineering experience, including significant full stack work.</li>
+        <li>Proven experience architecting and delivering complex web applications or SaaS products in production.</li>
+        <li>Strong proficiency in <strong>Python</strong> for backend / API development.</li>
+        <li>Professional experience building SPAs with <strong>React</strong>, <strong>Angular</strong>, or both.</li>
+        <li>Hands-on experience building applications with <strong>LLMs</strong> and frameworks such as <strong>LangChain</strong>.</li>
+        <li>Solid understanding of system design, microservices or modular monoliths, and cloud infrastructure fundamentals.</li>
+        <li>Comfortable leading projects end-to-end: requirements, design, implementation, testing, and deployment.</li>
+        <li>Ability to mentor other engineers and set technical direction while still coding a significant share of the time.</li>
+        <li>Excellent communication skills and a product mindset; you care deeply about user experience and business impact.</li>
+      </ul>
+
+      <h3>Nice to have</h3>
+      <ul>
+        <li>Experience at an early-stage startup or in a small, fast-moving engineering team.</li>
+        <li>Background with prompt engineering, evaluation of LLM quality, and guardrail techniques.</li>
+        <li>Familiarity with event-driven architectures and streaming (e.g., Kafka, Pub/Sub).</li>
+        <li>Experience with modern testing practices (unit, integration, e2e) and observability (logging, metrics, tracing).</li>
+        <li>Security-minded development experience (OAuth2/OIDC, JWT, data encryption, secure secrets management).</li>
+      </ul>
+
+      <h3>What we offer</h3>
+      <ul>
+        <li>Competitive salary plus meaningful early-stage equity.</li>
+        <li>Remote-first culture with flexible working hours.</li>
+        <li>Significant ownership and autonomy over technical decisions and product direction.</li>
+        <li>Budget for hardware, tools, and learning (conferences, courses, books).</li>
+        <li>Opportunity to build and lead a high-impact engineering team around you.</li>
+      </ul>
+
+      <h3>About NovaMind Labs</h3>
+      <p>
+        NovaMind Labs is an AI-native startup focused on helping teams safely and reliably deploy AI into critical business
+        workflows. We believe that the next generation of software will be co-piloted by AI, and we’re building the tools
+        that make this transition practical, observable, and secure.
+      </p>
+
+      <div class="apply-box">
+        <p>
+          Interested? Send your resume, GitHub/portfolio links, and a brief note about a system you’ve architected to
+          <strong>careers@novamindlabs.com</strong>.
+        </p>
+        <a class="apply-btn" href="mailto:careers@novamindlabs.com?subject=Application%20-%20Full%20Stack%20Developer%20%2F%20Architect%20(AI%20Platform)">
+          Apply via Email
+        </a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span>NovaMind Labs · AI-first SaaS · Remote</span>
+      <span>Not an exact fit? Reach out anyway at <a href="mailto:careers@novamindlabs.com">careers@novamindlabs.com</a>.</span>
+    </footer>
+  </div>
+</body>
+</html>

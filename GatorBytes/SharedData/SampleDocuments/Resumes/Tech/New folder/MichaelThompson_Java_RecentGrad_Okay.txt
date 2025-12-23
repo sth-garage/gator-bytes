@@ -1,0 +1,120 @@
+Michael R. Thompson
+1234 Oak Ridge Lane
+Columbus, OH 43210
+Phone: (555) 867-5309
+Email: michael.thompson.dev@example.com
+LinkedIn: linkedin.com/in/michael-thompson-dev
+GitHub: github.com/mthompson-java
+
+====================================================================== SUMMARY
+Recent Computer Science graduate with a strong focus on object-oriented programming in Java and hands-on experience building back-end applications. Known by professors and coaches for work ethic, leadership, and persistence. Completed several Java-based academic projects involving data structures, file handling, and basic networking. Former collegiate football and baseball player; captain of the baseball team, balancing demanding athletics schedule with full academic load.
+
+====================================================================== EDUCATION
+Bachelor of Science in Computer Science
+Ohio State University, Columbus, OH
+Graduation: May 2025
+GPA: 2.6 / 4.0
+
+Relevant Coursework:
+
+Object-Oriented Programming (Java)
+Data Structures and Algorithms
+Operating Systems
+Software Engineering
+Computer Networks
+Discrete Structures
+Programming in Java II
+====================================================================== TECHNICAL SKILLS
+Languages:
+
+Java (primary)
+Python (basic scripting)
+Tools & Technologies:
+
+Git, GitHub
+IntelliJ IDEA, Eclipse
+JUnit (unit testing)
+Maven
+Command-line tools (Windows, Linux/Unix)
+Concepts:
+
+Object-Oriented Programming (OOP)
+Data structures (lists, maps, trees, queues, stacks)
+Algorithms (searching, sorting, graph traversal)
+File I/O and serialization
+Basic networking (sockets, simple client-server)
+Note: Experience and coursework are focused on back-end/Java development; no professional SQL or front-end (HTML/CSS/JavaScript) experience to date.
+
+====================================================================== ACADEMIC PROJECTS
+Library Inventory Management System (Team Project)
+Language/Tools: Java, JUnit, Git
+Duration: Jan 2025 – Apr 2025
+
+Developed a console-based library inventory system in Java to manage books, patrons, checkouts, and returns.
+Implemented core business logic including adding/removing books, tracking due dates, and calculating late fees using object-oriented design principles.
+Designed and implemented custom data structures using Java Collections (ArrayList, HashMap) to store and retrieve records efficiently.
+Wrote unit tests in JUnit to validate key methods (e.g., search, checkout, and overdue calculations), improving reliability during future changes.
+Collaborated using Git and GitHub for version control, handling branching and code reviews across a team of three.
+Reflection:
+
+Enjoyed designing the class structure and seeing how good object-oriented design made later changes much easier.
+Found it especially rewarding to write unit tests and watch them pass as new features were added, which boosted confidence in the code.
+Multithreaded File Processing Tool (Individual Project)
+Language/Tools: Java, Threads, Synchronization
+Duration: Sep 2024 – Dec 2024
+
+Built a Java application that processes large text files in parallel, counting word frequencies and generating summary reports.
+Used Java threads and synchronization (locks) to safely manage shared data structures while achieving speed-ups on multi-core systems.
+Implemented command-line arguments to configure the number of worker threads and input/output file paths.
+Performed basic performance testing by measuring execution time with different thread counts and file sizes.
+Reflection:
+
+Particularly liked experimenting with threads and observing how concurrency could speed up processing on big files.
+Learned to appreciate how tricky synchronization can be, and enjoyed the challenge of debugging race conditions and deadlocks.
+Simple Chat Server and Client (Team Project)
+Language/Tools: Java, Sockets, Git
+Duration: Jan 2024 – May 2024
+
+Co-developed a basic text-based chat application using Java sockets, with a multi-client server and simple console clients.
+Implemented server logic to handle multiple clients concurrently using threads, including join/leave notifications and broadcasting messages.
+Added basic server-side logging of chat sessions to text files for later review.
+Participated in code reviews and pair programming sessions to improve code quality and learn different approaches to problem-solving.
+Reflection:
+
+Really enjoyed seeing networking concepts “come to life” and watching multiple clients communicate through the server.
+Found working in a small team rewarding, especially learning how to break up tasks and integrate code smoothly with version control.
+====================================================================== LEADERSHIP & ATHLETICS
+Ohio State University Baseball Team – Team Captain
+Columbus, OH | Aug 2021 – May 2025
+
+Elected captain for junior and senior seasons based on leadership, discipline, and consistent effort.
+Led pre-season and in-season training sessions, coordinating with coaching staff and teammates to maintain high performance and morale.
+Balanced 20+ hours per week of practice, games, and travel with a full course load in Computer Science.
+Developed strong communication skills by serving as a liaison between players and coaches.
+Ohio State University Football Team – Player (Defensive Back)
+Columbus, OH | Aug 2020 – Dec 2022
+
+Competed at the collegiate level while maintaining academic responsibilities.
+Gained experience working under pressure, adapting to rapidly changing situations, and staying focused during high-stakes events.
+====================================================================== WORK & OTHER EXPERIENCE
+Student Programming Tutor (Part-Time)
+Ohio State University Computer Science Department
+Columbus, OH | Jan 2024 – May 2025
+
+Assisted fellow students with introductory and intermediate Java programming assignments and exam preparation.
+Explained concepts such as loops, conditionals, classes, inheritance, and basic data structures in understandable terms.
+Helped students debug code using the IDE, console output, and step-through debugging tools.
+Reinforced my own understanding by teaching others and breaking down complex problems into smaller, manageable steps.
+Summer Camp Counselor
+Columbus Community Youth Sports Camp
+Columbus, OH | Summers 2022 & 2023
+
+Led groups of 15–20 children (ages 8–14) in daily sports activities, games, and team-building exercises.
+Coordinated with other counselors to ensure a safe, structured, and positive environment.
+Developed patience, communication, and conflict-resolution skills while working with diverse groups of children and parents.
+====================================================================== ADDITIONAL ACTIVITIES & INTERESTS
+Member, University Programming Club (attended Java-focused workshops, coding challenges, and peer-led study groups).
+Personal Projects: Small Java command-line tools (file organizers, simple games like text-based tic-tac-toe).
+Interests: Sports analytics, strength training, reading about software design patterns and clean code practices.
+====================================================================== REFERENCES
+Available upon request.

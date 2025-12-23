@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Avery Thompson - Resume</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fb;
+            color: #222;
+        }
+
+        .page {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px 40px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.06);
+        }
+
+        h1, h2, h3, h4 {
+            margin: 0;
+            font-weight: 600;
+            color: #1f2933;
+        }
+
+        h1 {
+            font-size: 32px;
+            letter-spacing: 0.03em;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 4px;
+            border-bottom: 1px solid #d5d9e2;
+            padding-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #334e68;
+        }
+
+        h3 {
+            font-size: 16px;
+            margin-bottom: 2px;
+        }
+
+        h4 {
+            font-size: 14px;
+            color: #52606d;
+        }
+
+        p {
+            margin: 2px 0 6px;
+            line-height: 1.4;
+        }
+
+        .subtext {
+            font-size: 13px;
+            color: #52606d;
+        }
+
+        .small {
+            font-size: 12px;
+            color: #7b8794;
+        }
+
+        ul {
+            margin: 4px 0 8px 18px;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 3px;
+        }
+
+        /* Layout */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid #d5d9e2;
+            padding-bottom: 10px;
+            margin-bottom: 14px;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 13px;
+            color: #52606d;
+        }
+
+        .contact-info a {
+            color: #334e68;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 2.3fr 1.3fr;
+            column-gap: 24px;
+            margin-top: 10px;
+        }
+
+        .section {
+            margin-top: 10px;
+        }
+
+        .section-main {
+            margin-top: 4px;
+        }
+
+        .section-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .badge {
+            display: inline-block;
+            border-radius: 999px;
+            background-color: #e0e7ff;
+            color: #253b5d;
+            padding: 2px 8px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .tag-list {
+            margin-top: 2px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .tag {
+            background-color: #f1f5f9;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 11px;
+            color: #52606d;
+        }
+
+        /* Skills layout */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1.1fr;
+            gap: 4px 14px;
+            font-size: 13px;
+        }
+
+        .skill-category {
+            font-weight: 600;
+            color: #334e68;
+            margin-bottom: 1px;
+        }
+
+        /* Smaller devices */
+        @media (max-width: 700px) {
+            .page {
+                margin: 10px;
+                padding: 16px;
+            }
+            .header {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .contact-info {
+                text-align: left;
+            }
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- Header -->
+    <header class="header">
+        <div>
+            <h1>AVERY THOMPSON</h1>
+            <div class="subtext">Entry-Level Python Developer</div>
+        </div>
+        <div class="contact-info">
+            <div>1234 Maple Street</div>
+            <div>Springfield, IL 62701</div>
+            <div>(555) 123-4567</div>
+            <div><a href="mailto:avery.thompson@example.com">avery.thompson@example.com</a></div>
+            <div><a href="https://github.com/avery-thompson" target="_blank">github.com/avery-thompson</a></div>
+            <div><a href="https://www.linkedin.com/in/avery-thompson" target="_blank">linkedin.com/in/avery-thompson</a></div>
+        </div>
+    </header>
+
+    <!-- Summary -->
+    <section class="section">
+        <h2>Professional Summary</h2>
+        <p>
+            Recent Computer Science graduate with a strong academic record (GPA 3.92/4.00) and hands-on experience 
+            building Python-based applications and data-processing tools. Comfortable with core Python concepts, 
+            scripting, and basic backend logic, plus elementary experience with SQL and simple front-end pages 
+            (HTML/CSS). Looking for an entry-level Python developer role where I can grow my skills in production-grade 
+            development, databases, and modern frameworks.
+        </p>
+    </section>
+
+    <div class="two-column">
+        <!-- Left Column: Education, Projects, Experience -->
+        <div>
+            <!-- Education -->
+            <section class="section">
+                <h2>Education</h2>
+                <div class="section-main">
+                    <div class="section-header-row">
+                        <div>
+                            <h3>Midwest State University</h3>
+                            <div class="subtext">Bachelor of Science in Computer Science</div>
+                        </div>
+                        <div class="small">Aug 2021 – May 2025</div>
+                    </div>
+                    <p class="subtext">
+                        Springfield, IL &nbsp;|&nbsp; GPA: <strong>3.92 / 4.00</strong>
+                        <span class="badge">Dean’s List (All Semesters)</span>
+                    </p>
+                    <p class="small">
+                        Relevant Coursework: Data Structures &amp; Algorithms, Software Engineering, Database Systems,
+                        Introduction to Artificial Intelligence, Discrete Mathematics, Operating Systems, Web Development,
+                        Probability &amp; Statistics.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Academic & Personal Projects -->
+            <section class="section">
+                <h2>Academic &amp; Personal Projects</h2>
+
+                <!-- Project 1 -->
+                <div class="section-main">
+                    <div class="section-header-row">
+                        <h3>Personal Finance Tracker (Python CLI Tool)</h3>
+                        <div class="small">Solo Project | Jan 2025 – Mar 2025</div>
+                    </div>
+                    <p class="subtext">
+                        Technologies: Python, pandas, matplotlib, CSV, basic file I/O
+                    </p>
+                    <ul>
+                        <li>Designed and implemented a command-line application to track income, expenses, and monthly budgets using Python.</li>
+                        <li>Built data ingestion logic to parse CSV bank statements, categorize transactions, and compute summary statistics such as category totals and savings rate.</li>
+                        <li>Generated simple visualizations (bar and line charts) with matplotlib to show spending trends over time.</li>
+                        <li>Structured the codebase using functions and small classes to separate data loading, processing, and reporting logic.</li>
+                    </ul>
+                    <p class="small"><strong>What I did:</strong> Requirements definition, application architecture, Python implementation, testing on sample data, and documentation in a README.</p>
+                    <p class="small"><strong>What I learned:</strong> Practical use of Python for real-world scripting; modular design; working with tabular data in pandas; basic data visualization; importance of clear function boundaries and docstrings.</p>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="section-main">
+                    <div class="section-header-row">
+                        <h3>Movie Recommendation System (Class Project)</h3>
+                        <div class="small">Team of 4 | Sep 2024 – Dec 2024</div>
+                    </div>
+                    <p class="subtext">
+                        Technologies: Python, scikit-learn, NumPy, pandas, Git, Jupyter Notebook
+                    </p>
+                    <ul>
+                        <li>Served as team lead for a semester-long project to build a simple movie recommendation prototype based on user ratings and content features.</li>
+                        <li>Implemented data preprocessing pipelines to clean, normalize, and split a 100K+ record movie ratings dataset into training and test sets.</li>
+                        <li>Experimented with baseline recommendation approaches (user-based and item-based similarity) and evaluated accuracy with mean absolute error.</li>
+                        <li>Coordinated version control with Git and GitHub, managed pull requests, and maintained a clear project structure and documentation.</li>
+                    </ul>
+                    <p class="small"><strong>What I did:</strong> Took responsibility for dataset exploration, feature engineering, evaluation scripts, and writing the technical report section on methodology and results.</p>
+                    <p class="small"><strong>What I learned:</strong> End-to-end workflow for a small data science project; practical model evaluation; basic collaboration with Git; communicating technical results to non-experts in presentations.</p>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="section-main">
+                    <div class="section-header-row">
+                        <h3>Web Scraper &amp; Minimal Dashboard</h3>
+                        <div class="small">Solo Project | Jun 2024 – Jul 2024</div>
+                    </div>
+                    <p class="subtext">
+                        Technologies: Python, requests, BeautifulSoup, Flask (basic), HTML/CSS (basic)
+                    </p>
+                    <ul>
+                        <li>Created a Python script to scrape product prices from a small e-commerce site and store results in CSV files for simple trend tracking.</li>
+                        <li>Built a very simple Flask-based dashboard that reads the CSV and displays a table of items with their latest price and a basic change indicator.</li>
+                        <li>Used elementary HTML and CSS to layout the dashboard page with a single responsive table and basic styling.</li>
+                    </ul>
+                    <p class="small"><strong>What I did:</strong> Implemented scraping logic, basic error handling (e.g., retries, timeouts), CSV persistence, and a minimal Flask route to render data into an HTML template.</p>
+                    <p class="small"><strong>What I learned:</strong> Fundamentals of HTTP requests, HTML parsing, very basic web application structure, and how frontend HTML/CSS ties together with backend Python rendering.</p>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="section-main">
+                    <div class="section-header-row">
+                        <h3>Student Enrollment Database (Intro to Databases)</h3>
+                        <div class="small">Team of 3 | Jan 2024 – May 2024</div>
+                    </div>
+                    <p class="subtext">
+                        Technologies: Python, SQLite, elementary SQL (SELECT, INSERT, UPDATE, DELETE, simple JOIN)
+                    </p>
+                    <ul>
+                        <li>Collaborated on a lightweight enrollment system to manage students, courses, and registrations using a SQLite database.</li>
+                        <li>Wrote Python scripts to create tables, insert sample data, and run parameterized queries to view enrollments and course rosters.</li>
+                        <li>Implemented a command-line menu to execute common operations such as “add student,” “list courses,” and “view student schedule.”</li>
+                    </ul>
+                    <p class="small"><strong>What I did:</strong> Focused on basic SQL queries, simple schema design, and Python database integration using SQLite’s Python API.</p>
+                    <p class="small"><strong>What I learned:</strong> Elementary relational database concepts, writing simple SQL statements, handling connections/cursors, and basic input validation for user-provided data.</p>
+                </div>
+            </section>
+
+            <!-- Experience (if any light role / tutoring) -->
+            <section class="section">
+                <h2>Experience</h2>
+
+                <div class="section-main">
+                    <div class="section-header-row">
+                        <h3>Computer Science Tutor (Python &amp; Intro Programming)</h3>
+                        <div class="small">Midwest State University | Jan 2023 – May 2025</div>
+                    </div>
+                    <p class="subtext">Springfield, IL</p>
+                    <ul>
+                        <li>Assisted first-year students with Python programming fundamentals, including variables, control flow, functions, lists, and dictionaries.</li>
+                        <li>Helped debug common issues in assignments, reinforcing concepts like off-by-one errors, incorrect conditionals, and improper use of loops.</li>
+                        <li>Explained problem-solving strategies and how to break down tasks into smaller functions or steps.</li>
+                    </ul>
+                    <p class="small"><strong>Key skills gained:</strong> Explaining technical topics clearly, reading and understanding unfamiliar code quickly, and reinforcing my own core Python knowledge.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Column: Skills, Activities, Additional Info -->
+        <div>
+            <!-- Skills -->
+            <section class="section">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div>
+                        <div class="skill-category">Languages</div>
+                        <p>Python (strong), SQL (elementary), Java (introductory), JavaScript (very basic)</p>
+                    </div>
+                    <div>
+                        <div class="skill-category">Python &amp; Libraries</div>
+                        <p>Core Python (data structures, OOP, modules), pandas, NumPy, matplotlib, scikit-learn (intro), requests, BeautifulSoup</p>
+                    </div>
+                    <div>
+                        <div class="skill-category">Web &amp; Front End</div>
+                        <p>HTML5, CSS3 (basic layouts, forms, tables), Flask (basic routing/templates)</p>
+                    </div>
+                    <div>
+                        <div class="skill-category">Databases</div>
+                        <p>SQLite, basic SQL queries (SELECT, INSERT, UPDATE, DELETE, simple JOINs)</p>
+                    </div>
+                    <div>
+                        <div class="skill-category">Tools &amp; Practices</div>
+                        <p>Git/GitHub, VS Code, Jupyter Notebook, basic unit testing, virtual environments, command-line usage</p>
+                    </div>
+                    <div>
+                        <div class="skill-category">Concepts</div>
+                        <p>Data structures &amp; algorithms, object-oriented programming, basic REST concepts, debugging &amp; logging, basic software design</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Academic Achievements -->
+            <section class="section">
+                <h2>Academic Highlights</h2>
+                <ul>
+                    <li>Graduated <em>magna cum laude</em>, GPA 3.92/4.00.</li>
+                    <li>Dean’s List for 8 consecutive semesters.</li>
+                    <li>Top 5% in “Data Structures &amp; Algorithms” and “Database Systems” courses.</li>
+                    <li>Completed an independent study on Python scripting for automating file and data processing tasks.</li>
+                </ul>
+            </section>
+
+            <!-- Extracurriculars -->
+            <section class="section">
+                <h2>Projects &amp; Activities</h2>
+                <ul>
+                    <li>
+                        <strong>Programming Club Member</strong> (2022 – 2025) – Participated in weekly coding challenges and group workshops focused on Python and algorithmic problem solving.
+                    </li>
+                    <li>
+                        <strong>Hackathon Participant</strong> – Built a small prototype that automated creation of study flashcards from lecture notes using Python text processing.
+                    </li>
+                    <li>
+                        <strong>Open Source Contributions (Small)</strong> – Submitted minor documentation and test improvements to a small Python utility on GitHub.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Additional Info -->
+            <section class="section">
+                <h2>Additional Information</h2>
+                <ul>
+                    <li><strong>Location:</strong> Open to relocation within the U.S. and remote-friendly roles.</li>
+                    <li><strong>Work Authorization:</strong> Eligible to work in the United States with no sponsorship required.</li>
+                    <li><strong>Learning Focus:</strong> Currently studying deeper SQL (joins, indexing, normalization), Flask/FastAPI for backend development, and writing more robust tests in Python.</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,189 @@
+BLAKE RICHARDSON
+Senior .NET Software Developer
+Seattle, WA 98101 | (555) 394-7821 | blake.richardson.dev@example.com | LinkedIn: linkedin.com/in/blakerichardson | GitHub: github.com/brichardson-dev
+
+SUMMARY
+Results-oriented .NET developer with ~5 years of professional experience delivering APIs, web applications, and integration services across finance, healthcare, logistics, and SaaS. Specialized in C#, ASP.NET Core, and SQL Server, with additional experience in Angular and modern DevOps practices. Extensive history of short-term and contract roles, typically 3–5 months, adapting quickly to new codebases and delivering value under tight timelines. Known for improving performance, stabilizing legacy services, and enhancing maintainability through clean architecture and automated testing.
+
+TECHNICAL SKILLS
+
+Languages & Frameworks
+- C# ............................................... Advanced
+- .NET 6 / .NET 7 ................................. Advanced
+- ASP.NET Core (Web API, MVC) .................... Advanced
+- Entity Framework Core .......................... Intermediate
+- LINQ ............................................ Advanced
+- .NET Framework (4.x) ........................... Intermediate
+- ASP.NET Web API (Legacy) ....................... Intermediate
+
+Front-End
+- Angular 14+ ..................................... Intermediate
+- TypeScript ...................................... Intermediate
+- JavaScript (ES6+) ............................... Intermediate
+- HTML5 / CSS3 / SCSS ............................. Intermediate
+- React ........................................... Basic
+- Razor Pages / Blazor ............................ Basic
+
+Databases & Data
+- Microsoft SQL Server ............................ Advanced
+- T-SQL (stored procedures, views, functions) .... Advanced
+- PostgreSQL ...................................... Basic
+- MongoDB ......................................... Basic
+- Redis (caching) ................................ Intermediate
+
+Cloud, DevOps & Tools
+- Azure App Service / Azure Functions ............. Intermediate
+- Azure SQL Database .............................. Intermediate
+- AWS (Lambda, S3) ................................ Basic
+- Docker (containerization) ....................... Intermediate
+- Git, GitHub, Azure DevOps, Bitbucket ........... Advanced
+- CI/CD (GitHub Actions, Azure Pipelines) ........ Intermediate
+- RESTful API design & documentation (Swagger) ... Advanced
+
+Testing, Quality & Practices
+- xUnit, MSTest ................................... Intermediate
+- NUnit .......................................... Basic
+- Moq (unit testing with mocks) .................. Intermediate
+- Postman / Newman ............................... Advanced
+- SonarQube / static analysis .................... Basic
+- Domain-Driven Design (DDD) ..................... Basic
+- Clean Architecture, SOLID principles ........... Intermediate
+- Agile / Scrum, Kanban .......................... Advanced
+
+
+PROFESSIONAL EXPERIENCE
+
+Contract Senior .NET Engineer
+BrightWave Logistics Systems, Seattle, WA
+02/2025 – 06/2025 (5-month contract)
+
+- Built and optimized .NET 7 REST APIs for a shipment tracking platform, integrating with external carrier APIs (UPS, FedEx) and internal order management services.
+- Implemented asynchronous processing using background services and Azure Service Bus, reducing API response times by ~35% during high-volume ingestion.
+- Designed and tuned SQL Server stored procedures and indexes for shipment and tracking tables (millions of rows), cutting key queries from 1.8s to under 300ms.
+- Introduced integration tests with xUnit and an in-memory test database, increasing API test coverage from ~20% to 65% within the contract period.
+- Collaborated with Angular front-end team by defining clear contracts and versioned APIs using Swagger/OpenAPI.
+
+Technologies: C#, .NET 7, ASP.NET Core Web API, Entity Framework Core, SQL Server, Azure App Service, Azure Service Bus, Docker, xUnit, Postman, GitHub Actions
+
+
+Contract .NET Back-End Developer
+NorthPoint Health Analytics, Remote
+09/2024 – 01/2025 (5-month contract)
+
+- Modernized legacy .NET Framework 4.6 services into .NET 6 microservices, improving reliability and enabling containerized deployments.
+- Implemented role-based authorization and token validation for internal APIs using JWT and ASP.NET Core middleware.
+- Refactored data access to use EF Core with a repository pattern and unit of work, reducing duplicate query logic and simplifying testability.
+- Designed and maintained complex T-SQL stored procedures and views for patient analytics dashboards, while ensuring PHI access patterns respected compliance guidelines.
+- Built automated API smoke tests in Postman collections, later integrated into CI to prevent regressions on critical endpoints.
+
+Technologies: C#, .NET 6, ASP.NET Core, EF Core, SQL Server, Docker, Azure DevOps, Postman, xUnit, Git, Jira
+
+
+Full-Stack .NET / Angular Developer
+CityLine Fleet & Dispatch, Portland, OR
+05/2024 – 08/2024 (4-month contract)
+
+- Delivered new driver scheduling and dispatch features in a full-stack .NET 6 + Angular 15 application used by operations teams across multiple depots.
+- Consumed and extended existing REST APIs; added new endpoints for schedule templates, recurring routes, and bulk updates with proper validation and paging.
+- Implemented Angular components, services, and reactive forms to support complex schedule editing and conflict detection in the UI.
+- Optimized frequently used SQL queries with improved indexing and query rewrites, reducing average page load times by ~40%.
+- Worked closely with UX designer to refine UI interactions, contributing CSS/SCSS improvements for consistent styling and responsive layouts.
+
+Technologies: C#, .NET 6, ASP.NET Core, Angular 15, TypeScript, HTML5, CSS3/SCSS, SQL Server, Git, Azure Boards
+
+
+Software Engineer (.NET)
+GreenLeaf Retail Solutions, Remote
+01/2024 – 04/2024 (4-month contract)
+
+- Extended an existing ASP.NET Core MVC + Web API application that handled online orders, inventory checks, and payment processing.
+- Implemented discount and promotion business rules in C# with unit-tested services that integrated with both the checkout flow and back-office tools.
+- Introduced in-memory caching and Redis-backed caching for product catalog endpoints, decreasing load on SQL Server and improving response times under seasonal spikes.
+- Created admin UI components with Razor pages to manage promotions, inventory flags, and feature toggles.
+- Assisted in migrating configuration settings to Azure App Configuration and Key Vault, improving secrets management and deployment flexibility.
+
+Technologies: C#, ASP.NET Core MVC/Web API, Redis, SQL Server, Azure App Service, Azure Key Vault, Razor Pages, MSTest, Git
+
+
+Contract .NET API Developer
+Apex FinTech Services, San Francisco, CA
+08/2023 – 12/2023 (5-month contract)
+
+- Developed and maintained high-throughput .NET 7 APIs for trade order submission, validation, and status tracking.
+- Applied CQRS patterns for certain high-volume endpoints to separate read/write concerns and improve scalability.
+- Integrated with third-party services for KYC/AML checks, building robust retry and circuit-breaker logic to handle intermittent failures.
+- Implemented structured logging and correlation IDs using Serilog, improving traceability across distributed services.
+- Worked with DevOps team to containerize services using Docker and deploy to Azure Kubernetes Service (AKS).
+
+Technologies: C#, .NET 7, ASP.NET Core Web API, CQRS, Serilog, SQL Server, Redis, Docker, AKS, Azure DevOps Pipelines, NUnit, Moq
+
+
+Full-Stack .NET Developer
+BlueOrbit Media Platform, Seattle, WA
+04/2023 – 07/2023 (4-month contract)
+
+- Contributed to a content management and subscription platform built on ASP.NET Core and a React front end.
+- Added new subscription and billing features, including proration logic and free-trial handling, implemented as versioned REST endpoints.
+- Implemented a small admin dashboard with React components and integrated it with the existing API for user management and feature flags.
+- Wrote and optimized SQL queries and Entity Framework mappings for user, subscription, and invoice domains.
+- Set up GitHub Actions workflows to run unit tests and API contract checks on pull requests.
+
+Technologies: C#, ASP.NET Core Web API, EF Core, SQL Server, React, JavaScript (ES6), GitHub Actions, xUnit, Postman
+
+
+Junior–Mid .NET Developer
+Horizon Insurance Systems, Denver, CO
+11/2022 – 03/2023 (5-month contract)
+
+- Maintained internal ASP.NET Web API (legacy) services used for policy management and claims processing.
+- Implemented new endpoints and bug fixes in C#, adding unit tests around critical policy rating logic.
+- Helped migrate selected services from .NET Framework to .NET 6, including updating dependency injection, logging, and configuration patterns.
+- Worked on front-end enhancements for a small Angular-based agent portal, including form validation and integration with new backend endpoints.
+- Analyzed slow SQL queries and collaborated with DBAs to add indexes and refactor stored procedures.
+
+Technologies: C#, .NET Framework 4.x, .NET 6, ASP.NET Web API, Angular, TypeScript, SQL Server, T-SQL, MSTest, Git, Azure Repos
+
+
+ADDITIONAL SHORT-TERM CONTRACTS (2019 – 2022)
+
+Various Clients (Healthcare, eCommerce, Internal Tools)
+- Multiple 3–4 month roles focused on:
+  - Building and consuming RESTful APIs in ASP.NET Core and .NET Framework.
+  - Creating internal tools and dashboards with Razor pages and basic JavaScript/TypeScript.
+  - Writing T-SQL queries, stored procedures, and functions for line-of-business applications.
+  - Implementing unit tests and basic CI pipelines, and performing bug fixing and maintenance on large existing codebases.
+- These roles established core .NET, SQL Server, and web development foundations and reinforced the ability to quickly learn new products and domains.
+
+
+SELECTED PROJECT HIGHLIGHTS
+
+Order Processing and Inventory Sync API
+- Consolidated separate order intake processes into a single ASP.NET Core Web API, integrating with a third-party warehouse system via REST and scheduled jobs.
+- Used EF Core and SQL Server to maintain a normalized inventory schema with auditing tables, enabling clearer reporting and rollback.
+- Achieved near real-time synchronization with inventory updates processed every 60 seconds, while applying idempotent operations to avoid duplication.
+
+Telehealth Appointment Scheduling Module
+- Implemented a scheduling API in .NET 6 that enforced provider availability, time zones, and appointment-type rules.
+- Created Angular components for patients and providers to view, book, and manage appointments, backed by REST endpoints.
+- Worked with product and QA to refine edge cases (overlaps, cancellations, reschedules), supported by automated tests and Postman collections.
+
+
+EDUCATION
+
+Bachelor of Science in Computer Science
+University of Washington, Seattle, WA
+Graduated: 2019
+
+CERTIFICATIONS (NON-EXHAUSTIVE)
+
+- Microsoft Certified: Azure Fundamentals (AZ-900)
+- Pluralsight and Udemy coursework in:
+  - Advanced C# and .NET 6
+  - Clean Architecture and SOLID in .NET
+  - Angular Front-End Development
+
+PROFESSIONAL DETAILS
+
+- Work Authorization: Eligible to work in the U.S. without sponsorship
+- Availability: Open to W-2 or 1099 contract roles, typically 3–6 months
+- Preferences: API-centric backend roles with some front-end or DevOps collaboration, ideally in cloud-hosted environments (Azure or AWS)

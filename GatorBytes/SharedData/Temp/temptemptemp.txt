@@ -1,0 +1,67 @@
+Basic Information: Full Name: Alex Carter. Current/Desired Title: Entry-Level Front-End Developer. Location: Portland, OR, United States (127 Maple Ridge Lane, Apt 3B, Portland, OR 97205). Contact Information: Email: alex.carter.dev@example.com. Phone: (503) 555-0198. LinkedIn: linkedin.com/in/alexcarter-dev. GitHub: github.com/alexcarter-dev. Website: www.alexcarter.dev. Work Authorization: Authorized to work in the U.S. without sponsorship. Open to hybrid and remote positions.
+
+Professional Summary: Alex Carter is an enthusiastic and detail-oriented entry-level front-end developer with approximately 14 months of professional experience, primarily focused on React and React Native in a hybrid work environment at Northwind Digital Labs. Recently promoted from Junior Developer due to performance, Alex is actively growing skills in modern Angular (versions 16 and 17) through self-driven projects and intends to transition into Angular 2+ roles. Strengths include component-based UI development, thorough documentation, eagerness to learn via code review, and a strong grasp of state management, responsive design, and accessibility best practices. Proficient in JavaScript, TypeScript (growing), and a range of modern FE tools, Alex has a history of cross-platform UI work and is recognized for clear communication and ownership of deliverables.
+
+Work History:
+1. Front-End Developer (Promoted from Junior)
+   - Company: Northwind Digital Labs
+   - Location: Portland, OR (Hybrid)
+   - Dates: June 2023 – Present (14 months total); promoted within 12 months
+   - Responsibilities and Achievements:
+     - Built and maintained reusable component libraries for React-based internal design systems, contributing over 20 production-quality UI components (buttons, dialogs, layouts). Authored detailed documentation, usage examples, and accessibility notes in Storybook.
+     - Led accessibility improvements, raising Lighthouse scores from 72 to 93 through semantic HTML, ARIA, key bindings, and color adjustments.
+     - Implemented shared UI logic and platform-specific designs across web (React) and mobile (React Native) apps.
+     - Managed API state using Redux Toolkit and React Query, including design of optimistic UI flows and robust error handling.
+     - Consistently wrote and maintained unit/integration tests (Jest, React Testing Library), maintaining 85–95% coverage and debugging asynchronous UI states.
+     - Assisted in maintenance and gradual refactoring of a legacy AngularJS (1.x) internal tool; performed bug fixes and minor upgrades.
+     - Fully participated in Agile ceremonies (standups, planning, retros, ticket creation), proactively requested code reviews, and fostered best practices in FE architecture and CSS design token usage.
+     - Mentored newer interns and was recognized for clear documentation, communication, and initiative.
+
+Education:
+- B.S. in Computer & Information Science, University of Oregon, Eugene, OR, 2018-2022; GPA: 3.5/4.0. Focused on Web Development, Human-Computer Interaction. Relevant coursework: Web App Development (JavaScript, AngularJS, REST), UI/UX Design, Mobile App Development (intro React Native), Software Engineering (Agile, Git, docs), Data Structures & Algorithms (Java). Notable projects include a responsive course planner (vanilla JS, CSS Grid) and HCI usability study (personas, reports).
+
+Certifications, Courses, and Training:
+- Completed several Angular 14–17 courses (Udemy and official Angular documentation), focusing on components, DI, routing, RxJS. No formal certifications listed. Maintains personal Angular notes and actively follows Angular community/training content (e.g., NG Conf, Angular Blog).
+
+Skills:
+Technical Skills (Top Skills with Approximate Levels):
+- JavaScript (ES6+): Advanced (core language for all roles/projects, substantial experience)
+- React: Advanced (core in professional work, library development, cross-platform UI)
+- React Native: Intermediate-Advanced (14 months of direct experience, shipped mobile UI)
+- TypeScript: Intermediate (growing proficiency, applied in personal/professional projects)
+- Angular (2+, 16–17): Intermediate-Basic (actively learning, robust personal projects, not yet in production)
+- Redux Toolkit, React Query, NgRx, RxJS: Intermediate (prominently used in projects and main role)
+- CSS3, SASS/SCSS, Styled Components, CSS Modules, Tailwind: Advanced (multiple styling frameworks, strong in both pro and personal work)
+- HTML5, ARIA/Accessibility: Advanced (lead accessibility improvements, routine semantic markup)
+- Testing: Jest, React Testing Library, Cypress: Intermediate (routine professional testing with high test coverage)
+- Git & GitHub, Webpack, Vite, ESLint, Prettier: Intermediate-Advanced (daily tooling)
+- Node.js (tooling & basic APIs): Basic-Intermediate
+- REST APIs: Intermediate (integrations and state/APIs in all major roles/projects)
+- Express, MongoDB (basic/intro)
+
+Non-Technical Skills:
+- Clear written and verbal communication (PRs, code reviews)
+- Detail-oriented documentation
+- Agile participation
+- Team collaboration
+- Mentoring/intern onboarding
+- Initiative and feedback seeking
+
+Projects:
+- TaskFlow Pro (Kanban Productivity App): Personal Angular 17 project focusing on best practices, global state with NgRx, RxJS streams, feature modules, Angular Material theming, robust form validations. Documented learning and build notes extensively (github.com/alexcarter-dev/taskflow-pro-angular).
+- FitTrack Mobile: Personal React Native app for workout tracking, built with focus on reusable components, navigation, local persistence, and maintainable styles. Code and screenshots available (github.com/alexcarter-dev/fittrack-mobile).
+- Campus Event Explorer: Senior capstone, team web app (React, Node.js, MongoDB), front-end led by Alex, with responsive design, event filtering/bookmarking, style guides, team navigation components.
+- Student Budget Planner (AngularJS): Campus project managing expenses with AngularJS controllers/services; first exposure to SPA, client-side routing, and API integration.
+- Additional: Single-page resume site (HTML, CSS, vanilla JS), responsive photo gallery (CSS Grid/Flexbox), utility JS algorithm/practice snippets.
+
+Awards, Honors, and Recognition: Promoted from Junior Developer within 12 months at Northwind Digital Labs based on code quality, proactive learning, documentation, and mentorship. No distinct external awards stated.
+
+Languages: English (no others explicitly listed).
+
+Extracurriculars and Interests: Regularly attends local tech meetups (Portland JavaScript, Angular/Frontend), recreates UI components for practice (CodeSandbox), follows FE industry blogs (CSS-Tricks, Smashing Magazine, Angular Blog).
+
+Professional Interests: Particularly passionate about accessible, responsive UIs, state management, learning new frameworks, and collaborating in code reviews. Enjoys cross-functional/Agile teams and continuous learning.
+
+Personality Interpretation (Subjective Inference): Based on the resume, Alex exhibits a detail-oriented, proactive communication style and a deep investment in thorough documentation and quality. There is a strong learning mindset, evidenced by regular feedback-seeking, self-driven study outside immediate job demands, and careful tracking of new frameworks and industry trends. The resume reflects both pride in technical achievement and a collaborative approach, with highlights regarding mentorship, code reviews, and team-oriented Agile practices. Alex appears to thrive in environments where best practices, readability, and new technology adoption are valued, and seems well suited to roles requiring both technical depth and cross-team communication.
+
+Overall Profile Summary: Alex Carter is an early-career front-end developer with roughly 14 months of production experience at Northwind Digital Labs, primarily using React and React Native. Promoted in under a year due to technical reliability, code quality, accessibility initiatives, and team mentorship. Alex is increasingly specializing in state management (Redux, React Query, NgRx), component libraries, and UI accessibility, and actively expanding skills into modern Angular through self-driven projects, online coursework, and community engagement. Thrives in collaborative, Agile teams with clear engineering standards, mentorship, and an appetite for continuous learning and refactoring. Particularly equipped for roles on teams transitioning toward modern FE stacks (e.g., migrating old AngularJS to Angular 2+ or React), with a strong appetite for codebase quality, UI architecture, and documentation. Driven by curiosity and a sense of ownership, Alex seeks junior/entry-level positions with growth potential, mentoring, and involvement in UI/UX, accessibility, and state management challenges.

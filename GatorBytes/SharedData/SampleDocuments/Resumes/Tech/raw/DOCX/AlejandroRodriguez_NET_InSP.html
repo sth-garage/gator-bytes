@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>CV - Alejandro Morales Rodríguez - Principal Software Developer .NET & SQL Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        :root {
+            --bg-main: #0f172a;
+            --bg-accent: #111827;
+            --bg-card: #f9fafb;
+            --bg-chip: #e5e7eb;
+            --primary: #3b82f6;
+            --primary-soft: rgba(59,130,246,0.12);
+            --highlight: #22c55e;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+            --border-subtle: #e5e7eb;
+            --shadow-soft: 0 18px 45px rgba(15,23,42,0.30);
+            --radius-lg: 16px;
+            --radius-md: 10px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top left, #1f2937 0, #020617 45%, #020617 100%);
+            color: #e5e7eb;
+            padding: 32px 12px;
+        }
+
+        .page-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .shell {
+            background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(15,23,42,0.96));
+            border-radius: 32px;
+            padding: 28px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(148,163,184,0.35);
+            backdrop-filter: blur(18px);
+        }
+
+        @media (min-width: 960px) {
+            .shell {
+                padding: 40px 46px 42px 46px;
+            }
+        }
+
+        .header {
+            display: grid;
+            grid-template-columns: minmax(0, 3fr) minmax(0, 2.1fr);
+            gap: 24px;
+            align-items: center;
+            border-bottom: 1px solid rgba(148,163,184,0.35);
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 840px) {
+            .header {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .name-role {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .name-role h1 {
+            margin: 0;
+            font-size: clamp(2.1rem, 3vw, 2.6rem);
+            letter-spacing: 0.04em;
+        }
+
+        .name-highlight {
+            background: linear-gradient(120deg, #ffffff, #bae6fd);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .role {
+            font-size: 1.02rem;
+            font-weight: 600;
+            color: #d1d5db;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .summary {
+            margin-top: 10px;
+            color: #e5e7eb;
+            font-size: 0.96rem;
+            line-height: 1.55;
+            max-width: 640px;
+        }
+
+        .summary strong {
+            color: #fbbf24;
+            font-weight: 600;
+        }
+
+        .summary-highlight {
+            display: inline-flex;
+            align-items: center;
+            padding: 3px 9px;
+            border-radius: 999px;
+            background: rgba(34,197,94,0.10);
+            border: 1px solid rgba(34,197,94,0.75);
+            color: #bbf7d0;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-top: 8px;
+        }
+
+        .summary-highlight span {
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: #22c55e;
+            margin-right: 6px;
+            box-shadow: 0 0 0 4px rgba(34,197,94,0.35);
+        }
+
+        .contact-panel {
+            background: radial-gradient(circle at top left, rgba(37,99,235,0.25), rgba(15,23,42,1));
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(129,140,248,0.60);
+            padding: 14px 16px 14px 16px;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 12px;
+        }
+
+        @media (max-width: 640px) {
+            .contact-panel {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-main {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-size: 0.86rem;
+        }
+
+        .contact-main-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 18px;
+            align-items: center;
+        }
+
+        .contact-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #a5b4fc;
+        }
+
+        .contact-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 9px;
+            border-radius: 999px;
+            background: rgba(15,23,42,0.72);
+            border: 1px solid rgba(148,163,184,0.7);
+            color: #e5e7eb;
+        }
+
+        .contact-pill span.icon {
+            width: 16px;
+            height: 16px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #60a5fa, #22c55e);
+        }
+
+        .contact-pill a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contact-pill a:hover {
+            text-decoration: underline;
+        }
+
+        .location-line {
+            font-size: 0.8rem;
+            color: #e5e7eb;
+            opacity: 0.9;
+        }
+
+        .contact-meta {
+            font-size: 0.78rem;
+            color: #cbd5f5;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            border-left: 1px solid rgba(129,140,248,0.55);
+            padding-left: 14px;
+        }
+
+        @media (max-width: 640px) {
+            .contact-meta {
+                border-left: none;
+                border-top: 1px solid rgba(129,140,248,0.45);
+                padding-left: 0;
+                padding-top: 10px;
+                margin-top: 4px;
+            }
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 3px 7px;
+            border-radius: 999px;
+            border: 1px solid rgba(251,191,36,0.7);
+            background: rgba(251,191,36,0.08);
+            color: #fef3c7;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+        }
+
+        .badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 999px;
+            background: #facc15;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.15fr);
+            gap: 26px;
+        }
+
+        @media (max-width: 960px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 0.9rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #9ca3af;
+        }
+
+        .section-accent {
+            width: 56px;
+            height: 3px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #3b82f6, #22c55e);
+        }
+
+        .section-body {
+            background: linear-gradient(145deg, rgba(15,23,42,0.92), rgba(15,23,42,0.94));
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(75,85,99,0.9);
+            padding: 14px 16px 14px 16px;
+        }
+
+        .timeline-item {
+            border-left: 2px solid rgba(55,65,81,0.9);
+            padding-left: 14px;
+            margin-left: 3px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -6px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: #3b82f6;
+            box-shadow: 0 0 0 4px rgba(59,130,246,0.35);
+        }
+
+        .job-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 6px;
+        }
+
+        .job-title {
+            font-weight: 600;
+            color: #e5e7eb;
+        }
+
+        .job-company {
+            color: #9ca3af;
+            font-size: 0.88rem;
+        }
+
+        .job-meta {
+            font-size: 0.8rem;
+            color: #9ca3af;
+        }
+
+        .chip-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 6px;
+        }
+
+        .chip {
+            padding: 2px 7px;
+            border-radius: 999px;
+            background: rgba(31,41,55,0.9);
+            border: 1px solid rgba(148,163,184,0.7);
+            font-size: 0.7rem;
+            color: #e5e7eb;
+        }
+
+        .job-description {
+            margin-top: 6px;
+            font-size: 0.86rem;
+            color: #d1d5db;
+        }
+
+        .job-description ul {
+            margin: 4px 0 0 18px;
+            padding: 0;
+        }
+
+        .job-description li {
+            margin-bottom: 2px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px;
+        }
+
+        .skill-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: 10px 10px 9px 10px;
+            box-shadow: 0 10px 25px rgba(15,23,42,0.18);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-main);
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            font-size: 0.88rem;
+        }
+
+        .skill-level {
+            font-size: 0.74rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .rating-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 3px;
+        }
+
+        .rating-bar {
+            display: flex;
+            gap: 2px;
+        }
+
+        .rating-bar span {
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: #e5e7eb;
+            border: 1px solid #d1d5db;
+        }
+
+        .rating-bar span.filled {
+            background: var(--primary);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px var(--primary-soft);
+        }
+
+        .rating-text {
+            font-size: 0.72rem;
+            color: #4b5563;
+        }
+
+        .skill-justification {
+            font-size: 0.76rem;
+            color: #4b5563;
+            line-height: 1.35;
+        }
+
+        .legend {
+            font-size: 0.76rem;
+            color: #9ca3af;
+            margin-bottom: 6px;
+        }
+
+        .legend strong {
+            color: #e5e7eb;
+        }
+
+        .education-item {
+            font-size: 0.86rem;
+            color: #e5e7eb;
+            margin-bottom: 6px;
+        }
+
+        .education-item strong {
+            display: block;
+        }
+
+        .tagline {
+            font-size: 0.8rem;
+            color: #9ca3af;
+            margin-top: 3px;
+        }
+
+        .list {
+            margin: 4px 0 0 16px;
+            padding: 0;
+            font-size: 0.86rem;
+            color: #d1d5db;
+        }
+
+        .list li {
+            margin-bottom: 2px;
+        }
+
+        .pill-inline {
+            display: inline-flex;
+            align-items: center;
+            padding: 1px 7px;
+            border-radius: 999px;
+            background: rgba(31,41,55,0.9);
+            border: 1px solid rgba(148,163,184,0.7);
+            font-size: 0.72rem;
+            margin-left: 4px;
+        }
+
+        .small-muted {
+            font-size: 0.8rem;
+            color: #9ca3af;
+        }
+
+        .two-col-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 4px 18px;
+            font-size: 0.84rem;
+            color: #d1d5db;
+        }
+
+        @media (max-width: 640px) {
+            .two-col-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print tweaks */
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+            .shell {
+                box-shadow: none;
+                border-radius: 0;
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+    <div class="shell">
+
+        <!-- Encabezado -->
+        <header class="header">
+            <div class="name-role">
+                <h1><span class="name-highlight">Alejandro Morales Rodríguez</span></h1>
+                <div class="role">Principal Software Developer · .NET &amp; SQL Server</div>
+                <p class="summary">
+                    Desarrollador de software principal con <strong>14+ años</strong> de experiencia construyendo
+                    plataformas empresariales en <strong>.NET</strong> y <strong>SQL Server</strong>. Especializado en
+                    diseño de arquitectura, optimización de rendimiento y modernización de aplicaciones críticas para
+                    banca, seguros y fintech en entornos on‑premise y Azure.
+                </p>
+                <div class="summary-highlight">
+                    <span></span> Enfoque en soluciones escalables, mantenibles y medibles
+                </div>
+            </div>
+
+            <aside class="contact-panel">
+                <div class="contact-main">
+                    <div class="contact-label">Contacto</div>
+                    <div class="contact-main-row">
+                        <div class="contact-pill">
+                            <span class="icon"></span>
+                            <a href="mailto:alejandro.morales.cr@example.com">alejandro.morales.cr@example.com</a>
+                        </div>
+                        <div class="contact-pill">
+                            <span class="icon"></span>
+                            <span>+506 8888‑0000</span>
+                        </div>
+                    </div>
+                    <div class="contact-main-row">
+                        <div class="contact-pill">
+                            <span class="icon"></span>
+                            <a href="https://www.linkedin.com/in/alejandromoralescr" target="_blank">linkedin.com/in/alejandromoralescr</a>
+                        </div>
+                        <div class="contact-pill">
+                            <span class="icon"></span>
+                            <a href="https://github.com/amorales-cr" target="_blank">github.com/amorales-cr</a>
+                        </div>
+                    </div>
+                    <div class="location-line">
+                        San José, Costa Rica · Dispuesto a trabajo remoto e híbrido en LATAM / EE. UU.
+                    </div>
+                </div>
+                <div class="contact-meta">
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        <span>.NET · SQL Server · Azure</span>
+                    </div>
+                    <div>Ciudadanía costarricense · Inglés B2/C1 · Español nativo</div>
+                    <div>Industria objetivo: banca, fintech, seguros, SaaS B2B</div>
+                </div>
+            </aside>
+        </header>
+
+        <main class="content">
+
+            <!-- Columna izquierda -->
+            <section>
+
+                <!-- Experiencia profesional -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-title">Experiencia profesional</div>
+                        <div class="section-accent"></div>
+                    </div>
+                    <div class="section-body">
+                        <article class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="job-header">
+                                <div>
+                                    <div class="job-title">Principal Software Developer / Líder Técnico .NET</div>
+                                    <div class="job-company">Plataforma Fintech Regional · San José, Costa Rica</div>
+                                </div>
+                                <div class="job-meta">2019 – Presente</div>
+                            </div>
+                            <div class="chip-row">
+                                <span class="chip">.NET 6/7</span>
+                                <span class="chip">C#</span>
+                                <span class="chip">ASP.NET Core Web API</span>
+                                <span class="chip">Microservicios</span>
+                                <span class="chip">SQL Server 2019</span>
+                                <span class="chip">Azure (App Service, SQL, Functions)</span>
+                            </div>
+                            <div class="job-description">
+                                <ul>
+                                    <li>Diseño y liderazgo de la arquitectura de una plataforma de pagos regional basada en microservicios .NET y bases de datos SQL Server altamente disponibles.</li>
+                                    <li>Reducción del tiempo de respuesta promedio de APIs críticas de 850 ms a 120 ms mediante <strong>optimización de consultas T‑SQL, índices, caché distribuido</strong> y profiling en .NET.</li>
+                                    <li>Definición de estándares de desarrollo, revisión de código y mentoring de un equipo de 10+ desarrolladores backend, promoviendo principios SOLID y DDD.</li>
+                                    <li>Diseño de modelo de datos relacional para conciliación financiera multimoneda (tablas particionadas, índices columnstore, jobs de mantenimiento).</li>
+                                    <li>Implementación de CI/CD con Azure DevOps para más de 40 servicios .NET, incluyendo migraciones automatizadas de base de datos (DbUp / EF Core Migrations).</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="job-header">
+                                <div>
+                                    <div class="job-title">Senior .NET Developer / Arquitecto de Soluciones</div>
+                                    <div class="job-company">Consultora Tecnológica Global · Heredia, Costa Rica</div>
+                                </div>
+                                <div class="job-meta">2014 – 2019</div>
+                            </div>
+                            <div class="chip-row">
+                                <span class="chip">ASP.NET MVC</span>
+                                <span class="chip">WCF</span>
+                                <span class="chip">Entity Framework</span>
+                                <span class="chip">SQL Server 2012/2016</span>
+                                <span class="chip">SSIS / SSRS</span>
+                            </div>
+                            <div class="job-description">
+                                <ul>
+                                    <li>Liderazgo técnico en proyectos para bancos y aseguradoras en Estados Unidos y Centroamérica, modernizando aplicaciones legadas en .NET Framework hacia arquitecturas más modulares.</li>
+                                    <li>Diseño de procedimientos almacenados complejos, vistas materializadas y paquetes SSIS para cargas diarias de +200 M registros.</li>
+                                    <li>Implementación de patrones CQRS y capa de acceso a datos limpia para desacoplar lógica de negocio de SQL Server.</li>
+                                    <li>Participación en estimaciones, definición de roadmap técnico y presentaciones de arquitectura a stakeholders no técnicos.</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="job-header">
+                                <div>
+                                    <div class="job-title">Desarrollador .NET</div>
+                                    <div class="job-company">Empresa de Servicios Compartidos · San José, Costa Rica</div>
+                                </div>
+                                <div class="job-meta">2010 – 2014</div>
+                            </div>
+                            <div class="chip-row">
+                                <span class="chip">C#</span>
+                                <span class="chip">WinForms / WPF</span>
+                                <span class="chip">ASP.NET WebForms</span>
+                                <span class="chip">SQL Server 2008 R2</span>
+                            </div>
+                            <div class="job-description">
+                                <ul>
+                                    <li>Desarrollo de aplicaciones internas de facturación y gestión de inventario usando C#, WinForms y ASP.NET.</li>
+                                    <li>Diseño y mantenimiento de esquemas y consultas en SQL Server, incluyendo triggers, constraints y funciones definidas por el usuario.</li>
+                                    <li>Automatización de reportes operativos con SQL Server Reporting Services (SSRS).</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Proyectos destacados -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-title">Proyectos destacados</div>
+                        <div class="section-accent"></div>
+                    </div>
+                    <div class="section-body">
+                        <div class="education-item">
+                            <strong>Plataforma de procesamiento de pagos en tiempo real (.NET 6 + SQL Server)</strong>
+                            <div class="tagline">
+                                Rediseño de una pasarela de pagos para soportar 3x el volumen de transacciones.
+                            </div>
+                            <ul class="list">
+                                <li>Implementación de microservicios .NET 6, mensajería con Azure Service Bus y base de datos SQL Server particionada por región.</li>
+                                <li>Reducción de timeouts de base de datos en un 90% mediante tuning de índices e implementación de consultas parametrizadas y planes guías.</li>
+                            </ul>
+                        </div>
+
+                        <div class="education-item">
+                            <strong>Sistema de conciliación contable multimoneda</strong>
+                            <div class="tagline">
+                                Solución para automatizar conciliaciones diarias entre bancos, pasarelas y ERP.
+                            </div>
+                            <ul class="list">
+                                <li>Modelo de datos relacional en SQL Server con más de 80 tablas, vistas indexadas y auditoría mediante Change Data Capture (CDC).</li>
+                                <li>APIs REST en ASP.NET Core para exponer saldos y conciliaciones a sistemas externos.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Educación y certificaciones -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-title">Educación y certificaciones</div>
+                        <div class="section-accent"></div>
+                    </div>
+                    <div class="section-body">
+                        <div class="education-item">
+                            <strong>Licenciatura en Ingeniería en Computación</strong>
+                            Universidad de Costa Rica (UCR), San José · 2009
+                            <div class="small-muted">Énfasis en ingeniería de software y bases de datos.</div>
+                        </div>
+
+                        <div class="education-item">
+                            <strong>Certificaciones</strong>
+                            <ul class="list">
+                                <li>Microsoft Certified: <strong>Azure Developer Associate (AZ‑204)</strong></li>
+                                <li>Microsoft Certified: <strong>Azure Database Administrator Associate (DP‑300)</strong></li>
+                                <li>Scrum.org Professional Scrum Master I (PSM I)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Columna derecha -->
+            <section>
+
+                <!-- Competencias técnicas clave -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-title">Competencias técnicas clave</div>
+                        <div class="section-accent"></div>
+                    </div>
+                    <div class="section-body">
+                        <div class="legend">
+                            <strong>Escala de autoevaluación (1–5):</strong> 1 = Básico, 3 = Sólido, 5 = Experto / referencia técnica.
+                        </div>
+
+                        <div class="skills-grid">
+                            <!-- Skill: C# / .NET -->
+                            <div class="skill-card">
+                                <div class="skill-header">
+                                    <div class="skill-name">C# y plataforma .NET</div>
+                                    <div class="skill-level">Nivel: 5 / 5</div>
+                                </div>
+                                <div class="rating-row">
+                                    <div class="rating-bar">
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                    </div>
+                                    <div class="rating-text">14+ años, referencia técnica</div>
+                                </div>
+                                <p class="skill-justification">
+                                    Lidero diseño y desarrollo de APIs y servicios de misión crítica en C# (.NET Framework y .NET 6/7),
+                                    definiendo estándares de código, patrones (DDD, CQRS) y guías de arquitectura para el equipo.
+                                </p>
+                            </div>
+
+                            <!-- Skill: ASP.NET Core APIs -->
+                            <div class="skill-card">
+                                <div class="skill-header">
+                                    <div class="skill-name">ASP.NET Core Web API / REST</div>
+                                    <div class="skill-level">Nivel: 5 / 5</div>
+                                </div>
+                                <div class="rating-row">
+                                    <div class="rating-bar">
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                    </div>
+                                    <div class="rating-text">Arquitecto de APIs</div>
+                                </div>
+                                <p class="skill-justification">
+                                    Diseño APIs REST de alto rendimiento (versionado, seguridad, observabilidad) y he liderado
+                                    migraciones desde WCF/ASMX hacia ASP.NET Core, incluyendo autenticación OAuth2/JWT y políticas de resiliencia.
+                                </p>
+                            </div>
+
+                            <!-- Skill: SQL Server -->
+                            <div class="skill-card">
+                                <div class="skill-header">
+                                    <div class="skill-name">SQL Server &amp; T‑SQL</div>
+                                    <div class="skill-level">Nivel: 5 / 5</div>
+                                </div>
+                                <div class="rating-row">
+                                    <div class="rating-bar">
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                    </div>
+                                    <div class="rating-text">Diseño y tuning avanzado</div>
+                                </div>
+                                <p class="skill-justification">
+                                    Experto en modelado relacional, diseño de índices, particionamiento, planes de ejecución,
+                                    procedimientos almacenados complejos y resolución de cuellos de botella mediante DMVs y Extended Events.
+                                </p>
+                            </div>
+
+                            <!-- Skill: Rendimiento y escalabilidad -->
+                            <div class="skill-card">
+                                <div class="skill-header">
+                                    <div class="skill-name">Rendimiento y escalabilidad</div>
+                                    <div class="skill-level">Nivel: 4 / 5</div>
+                                </div>
+                                <div class="rating-row">
+                                    <div class="rating-bar">
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="rating-text">Diseño y medición</div>
+                                </div>
+                                <p class="skill-justification">
+                                    Experiencia mejorando latencia y throughput de sistemas .NET/SQL Server mediante caching,
+                                    optimización de consultas, patrones asíncronos y pruebas de carga; aún profundizando en escenarios extremos de alta concurrencia.
+                                </p>
+                            </div>
+
+                            <!-- Skill: Entity Framework / acceso a datos -->
+                            <div class="skill-card">
+                                <div class="skill-header">
+                                    <div class="skill-name">EF Core / acceso a datos</div>
+                                    <div class="skill-level">Nivel: 4 / 5</div>
+                                </div>
+                                <div class="rating-row">
+                                    <div class="rating-bar">
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="rating-text">Modelado + tuning</div>
+                                </div>
+                                <p class="skill-justification">
+                                    Diseño de modelos de datos, mapeos complejos, estrategias de tracking/no‑tracking y uso combinado
+                                    de EF Core con T‑SQL nativo para lograr el balance entre productividad y rendimiento.
+                                </p>
+                            </div>
+
+                            <!-- Skill: Azure -->
+                            <div class="skill-card">
+                                <div class="skill-header">
+                                    <div class="skill-name">Microsoft Azure (App / Data)</div>
+                                    <div class="skill-level">Nivel: 4 / 5</div>
+                                </div>
+                                <div class="rating-row">
+                                    <div class="rating-bar">
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="rating-text">Implementación sólida</div>
+                                </div>
+                                <p class="skill-justification">
+                                    Experiencia desplegando soluciones en Azure App Service, Azure SQL Database, Functions,
+                                    Storage, Service Bus y Key Vault; administración básica de recursos y diseño de topologías para alta disponibilidad.
+                                </p>
+                            </div>
+
+                            <!-- Skill: Integración y datos -->
+                            <div class="skill-card">
+                                <div class="skill-header">
+                                    <div class="skill-name">Integración y ETL (SSIS / APIs)</div>
+                                    <div class="skill-level">Nivel: 4 / 5</div>
+                                </div>
+                                <div class="rating-row">
+                                    <div class="rating-bar">
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="rating-text">Alto volumen de datos</div>
+                                </div>
+                                <p class="skill-justification">
+                                    Diseño de procesos ETL con SSIS y servicios .NET para integrar bancos, pasarelas y ERPs,
+                                    manejando grandes volúmenes con control de errores y reintentos transaccionales.
+                                </p>
+                            </div>
+
+                            <!-- Skill: DevOps -->
+                            <div class="skill-card">
+                                <div class="skill-header">
+                                    <div class="skill-name">DevOps (.NET / SQL)</div>
+                                    <div class="skill-level">Nivel: 3 / 5</div>
+                                </div>
+                                <div class="rating-row">
+                                    <div class="rating-bar">
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="rating-text">Práctico</div>
+                                </div>
+                                <p class="skill-justification">
+                                    Configuro pipelines en Azure DevOps/GitHub Actions para compilar, probar y desplegar
+                                    soluciones .NET y scripts de base de datos; colaboro de cerca con equipos DevOps dedicados.
+                                </p>
+                            </div>
+
+                            <!-- Skill: Arquitectura -->
+                            <div class="skill-card">
+                                <div class="skill-header">
+                                    <div class="skill-name">Arquitectura de software</div>
+                                    <div class="skill-level">Nivel: 4 / 5</div>
+                                </div>
+                                <div class="rating-row">
+                                    <div class="rating-bar">
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="rating-text">Diseño y liderazgo</div>
+                                </div>
+                                <p class="skill-justification">
+                                    Defino arquitecturas basadas en microservicios, capas limpias y mensajería;
+                                    facilito decisiones de trade‑off con negocio y documento diagramas (C4) y lineamientos de calidad.
+                                </p>
+                            </div>
+
+                            <!-- Skill: Liderazgo técnico -->
+                            <div class="skill-card">
+                                <div class="skill-header">
+                                    <div class="skill-name">Liderazgo técnico &amp; mentoring</div>
+                                    <div class="skill-level">Nivel: 4 / 5</div>
+                                </div>
+                                <div class="rating-row">
+                                    <div class="rating-bar">
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="rating-text">Equipo 8–12 devs</div>
+                                </div>
+                                <p class="skill-justification">
+                                    Responsable de lineamientos técnicos, revisiones de código, formación de desarrolladores
+                                    junior y coordinación con Product Owners; continúo perfeccionando habilidades de delegación y coaching.
+                                </p>
+                            </div>
+
+                            <!-- Skill: Comunicación -->
+                            <div class="skill-card">
+                                <div class="skill-header">
+                                    <div class="skill-name">Comunicación y trabajo con negocio</div>
+                                    <div class="skill-level">Nivel: 4 / 5</div>
+                                </div>
+                                <div class="rating-row">
+                                    <div class="rating-bar">
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span class="filled"></span>
+                                        <span></span>
+                                    </div>
+                                    <div class="rating-text">Español / Inglés</div>
+                                </div>
+                                <p class="skill-justification">
+                                    Acostumbrado a traducir requerimientos de negocio en soluciones técnicas claras,
+                                    presentar propuestas de arquitectura y negociar alcances con stakeholders técnicos y no técnicos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tecnologías y herramientas -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-title">Tecnologías y herramientas</div>
+                        <div class="section-accent"></div>
+                    </div>
+                    <div class="section-body">
+                        <div class="two-col-list">
+                            <div>
+                                <strong>.NET &amp; Backend</strong><br />
+                                C#, .NET 6/7, ASP.NET Core, Web API, gRPC,<br />
+                                EF Core, Dapper, LINQ, WCF (legado)
+                            </div>
+                            <div>
+                                <strong>Bases de datos</strong><br />
+                                SQL Server 2008–2019, Azure SQL Database,<br />
+                                T‑SQL, SSIS, SSRS, diseño de esquemas, índices
+                            </div>
+                            <div>
+                                <strong>Cloud / DevOps</strong><br />
+                                Azure App Service, Functions, Service Bus, Storage,<br />
+                                Azure DevOps, GitHub Actions, Docker básico
+                            </div>
+                            <div>
+                                <strong>Prácticas y patrones</strong><br />
+                                DDD, CQRS, SOLID, Clean Architecture, REST,<br />
+                                pruebas unitarias/integración (xUnit, MSTest)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Idiomas e información adicional -->
+                <div class="section">
+                    <div class="section-header">
+                        <div class="section-title">Idiomas e información adicional</div>
+                        <div class="section-accent"></div>
+                    </div>
+                    <div class="section-body">
+                        <p class="small-muted">
+                            <strong>Idiomas:</strong> Español (nativo); Inglés (B2/C1, trabajo diario con equipos y clientes internacionales).
+                        </p>
+                        <p class="small-muted">
+                            <strong>Preferencias:</strong> roles de liderazgo técnico / principal engineer con foco en .NET y SQL Server,
+                            participación en decisiones de arquitectura y mentoring de equipos.
+                        </p>
+                        <p class="small-muted">
+                            <strong>Disponibilidad:</strong> trabajo remoto o híbrido desde Costa Rica; viajes ocasionales dentro de la región.
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+</div>
+</body>
+</html>

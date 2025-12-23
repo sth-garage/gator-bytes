@@ -1,0 +1,106 @@
+
+1.
+Create a resume for a software developer who has primarily worked in the .NET stack - they should have deep skills with .NET, average skills with SQL, and very limited front end experience mostly with Knockout JS and Angular.  They are a senior who has been worked for several years at a few jobs.  One of the most recent jobs should show 2 promotions.  They have limited team lead experience but can help mentor junior devs.  They have some basic Microsoft certifications.  The resume output needs to detailed and verbose.  It should be returned in an markdown format.
+
+2.
+Create a resume for a Database Engineer that is primiarly focused on Oracle but does have some SQL Server and PostgresSQL experience as well.  They have been working for 7 years and have switched jobs frequently - most lasting only 6-9 months.  They are looking for opportunities to move into more of lead DBA role and the resume should reflect that.  Return the resume as a txt file - keep their descriptions short.  Mark some of the jobs as contracts rather than full posititions.  Create necessary personal details like name/address/email address and educational experience including major and GPA
+
+3.
+Create a sample resume with simulated name/address/email for someone applying for:
+
+An entry level front end developer with exposure to React and React Native.  Limited work with AngularJS.  Has only had one job in the industry for 14 months - has recently been promoted from Junior and is looking for other opportunities with Angular 2+.  Overly detailed, including school projects but enthusiastic.
+
+Return the output as a single file HTML that includes styling
+
+
+4.
+Create a sample resume with simulated name/address/email for someone applying for:
+
+A principal level Java developer who has a wide depth of knowledge in microservices and code optimzations.  Has worked with most major versions of Java.  Strong familiarity with Oracle and PostgresSQL.  Has worked in the industry for 10 years and been at the same company the whole time, being promoted from junior->dev->senior->principal.  Has team lead experience and has worked at an architectural level but has very limited client facing experience.  Resume format needs to reflect this level of experience and include summaries that highlight projects/skill without being too wordy
+
+Return the output as a single file HTML that includes styling
+
+
+
+5.
+Create a sample resume with simulated name/address/email for someone applying for:
+
+A principal level Full Stack developer specializing in the .NET stack who has a wide depth of knowledge in refactoring for performance and being called on to fix major issues.  Has strong experience on the front end, focused on vanilla javascript/HTML/CSS.  Strong familiarity with SQL Server including query optimization, SSIS, and SSRS.  Has worked in the industry for 14 years and been at about 5 companiesHas team lead experience and has worked at an architectural level - importantly they focus on business value in addition to technical skills themselves.  Resume format needs to reflect this level of experience and include summaries that highlight projects/skill without being too wordy, but shows a fun attitude that comes with confidence
+
+Return the output as a single file HTML that includes styling
+
+
+6.
+Create a sample resume with simulated name/address/email for someone applying for:
+
+A recent college graduate that did excelpmary in school - include a high GPA and several class projects including their role, what they did, what they learned, etc.  The focus was on Python with very limited front end and very elementary SQL experience
+Return the output as a single file HTML that includes styling
+
+
+7.
+Create a sample resume with simulated name/address/email for someone applying for:
+
+A recent college graduate that did excelpmary in school - include a low GPA and a few class projects including what they did, how they liked it, etc.  The focus was on Java with no SQL or Front End Experience.  They did play on the schools football and baseball team and was a captain of the baseball team.
+Return the output as a single txt file
+
+
+8.
+Create a resume for a software developer who has primarily worked in the .NET stack - they should have deep skills with .NET, good skills with SQL, and limited front end experience mostly with React.  They are a senior who has been worked for several years at a few jobs.  One of the most recent jobs should show 2 promotions.  They have limited team lead experience but can help mentor junior devs.  They have some basic Microsoft certifications.  The resume output needs to detailed and verbose.  
+It should be returned in an rich text file format.
+
+
+9.
+Create a resume for a software developer who has primarily worked in the .NET stack - they should have deep skills with .NET, randomize their skills and levels.  
+It should be returned in an rich text file format.
+
+10, 11
+Create a resume for a software developer with 4-6 years experience. who has primarily worked in the .NET stack - they should have deep skills with .NET, randomize their skills and levels. They may have front end and DB experience, randomize as well but demonstrate skills in projects summaries. 
+Return the output as a single file HTML that includes styling
+The name needs to be Indian
+
+12.
+Create a resume for a software developer with 4-6 years experience. who has primarily worked in the .NET stack - they should have skills with .NET, randomize their skills and levels. They may have front end and DB experience, randomize as well but demonstrate skills in projects summaries. 
+This person has never stayed at a job more than 5 months, mosting only lasting 3-4 months
+Return the output as a text file
+Pick a name that starts with B
+
+13.
+Create a resume for a software developer with 7 years experience. who has primarily worked in the .NET stack - they should have skills with .NET, randomize their skills and levels. They may have front end and DB experience, randomize as well but demonstrate skills in projects summaries. 
+There should be a 2 year gap between 2 positiions.
+Return the output as a single file HTML that includes styling
+
+14.
+Create a resume for a software developer focusing on Python and related skills
+There should be a 2 year gap between 2 positiions.
+Return the output as a single file HTML that includes styling
+The name should Spanish
+
+15.
+Create a resume for a software developer focusing on NET and SQL Server related skills
+Return the output as a single file HTML that includes styling
+The name should Spanish - the output file should also be in Spanish (applicant is from Costa Rica)
+
+16.
+Create a resume for a prinicipal software developer focusing on NET and SQL Server related skills
+Return the output as a single file HTML that includes styling - use eye catching styling and grids for skills with a self rating 1-5 with justification
+The name should Spanish - the output file should also be in Spanish (applicant is from Costa Rica)
+
+
+17.
+Create a resume for a prinicipal software developer focusing on NET and SQL Server related skills - with intro skills using AI with Semantic Kernel
+Return the output as a single file HTML that includes styling - use eye catching styling and grids for skills with a self rating 1-10
+
+18.
+Create a resume for a prinicipal software developer focusing on NET and SQL Server related skills - with advanced skills using AI with Semantic Kernel to enchance applications
+Return the output as a single file HTML that includes styling - use eye catching styling and grids for skills with a self rating 1-10
+
+
+
+19.
+Create a resume for a prinicipal software developer focusing on Python and Oracle/PostgresSQL related skills - with intro skills using AI with langchain
+Return the output as a single file HTML that includes styling - use eye catching styling and grids for skills
+
+20.
+Create a resume for a prinicipal software developer focusing on Python and Oracle/PostgresSQL related skills - with advanced skills using AI with langchain to enchance applications
+Return the output as a single file HTML that includes styling - use eye catching styling
+

@@ -1,0 +1,379 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Alex Carter</title>
+    <style>
+      /* Use the full provided CSS from your template */
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        background-color: #f4f6fb;
+        color: #1f2933;
+        line-height: 1.6;
+      }
+      body {
+        padding: 32px 16px;
+      }
+      .page-container {
+        max-width: 960px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+        padding: 32px 40px;
+        box-sizing: border-box;
+      }
+      h1, h2, h3 {
+        margin: 0 0 12px 0;
+        font-weight: 600;
+        color: #111827;
+      }
+      h1 {
+        font-size: 28px;
+        letter-spacing: 0.02em;
+      }
+      h2 {
+        font-size: 20px;
+        margin-top: 24px;
+        border-bottom: 1px solid #e5e7eb;
+        padding-bottom: 4px;
+      }
+      p {
+        margin: 0 0 10px 0;
+      }
+      .overview, .personality, .workHistory, .skillList {
+        margin-bottom: 24px;
+      }
+      .section-header {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #111827;
+      }
+      .overview { font-size: 15px; color: #111827; }
+      .overview p { margin-bottom: 8px; }
+      .personality {
+        font-size: 14px;
+        color: #374151;
+        background-color: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 6px;
+        padding: 12px 14px;
+      }
+      .workHistory { font-size: 14px; }
+      .totalYears {
+        display: inline-block;
+        font-weight: 600;
+        color: #2563eb;
+        margin-bottom: 12px;
+      }
+      .workHistoryEntry {
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        border-bottom: 1px dashed #e5e7eb;
+      }
+      .workHistoryEntryHeader {
+        font-weight: 600;
+        font-size: 15px;
+        color: #111827;
+        margin-bottom: 2px;
+      }
+      .workHistoryEntryHeader .companyName {
+        font-weight: 500;
+        color: #374151;
+      }
+      .workHistoryEntryTime {
+        float: right;
+        font-size: 12px;
+        color: #6b7280;
+      }
+      .workHistoryEntrySummary {
+        font-size: 14px;
+        color: #374151;
+        margin: 4px 0 6px 0;
+      }
+      .workHistoryEntryTasks {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin: 0;
+        color: #4b5563;
+      }
+      .workHistoryEntryTasks li {
+        margin-bottom: 4px;
+      }
+      .workHistoryEntryHeader::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .skillList { font-size: 14px; }
+      .skillEntry {
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #f3f4f6;
+      }
+      .skillName {
+        font-weight: 600;
+        color: #111827;
+      }
+      .skillLevel {
+        font-weight: 600;
+        margin-left: 8px;
+        font-size: 13px;
+      }
+      .skillLevel-elite { color: #006400; }
+      .skillLevel-strong { color: #008000; }
+      .skillLevel-intermediate { color: #ff8c00; }
+      .skillLevel-basic { color: #cc0000; }
+      .skillJustification {
+        display: block;
+        margin-top: 4px;
+        color: #4b5563;
+        font-size: 13px;
+      }
+      .muted { color: #6b7280; }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <h1>Alex Carter</h1>
+
+      <div class="overview">
+        <div class="section-header">Professional Overview</div>
+        <p>
+          Enthusiastic, detail-oriented front-end developer with roughly 14 months of professional experience, recently promoted at Northwind Digital Labs for exceptional code quality, accessible design, and team mentorship. Highly proficient in component-based UI development and state management in React and React Native, with strong practices in test coverage, agile workflows, and collaborative documentation.
+        </p>
+        <p>
+          Alex is actively upskilling in modern Angular (versions 16–17) through personal projects and formal courses, demonstrating an aptitude for rapid learning and self-motivation. Recognized for raising accessibility scores, authoring reusable UIs, and participating in code reviews and team discussions. Alex thrives in fast-moving environments where code quality, knowledge sharing, and continuous learning are valued.
+        </p>
+      </div>
+
+      <div class="personality">
+        <div class="section-header">Personality & Working Style</div>
+        Alex demonstrates a highly detail-oriented and communicative approach to software development. Known for clear written and verbal communication, Alex is proactive in seeking and offering feedback, participating in team rituals, and contributing to comprehensive documentation. Strongly values mentorship—both as learner and as peer guide—and enjoys collaborating cross-functionally within Agile teams. Thrives in environments focused on knowledge sharing, technical rigor, and adoption of new technologies. Consistently demonstrates ownership, curiosity, and a growth mindset.
+      </div>
+
+      <div class="workHistory">
+        <div class="section-header">Work History</div>
+        <span class="totalYears">1.2 Years Experience</span>
+        <div class="workHistoryEntry">
+          <div class="workHistoryEntryHeader">
+            Front-End Developer (Promoted from Junior)
+            <span class="companyName"> - Northwind Digital Labs</span>
+            <span class="workHistoryEntryTime">Jun 2023 to Present</span>
+          </div>
+          <div class="workHistoryEntrySummary">
+            Built and maintained reusable React component libraries for design systems, leading accessibility and documentation efforts. Promoted within 12 months for technical contributions and mentoring interns, while assisting in legacy AngularJS maintenance and gradual codebase modernization. Worked in a hybrid environment using modern FE tooling, test-driven development, and agile methodologies.
+          </div>
+          <ul class="workHistoryEntryTasks">
+            <li>Developed and documented 20+ reusable React components with Storybook usage guides and detailed accessibility notes.</li>
+            <li>Led accessibility improvements, raising Lighthouse scores from 72 to 93 through semantic HTML, ARIA, keyboard navigation, and contrast audits.</li>
+            <li>Managed API state using Redux Toolkit and React Query in production dashboards, including optimistic UI and robust error handling.</li>
+            <li>Maintained 85–95% unit/integration test coverage for owned components using Jest and React Testing Library.</li>
+            <li>Assisted with legacy AngularJS maintenance and refactoring initiatives for gradual code migration.</li>
+            <li>Participated in Agile ceremonies, groomed tickets, championed FE architecture best practices, and mentored interns.</li>
+            <li>Consistently recognized for clear documentation, code review contributions, and initiative in experimental learning (e.g., CSS architecture, design tokens).</li>
+          </ul>
+        </div>
+        <!-- Only one professional role listed; if more, repeat this block for each in reverse chronological order -->
+      </div>
+
+      <div class="skillList">
+        <div class="section-header">Skills</div>
+
+        <div class="skillEntry">
+          <span class="skillName">JavaScript</span>
+          <span class="skillLevel skillLevel-elite">8/10</span>
+          <br />
+          <span class="skillJustification">
+            Used extensively as the core language at Northwind Digital Labs (14+ months), and for all major academic and side projects (e.g., Campus Event Explorer). Regularly leads component logic and utility implementations, indicating strong, independent mastery.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">React</span>
+          <span class="skillLevel skillLevel-elite">8/10</span>
+          <br />
+          <span class="skillJustification">
+            Primary professional and academic stack—built component libraries, led accessibility work, and implemented shared logic across web/mobile. Used in all stages from planning to production at Northwind Digital Labs and for senior capstone.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">CSS (CSS3, SCSS, Styled Components)</span>
+          <span class="skillLevel skillLevel-elite">8/10</span>
+          <br />
+          <span class="skillJustification">
+            Advanced UI and design system implementation in professional settings and personal projects. Direct, hands-on responsibility for all aspects of styling, theme management, and responsive layouts, including accessibility/contrast improvements.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">HTML5</span>
+          <span class="skillLevel skillLevel-elite">8/10</span>
+          <br />
+          <span class="skillJustification">
+            Daily use in UI engineering and accessible design. Led accessibility initiatives (semantic markup, ARIA) with quantifiable improvements (Lighthouse score). Foundational to all professional and academic FE work.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">React Native</span>
+          <span class="skillLevel skillLevel-strong">7/10</span>
+          <br />
+          <span class="skillJustification">
+            14 months of production use at Northwind Digital Labs and complete personal app builds (FitTrack Mobile), including cross-platform logic and mobile UI/UX work.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">Redux Toolkit</span>
+          <span class="skillLevel skillLevel-strong">7/10</span>
+          <br />
+          <span class="skillJustification">
+            Core to API state management and UI logic at Northwind Digital Labs; designed complex flows, handled optimistic updates, error modeling, and project documentation.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">Unit Testing (Jest, React Testing Library)</span>
+          <span class="skillLevel skillLevel-strong">7/10</span>
+          <br />
+          <span class="skillJustification">
+            Sustained, high test coverage (85–95%) for all FE code at Northwind Digital Labs using Jest and React Testing Library. Includes testing asynchronous UI states and reusable components.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">Git &amp; GitHub</span>
+          <span class="skillLevel skillLevel-strong">7/10</span>
+          <br />
+          <span class="skillJustification">
+            Daily collaborative use in professional, academic, and personal work. Manages PRs, branches, and merges, and regularly participates in code reviews.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">Documentation</span>
+          <span class="skillLevel skillLevel-strong">7/10</span>
+          <br />
+          <span class="skillJustification">
+            Recognized in performance reviews for exceptional documentation—Storybook usage notes, accessibility docs, project build notes, and onboarding materials.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">TypeScript</span>
+          <span class="skillLevel skillLevel-intermediate">6/10</span>
+          <br />
+          <span class="skillJustification">
+            Regularly used in both professional (React/Redux code) and personal (Angular) projects. Developed growing fluency, especially in strict/typed code environments.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">React Query</span>
+          <span class="skillLevel skillLevel-intermediate">6/10</span>
+          <br />
+          <span class="skillJustification">
+            Used for data fetching and caching in complex UIs at Northwind Digital Labs. Manages API state and supports robust/fault-tolerant interfaces.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">Communication</span>
+          <span class="skillLevel skillLevel-intermediate">6/10</span>
+          <br />
+          <span class="skillJustification">
+            Cited in feedback and performance reviews for clarity across code reviews, documentation, and team discussions. Supports effective project execution and intern onboarding.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">REST APIs</span>
+          <span class="skillLevel skillLevel-intermediate">6/10</span>
+          <br />
+          <span class="skillJustification">
+            Manages FE-side consumption and state modeling for all major projects (Redux, React Query, Angular). Designs error states, optimistic flows, and integrates with various backend patterns.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">Angular (16–17)</span>
+          <span class="skillLevel skillLevel-intermediate">5/10</span>
+          <br />
+          <span class="skillJustification">
+            Currently learning and applying in-depth through TaskFlow Pro (personal project), certified courses, and ongoing self-study. No professional production yet, but robust project execution and up-to-date learning.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">RxJS</span>
+          <span class="skillLevel skillLevel-intermediate">5/10</span>
+          <br />
+          <span class="skillJustification">
+            Applies RxJS in Angular projects and coursework for streams and UI reactivity; regular engagement in personal builds and exercises.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">Cypress</span>
+          <span class="skillLevel skillLevel-intermediate">5/10</span>
+          <br />
+          <span class="skillJustification">
+            Used for front-end project test suites in professional and personal contexts, with practical understanding of end-to-end testing.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">Agile</span>
+          <span class="skillLevel skillLevel-intermediate">5/10</span>
+          <br />
+          <span class="skillJustification">
+            Consistent participation in Agile ceremonies, sprint management, and collaborative workflows at Northwind Digital Labs; also studied in academic contexts.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">NgRx</span>
+          <span class="skillLevel skillLevel-basic">4/10</span>
+          <br />
+          <span class="skillJustification">
+            Implemented in personal Angular projects (TaskFlow Pro) for global state management. No professional experience yet, but functional familiarity demonstrated.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">AngularJS (1.x)</span>
+          <span class="skillLevel skillLevel-basic">4/10</span>
+          <br />
+          <span class="skillJustification">
+            Supported legacy tool maintenance/refactoring at Northwind Digital Labs and completed an academic expense planner; not a primary framework, but maintains basic proficiency.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">Node.js</span>
+          <span class="skillLevel skillLevel-basic">4/10</span>
+          <br />
+          <span class="skillJustification">
+            Used for project tooling, simple API setup in the Campus Event Explorer, and running build environments for personal/pro academic apps.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">Mentoring</span>
+          <span class="skillLevel skillLevel-basic">4/10</span>
+          <br />
+          <span class="skillJustification">
+            Mentored interns and new hires at Northwind Digital Labs through onboarding, documentation, and code reviews.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">MongoDB</span>
+          <span class="skillLevel skillLevel-basic">3/10</span>
+          <br />
+          <span class="skillJustification">
+            Basic use in academic projects (Campus Event Explorer), primarily for data modeling and CRUD API integration.
+          </span>
+        </div>
+        <div class="skillEntry">
+          <span class="skillName">Express</span>
+          <span class="skillLevel skillLevel-basic">3/10</span>
+          <br />
+          <span class="skillJustification">
+            Introductory experience building Express endpoints for academic projects only; not used professionally.
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+```
+---
+
+**How to use:**  
+You can copy and use the above HTML directly for Alex Carter's summary/profile, work history, personality, and skills, styled as your template specified. Adjust or expand "Work History" if Alex gains more roles in the future. This is fully filled with content and ready for review or editing.

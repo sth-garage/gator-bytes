@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es-CR">
+<head>
+    <meta charset="UTF-8">
+    <title>Currículum - Desarrollador .NET y SQL Server</title>
+    <style>
+        /* ---------- Reset básico ---------- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.5;
+            color: #222;
+            background: #f4f6f8;
+            padding: 20px;
+        }
+
+        /* ---------- Layout general ---------- */
+        .cv-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.06), 0 10px 30px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(120deg, #004d7a, #008793);
+            color: #ffffff;
+            padding: 24px 32px 20px 32px;
+        }
+
+        .header-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .name-title {
+            max-width: 70%;
+        }
+
+        .name-title h1 {
+            font-size: 2rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .name-title h2 {
+            font-size: 1.05rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .header-contact {
+            font-size: 0.9rem;
+            text-align: right;
+        }
+
+        .header-contact a {
+            color: #e2f4ff;
+            text-decoration: none;
+        }
+
+        .header-contact a:hover {
+            text-decoration: underline;
+        }
+
+        .header-bottom {
+            margin-top: 14px;
+            font-size: 0.95rem;
+            max-width: 800px;
+            opacity: 0.95;
+        }
+
+        /* ---------- Cuerpo ---------- */
+        .content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            padding: 24px 32px 28px 32px;
+        }
+
+        @media (max-width: 800px) {
+            .content {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            .header {
+                padding: 20px;
+            }
+            .name-title {
+                max-width: 100%;
+            }
+            .header-contact {
+                text-align: left;
+            }
+        }
+
+        /* ---------- Secciones ---------- */
+        h3.section-title {
+            font-size: 1rem;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: #004d7a;
+            border-bottom: 1px solid #e0e4e8;
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        p, li {
+            font-size: 0.94rem;
+        }
+
+        ul {
+            margin-left: 18px;
+        }
+
+        li {
+            margin-bottom: 4px;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 6px;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            padding: 3px 7px;
+            border-radius: 999px;
+            border: 1px solid #d1d7de;
+            background: #f7f9fb;
+            color: #333;
+            white-space: nowrap;
+        }
+
+        /* ---------- Experiencia ---------- */
+        .item {
+            margin-bottom: 14px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 2px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 0.97rem;
+        }
+
+        .item-meta {
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        .item-subtitle {
+            font-size: 0.88rem;
+            color: #555;
+            margin-bottom: 4px;
+        }
+
+        .item ul {
+            margin-top: 4px;
+        }
+
+        /* ---------- Barra lateral ---------- */
+        .side-section p {
+            margin-bottom: 6px;
+        }
+
+        .side-section ul {
+            margin-top: 4px;
+        }
+
+        /* ---------- Enlaces ---------- */
+        a {
+            color: #005b96;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ---------- Impresión ---------- */
+        @media print {
+            body {
+                background: #ffffff;
+                padding: 0;
+            }
+            .cv-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            a {
+                text-decoration: none;
+                color: #000000;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="cv-container">
+    <header class="header">
+        <div class="header-top">
+            <div class="name-title">
+                <h1>Carlos Andrés Rodríguez Morales</h1>
+                <h2>Desarrollador de Software .NET / SQL Server</h2>
+            </div>
+            <div class="header-contact">
+                <div>San José, Costa Rica</div>
+                <div>Tel: +506 8888-1234</div>
+                <div><a href="mailto:carlos.rodriguez.dev@ejemplo.com">carlos.rodriguez.dev@ejemplo.com</a></div>
+                <div><a href="https://www.linkedin.com/in/carlos-rodriguez-dotnet" target="_blank">linkedin.com/in/carlos-rodriguez-dotnet</a></div>
+                <div><a href="https://github.com/crodriguez-cr" target="_blank">github.com/crodriguez-cr</a></div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            Desarrollador de software con 7+ años de experiencia construyendo aplicaciones empresariales
+            sobre la plataforma .NET y bases de datos Microsoft SQL Server. Especializado en diseño de APIs,
+            optimización de consultas, modelado de datos y modernización de aplicaciones legadas.
+            Acostumbrado a trabajar con equipos ágiles distribuidos y a documentar soluciones de forma clara y mantenible.
+        </div>
+    </header>
+
+    <main class="content">
+        <!-- Columna principal -->
+        <section>
+            <!-- Perfil profesional -->
+            <div class="section">
+                <h3 class="section-title">Perfil profesional</h3>
+                <p>
+                    Ingeniero en Sistemas con sólida experiencia en desarrollo backend y full‑stack utilizando C#, ASP.NET
+                    (MVC y Core), Entity Framework y SQL Server. Fuerte enfoque en rendimiento y calidad de código,
+                    aplicando principios SOLID, patrones de diseño y prácticas de pruebas automatizadas.
+                    Experiencia en integración con servicios REST, SOAP y mensajería, así como en despliegues en Azure.
+                </p>
+            </div>
+
+            <!-- Experiencia profesional -->
+            <div class="section">
+                <h3 class="section-title">Experiencia profesional</h3>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Desarrollador Senior .NET</div>
+                        <div class="item-meta">Enero 2021 – Actualidad | San José, Costa Rica</div>
+                    </div>
+                    <div class="item-subtitle">Consultora Tecnológica Centroamericana S.A.</div>
+                    <ul>
+                        <li>Diseño y desarrollo de APIs REST con ASP.NET Core 6 para sistemas de facturación electrónica y gestión de inventarios.</li>
+                        <li>Modelado y optimización de bases de datos SQL Server (índices, vistas, procedimientos almacenados, planes de ejecución).</li>
+                        <li>Implementación de Entity Framework Core con migraciones y patrones Repository/Unit of Work.</li>
+                        <li>Automatización de procesos ETL simples con SQL Server Integration Services (SSIS) para consolidación de datos financieros.</li>
+                        <li>Despliegue de aplicaciones en Azure App Service y administración de Azure SQL Database.</li>
+                        <li>Mentoría a desarrolladores junior en buenas prácticas de C#, revisión de código y control de versiones con Git.</li>
+                    </ul>
+                    <div class="tag-list">
+                        <span class="tag">ASP.NET Core 6</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">Web API</span>
+                        <span class="tag">Entity Framework Core</span>
+                        <span class="tag">SQL Server 2019</span>
+                        <span class="tag">Azure App Service</span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Desarrollador .NET / SQL Server</div>
+                        <div class="item-meta">Julio 2017 – Diciembre 2020 | Heredia, Costa Rica</div>
+                    </div>
+                    <div class="item-subtitle">Grupo Soluciones Empresariales S.A.</div>
+                    <ul>
+                        <li>Desarrollo de aplicaciones web internas con ASP.NET MVC 5 y jQuery para recursos humanos y gestión de proyectos.</li>
+                        <li>Diseño de esquemas de base de datos relacionales, disparadores y funciones definidas por el usuario en SQL Server.</li>
+                        <li>Optimización de consultas complejas y generación de reportes usando SQL Server Reporting Services (SSRS).</li>
+                        <li>Refactorización de módulos legados en WebForms hacia capas de servicios y repositorios reutilizables.</li>
+                        <li>Implementación de autenticación basada en roles y manejo de sesiones seguras.</li>
+                    </ul>
+                    <div class="tag-list">
+                        <span class="tag">ASP.NET MVC</span>
+                        <span class="tag">JavaScript / jQuery</span>
+                        <span class="tag">SQL Server 2016</span>
+                        <span class="tag">Stored Procedures</span>
+                        <span class="tag">SSRS</span>
+                        <span class="tag">WebForms (mantenimiento)</span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Desarrollador Junior .NET</div>
+                        <div class="item-meta">Enero 2016 – Junio 2017 | San José, Costa Rica</div>
+                    </div>
+                    <div class="item-subtitle">SoftTech Costa Rica</div>
+                    <ul>
+                        <li>Soporte y desarrollo de nuevas funcionalidades en aplicaciones de escritorio con Windows Forms y WPF.</li>
+                        <li>Elaboración de procedimientos almacenados, vistas y scripts de actualización de datos en SQL Server.</li>
+                        <li>Participación en migraciones de datos entre ambientes de prueba y producción.</li>
+                        <li>Documentación técnica básica y soporte de segundo nivel para usuarios internos.</li>
+                    </ul>
+                    <div class="tag-list">
+                        <span class="tag">C#</span>
+                        <span class="tag">Windows Forms</span>
+                        <span class="tag">WPF</span>
+                        <span class="tag">SQL Server</span>
+                        <span class="tag">T-SQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyectos destacados -->
+            <div class="section">
+                <h3 class="section-title">Proyectos destacados</h3>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Plataforma de facturación electrónica para PYMES</div>
+                        <div class="item-meta">2022 – 2023</div>
+                    </div>
+                    <div class="item-subtitle">Rol: Desarrollador Líder Backend</div>
+                    <ul>
+                        <li>Diseño de arquitectura basada en servicios REST con ASP.NET Core, autenticación JWT y patrones CQRS ligeros.</li>
+                        <li>Normalización del modelo de datos en SQL Server y uso de índices compuestos para mejorar el rendimiento.</li>
+                        <li>Reducción del tiempo promedio de generación de facturas de 3 s a menos de 800 ms mediante optimización de consultas y caché en memoria.</li>
+                    </ul>
+                    <div class="tag-list">
+                        <span class="tag">ASP.NET Core</span>
+                        <span class="tag">JWT</span>
+                        <span class="tag">SQL Server</span>
+                        <span class="tag">CQRS (básico)</span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Sistema de reportes gerenciales</div>
+                        <div class="item-meta">2020</div>
+                    </div>
+                    <div class="item-subtitle">Rol: Desarrollador .NET / SQL</div>
+                    <ul>
+                        <li>Creación de cubos de información simples a partir de datos transaccionales usando vistas e índices columnstore.</li>
+                        <li>Implementación de reportes parametrizables en SSRS consumidos desde una aplicación ASP.NET MVC.</li>
+                        <li>Reducción de tiempos de generación de reportes mensuales de 20 a 3 minutos.</li>
+                    </ul>
+                    <div class="tag-list">
+                        <span class="tag">SSRS</span>
+                        <span class="tag">SQL Server</span>
+                        <span class="tag">ASP.NET MVC</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Educación -->
+            <div class="section">
+                <h3 class="section-title">Educación</h3>
+
+                <div class="item">
+                    <div class="item-header">
+                        <div class="item-title">Bachillerato en Ingeniería en Sistemas de Información</div>
+                        <div class="item-meta">2011 – 2015</div>
+                    </div>
+                    <div class="item-subtitle">Universidad Estatal a Distancia (UNED), Costa Rica</div>
+                    <ul>
+                        <li>Énfasis en desarrollo de software, bases de datos y arquitectura de sistemas.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Barra lateral -->
+        <aside>
+            <!-- Habilidades técnicas -->
+            <div class="section side-section">
+                <h3 class="section-title">Habilidades técnicas</h3>
+
+                <p><strong>Lenguajes y plataforma</strong></p>
+                <ul>
+                    <li>C#, .NET Framework, .NET Core / .NET 6+</li>
+                    <li>T-SQL</li>
+                    <li>JavaScript (ES6+), TypeScript (básico)</li>
+                </ul>
+
+                <p><strong>Backend y APIs</strong></p>
+                <ul>
+                    <li>ASP.NET Core Web API, ASP.NET MVC</li>
+                    <li>Entity Framework / EF Core</li>
+                    <li>Servicios REST y SOAP</li>
+                </ul>
+
+                <p><strong>Bases de datos</strong></p>
+                <ul>
+                    <li>Microsoft SQL Server 2012–2019</li>
+                    <li>Diseño de esquemas, normalización, índices</li>
+                    <li>Stored procedures, funciones, triggers</li>
+                    <li>SSRS, SSIS (nivel intermedio)</li>
+                </ul>
+
+                <p><strong>Infraestructura y DevOps</strong></p>
+                <ul>
+                    <li>Azure App Service, Azure SQL Database</li>
+                    <li>IIS, configuración básica de sitios</li>
+                    <li>CI/CD con Azure DevOps (básico)</li>
+                </ul>
+
+                <p><strong>Herramientas</strong></p>
+                <ul>
+                    <li>Visual Studio, Visual Studio Code</li>
+                    <li>Git, GitHub, Azure DevOps</li>
+                    <li>SQL Server Management Studio (SSMS)</li>
+                    <li>Postman, Swagger/OpenAPI</li>
+                </ul>
+
+                <p><strong>Buenas prácticas</strong></p>
+                <ul>
+                    <li>Programación orientada a objetos, SOLID</li>
+                    <li>Pruebas unitarias con xUnit / MSTest</li>
+                    <li>Patrones de diseño comunes (Repository, Factory, etc.)</li>
+                </ul>
+            </div>
+
+            <!-- Certificaciones -->
+            <div class="section side-section">
+                <h3 class="section-title">Certificaciones</h3>
+                <ul>
+                    <li>Microsoft Certified: Azure Fundamentals (AZ-900) – 2022</li>
+                    <li>Microsoft Certified: Azure Developer Associate (AZ-204) – 2023</li>
+                    <li>Certificación interna en Desarrollo .NET y SQL Server – 2020</li>
+                </ul>
+            </div>
+
+            <!-- Idiomas -->
+            <div class="section side-section">
+                <h3 class="section-title">Idiomas</h3>
+                <ul>
+                    <li>Español: Nativo</li>
+                    <li>Inglés: Intermedio – B2 (lectura técnica avanzada, comunicación oral funcional)</li>
+                </ul>
+            </div>
+
+            <!-- Información adicional -->
+            <div class="section side-section">
+                <h3 class="section-title">Información adicional</h3>
+                <ul>
+                    <li>Disponibilidad para trabajo remoto o modalidad híbrida en el Gran Área Metropolitana.</li>
+                    <li>Experiencia trabajando con equipos internacionales y metodologías ágiles (Scrum).</li>
+                    <li>Interés en arquitectura de software, microservicios y mejores prácticas de base de datos.</li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+</div>
+</body>
+</html>
