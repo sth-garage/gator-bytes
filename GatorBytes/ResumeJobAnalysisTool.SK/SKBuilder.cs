@@ -23,15 +23,9 @@ namespace ResumeJobAnalysisTool.SK
     {
         public async Task<SemanticKernelBuilderResult> BuildSemanticKernel(ConfigurationValues configValues, SKQuickTestOptions sKQuickTestOptions = null)
         {
-            var modelId = "openai/gpt-oss-20b"; // configValues.OpenAISettings.OpenAI_Model;
-            var apiKey = "openai/gpt-oss-20b"; // configValues.OpenAISettings.OpenAI_ApiKey;
-            var apiUrl = "http://127.0.0.1:1234"; // configValues.OpenAISettings.OpenAI_ApiUrl;
-
-            //configValues.OpenAISettings.OpenAI_Model = "google/gemma-3-12b";
-            //configValues.OpenAISettings.OpenAI_ApiKey = "Z3T84R3-MWF4GHN-GPMDV46-20TP1V0";
-            //configValues.OpenAISettings.OpenAI_ApiUrl = "http://localhost:3001/api/v1";
-
-
+            var modelId = configValues.OpenAISettings.OpenAI_Model;
+            var apiKey = configValues.OpenAISettings.OpenAI_ApiKey;
+            var apiUrl = configValues.OpenAISettings.OpenAI_ApiUrl;
 
             // Create a kernel with Azure OpenAI chat completion
             var skBuilder = Kernel.CreateBuilder().AddOpenAIChatCompletion(
